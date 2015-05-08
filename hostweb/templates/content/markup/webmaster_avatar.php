@@ -1,3 +1,0 @@
-<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#119;&#101;&#98;&#103;&#111;&#46;&#110;&#101;&#116;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;?subject=Kontaktanfrage%20über%20das%20Loopshape-Portal&body=Bitte%20schildern%20Sie%20Ihr%20Anliegen..." title="">
-	<img id="webmasterAvatar" src="./hostweb/assets/img/avatars/github_avatar.png" class="hastip" title="Sende eine E-Mail an den Webmaster von Loopshape" alt="" />
-</a>
