@@ -17,8 +17,12 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 	// Angular.JS Setup
 	var app = angular.module('loopcode', []);
 	app.controller('bridge', function($scope) {
-	    $scope.userEmail= "user@domain.tld";
-	    $scope.userPasswd= "1337secure";
+	    
+	    $scope.baseUrl = baseUrl;
+	    
+	    $scope.userEmail = "user@domain.tld";
+	    $scope.userPasswd = "1337secure";
+	    
 	});
 	
 	function responsiveMeasures() {

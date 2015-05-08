@@ -53,6 +53,7 @@ h3,
 h4,
 h5,
 h6 {
+    clear: both;
   line-height: 160% !important;
   margin-top: 30px;
   margin-bottom: 15px;
@@ -744,18 +745,20 @@ html body p.slogan>strong {
 }
 .scrollToTop {
   position: fixed;
-  width: auto !important;
-  height: auto !important;
+  width: 64px !important;
+  height: 80px !important;
   text-align: center;
   vertical-align: middle;
   background-color: rgba(0,0,0,0.25);
   font-weight: bold;
   color: #eee !important;
   text-decoration: none;
-  bottom: 20px !important;
-  right: 20px !important;
+  bottom: 15px !important;
+  right: 15px !important;
   display: none;
-  background: url("./../img/items/arrow_up.png") no-repeat 0px 20px;
+  background: url("/hostweb/assets/img/items/arrow_up.png") no-repeat 0px 20px;
+  opacity: 0.8;
+  z-index: 1000000 !important;
 }
 .scrollToTop:hover {
   text-decoration: none;
