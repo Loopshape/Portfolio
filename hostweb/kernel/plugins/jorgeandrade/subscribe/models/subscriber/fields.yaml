@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        disabled: false
+    surname:
+        label: Surname
+        disabled: false
+    email:
+        label: Email
+        disabled: false
+    country:
+        label: Country
+        disabled: false
+    latitude:
+        label: Latitude
+        disabled: false
+    longitude:
+        label: Longitude
+        disabled: false

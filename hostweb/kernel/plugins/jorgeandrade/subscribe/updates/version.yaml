@@ -1,0 +1,19 @@
+1.0.1:
+    - Initialize plugin.
+    - create_subscribers_table.php
+1.0.2: Fixed data-request
+1.0.3:
+    - Added the status and code column to the subscribers table.
+    - create_subscribers_code.php
+    - create_subscribers_status.php
+    - Adding a unsubscribe form.
+1.0.4:
+    - fixed code update
+    - update_code_column_subscriber.php
+1.0.5:
+    - Added the name surname and country column to the subscribers table.
+    - create_subscribers_name_surname_country.php
+    - Adding a profile form.
+1.0.6: Fixed some bugs and adding config for url profile con subscriber component
+1.0.7: Fixed some bugs subscriber component
+1.0.8: Added support for export the unique code

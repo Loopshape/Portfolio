@@ -1,0 +1,270 @@
+// global modifications after template definition
+
+html #page {
+  border: @none;
+  margin-bottom: 0;
+}
+
+html,
+html *,
+html #page,
+html #page *,
+html #page header#header,
+html #page #contentWrapper,
+html #page #contentWrapper *,
+html #page footer#footer {
+-moz-box-shadow: @none;
+-webkit-box-shadow: @none;
+box-shadow: @none;
+border: @none;
+border-width: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+  text-shadow: @none;
+  border-color: @none;
+-webkit-transition: all 0ms linear;
+-moz-transition: all 0ms linear;
+-ms-transition: all 0ms linear;
+-o-transition: all 0ms linear;
+transition: all 0ms linear;
+}
+
+html #page,
+//html #page h1,
+//html #page h2,
+//html #page h3,
+html #page h4,
+html #page h5,
+html #page h6,
+html #page input,
+html #page p,
+html #page strong p,
+html #page p strong:not(#tutsArea > a > * > strong) {
+  color: @pencolor;
+}
+
+html #page {
+  background-color: @blackgold;
+}
+
+html #page > .inner {
+  background-color: @darkgold;
+}
+
+html #page #main #contentWrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  background-color: @none;
+  padding: 30px;
+  top: 30px;
+  max-width: 94%;
+  margin-bottom: 30px;
+}
+
+i {
+  text-shadow: 0 0 1px #000;
+}
+
+*[class^="btn"] {
+  &, *, &:hover, *:hover {
+-webkit-transition: all 0ms linear;
+-moz-transition: all 0ms linear;
+-ms-transition: all 0ms linear;
+-o-transition: all 0ms linear;
+transition: all 0ms linear;
+  }
+}
+
+html #page > .inner {
+  padding-bottom: 0;
+}
+
+html #page > .inner,
+html #page div.blackBoxTrans1,
+html #page #header .fmLogo {
+  background: @none;
+  border: @none;
+}
+
+html #page #header > div.inner > div.fmHeader {
+  left: 34%;
+}
+
+html #page i,
+#header > div.inner > div.fmHeader > strong > h2 > i {
+  color: @backendblue;
+}
+
+html #page p.slogan {
+  display: @none;
+}
+
+#footer > div > h6 > strong > i {
+  color: @pencolor;
+}
+
+html #page #main #contentWrapper {
+  position: relative;
+  display: inline-block;
+  border: 2px solid @bordercolor;
+  width: 100%;
+  max-width: 93%;
+}
+
+html #page #glowMenu > strong > *,
+html #page #sidebar > div > div > h5 > strong > a,
+#glowMenu a {
+  color: @frontendgreen;
+  
+  &:hover {
+    color: @frontendblue;
+  }
+}
+
+html #page header#header {
+  background-color: @greyHigh;
+}
+
+html #page footer#footer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 94% !important;
+  background-color: @greyDark;
+  margin-top: 30px;
+  margin-left: -6px;
+}
+
+html #page a:hover {
+  &, * {
+    color: @linkcolor;
+  }
+}
+
+html #page #contentWrapper a > button.btn_link * {
+  color: @whitecolor;
+  font-size: 1.2em;
+  opacity: 0.8;
+}
+html #page #contentWrapper a > button.btn_link:hover * {
+  color: @greyMono;
+}
+
+html #page #main #subSectionArea {
+  div ul > li {
+    border: 2px solid @pencolor;
+  }
+}
+
+html #page #main #disclaimerBox {
+  padding: 30px;
+  
+  a {
+    color: @iconcolor;
+    
+    &:hover {
+      color: @linkcolor;
+    }
+  }
+}
+
+html #page #main #contentWrapper img.portrait {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-width: 160px;
+  
+  border: 5px solid @frontendblue;
+  
+-webkit-transition: all 1000ms ease-in-out;
+-moz-transition: all 1000ms ease-in-out;
+-ms-transition: all 1000ms ease-in-out;
+-o-transition: all 1000ms ease-in-out;
+transition: all 1000ms ease-in-out;
+}
+
+* a {
+  text-decoration: @none;
+  border: @none;
+}
+
+html #page #tutsArea > a > * > strong {
+  color: @frontendblue;
+  
+  &:hover {
+    color: @frontendgreen;
+  }
+}
+
+html #page #tutsArea > a > * > strong > *,
+html #page #content strong * a:not(html #page #footer > div > * > strong > a),
+html #page #sidebar strong * a:not(html #page #footer > div > * > strong > a) {
+  color: @frontendgreen;
+  
+  &:hover {
+    color: @frontendblue;
+  }
+}
+
+html #loginBar {
+  display: @none;
+}
+
+html .imgPlaceholder {
+  display: none;
+}
+
+html #teaserWrapper > h3.teaserHeadline > strong {
+  &, * {
+    color: @frontendblue;
+  }
+}
+
+html body#page #main {
+  #header {
+    position: relative;
+    
+    & > div.inner {
+      
+      & > div.fmLogo {
+        
+        img {
+          position: relative ;
+          display: inline-block;
+          clear: both;
+          float: left;
+          margin-top: -35px;
+        }
+      }
+    
+      & > div.fmLogo {
+        position: relative;
+        top: 30px;
+        left: 40px;
+        float: left;
+        display: inline-block;
+        width: auto;
+        height: 100%;
+        max-height: 100%;
+        margin: 10px 0;
+        border: 10px solid @backendblue;
+        background-color: @darkgold;
+      }
+    }
+  }
+}
+
+#navBarMain {
+  margin-top: -20px;
+}
+
+html body#page #main div[class^="blackBoxTrans"] {
+  background-color: @backendbluetrans;
+}
+
+html #page #main div.gridsys {
+  background-color: @papercolor;
+  opacity: 0.75;
+}

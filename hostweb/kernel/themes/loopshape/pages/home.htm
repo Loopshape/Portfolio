@@ -1,0 +1,60 @@
+title = "Startseite"
+url = "/"
+layout = "Global"
+description = "Hauptseite von Loopshape"
+hidden = "0"
+meta_title = "LOOPSHAPE • Webentwicklung & Mediengestaltung • Hamburg / Germany"
+meta_description = "LOOPSHAPE • Das OnlinePortal zu den Themen Webentwicklung und Mediengestaltung von Arjuna Noorsanto • E-Mail: awebgo.net@gmail.com • http://loop.arcturus.uberspace.de/"
+seo_keywords = "loopshape,web,development,media,design,arjuna,noorsanto,hamburg,germany"
+canonical_url = "http://loop.arcturus.uberspace.de/"
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = "0"
+crumb_title = "Home"
+remove_crumb_trail = "0"
+crumb_disabled = "0"
+==
+<section id="teaser">
+	<div class="inner">
+	    
+	    <h3 class="teaserHeadline"><i class="fa fa-globe"></i>&nbsp;<strong>Webentwicklung</strong></h3>
+
+        <section id="teaserWrapper" style="float:left;width:62%;">
+            
+        	{% partial "markup/loginbar" %}
+        	{% content "message/teaser" %}
+        
+        </section>
+        
+        <section id="teaserSidebar" style="float:right;width:32%;">
+            
+            {% partial "module/twitterstream" %}
+            
+            {% partial "module/contactinfo" %}
+            
+        </section>
+        
+    </div>
+</section>
+    
+<p>&nbsp;</p>
+
+<section id="content">
+	<div class="inner">
+
+        {% partial "area/tutorials" %}
+		
+	</div>
+</section>
+
+<aside id="sidebar">
+	<div class="inner">
+	    
+	    <p>&nbsp;</p>
+	    {% partial "markup/service" %}
+	    
+	</div>
+</aside>
+
+<div class="cf"></div>

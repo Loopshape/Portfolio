@@ -1,0 +1,49 @@
+//socialmedias
+
+ul.socialMedias {
+  clear: both;
+  float: none;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto !important;
+  padding-left: 0;
+  margin-left: 28%;
+  
+  li {
+    float: left;
+    list-style: none;
+    margin-right: 2%;
+    
+    i {
+      font-size: 3em;
+    }
+  }
+}
+
+html body#page #disqusArea {
+  position: relative;
+  display: inline-block;
+  margin-top: -4px !important;
+  width: 100%;
+  height: auto !important;
+  background-color: rgba(255,255,255,0.5);
+  
+  &, * {
+    color: $yellowcolor;// highest color for inverted areas = black
+  }
+  
+  *.post-message {
+    color: $iconcolor;
+  }
+  
+  a {
+    color: $frontendblue;
+    
+    &:hover {
+      color: $frontendgreen;
+    }
+  }
+  
+}
+

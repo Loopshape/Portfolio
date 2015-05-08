@@ -1,0 +1,8 @@
+.project
+.sass-cache
+npm-debug.log
+composer
+composer.phar
+composer.lock
+node_modules
+vendor

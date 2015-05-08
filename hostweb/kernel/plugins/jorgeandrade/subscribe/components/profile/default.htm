@@ -1,0 +1,42 @@
+<div class="card">
+        <div class="card-titlet">
+            <h2>Profile form</h2>
+        </div>
+    
+        <div class="card-content author">
+            <form name="form-subscribe-andradedev" id="form-profile-andradedev" data-request="{{__SELF__}}::onUpdateSubscriber" data-request-update="'{{__SELF__}}::alert': '#result'">
+                <input type="text" class="form-control" name="name" value="{{subscriber.name}}" placeholder="* Name" required>
+                <input type="text" class="form-control" name="surname" value="{{subscriber.surname}}" placeholder="* Surname" required>
+                <input type="email" class="form-control" name="email" value="{{subscriber.email}}" placeholder="* Email" required>
+                <input type="text" class="form-control" name="country" value="{{subscriber.country}}" placeholder="* Country" required>
+                <input type="text" class="form-control" name="latitude" id="latitude" value="{{subscriber.latitude}}" placeholder="Latitude">
+                <input type="text" class="form-control" name="longitude" id="longitude" value="{{subscriber.longitude}}" placeholder="Longitude">
+                <input type="hidden" name="code" id="code" value="{{code}}">
+            </form>
+        </div>
+    
+        <div class="card-action">
+            <input type="submit" class="btn btn-primary btn-block" form="form-profile-andradedev" value="Update profile">
+        </div>
+        
+        <div id="result"></div>
+    </div>
+
+    <div class="card">
+        <div class="card-titlet">
+            <h2>Unsubcribe form</h2>
+        </div>
+    
+        <div class="card-content author">
+            <form name="form-unsubscribe-andradedev" id="form-unsubscribe-andradedev" data-request="{{ __SELF__ }}::onRemoveSubscriber" data-request-update="'{{__SELF__}}::alert': '#result1'">
+                <input type="email" class="form-control" name="email" placeholder="* Email" required>
+                <input type="hidden" name="code" id="code" value="{{code}}">
+            </form>
+        </div>
+    
+        <div class="card-action">
+            <button class="btn btn-primary btn-block" form="form-unsubscribe-andradedev">Unsubscribe</button>
+        </div>
+        
+        <div id="result1"></div>
+    </div>

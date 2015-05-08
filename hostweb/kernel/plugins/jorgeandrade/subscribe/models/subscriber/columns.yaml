@@ -1,0 +1,35 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    name:
+        label: Name
+        searchable: true
+    surname:
+        label: Surname
+        searchable: true
+    email:
+        label: Email
+        searchable: true
+    country:
+        label: Country
+        searchable: true
+    code:
+        label: Unique Code
+        searchable: false
+    latitude:
+        label: Latitude
+        searchable: false
+        invisible: true
+    longitude:
+        label: Longitude
+        searchable: false
+        invisible: true
+    status:
+        label: Subscribed
+        sortable: true
+        type: switch

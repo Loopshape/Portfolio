@@ -1,0 +1,9 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+  poll_settings:
+    span: left
+    label: Result bar color
+    type: dropdown

@@ -1,0 +1,324 @@
+//responsive
+
+@media screen and (max-width:1280px) {
+  
+  body {
+    //font-size: 1em !important;
+  }
+  
+  body#page #main {
+    #header {
+      
+      & > div.inner {
+        position: relative !important;
+        height: 100% !important;
+        max-height: 280px !important;
+        top: -28px !important;
+        left: 14px !important;
+      
+        & > div.fmLogo {
+          position: absolute;
+          top: 0 !important;
+          padding-top: 10px !important;
+          left: 10px !important;
+          height: 100% !important;
+          max-height: 100% !important;
+          margin: 0 !important;
+          border: 10px solid $levelcolor;
+        }
+      }
+      
+      #navBarMain {
+        margin-top: -10px !important;
+      }
+      
+    }
+  }
+  
+  #twitterStream {
+    display: block;
+  }
+  
+}
+
+@media screen and (max-width:1024px) {
+  
+  body {
+    //font-size: 1em !important;
+  }
+  
+  body#page #main {
+    #header {
+      position: relative !important;
+      
+      > div.inner {
+        position: absolute !important;
+        top: 0 !important;
+        left: 12px !important;
+      
+        & > div.fmLogo {
+          position: absolute;
+          top: -40px !important;
+          padding-top: 0 !important;
+          left: 20px !important;
+          height: 100% !important;
+          margin: 0 !important;
+          border: 10px solid $levelcolor;
+          
+          img {
+            top: 30px !important;
+          }
+          
+          i {
+            font-size: 2em !important;
+          }
+        }
+      }
+      
+      > div.inner > div.fmHeader {
+        top: -20px !important;
+      }
+      
+      #navBarMain {
+        margin-top: -10px !important;
+      }
+      
+    }
+  }
+  
+  #twitterStream {
+    display: block;
+  }
+  
+}
+
+@media screen and (max-width:860px) {
+  
+  body {
+    //font-size: 0.84em !important;
+  }
+  
+  #twitterStream {
+    display: none;
+  }
+  
+  .resizeReset {
+    position: relative;
+    top: -21px;
+  }
+  
+}
+
+@media screen and (orientation:landscape) {
+  html body#page #main #header>div.inner>div.fmLogo {
+    top: 30px !important;
+  }
+  html #page #header>div.inner>div.fmHeader {
+    left: 30% !important;
+  }
+}
+
+@media screen and (max-width:720px) {
+  
+  body {
+    //font-size: 0.72em !important;
+  }
+  
+  body#page #main {
+    #header {
+      position: relative !important;
+      padding-top: 25% !important; 
+      
+      > div.inner {
+        position: absolute;
+        top: -15px !important;
+        max-height: 480px !important;
+      
+        > div.fmLogo {
+          position: absolute !important;
+          padding-top: 0 !important;
+          left: 2% !important;
+          height: 100% !important;
+          max-height: 80% !important;
+          margin: 0 !important;
+          border: 10px solid $levelcolor;
+          
+          img {
+            position: absolute !important;
+            max-width: 80% !important;
+            top: 12.5% !important;
+            left: 12.5% !important;
+            margin-bottom: 30px !important;
+          }
+        }
+        
+        > div.fmHeader {
+          position: absolute !important;
+          top: 20px !important; 
+          left: 28% !important;
+        }
+      }
+      
+      #navBarMain {
+        margin-top: -10px !important;
+      }
+      
+    }
+  }
+  
+  #twitterStream {
+    display: none;
+  }
+  
+  .resizeReset {
+    position: relative;
+    top: -21px;
+  }
+  
+}
+
+@media screen and (max-width:480px) {
+  
+  body {
+    //font-size: 0.48em !important;
+  }
+  
+  body#page #main {
+    #header {
+      
+      & > div.inner {
+        max-height: 250px !important;
+      
+        & > div.fmLogo {
+          position: absolute;
+          top: 20px !important;
+          padding-top: 10px !important;
+          left: 20px !important;
+          height: 100% !important;
+          max-height: 100% !important;
+          margin: 40px 0 0 !important;
+          border: 10px solid $levelcolor;
+        }
+      }
+      
+      #navBarMain {
+        margin-top: -10px !important;
+      }
+      
+    }
+  }
+  
+  #twitterStream {
+    display: none;
+  }
+  
+  .resizeReset {
+    position: relative;
+    top: -21px;
+  }
+  
+}
+
+@media screen and (min-width:160px) and (max-width:480px) {
+  body {
+    //font-size: 0.36em !important;
+  }
+  
+  #page {
+    #header {
+      
+      .fmLogo {}
+      
+      .fmHeader {
+        //font-size: 0.32em !important;
+      }
+    }
+  }
+}
+
+// Responsive Columns
+
+@media screen and (min-width:650px) {
+  .areaColumns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .areaColumns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .areaColumns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    max-width:1460px;
+  }
+}
+
+@media screen and (orientation:portrait) {
+  html body#page #main #header>div.inner>div.fmLogo {
+    position: relative !important;
+    display: inline-block !important;
+    top: -30px !important;
+  }
+  html #page #header>div.inner>div.fmHeader {
+    position: absolute !important;
+    display: inline-block !important;
+    left: 50% !important;
+    margin-left: 45px !important;
+  }
+  
+  html body#page #main #header>div.inner>div.fmLogo {
+    min-height: 460px !important;
+  }
+  
+}
+
+@media screen and (max-width:320px) {
+  html body#page {
+    overflow: scroll !important;
+  } 
+}
+
+/*
+html body#page #main {
+  #header {
+    position: relative;
+    
+    & > div.inner {
+      
+      & > div.fmLogo {
+        img {
+          position: relative  !important;
+          display: inline-block;
+          clear: both;
+          float: left;
+          margin-top: -35px !important;
+        }
+      }
+    
+      & > div.fmLogo {
+        position: relative;
+        top: 30px !important;
+        left: 40px;
+        float: left !important;
+        display: inline-block;
+        width: auto !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        margin: 10px 0 !important;
+        border: 10px solid $levelcolor;
+        background-color: $darkgold;
+      }
+    }
+  }
+}
+*/

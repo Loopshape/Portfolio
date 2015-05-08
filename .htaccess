@@ -1,0 +1,20 @@
+Options -Indexes +SymLinksIfOwnerMatch
+
+<IfModule mod_rewrite.c>
+    
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+    
+	RewriteEngine On
+	#RewriteBase /html/
+  
+	RewriteCond %{HTTP_HOST} ^(http:\/\/)?loop\.arcturus\.uberspace\.de$  
+	RewriteCond %{REQUEST_URI} !^/hostweb/kernel/  
+	RewriteCond %{REQUEST_FILENAME} !-f 
+	RewriteCond %{REQUEST_FILENAME} !-d  
+	RewriteRule ^(.*)$ /hostweb/kernel/$1  
+	RewriteCond %{HTTP_HOST} ^(http:\/\/)?loop\.arcturus\.uberspace\.de$ 
+	RewriteRule ^(/)?$ hostweb/kernel/index.php [L]
+
+</IfModule>

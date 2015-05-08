@@ -1,0 +1,167 @@
+// CSS3 LESS-files created by: Arjuna Noorsanto
+// http://loop.arcturus.uberspace.de/
+//
+// eMail: awebgo.net@gmail.com
+
+// COLORS * * * * * * * * * * * * * * * * * * * * * *
+
+@none: none;
+
+@pureblack: rgba(0,0,0,0.5);
+@darkblack: rgba(0,0,0,0.3);
+
+@trans: transparent;
+
+@blackgold: #ccc;
+@spacegold: #ddd;
+@darkgold: #eee;
+
+@lightblack: #ccc;
+
+@greyDark: #aaa;
+@greyMono: #bbb;
+@greyHigh: #ccc;
+
+@whitecolor: #eee;
+
+@backendred: rgba(127,11,31,1);
+@frontendred: rgba(152,40,48,1);
+
+@backendbluestrong: rgba(0,74,127,0.66);
+@backendbluetrans: rgba(0,74,127,0.25);
+@backendblue: rgba(0,74,127,1);
+@frontendblue: rgba(0,93,149,1);
+
+@backendgreen: rgba(9,99,13,1);
+@frontendgreen: rgba(39,118,33,1);
+
+@backendyellow: rgba(255,168,0,1);
+@frontendyellow: rgba(229,146,0,1);
+
+@lightredcolor: #888;
+@yellowcolor: #333;
+
+@noticecolor: #999;
+@hintcolor: #aaa;
+
+@bordercolor: #ccc;
+@pagecolor: #eee;
+@papercolor: #fff;
+
+@pencolor: #222;
+@iconcolor: #555;
+@framecolor: #bbb;
+@levelcolor: #aaa;
+@linkcolor: @frontendgreen;
+
+// ROUTES * * * * * * * * * * * * * * * * * * * * *
+
+/*
+
+@import "layout/global";
+@import "layout/clearfix";
+
+@import "layout/style";
+@import "layout/elements";
+
+@import "layout/formfields";
+
+@import "layout/grids";
+
+@import "layout/socialmedia";
+
+@import "layout/finalize";
+
+@import "layout/responsive";
+
+@import "layout/effects";
+
+*/
+
+@import "global";
+
+// END * * * * * * * * * * * * * * * * * * * * * *
+
+// CUSTOM CSS DEFINITIONS
+
+html p {
+    clear: both;
+}
+
+html #contentWrapper > strong > a:visited {
+    color: @frontendgreen !important;
+}
+
+html code {
+    position: relative;
+    z-index: 100000 !important;
+-moz-box-shadow: 0 0 20px rgba(0,0,0,0.66) !important;
+-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.66) !important;
+box-shadow: 0 0 20px rgba(0,0,0,0.5) !important;
+    font-size: 0.88em !important;
+}
+
+html body#page {
+    min-width: 96% !important;
+    max-width: 96% !important;
+    
+    >.inner {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+}
+
+html body#page #main {
+    
+    .frontendred {
+        color: @frontendred !important;
+    }
+    
+    .frontendblue {
+        color: @frontendblue !important;
+    }
+    
+    .frontendgreen {
+        color: @frontendgreen !important;
+    }
+    
+}
+
+html #page #header > div.inner > div.fmHeader {
+    left: 29% !important;
+}
+
+html body#page #main #contentWrapper {
+    
+    p {
+        color: @pencolor !important;
+    }
+    
+    #serviceOptions {
+        margin-top: 60px !important;
+    }
+    
+    #sidebar {
+        margin-top: -10px !important;
+    }
+    
+}
+
+html body#page #contentWrapper > div.gridsys {
+    z-index: -1 !important;
+}
+
+html body#page #main #disqusArea {
+    margin: 15px 0 !important;
+}
+
+html body#page #main #contentWrapper #disclaimerBox {
+    background-color: @papercolor !important;
+    opacity: 1 !important;
+}
+
+html body#page footer#footer {
+    min-width: 100% !important;
+    margin-top: 15px !important;
+}

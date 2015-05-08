@@ -1,0 +1,7 @@
+{
+    "require": {
+    	"laravel/installer": "~1.1",
+    	"psy/psysh": "@stable",
+        "guzzlehttp/guzzle": "~4.0"
+    }
+}

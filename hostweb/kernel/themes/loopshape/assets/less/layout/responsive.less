@@ -1,0 +1,324 @@
+//responsive
+
+@media screen and (max-width:1280px) {
+  
+  body {
+    //font-size: 1em;
+  }
+  
+  body#page #main {
+    #header {
+      
+      & > div.inner {
+        position: relative;
+        height: 100%;
+        max-height: 280px;
+        top: -28px;
+        left: 14px;
+      
+        & > div.fmLogo {
+          position: absolute;
+          top: 0;
+          padding-top: 10px;
+          left: 10px;
+          height: 100%;
+          max-height: 100%;
+          margin: 0;
+          border: 10px solid @levelcolor;
+        }
+      }
+      
+      #navBarMain {
+        margin-top: -10px;
+      }
+      
+    }
+  }
+  
+  #twitterStream {
+    display: block;
+  }
+  
+}
+
+@media screen and (max-width:1024px) {
+  
+  body {
+    //font-size: 1em;
+  }
+  
+  body#page #main {
+    #header {
+      position: relative;
+      
+      > div.inner {
+        position: absolute;
+        top: 0;
+        left: 12px;
+      
+        & > div.fmLogo {
+          position: absolute;
+          top: -40px;
+          padding-top: 0;
+          left: 20px;
+          height: 100%;
+          margin: 0;
+          border: 10px solid @levelcolor;
+          
+          img {
+            top: 30px;
+          }
+          
+          i {
+            font-size: 2em;
+          }
+        }
+      }
+      
+      > div.inner > div.fmHeader {
+        top: -20px;
+      }
+      
+      #navBarMain {
+        margin-top: -10px;
+      }
+      
+    }
+  }
+  
+  #twitterStream {
+    display: block;
+  }
+  
+}
+
+@media screen and (max-width:860px) {
+  
+  body {
+    //font-size: 0.84em;
+  }
+  
+  #twitterStream {
+    display: none;
+  }
+  
+  .resizeReset {
+    position: relative;
+    top: -21px;
+  }
+  
+}
+
+@media screen and (orientation:landscape) {
+  html body#page #main #header>div.inner>div.fmLogo {
+    top: 30px;
+  }
+  html #page #header>div.inner>div.fmHeader {
+    left: 30%;
+  }
+}
+
+@media screen and (max-width:720px) {
+  
+  body {
+    //font-size: 0.72em;
+  }
+  
+  body#page #main {
+    #header {
+      position: relative;
+      padding-top: 25%; 
+      
+      > div.inner {
+        position: absolute;
+        top: -15px;
+        max-height: 480px;
+      
+        > div.fmLogo {
+          position: absolute;
+          padding-top: 0;
+          left: 2%;
+          height: 100%;
+          max-height: 80%;
+          margin: 0;
+          border: 10px solid @levelcolor;
+          
+          img {
+            position: absolute;
+            max-width: 80%;
+            top: 12.5%;
+            left: 12.5%;
+            margin-bottom: 30px;
+          }
+        }
+        
+        > div.fmHeader {
+          position: absolute;
+          top: 20px; 
+          left: 28%;
+        }
+      }
+      
+      #navBarMain {
+        margin-top: -10px;
+      }
+      
+    }
+  }
+  
+  #twitterStream {
+    display: none;
+  }
+  
+  .resizeReset {
+    position: relative;
+    top: -21px;
+  }
+  
+}
+
+@media screen and (max-width:480px) {
+  
+  body {
+    //font-size: 0.48em;
+  }
+  
+  body#page #main {
+    #header {
+      
+      & > div.inner {
+        max-height: 250px;
+      
+        & > div.fmLogo {
+          position: absolute;
+          top: 20px;
+          padding-top: 10px;
+          left: 20px;
+          height: 100%;
+          max-height: 100%;
+          margin: 40px 0 0;
+          border: 10px solid @levelcolor;
+        }
+      }
+      
+      #navBarMain {
+        margin-top: -10px;
+      }
+      
+    }
+  }
+  
+  #twitterStream {
+    display: none;
+  }
+  
+  .resizeReset {
+    position: relative;
+    top: -21px;
+  }
+  
+}
+
+@media screen and (min-width:160px) and (max-width:480px) {
+  body {
+    //font-size: 0.36em;
+  }
+  
+  #page {
+    #header {
+      
+      .fmLogo {}
+      
+      .fmHeader {
+        //font-size: 0.32em;
+      }
+    }
+  }
+}
+
+// Responsive Columns
+
+@media screen and (min-width:650px) {
+  .areaColumns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .areaColumns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .areaColumns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    max-width:1460px;
+  }
+}
+
+@media screen and (orientation:portrait) {
+  html body#page #main #header>div.inner>div.fmLogo {
+    position: relative;
+    display: inline-block;
+    top: -30px;
+  }
+  html #page #header>div.inner>div.fmHeader {
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    margin-left: 45px;
+  }
+  
+  html body#page #main #header>div.inner>div.fmLogo {
+    min-height: 460px;
+  }
+  
+}
+
+@media screen and (max-width:320px) {
+  html body#page {
+    overflow: scroll;
+  } 
+}
+
+/*
+html body#page #main {
+  #header {
+    position: relative;
+    
+    & > div.inner {
+      
+      & > div.fmLogo {
+        img {
+          position: relative ;
+          display: inline-block;
+          clear: both;
+          float: left;
+          margin-top: -35px;
+        }
+      }
+    
+      & > div.fmLogo {
+        position: relative;
+        top: 30px;
+        left: 40px;
+        float: left;
+        display: inline-block;
+        width: auto;
+        height: 100%;
+        max-height: 100%;
+        margin: 10px 0;
+        border: 10px solid @levelcolor;
+        background-color: @darkgold;
+      }
+    }
+  }
+}
+*/
