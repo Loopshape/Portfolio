@@ -138,12 +138,18 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 
 		$('a.internal,a.external').on('click', function(e) {
 			e.preventDefault();
-			$('#main').animate({
-				'opacity' : '-=1'
-			}, 2000);
+			var isExternal = $(this).hasClass('external');
+			if(!isExternal)
+    			$('#main').animate({
+    				'opacity' : '-=1'
+    			}, 2000);
 			var $href = $(this).prop('href');
 			setTimeout(function() {
-				window.open($href, '_self');
+			    if(!isExternal) {
+				    window.open($href, '_self');
+			    } else {
+			        window.open($href, '_blank');
+			    }
 			}, 100);
 		});
 		

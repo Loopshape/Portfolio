@@ -109,13 +109,18 @@ html body#page #contentWrapper {
     width: 100%;
     max-width: 100% !important;
     
-    ul.category-list > li {
-        list-style: square !important;
+    ul.category-list {
+        padding-left: 16px !important;
         
-        > a {
-            font-size: 1.48em !important;
-            font-weight: bold;
-            line-height: 160% !important;
+        > li {
+            list-style: square !important;
+            
+            > a {
+                font-size: 1.48em !important;
+                font-weight: bold;
+                line-height: 160% !important;
+            }
+            
         }
         
     }
@@ -134,6 +139,52 @@ html body#page #contentWrapper {
             display: none;
         }
         
+    }
+    
+}
+
+html body#page #main #contentWrapper #blogArea {
+    
+    div.content {
+        
+        > h3,
+        > h3 > strong {
+            color: @frontendblue !important;
+        }
+        
+    }
+    
+    p.info {
+        display: block;
+        text-align: right;
+        font-size: 0.975em !important;
+    }
+    
+    a {
+        color: @frontendblue !important;
+        
+        &:hover {
+            color: @frontendgreen !important;
+        }
+    }
+    
+}
+
+html body#page #main #contentWrapper #blogArea.journal {
+    
+    p.info {
+        font-weight: bold !important;
+    }
+    
+}
+
+html body#page #main #contentWrapper #blogArea.topic {}
+
+html body#page #main #contentWrapper #blogArea.event {
+    
+    p.info {
+        clear: both;
+        margin-top: 75px !important;
     }
     
 }
