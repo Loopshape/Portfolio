@@ -1,0 +1,26 @@
+title = "Search"
+url = "/search"
+layout = "Global"
+hidden = "0"
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = "0"
+remove_crumb_trail = "0"
+crumb_disabled = "0"
+==
+<?php
+function onStart() {
+    
+    $this->page->title = 'Loopshape Index-Search';
+
+}
+?>
+==
+<section id="searchBoxMain">
+    <h3><strong>IndexSearch</strong></h3>
+    <div class="search">
+        <label><strong>Beschreibung:</strong></label>&nbsp;&nbsp;
+        <input class="mainsearch" value="" name="searchString" placeholder="Suche eingeben..." />    
+    </div>
+</section>

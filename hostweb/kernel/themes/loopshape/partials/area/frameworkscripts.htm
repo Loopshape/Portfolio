@@ -1,0 +1,19 @@
+description = "WCMS Javascripts"
+==
+<!--
+	REQUIRE.JS Loader for "Infinity Red" Template 
+	Combined by: Arjuna Noorsanto • E-Mail: awebgo.net@gmail.com
+-->
+<!-- define BaseURL and load RequireJS-config -->
+<script>
+	//var baseUrl = "http://192.168.1.100/";
+	var baseUrl = "http://loop.arcturus.uberspace.de/";
+</script>
+<!-- loading RequireJS main file with main-config -->
+<script>
+    var rjsConfig = baseUrl + 'hostweb/assets/js/app/config.js';
+</script>
+<script src="./hostweb/assets/js/app/r.js"></script>
+<script>
+	require([rjsConfig]);
+</script>

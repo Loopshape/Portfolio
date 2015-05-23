@@ -1,0 +1,27 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Article
+
+# Model Form Field configuration
+form: $/loopshape/searchindex/models/article/fields.yaml
+
+# Model Class name
+modelClass: RAFIE\Quickarticle\Models\Article
+
+# Default redirect location
+defaultRedirect: loopshape/searchindex/articles
+
+# Create page
+create:
+    title: Create Articles
+    redirect: loopshape/searchindex/articles/update/:id
+    redirectClose: loopshape/searchindex/articles
+
+# Update page
+update:
+    title: Edit Articles
+    redirect: loopshape/searchindex/articles
+    redirectClose: loopshape/searchindex/articles

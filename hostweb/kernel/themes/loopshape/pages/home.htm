@@ -14,6 +14,11 @@ hide_crumb = "0"
 crumb_title = "Home"
 remove_crumb_trail = "0"
 crumb_disabled = "0"
+
+[forumChannels]
+memberPage = "forum/member"
+channelPage = "forum/channel"
+topicPage = "forum/topics"
 ==
 <section id="teaser">
 	<div class="inner">
@@ -26,16 +31,8 @@ crumb_disabled = "0"
             
         	{% partial "markup/loginbar" %}
         	{% content "message/teaser" %}
+        	<div class="cf"></div>
         	
-        	<p>&nbsp;</p>
-        	<p>&nbsp;</p>
-        	
-        	<h2>Loopshape API</h2>
-        	<p><strong>
-        	    <a href="http://loop.arcturus.uberspace.de:64321/">Öffne die Treeline.IO WebApp</a><br />
-        	    <small>[ API ist nur zu Testzwecken sporadisch aktiv! ]</small>
-        	</strong></p>
-            
         </section>
         
         <section id="teaserSidebar" style="float:right;width:32%;">
@@ -49,23 +46,6 @@ crumb_disabled = "0"
     </div>
 </section>
 
-<div class="cf"></div>    
-
-<section id="content">
-	<div class="inner">
-
-        {% partial "area/tutorials" %}
-		
-	</div>
-</section>
-
-<aside id="sidebar">
-	<div class="inner">
-	    
-	    <p>&nbsp;</p>
-	    {% partial "markup/service" %}
-	    
-	</div>
-</aside>
-
 <div class="cf"></div>
+
+{% partial "markup/backhomelink" %}

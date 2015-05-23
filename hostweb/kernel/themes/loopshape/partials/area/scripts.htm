@@ -8,6 +8,7 @@ description = "Page Scripts"
 <script src="./hostweb/assets/js/app/r.js"></script>
 <!-- define BaseURL and load RequireJS-config -->
 <script>
-	var baseUrl = "http://<?php echo $_SERVER['HTTP_HOST'] . '/' . $pageParams[0] . (!empty($pageParams[0]) ? '/' : '') ?>";
+	//var baseUrl = "http://<?php echo $_SERVER['HTTP_HOST'] . '/' . $pageParams[0] . (!empty($pageParams[0]) ? '/' : '') ?>";
+	var baseUrl = "http://loop.arcturus.uberspace.de/";
 	require(['./hostweb/assets/js/app/config']);
 </script>

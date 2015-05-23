@@ -1,0 +1,26 @@
+title = "Ereignis"
+url = "/blog/post/:slug?"
+layout = "Framework"
+hidden = "0"
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = "0"
+remove_crumb_trail = "0"
+crumb_disabled = "0"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "journal/category"
+==
+<section id="blogArea">    
+    
+    <h3><strong>Daily Activity</strong></h3>
+    
+    {% component 'blogPost' %}
+    
+    <div class="cf"></div>
+    <p>&nbsp;</p>
+    {% partial "markup/backhomelink" %}
+    
+</section>

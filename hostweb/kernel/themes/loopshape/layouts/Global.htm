@@ -1,4 +1,11 @@
 description = "Main Template"
+
+[breadcrumbs]
+main-ol-class = "breadcrumb"
+active-class = "active"
+disabled-class = "disabled"
+
+[SeoCmsPage]
 ==
 <!DOCTYPE HTML>
 <html ng-app='loopcode'>
@@ -30,9 +37,9 @@ description = "Main Template"
 
 		------------------------------------------->
 
-		<base href="http://loop.arcturus.uberspace.de/">
-		</base>
-
+        <base href="http://loop.arcturus.uberspace.de/" />
+		<!-- <base href="http://192.168.1.100/" /> -->
+        
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=1" />
 
 		<title>Web Development • Arjuna Noorsanto • Mediengestalter Digital in Hamburg/Germany</title>
@@ -52,6 +59,8 @@ description = "Main Template"
 		<![endif]-->
 
 		<link rel="shortcut icon" href="favicon.ico" />
+		
+		{% component "SeoCmsPage" %}
 
 	</head>
 	<body id="page">
@@ -66,10 +75,14 @@ description = "Main Template"
 
 				{% partial "area/header" %}
 				
+				<div id="breadcrumbArea">
+    		        {% component "breadcrumbs" %}
+    		    </div>
+				
 				<div id="contentWrapper">
 				    
 				    <div class="gridsys"></div>
-	
+				    
     				{% page %}
 						
 				</div>

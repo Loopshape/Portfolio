@@ -1507,3 +1507,87 @@ html #page #sidebar>div>div>h5>strong>a:hover,
 html body#page #main .linkInternal:hover {
   color: #005d95 !important;
 }
+
+// CUSTOM CSS DEFINITIONS
+
+html p {
+    clear: both;
+}
+
+html #contentWrapper > strong > a:visited {
+    color: @frontendgreen !important;
+}
+
+html code {
+    position: relative;
+    z-index: 100000 !important;
+-moz-box-shadow: 0 0 20px rgba(0,0,0,0.66) !important;
+-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.66) !important;
+box-shadow: 0 0 20px rgba(0,0,0,0.5) !important;
+    font-size: 0.88em !important;
+}
+
+html body#page {
+    min-width: 96% !important;
+    max-width: 96% !important;
+    
+    >.inner {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+}
+
+html body#page #main {
+    
+    .frontendred {
+        color: @frontendred !important;
+    }
+    
+    .frontendblue {
+        color: @frontendblue !important;
+    }
+    
+    .frontendgreen {
+        color: @frontendgreen !important;
+    }
+    
+}
+
+html #page #header > div.inner > div.fmHeader {
+    left: 29% !important;
+}
+
+html body#page #main #contentWrapper {
+    
+    p {
+        color: @pencolor !important;
+    }
+    
+    #serviceOptions {
+        margin-top: 60px !important;
+    }
+    
+    #sidebar {
+        margin-top: -10px !important;
+    }
+    
+}
+
+html body#page #contentWrapper > div.gridsys {
+    z-index: -1 !important;
+}
+
+html body#page #main #disqusArea {
+    margin: 15px 0 !important;
+}
+
+html body#page #main #contentWrapper #disclaimerBox {
+    background-color: @papercolor !important;
+    opacity: 1 !important;
+}
+
+html body#page footer#footer {
+    min-width: 100% !important;
+    margin-top: 15px !important;
+}

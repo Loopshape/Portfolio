@@ -1,0 +1,4 @@
+1.0.1: First version of Searchindex
+1.0.2:
+  - Created articles Table
+  - create_articles_table.php

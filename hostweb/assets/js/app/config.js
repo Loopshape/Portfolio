@@ -4,7 +4,7 @@
  */
 requirejs.config({
 	
-	baseUrl : '.',
+	baseUrl : 'http://loop.arcturus.uberspace.de/',
 
 	pragmasOnSave : {
 		excludeRequireCss : true
@@ -35,8 +35,6 @@ requirejs.config({
 		angularscroll : './hostweb/assets/js/app/bower_components/angular-scroll/angular-scroll.min',
 		multicolselect : './hostweb/assets/js/app/bower_components/Multi-Column-Select/Multi-Column-Select/Multi-Column-Select.min',
 		cssmulticol : './hostweb/assets/js/app/bower_components/css3_multicol/css3-multi-column',
-		
-		knex : './hostweb/node_modules/knex/knex',
 		
 		jquerysnippet : './hostweb/assets/js/app/bower_components/jquery.snippet.2.0.0/jquery.snippet.min',
 		jssnippet : './hostweb/assets/js/app/bower_components/jquery.snippet.2.0.0/language/sh_javascript.min',
@@ -103,11 +101,6 @@ requirejs.config({
 		cssmulticol : {
 			deps : ['angular', 'jquery'],
 			exports : 'CssMultiColumns'
-		},
-		
-		knex : {
-			deps : ['angular', 'jquery'],
-			exports : 'knex'
 		},
 		
 		jquerysnippet : {

@@ -56,112 +56,156 @@
 
 // ROUTES * * * * * * * * * * * * * * * * * * * * *
 
-/*
-
-@import "layout/global";
-@import "layout/clearfix";
-
-@import "layout/style";
-@import "layout/elements";
-
-@import "layout/formfields";
-
-@import "layout/grids";
-
-@import "layout/socialmedia";
-
-@import "layout/finalize";
-
-@import "layout/responsive";
-
-@import "layout/effects";
-
-*/
-
 @import "global";
 
 // END * * * * * * * * * * * * * * * * * * * * * *
 
-// CUSTOM CSS DEFINITIONS
+// GLOBAL LESS
 
-html p {
-    clear: both;
-}
-
-html #contentWrapper > strong > a:visited {
-    color: @frontendgreen !important;
-}
-
-html code {
-    position: relative;
-    z-index: 100000 !important;
--moz-box-shadow: 0 0 20px rgba(0,0,0,0.66) !important;
--webkit-box-shadow: 0 0 20px rgba(0,0,0,0.66) !important;
-box-shadow: 0 0 20px rgba(0,0,0,0.5) !important;
-    font-size: 0.88em !important;
-}
-
-html body#page {
-    min-width: 96% !important;
-    max-width: 96% !important;
-    
-    >.inner {
-        min-width: 100% !important;
-        max-width: 100% !important;
-    }
-    
-}
-
-html body#page #main {
-    
-    .frontendred {
-        color: @frontendred !important;
-    }
-    
-    .frontendblue {
-        color: @frontendblue !important;
-    }
-    
-    .frontendgreen {
-        color: @frontendgreen !important;
-    }
-    
-}
-
-html #page #header > div.inner > div.fmHeader {
-    left: 29% !important;
-}
-
-html body#page #main #contentWrapper {
-    
-    p {
-        color: @pencolor !important;
-    }
-    
-    #serviceOptions {
-        margin-top: 60px !important;
-    }
-    
-    #sidebar {
-        margin-top: -10px !important;
-    }
-    
-}
-
-html body#page #contentWrapper > div.gridsys {
+div.cf {
+    position: relative !important;
     z-index: -1 !important;
 }
 
-html body#page #main #disqusArea {
-    margin: 15px 0 !important;
+html body#page #contentWrapper a.homeLink {
+    display: inline-block;
+    margin: 0 15px 15px 0;
 }
 
-html body#page #main #contentWrapper #disclaimerBox {
-    background-color: @papercolor !important;
-    opacity: 1 !important;
+html body#page .featured-images {
+    position: relative;
+    display: inline-block;
+    width: 100% !important;
+    max-width: 32% !important;
 }
 
-html body#page footer#footer {
-    min-width: 100% !important;
-    margin-top: 15px !important;
+// BREADCRUMBAREA
+
+#breadcrumbArea {
+    
+    & {
+        position: relative;
+        top: 10px;
+        left: -10px;
+        color: @yellowcolor;
+        font-weight: bold;
+        font-size: 1.2em;
+        
+        li {
+            clear: both;
+            float: left;
+            list-style: none;
+        }
+        
+    }
+    
+}
+
+// TECHBLOG AREA
+
+html body#page #contentWrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 100% !important;
+    
+    ul.category-list > li {
+        list-style: square !important;
+        
+        > a {
+            font-size: 1.48em !important;
+            font-weight: bold;
+            line-height: 160% !important;
+        }
+        
+    }
+    
+    ul.post-list {
+        position: relative;
+        display: inline-block;
+        width: auto !important;
+        
+        li {
+            list-style: none !important;
+            padding-left: 0;
+        }
+        
+        div.content {
+            display: none;
+        }
+        
+    }
+    
+}
+
+// TECHFORUM AREA 
+
+section.techforumArea {
+    position: relative;
+    font-size: 1em;
+    padding-bottom: 15px;
+    
+    &, > *, > * > *,
+    table.forum-table {
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .root-channel {
+        width: 100%;
+        background-color: @frontendblue;
+        
+        > * {
+            padding: 15px;
+        }
+        
+        * {
+            color: #fff !important;
+        }
+    }
+    
+    .forum-channel {
+        background-color: @pagecolor;
+        
+        p {
+            color: #eee !important;
+            margin: 0 0 15px 15px;
+            padding: 0;
+        }
+        
+        a {
+            margin: 0 0 15px 15px;
+        }
+        
+        td[class$="-column"] {
+            background-color: transparent !important;
+            
+            > * {
+                position: relative;
+                left: 15px;
+            }
+        }
+        
+        td {
+            h5 {
+                font-size: 1.48em;
+            }
+            
+            p {
+                font-size: 0.88em;
+            }
+        }
+    }
+    
+}
+
+// SEARCHBOX MAIN
+
+#searchBoxMain {
+    
+    input.mainsearch {
+        padding: 7px 4px;
+        border: 1px solid @lightredcolor !important;
+    }
+    
 }
