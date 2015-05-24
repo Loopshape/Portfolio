@@ -26,7 +26,6 @@ requirejs.config({
 		jquery : './hostweb/assets/js/app/bower_components/jquery2/jquery.min',
 		jqmigrate : './hostweb/assets/js/app/bower_components/jquery2/jquery-migrate.min.js',
 		
-		//timeline : './hostweb/assets/js/app/bower_components/greensock/src/minified/TimelineMax.min',
 		tweenmax : './hostweb/assets/js/app/bower_components/greensock/src/minified/TweenMax.min',
 		
 		responsivemeasure : './hostweb/assets/js/app/bower_components/Responsive-Measure/jquery.rm',
@@ -67,19 +66,12 @@ requirejs.config({
 			deps : ['angular', 'jquery'],
 			exports : '_'
 		},
-
-        /*
-		timeline : {
-			deps : ['angular', 'jquery'],
-			exports : 'TimelineMax'
-		},
-        */
         
 		tweenmax : {
 			deps : ['angular', 'jquery'],
 			exports : 'TweenMax'
 		},
-
+        
 		tooltipsy : {
 			deps : ['angular', 'jquery'],
 			exports : 'tooltipsy'

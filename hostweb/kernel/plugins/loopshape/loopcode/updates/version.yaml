@@ -1,0 +1,7 @@
+1.0.1: First version of Loopcode
+1.0.2:
+  - Created Features Table
+  - create_features_table.php
+1.0.3:
+  - Created ProjectInfos Table
+  - create_project_infos_table.php

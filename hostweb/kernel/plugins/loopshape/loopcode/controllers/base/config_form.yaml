@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Base
+
+# Model Form Field configuration
+form: $/loopshape/loopcode/models/base/fields.yaml
+
+# Model Class name
+modelClass: Loopshape\Loopcode\Models\Base
+
+# Default redirect location
+defaultRedirect: loopshape/loopcode/base
+
+# Create page
+create:
+    title: Create Base
+    redirect: loopshape/loopcode/base/update/:id
+    redirectClose: loopshape/loopcode/base
+
+# Update page
+update:
+    title: Edit Base
+    redirect: loopshape/loopcode/base
+    redirectClose: loopshape/loopcode/base
+
+# Preview page
+preview:
+    title: Preview Base

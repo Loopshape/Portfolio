@@ -8,6 +8,9 @@
 // module dependencies
 require([], function() {
 	'use strict';
+	
+	// load Facebook SDK
+	var FB = require(['fb']);
 
 	// Backbone definitions for App
 	var App = Backbone.View.extend({
@@ -24,6 +27,9 @@ require([], function() {
 			
 			// here comes the APP logic
 			console.log('Start rendering:');
+			
+			// start Facebook SDK
+			this.facebook();
 
 			return;
 		},
@@ -36,7 +42,22 @@ require([], function() {
 			this.windowWidth = $(window).width();
 			_.bindAll(this, 'ajax');
 			this.render();
+		},
+		
+	    // setup Facebook SDK
+		facebook : function() {
+            define(['facebook'], function(){
+              FB.init({
+                appId      : '849734395080698',
+                version    : 'v2.3'
+              });
+              FB.getLoginStatus(function(response) {
+                console.log(response);
+              });
+            });
+            return;
 		}
+		
 	});
 
 	var app = new App();

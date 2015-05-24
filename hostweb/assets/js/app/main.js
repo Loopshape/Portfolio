@@ -25,6 +25,10 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 	    
 	});
 	
+	// MainJS config vars
+	var pageSpeed = 500;
+	
+	// Typography settings
 	function responsiveMeasures() {
 		$('#contentWrapper').responsiveMeasure({
 		    // Responsive Measures
@@ -45,6 +49,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 	// Mixpanel send vars 
 	//mixpanel.track("Loopshape > Pagevisit");
 	
+	// Layout customizations
 	var $wrapper = $('#contentWrapper');
 	var $wrapperHeight = $wrapper.innerHeight();
 	var $content = $('section#content');
@@ -104,6 +109,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 		return;
 	}
 	
+	// Server connectivity test
 	function ajaxCheck() {
 		$.ajax({url: baseUrl,
 			type: "HEAD",
@@ -134,7 +140,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 		$('.areaFull,#ajaxLoader').css({
 			'position':'fixed',
 			'z-index':'100000'
-		}).fadeIn(500);
+		}).fadeIn(pageSpeed/4);
 
 		$('a.internal,a.external').on('click', function(e) {
 			e.preventDefault();
@@ -142,7 +148,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			if(!isExternal)
     			$('#main').animate({
     				'opacity' : '-=1'
-    			}, 2000);
+    			}, pageSpeed);
 			var $href = $(this).prop('href');
 			setTimeout(function() {
 			    if(!isExternal) {
@@ -153,19 +159,37 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			}, 100);
 		});
 		
+		// prepare Vars for DOC-Ready
 		var TweenMax = null;
 
 		// Document Ready
 		$(function() {
 		    
 		    // GREENSOCK AREA
-		    
 		    TweenMax = require(['tweenmax']);
 		
 		    // HTML-DOM AREA
 			
 			$(window).scrollTop(0);
 			
+			// load Facebook SDK
+			window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '849734395080698',
+              xfbml      : true,
+              version    : 'v2.3'
+            });
+          };
+            // execute Facebook SDK
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+			
+			// some Typography settings
 			$(document).on('responsiveMeasureUpdated', function(e, data) {
 			    $('.giga').css('fontSize', data.fontRatios[24] + 'px');
 			    $('h1').css('fontSize', data.fontRatios[20] + 'px');
@@ -180,8 +204,8 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			
 			$('#main').animate({
 				'opacity' : '+=1'
-			}, 2000, function() {
-				$('#ajaxLoader').fadeOut(500, function() {
+			}, pageSpeed, function() {
+				$('#ajaxLoader').fadeOut(pageSpeed/4, function() {
 					// load another script into the scope
 					require(['./hostweb/assets/js/app/app']);
 				});
@@ -229,7 +253,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			});
 			
 			$('.areaFull')
-				.fadeOut(1000)
+				.fadeOut(pageSpeed/2)
 				.css({
 					'z-index':'-1'
 				});
@@ -243,7 +267,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 				responsiveMeasures();
 				setTimeout(function() {
 					resizeHeights();
-				}, 1000);
+				}, pageSpeed/2);
 			});
 
 		});
