@@ -153,12 +153,16 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			}, 100);
 		});
 		
-		// GREENSOCK AREA
-		
-		
+		var TweenMax = null;
 
 		// Document Ready
 		$(function() {
+		    
+		    // GREENSOCK AREA
+		    
+		    TweenMax = require(['tweenmax']);
+		
+		    // HTML-DOM AREA
 			
 			$(window).scrollTop(0);
 			

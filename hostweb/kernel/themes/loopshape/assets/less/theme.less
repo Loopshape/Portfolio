@@ -62,6 +62,14 @@
 
 // GLOBAL LESS
 
+*, *:before, *:after {
+    box-sizing: content-box; //border-box;
+}
+
+*:focus {
+    outline: none !important;
+}
+
 div.cf {
     position: relative !important;
     z-index: -1 !important;
