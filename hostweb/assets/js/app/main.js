@@ -11,23 +11,23 @@
 console.log('Starting MAINSCRIPT');
 
 // on this area, all Plugins must be listed as a sequence and be called so
-requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet'], function(angular, $, Backbone, _, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet) {
+requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet', 'jscookie'], function(angular, $, Backbone, _, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet, Cookies) {
 	'use strict';
-	
+
 	// Angular.JS Setup
 	var app = angular.module('loopcode', []);
 	app.controller('bridge', function($scope) {
-	    
+
 	    $scope.baseUrl = baseUrl;
-	    
+
 	    $scope.userEmail = "user@domain.tld";
 	    $scope.userPasswd = "1337secure";
-	    
+
 	});
-	
+
 	// MainJS config vars
 	var pageSpeed = 500;
-	
+
 	// Typography settings
 	function responsiveMeasures() {
 		$('#contentWrapper').responsiveMeasure({
@@ -39,16 +39,16 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 		});
 		return;
 	}
-	
+
 	// Mixpanel Script embed
 	/*
 	(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
 	for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
 	mixpanel.init("0730131673ecbc8c8c43080e05d23095");
 	*/
-	// Mixpanel send vars 
+	// Mixpanel send vars
 	//mixpanel.track("Loopshape > Pagevisit");
-	
+
 	// Layout customizations
 	var $wrapper = $('#contentWrapper');
 	var $wrapperHeight = $wrapper.innerHeight();
@@ -56,18 +56,18 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 	var $contentHeight = $content.innerHeight();
 	var $sidebar = $('aside#sidebar');
 	var $sidebarHeight = $sidebar.innerHeight();
-	
+
 	var $header = $('header#header');
 	var $headerHeight = $header.innerHeight();
 	var $disqus = $('#disqusArea');
 	var $disqusHeight = $disqus.innerHeight();
-	
+
 	var $contextHeight = 0;
-	
+
 	function checkHeights() {
-		
+
 		$disqusHeight = $disqus.innerHeight();
-		
+
 		if($('section#content').length) {
 			$contextHeight = 0;
 			$content.children().each(function() {
@@ -75,7 +75,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			});
 			$contentHeight = $contextHeight - $headerHeight - $disqusHeight;
 		}
-		
+
 		if($('aside#sidebar').length) {
 			$contextHeight = 0;
 			$sidebar.children().each(function() {
@@ -83,32 +83,32 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			});
 			$sidebarHeight = $contextHeight - $headerHeight - $disqusHeight;
 		}
-		
+
 		return;
 	}
-	
+
 	function resizeHeights() {
-		
+
 		checkHeights();
-		
+
 		if($contentHeight < $sidebarHeight)
 			$wrapper.css({
 				'min-height' : $sidebarHeight
 			});
 			$content.css({
-				'min-height' : $sidebarHeight 
+				'min-height' : $sidebarHeight
 			});
 		if($sidebarHeight < $contentHeight)
 			$wrapper.css({
 				'min-height' : $contentHeight
-			});	
+			});
 			$sidebar.css({
 				'min-height' : $contentHeight
 			});
-		
+
 		return;
 	}
-	
+
 	// Server connectivity test
 	function ajaxCheck() {
 		$.ajax({url: baseUrl,
@@ -125,18 +125,18 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			    0: function (response) {
 			        console.log('Connection: 0 no server available');
 			        throw "No Server available";
-			    }              
+			    }
 			}
 		});
 	}
 
 	// additional Standard-Setup
 	try {
-		
+
 		setInterval(function() {
 			ajaxCheck();
 		}, 60000);
-		
+
 		$('.areaFull,#ajaxLoader').css({
 			'position':'fixed',
 			'z-index':'100000'
@@ -158,20 +158,20 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			    }
 			}, 100);
 		});
-		
+
 		// prepare Vars for DOC-Ready
 		var TweenMax = null;
 
 		// Document Ready
 		$(function() {
-		    
+
 		    // GREENSOCK AREA
 		    TweenMax = require(['tweenmax']);
-		
+
 		    // HTML-DOM AREA
-			
+
 			$(window).scrollTop(0);
-			
+
 			// load Facebook SDK
 			window.fbAsyncInit = function() {
             FB.init({
@@ -188,7 +188,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
              js.src = "//connect.facebook.net/en_US/sdk.js";
              fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));
-			
+
 			// some Typography settings
 			$(document).on('responsiveMeasureUpdated', function(e, data) {
 			    $('.giga').css('fontSize', data.fontRatios[24] + 'px');
@@ -201,7 +201,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			    $('p').css('fontSize', data.fontRatios[10] + 'px');
 			    $('.sm').css('fontSize', data.fontRatios[8] + 'px');
 			});
-			
+
 			$('#main').animate({
 				'opacity' : '+=1'
 			}, pageSpeed, function() {
@@ -234,7 +234,7 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 					'border-radius' : '8px'
 				}
 			});
-			
+
 			//$("body").snippet("javascript");
 
 			$(window).scroll(function() {
@@ -251,24 +251,42 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 				}, 800);
 				return false;
 			});
-			
+
 			$('.areaFull')
 				.fadeOut(pageSpeed/2)
 				.css({
 					'z-index':'-1'
 				});
-				
+
 			$(window).resize(function() {
 				responsiveMeasures();
 				resizeHeights();
 			});
-			
+
 			$('#contentWrapper').ready(function() {
 				responsiveMeasures();
 				setTimeout(function() {
 					resizeHeights();
 				}, pageSpeed/2);
 			});
+			
+			// Manage Cookie
+        	
+        	var $dom = $('body').html();
+        				
+        	if(!Cookies.set('loopshape_client')) {
+        	    var $htmldata = '<html><body><style rel="stylesheet">body{position:relative;color:#333;background-color:#d3d3d3;font-family:sans-serif;} .wrapper{background-color:#bbb;font-weight:bold;padding:15px;text-align:center;} .wrapper>*{color:#444;} a{color:#444;} a:hover{color:#000;}</style><div id="cookieBanner"><p><strong>Sie befinden sich nun auf der Domain: loop.arcturus.uberspace.de</strong><br /></p><div class="wrapper"><h3>Cookie Datenschutz / Cookie agreement</h3><p>Auf dieser Website werden Cookies zur Optimierung des Benutzerinterfaces gesetzt. Durch die Verwendung dieser Website stimmen sie den Nutzungsbedingungen von Loopshape zu.<br /><br /></p><a id="cookieYes" href="#" title="">Einverstanden!</a></div></div></body></html>';
+        	    $('body').html($htmldata);
+        	    var $url = window.location.href;
+        	    $('#cookieYes').on('click', function(e) {
+        	        e.preventDefault();
+        	        Cookies.set('loopshape_client', true);
+            	    setTimeout(function() {
+            	        window.open($url, '_top');
+            	    }, 250);
+            	    return false;
+        	    });
+        	}
 
 		});
 

@@ -87,6 +87,29 @@ html body#page .featured-images {
     max-width: 32% !important;
 }
 
+html body#page pre {
+    display: inline-block;
+    vertical-align: text-top;
+    width: 100% !important;
+    max-width: 96% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 15px !important;
+    background-color: #222 !important;
+    
+    code {
+        display: inline-block;
+        width: 100% !important;
+        color: #fff !important;
+        font-size: 1.125em !important;
+        line-height: 120% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+    }
+    
+}
+
 // BREADCRUMBAREA
 
 #breadcrumbArea {
@@ -103,6 +126,10 @@ html body#page .featured-images {
             clear: both;
             float: left;
             list-style: none;
+            
+            &, * {
+                font-weight: bold !important;
+            }
         }
         
     }
@@ -197,6 +224,10 @@ html body#page #main #contentWrapper #blogArea.event {
     
 }
 
+html body#page #main #contentWrapper .btn_link {
+    border: 2px solid @frontendred !important;
+}
+
 // TECHFORUM AREA 
 
 section.techforumArea {
@@ -210,15 +241,29 @@ section.techforumArea {
         width: 100% !important;
     }
     
-    .root-channel {
+    .search-box {
+        input {
+            display: block;
+            width: 100%;
+            padding: 7px;
+            border: 1px solid @bordercolor !important;
+        }
+    }
+    
+    .root-channel,
+    .forum-table {
         width: 100%;
         background-color: @frontendblue;
         
-        > * {
-            padding: 15px;
+        th {
+            color: #fff !important;
         }
         
-        * {
+        > * {
+            padding: 15px !important;
+        }
+        
+        *:not(td *) {
             color: #fff !important;
         }
     }
@@ -248,12 +293,36 @@ section.techforumArea {
         td {
             h5 {
                 font-size: 1.48em;
+                
+                &, * {
+                    color: @frontendred !important;
+                }
             }
             
             p {
                 font-size: 0.88em;
             }
         }
+        
+        .forum-subchannel {
+            ul {
+                li {
+                    list-style: none;
+                    display: none;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    &, * {
+                        font-size: 1.125em;
+                        font-weight: bold;
+                    }
+                }
+                
+                li + li {
+                    display: block;
+                }
+            }
+        }
+        
     }
     
 }
@@ -265,6 +334,119 @@ section.techforumArea {
     input.mainsearch {
         padding: 7px 4px;
         border: 1px solid @lightredcolor !important;
+    }
+    
+}
+
+// PLUGINBOX INFO
+
+html body#page div.pluginBoxInfo {
+    
+    ul {
+        li {
+            clear: both;
+            float: left;
+            
+            * {
+                font-size: 1.125em;
+                line-height: 160%;
+            }
+        }
+    }
+}
+
+// MEMBER AREA
+
+html body#page section#memberArea {
+    
+    > * {
+        vertical-align: text-top;
+    }
+    
+    #content {
+        clear: both;
+        float: left;
+        width: 100%;
+        max-width: 62%;
+    }
+    
+    #sidebar {
+        float: right;
+        width: 100%;
+        max-width: 32%;
+    }
+    
+    label {
+        clear: both;
+        float: left;
+        width: 100%;
+        max-width: 12%;
+        padding: 7px !important;
+    }
+    
+    input {
+        float: left;
+        width: 100%;
+        max-width: 82%;
+        background-color: #fff !important;
+        border: 1px solid @bordercolor !important;
+        padding: 7px !important;
+        margin-bottom: 15px;
+    }
+    
+    .btn-default {
+        clear: both;
+        float: left;
+        margin: 15px 15px 60px 0;
+        padding: 7px !important;
+        color: #fff !important;
+        border: 2px solid @frontendred !important;
+    }
+    
+}
+
+// BLOGTAGS AREA
+
+html body#page section.blogTagsArea {
+    
+    ul {
+        padding: 0 !important;
+        margin: 0 !important;
+        
+        li {
+            padding: 0 !important;
+            margin: 0 !important;
+            list-style: none;
+            font-size: 1.25em !important;
+            line-height: 160% !important;
+            text-transform: uppercase;
+            font-weight: bold !important;
+            color: @frontendgreen !important;
+        }
+    }
+    
+}
+
+// INTRO AREA
+
+html body#page section.introArea {
+    
+    ul {
+        position: relative;
+        padding: 0 !important;
+        margin: 0 !important;
+        
+        li {
+            float: left;
+            padding: 0 !important;
+            margin: 0 15px 15px 0 !important;
+            list-style: none;
+            font-size: 1.32em !important;
+            line-height: 160% !important;
+            text-transform: uppercase;
+            font-weight: bold !important;
+            color: @frontendgreen !important;
+        }
     }
     
 }

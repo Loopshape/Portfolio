@@ -19,6 +19,15 @@ crumb_disabled = "0"
 memberPage = "forum/member"
 channelPage = "forum/channel"
 topicPage = "forum/topics"
+
+[blogTags]
+hideOrphans = "1"
+results = "5"
+orderBy = "0"
+direction = "desc"
+
+[\Flynsarmy\Menu\Components\Menu menu]
+menu_id = "1"
 ==
 <section id="teaser">
 	<div class="inner">
@@ -26,12 +35,21 @@ topicPage = "forum/topics"
 	    <h3 class="teaserHeadline"><i class="fa fa-globe"></i>&nbsp;<strong>Webentwicklung</strong></h3>
 	    
 	    <div class="cf"></div>
+	    
+	    <section class="introArea">
+	        {% component "menu" %}
+	    </section>
+	    
+	    <div class="cf"></div>
 
         <section id="teaserWrapper" style="float:left;width:62%;">
             
         	{% partial "markup/loginbar" %}
         	{% content "message/teaser" %}
+        	
         	<div class="cf"></div>
+
+            {% partial "markup/backhomelink" %}
         	
         </section>
         
@@ -45,7 +63,3 @@ topicPage = "forum/topics"
         
     </div>
 </section>
-
-<div class="cf"></div>
-
-{% partial "markup/backhomelink" %}

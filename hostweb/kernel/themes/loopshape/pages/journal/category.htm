@@ -23,13 +23,32 @@ slug = ":slug"
 displayEmpty = "1"
 categoryPage = "journal/category"
 ==
-<section id="blogArea" class="topic">
-
-    <h3><strong>Daily Activity</strong></h3>
-    {% component "blogCategories" %}
+<section id="blogArea" class="journal">
+    
+    <section id="content" style="float:left;width:100%;min-width:100%!important;">
+    	<div class="inner">
+    	    
+    	    <h3 class="teaserHeadline"><i class="fa fa-globe"></i>&nbsp;<strong>Tech Journal</strong></h3>
+    	    <div class="cf"></div>
+    	    
+    	    {% partial "module/calendarwidget" %}
+    	    
+            <div class="cf"></div>
+            <section id="teaserWrapper" style="float:left;width:62%;">
+            	{% component 'blogPosts' %}
+            </section>
+            
+            <section id="teaserSidebar" style="float:right;width:32%;">
+                <br />
+                <h3><strong>Blog-Themen:</strong></h3>
+                {% component 'blogCategories' %}
+            </section>
+            
+        </div>
+    </section>
     
     <div class="cf"></div>
     <p>&nbsp;</p>
     {% partial "markup/backhomelink" %}
-    
+
 </section>

@@ -3,8 +3,8 @@
  * by Arjuna Noorsanto • E-Mail: awebgo.net@gmail.com
  */
 requirejs.config({
-	
-	baseUrl : 'http://loop.arcturus.uberspace.de/',
+
+	baseUrl : '.',
 
 	pragmasOnSave : {
 		excludeRequireCss : true
@@ -25,18 +25,20 @@ requirejs.config({
 
 		jquery : './hostweb/assets/js/app/bower_components/jquery2/jquery.min',
 		jqmigrate : './hostweb/assets/js/app/bower_components/jquery2/jquery-migrate.min.js',
-		
+
 		tweenmax : './hostweb/assets/js/app/bower_components/greensock/src/minified/TweenMax.min',
-		
+
 		responsivemeasure : './hostweb/assets/js/app/bower_components/Responsive-Measure/jquery.rm',
-		
+
 		tooltipsy : './hostweb/assets/js/app/bower_components/tooltipsy-master/tooltipsy.min',
 		angularscroll : './hostweb/assets/js/app/bower_components/angular-scroll/angular-scroll.min',
 		multicolselect : './hostweb/assets/js/app/bower_components/Multi-Column-Select/Multi-Column-Select/Multi-Column-Select.min',
 		cssmulticol : './hostweb/assets/js/app/bower_components/css3_multicol/css3-multi-column',
-		
+
 		jquerysnippet : './hostweb/assets/js/app/bower_components/jquery.snippet.2.0.0/jquery.snippet.min',
 		jssnippet : './hostweb/assets/js/app/bower_components/jquery.snippet.2.0.0/language/sh_javascript.min',
+
+		jscookie : './hostweb/assets/js/app/bower_components/js-cookie/src/js.cookie',
 
 		main : './hostweb/assets/js/app/main'
 
@@ -52,7 +54,7 @@ requirejs.config({
 			deps : ['angular'],
 			exports : '$'
 		},
-		
+
 		jqmigrate : {
 			deps : ['angular', 'jquery']
 		},
@@ -66,12 +68,12 @@ requirejs.config({
 			deps : ['angular', 'jquery'],
 			exports : '_'
 		},
-        
+
 		tweenmax : {
 			deps : ['angular', 'jquery'],
 			exports : 'TweenMax'
 		},
-        
+
 		tooltipsy : {
 			deps : ['angular', 'jquery'],
 			exports : 'tooltipsy'
@@ -81,29 +83,34 @@ requirejs.config({
 			deps : ['angular', 'jquery'],
 			exports : 'AngularScroll'
 		},
-		
+
 		responsivemeasure : {
 			deps : ['angular', 'jquery'],
 			exports : 'responsiveMeasure'
 		},
-		
+
 		multicolselect : {
 			deps : ['angular', 'jquery'],
 			exports : 'MultiColumnSelect'
 		},
-		
+
 		cssmulticol : {
 			deps : ['angular', 'jquery'],
 			exports : 'CssMultiColumns'
 		},
-		
+
 		jquerysnippet : {
 			deps : ['angular', 'jquery'],
 			exports : 'snippet'
-		}, 
-		
+		},
+
 		jssnippet : {
 			deps : ['jquerysnippet']
+		},
+
+		jscookie : {
+		    deps : ['angular', 'jquery'],
+		    exports : 'Cookie'
 		},
 
 		main : {
@@ -111,7 +118,7 @@ requirejs.config({
 		}
 
 	},
-	
+
 	waitSeconds: 240
 
 });

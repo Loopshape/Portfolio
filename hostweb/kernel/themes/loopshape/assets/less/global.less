@@ -716,7 +716,8 @@ html body p.slogan>strong {
   height: 100%;
   z-index: -1;
 }
-.btn_link {
+html #page #contentWrapper .btn-default,
+html #page #contentWrapper .btn_link {
   clear: both;
   float: left;
   position: relative;
@@ -734,7 +735,8 @@ html body p.slogan>strong {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-.btn_link:hover {
+html #page #contentWrapper .btn-default:hover,
+html #page #contentWrapper .btn_link:hover {
   cursor: pointer !important;
   background-color: #881820;
   border: 2px solid #780810 !important;
@@ -1143,11 +1145,13 @@ html #page a:hover,
 html #page a:hover * {
   color: #277621 !important;
 }
+html #page #contentWrapper .btn-default *,
 html #page #contentWrapper a>button.btn_link * {
   color: #eee !important;
   font-size: 1.2em !important;
   opacity: 0.8 !important;
 }
+html #page #contentWrapper .btn-default:hover *,
 html #page #contentWrapper a>button.btn_link:hover * {
   color: #bbb !important;
 }

@@ -1,24 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title></title>
-		<link></link>
-		<description></description>
-		<atom:link href="/rss.xml" rel="self" type="application/rss+xml" />
+		<title>Loopshape • TechBlog für Webentwicklung</title>
+		<link>http://loop.arcturus.uberspace.de/blog</link>
+		<description>Ein technologischer Blog über die alltägliche Webentwicklung.</description>
+		<atom:link href="http://loop.arcturus.uberspace.de/blog/rss.xml" rel="self" type="application/rss+xml" />
 
 		<item>
+			<title>Ubuntu LAMP-Webserver auf einem Android Device</title>
+			<link>http://loop.arcturus.uberspace.de/blog/post/ubuntu-lamp-webserver-auf-einem-android-device</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/ubuntu-lamp-webserver-auf-einem-android-device</guid>
+			<pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+			<description>&lt;h3&gt;LAMP server on Android via Linux Deploy&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Mit dieser Android-Applikation kann ein komplett autarker PHP-Webserver via einer Linux-Distribution auf gerooteten Geräten installiert werden: 
+&lt;a href=&quot;https://play.google.com/store/apps/details?id=ru.meefik.linuxdeploy&amp;amp;hl=de&amp;amp;referrer=utm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_term%3Dlinux+deploy+google+play&amp;amp;pcampaignid=APPU_1_uGdSVeWCN8LXUfPcgNgG&quot; title=&quot;Öffne Link&quot; class=&quot;hastip external&quot;&gt;&lt;strong&gt;Linux Deploy&lt;/strong&gt;&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;
+Auf meinen Tablet habe ich nun einen LAMP-Server aktiviert und kann nun von unterwegs aus weiterhin am einen Web-Projekt arbeiten ;)&lt;br&gt;&lt;br&gt;
+--&lt;br&gt;&lt;br&gt;
+With this Android-Application, now I&#039;m able to host my own LAMP-Server in my Pocket. Ideal for further works on scripts when you are travelling.&lt;br&gt;&lt;br&gt;
+On my tablet, there&#039;s a Apache2 + PHP5.6 + MySQL Server activated.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+You may need some shell modifications for some commands to get this app running properly. I&#039;ll post a link for that into the comment-area.&lt;br&gt;&lt;br&gt;&lt;br&gt;
+With post#60 from &quot;Larpoux&quot;, I was able to get an Ubuntu Image. The SD-Card has to be FAT32 formatted. Be aware, that the limit for space is set to max. 4096MB for FAT32-devices:&lt;br&gt;&lt;a href=&quot;https://github.com/meefik/linuxdeploy/issues/60&quot; title=&quot;Öffne Link&quot; class=&quot;hastip external&quot;&gt;https://github.com/meefik/linuxdeploy/issues/60&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Larpoux commented on 15 Jun 2014&lt;br&gt;
+I was able to install linuxdeploy on my Galaxy Note 3 and my Galaxy Tab Pro running Kitkat 4.4&lt;br&gt;
+This is easy :&lt;br&gt;&lt;br&gt;
+-1- Install Busybox somewhere (/system/xbin is fine)&lt;br&gt;&lt;br&gt;
+-2- Change ENV Directory (in linuxdeploy/settings) from /data/local/linux to 
+/data/data/ru.meefik.linuxdeploy/linux
+and hit Update ENV&lt;br&gt;&lt;br&gt;
+-3- In a terminal : &lt;br&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+$ su -&lt;br&gt;
+# cd /data/data/ru.meefik.linuxdeploy/linux/bin&lt;br&gt;
+# rm sh chroot&lt;br&gt;
+# ln -s /system/bin/mksh sh&lt;br&gt;
+# ln -s /system/xbin/busybox chroot&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;
+-4- Install your linux. It should work. And start your vserver.&lt;br&gt;&lt;br&gt;
+-5- In a terminal&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+$ su -&lt;br&gt;
+# . /data/data/ru.meefik.linuxdeploy/linux/bin/linuxdeploy shell&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+		</item>
+		<item>
+			<title>Loopshape Wallpaper Background v1</title>
+			<link>http://loop.arcturus.uberspace.de/blog/post/loopshape-wallpaper-background-v1</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/loopshape-wallpaper-background-v1</guid>
+			<pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+			<description>&lt;p&gt;Hier ist ein Wallpaper, was für eine damalige Loopshape-Website eingesetzt wurde:&lt;br&gt;&lt;img src=&quot;http://loop.arcturus.uberspace.de/storage/app/media/Renderings/Loopshape_Grid_Bubbles.jpg&quot; alt=&quot;Wallpaper&quot; class=&quot;img&quot;&gt;&lt;/p&gt;</description>
+		</item>
+		<item>
+			<title>Koding.com ROOT server coding environment VM for free</title>
+			<link>http://loop.arcturus.uberspace.de/blog/post/kodingcom-root-server-coding-environment-vm-free</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/kodingcom-root-server-coding-environment-vm-free</guid>
+			<pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+			<description>&lt;h3&gt;Koding.com&lt;/h3&gt;
+&lt;p&gt;Free 3GB-VM with ROOT access:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+Website: &lt;a href=&quot;https://koding.com/R/loopshape&quot;&gt;&lt;strong&gt;Koding.com&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description>
+		</item>
+		<item>
 			<title>Aptana3 SSH-KEX chroot into Ubuntu-LAMP-Server</title>
-			<link>/aptana3-ssh-kex-chroot-ubuntu-lamp-server</link>
-			<guid>/aptana3-ssh-kex-chroot-ubuntu-lamp-server</guid>
+			<link>http://loop.arcturus.uberspace.de/blog/post/aptana3-ssh-kex-chroot-ubuntu-lamp-server</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/aptana3-ssh-kex-chroot-ubuntu-lamp-server</guid>
 			<pubDate>Sun, 24 May 2015 00:00:00 +0000</pubDate>
-			<description></description>
+			<description>&lt;h3&gt;Aptana3 SSH-KEX chroot into Ubuntu-LAMP-Server&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;
+Seit einigen Tagen habe ich mehrmals versucht, auf meinen Ubuntu-LAMP-Webserver mit AptanaStudio3 via SSH einzuloggen. Doch es kam immer wieder eine Fehlermeldung, dass ein &quot;Austausch des Public-SSH-Keys&quot; nicht möglich sei, da bestimmte Codierungsverfahren angeblich fehlten...
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;
+Folgende Website von Niki Nuryadin mit einen kleinen Codesnippet brachte die Lösung. Einfach in den Remote-Rechner die &quot;sshd_config&quot; anpassen und schon kann man einloggen.&lt;br&gt;&lt;br&gt;&lt;a class=&quot;hastip external&quot; href=&quot;https://nikinuryadin.wordpress.com/2015/05/19/aptana-studio-3-sftp-key-exchange/&quot; title=&quot;Öffne Link&quot; target=&quot;_blank&quot;&gt;Website von Niki Nuryadin&lt;/a&gt;
+&lt;/strong&gt;&lt;/p&gt;</description>
 		</item>
 		<item>
 			<title>Willkommen zum TechJournal von Loopshape</title>
-			<link>/willkommen-zum-techjournal-von-loopshape</link>
-			<guid>/willkommen-zum-techjournal-von-loopshape</guid>
+			<link>http://loop.arcturus.uberspace.de/blog/post/willkommen-zum-techjournal-von-loopshape</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/willkommen-zum-techjournal-von-loopshape</guid>
 			<pubDate>Sat, 23 May 2015 00:00:00 +0000</pubDate>
-			<description></description>
+			<description>&lt;h3&gt;&lt;strong&gt;Willkommen zum TechJournal von Loopshape&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Hier werden Dinge über Webentwicklung gepostet...&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</description>
 		</item>
 	</channel>
 </rss>

@@ -1,6 +1,6 @@
 title = "Forenkanal"
-url = "/channel"
-layout = "Global"
+url = "/channel/:slug?"
+layout = "Raw"
 hidden = "0"
 robot_index = "index"
 robot_follow = "follow"
@@ -11,9 +11,12 @@ crumb_disabled = "0"
 
 [forumChannel]
 slug = "{{ :slug }}"
-memberPage = "{{ :user }}"
-topicPage = "{{ :topic }}"
+memberPage = "forum/member"
+topicPage = "forum/topics"
 ==
 <section class="techforumArea">
-    {% component "forumChannels" %}
+    {% component "forumChannel" %}
 </section>
+
+<div class="cf"></div>
+{% partial "markup/backhomelink" %}

@@ -6,6 +6,18 @@ active-class = "active"
 disabled-class = "disabled"
 
 [SeoCmsPage]
+
+
+[session]
+security = "all"
+==
+<?php
+function onStart() {
+    
+    $this->page['baseUrl'] = 'http://'.$_SERVER["HTTP_HOST"].'/';
+    
+}
+?>
 ==
 <!DOCTYPE HTML>
 <html ng-app='loopcode'>
@@ -39,8 +51,7 @@ disabled-class = "disabled"
 
 		------------------------------------------->
 
-        <base href="http://loop.arcturus.uberspace.de/" />
-		<!-- <base href="http://192.168.1.100/" /> -->
+        <base href="{{ this.page.baseUrl }}" />
         
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=1" />
 
@@ -92,6 +103,12 @@ disabled-class = "disabled"
 				<div class="cf"></div>
 				
 				<div id="bufferSpace"></div>
+				
+				<div class="cf"></div>
+				
+				{% partial "markup/socialmedias" %}
+				
+				<div class="cf"></div>
                 
                 <section id="disqusArea">
                 	<div id="disqus_thread"></div>

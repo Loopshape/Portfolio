@@ -7,12 +7,18 @@ return [
         'author' => 'Gergő Szabó'
     ],
     'settings' => [
-        'sidebar_description' => 'Blenden Sie das Menü Beschreibung in der Seitenleiste.',
-        'focus_searchfield' => 'Fokus auf das Suchfeld automatisch.',
-        'virtual_keyboard' => 'Lassen Sie sich die virtuelle Tastatur von Eingabefeldern.',
-        'more_themes' => 'Blenden Sie die "Weitere Themen ..." Link.',
-        'themes_comment' => 'Das Hotel liegt am Frontend-Themenseite.',
-        'comment' => 'Es funktioniert nur auf Seiten auf.'
+        'search_label' => 'Fokus auf das Suchfeld automatisch.',
+        'search_comment' => 'Zum einen in Listen, zweitens in der Seitenleiste.',
+        'sidebar_label' => 'Blenden Sie das Menü Beschreibung in der Seitenleiste.',
+        'sidebar_comment' => 'Es muss nicht in Seite aktualisieren noch zu arbeiten.',
+        'avatar_label' => 'Abgerundete Profilbild statt eines Würfels.',
+        'avatar_comment' => 'Der Avatar ändert nur in Top-Menü.',
+        'keyboard_label' => 'Lassen Sie sich die virtuelle Tastatur von Formen.',
+        'keyboard_comment' => 'Es funktioniert nur mit einfachen Textfelder.',
+        'media_label' => 'Ausblenden der Media Link in Top-Menü.',
+        'media_comment' => 'Es ist immer noch vorhanden, aber es nicht zu zeigen.',
+        'themes_label' => 'Blenden Sie die "Weitere Themen" Link.',
+        'themes_comment' => 'Das Hotel liegt am Frontend-Themenseite.'
     ],
     'widgets' => [
         'system' => [
