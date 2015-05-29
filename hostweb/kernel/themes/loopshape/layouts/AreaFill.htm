@@ -92,9 +92,9 @@ function onStart() {
     		        {% component "breadcrumbs" %}
     		    </div>
 				
-				<div id="contentWrapper">
+				<div id="contentWrapper" style="max-width:100%!important;padding:0!important;border:none!important;">
 				    
-				    <div class="gridsys"></div>
+				    <!-- <div class="gridsys"></div> -->
 				    
     				{% page %}
 						
@@ -105,46 +105,12 @@ function onStart() {
 				<div id="bufferSpace"></div>
 				
 				<div class="cf"></div>
-                
-                <section id="disqusArea">
-                	<div id="disqus_thread"></div>
-                	<script type="text/javascript">
-                		var disqus_shortname = 'loopshapeportfolio';
-                		(function() {
-                			var dsq = document.createElement('script');
-                			dsq.type = 'text/javascript';
-                			dsq.async = true;
-                			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                		})();
-                	</script>
-                	<noscript>
-                		<a href="https://disqus.com/?ref_noscript" rel="nofollow"></a>
-                	</noscript>
-                	<style rel="stylesheet">
-                		html body#page #disqusArea {
-                			margin-bottom: 0px !important;
-                		}
-                	</style>
-                </section>
-                
-                <div class="cf"></div>
-    				
+                	
     			{% partial "area/footer" %}
 				
             </section>
 		
 		</div>
-
-		<script type="text/javascript">
-			var disqus_shortname = 'loopshapeportfolio'; ( function() {
-					var s = document.createElement('script');
-					s.async = true;
-					s.type = 'text/javascript';
-					s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-					(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-				}());
-		</script>
         
         <a href="#" class="scrollToTop"></a>
 

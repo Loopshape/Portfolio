@@ -11,7 +11,7 @@
 console.log('Starting MAINSCRIPT');
 
 // on this area, all Plugins must be listed as a sequence and be called so
-requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet', 'jscookie'], function(angular, $, Backbone, _, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet, Cookies) {
+requirejs(['angular', 'jquery', 'tweenlite', 'backbone', 'underscore', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet', 'jscookie'], function(angular, $, TweenLite, Backbone, _, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet, Cookies) {
 	'use strict';
 
 	// Angular.JS Setup
@@ -24,9 +24,26 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 	    $scope.userPasswd = "1337secure";
 
 	});
-
+	
 	// MainJS config vars
 	var pageSpeed = 500;
+	
+	$('header#header')
+    	.on('mouseover', function() {
+    	    if(!$(this).hasClass('hover') && $(this).offset().top<-1)
+        	    $(this).animate({
+        	        'top' : '+=380'
+        	    }, pageSpeed*4).addClass('hover');
+    	})
+    	.on('mouseleave', function(e) {
+    	    var pageY = e.pageY;
+	        if($(this).hasClass('hover') && $(this).offset().top>-380)
+	            if(pageY<60)
+    	            return;
+    	        $(this).animate({
+        	        'top' : '-=380'
+        	    }, pageSpeed*4).removeClass('hover');
+    	});
 
 	// Typography settings
 	function responsiveMeasures() {
@@ -160,34 +177,30 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 		});
 
 		// prepare Vars for DOC-Ready
-		var TweenMax = null;
+		var itemSpeed = 500;
 
 		// Document Ready
 		$(function() {
 
-		    // GREENSOCK AREA
-		    TweenMax = require(['tweenmax']);
-
 		    // HTML-DOM AREA
 
 			$(window).scrollTop(0);
+			
+			// GSAP MOVES
+			
+			var $box = $('header#header');
 
-			// load Facebook SDK
-			window.fbAsyncInit = function() {
-            FB.init({
-              appId      : '849734395080698',
-              xfbml      : true,
-              version    : 'v2.3'
-            });
-          };
-            // execute Facebook SDK
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "//connect.facebook.net/en_US/sdk.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
+            function moveBox(e) {
+            	var x = e.pageX,
+            		y = e.pageY;
+            
+            	TweenMax.to($box, 1.4, {
+            		css: { left: x, top: y, scale: Math.random() * 2 + 1 },
+            		ease:Elastic.easeOut
+            	});
+            }
+            
+            $('header#header').on('click', moveBox);
 
 			// some Typography settings
 			$(document).on('responsiveMeasureUpdated', function(e, data) {
@@ -271,11 +284,9 @@ requirejs(['angular', 'jquery', 'backbone', 'underscore', 'tooltipsy', 'angulars
 			});
 			
 			// Manage Cookie
-        	
-        	var $dom = $('body').html();
         				
         	if(!Cookies.set('loopshape_client')) {
-        	    var $htmldata = '<html><body><style rel="stylesheet">body{position:relative;color:#333;background-color:#d3d3d3;font-family:sans-serif;} .wrapper{background-color:#bbb;font-weight:bold;padding:15px;text-align:center;} .wrapper>*{color:#444;} a{color:#444;} a:hover{color:#000;}</style><div id="cookieBanner"><p><strong>Sie befinden sich nun auf der Domain: loop.arcturus.uberspace.de</strong><br /></p><div class="wrapper"><h3>Cookie Datenschutz / Cookie agreement</h3><p>Auf dieser Website werden Cookies zur Optimierung des Benutzerinterfaces gesetzt. Durch die Verwendung dieser Website stimmen sie den Nutzungsbedingungen von Loopshape zu.<br /><br /></p><a id="cookieYes" href="#" title="">Einverstanden!</a></div></div></body></html>';
+        	    var $htmldata = '<html><body><style rel="stylesheet">body{position:relative;color:#333;background-color:#d3d3d3;font-family:sans-serif;} .wrapper{background-color:#bbb;font-weight:bold;padding:15px;text-align:center;} .wrapper>*{color:#444;} a{color:#444;} a:hover{color:#000;}</style><div id="cookieBanner"><p><strong>Sie befinden sich nun auf der Domain: loop.arcturus.uberspace.de</strong><br /></p><div class="wrapper"><h3>Cookie Datenschutz / Cookie agreement</h3><p>Auf dieser Website werden Cookies zur Optimierung des Benutzerinterfaces gesetzt. Durch die Verwendung dieser Website stimmen Sie den Nutzungsbedingungen von Loopshape zu.<br /><br /></p><a id="cookieYes" href="#" title="">Einverstanden!</a></div></div></body></html>';
         	    $('body').html($htmldata);
         	    var $url = window.location.href;
         	    $('#cookieYes').on('click', function(e) {

@@ -8,4 +8,35 @@ child_of = "mey_no_parent"
 hide_crumb = "0"
 remove_crumb_trail = "0"
 crumb_disabled = "0"
+
+[account]
+paramCode = "code"
+
+[resetPassword]
+paramCode = "code"
 ==
+<section id="userArea">
+	<div class="inner">
+	    
+	    <h3 class="teaserHeadline"><i class="fa fa-globe"></i>&nbsp;<strong>Login</strong></h3>
+	    
+	    <div class="cf"></div>
+
+        <section id="teaserWrapper" style="float:left;width:52%;">
+            
+        	{% component "account" %}
+        	
+        	<div class="cf"></div>
+
+            {% partial "markup/backhomelink" %}
+        	
+        </section>
+        
+        <section id="teaserSidebar" style="float:right;width:42%;">
+            
+            {% component "resetPassword" %}
+            
+        </section>
+        
+    </div>
+</section>

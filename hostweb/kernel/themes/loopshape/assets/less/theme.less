@@ -70,6 +70,12 @@
     outline: none !important;
 }
 
+html body#page #main header#header {
+    position:absolute !important;
+    top: -380px;
+    z-index: 1000000;
+}
+
 div.cf {
     position: relative !important;
     z-index: -1 !important;
@@ -87,20 +93,21 @@ html body#page .featured-images {
     max-width: 32% !important;
 }
 
-html body#page pre {
+html body#page code {
     display: inline-block;
     vertical-align: text-top;
     width: 100% !important;
+    min-width: 96% !important;
     max-width: 96% !important;
     min-height: 0 !important;
-    margin: 0 !important;
+    margin: 0 0 15px !important;
     padding: 15px !important;
+    color: #fff !important;
     background-color: #222 !important;
     
-    code {
+    pre {
         display: inline-block;
         width: 100% !important;
-        color: #fff !important;
         font-size: 1.125em !important;
         line-height: 120% !important;
         margin: 0 !important;
@@ -233,7 +240,6 @@ html body#page #main #contentWrapper .btn_link {
 section.techforumArea {
     position: relative;
     font-size: 1em;
-    padding-bottom: 15px;
     
     &, > *, > * > *,
     table.forum-table {
@@ -447,6 +453,26 @@ html body#page section.introArea {
             font-weight: bold !important;
             color: @frontendgreen !important;
         }
+    }
+    
+}
+
+// USER LOGIN AREA
+
+html body#page section#userArea {
+    
+    label {
+        clear: left;
+        float: left;
+        width: 100%;
+        max-width: 32%;
+    }
+    
+    input {
+        float: left;
+        width: 100%;
+        max-width: 62%;
+        margin-bottom: 15px;
     }
     
 }
