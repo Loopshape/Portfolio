@@ -15,7 +15,8 @@
 &lt;p&gt;&lt;strong&gt;Mit dieser Android-Applikation kann ein komplett autarker PHP-Webserver via einer Linux-Distribution auf gerooteten Geräten installiert werden: 
 &lt;a href=&quot;https://play.google.com/store/apps/details?id=ru.meefik.linuxdeploy&amp;amp;hl=de&amp;amp;referrer=utm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_term%3Dlinux+deploy+google+play&amp;amp;pcampaignid=APPU_1_uGdSVeWCN8LXUfPcgNgG&quot; title=&quot;Öffne Link&quot; class=&quot;hastip external&quot;&gt;&lt;strong&gt;Linux Deploy&lt;/strong&gt;&lt;/a&gt;
 &lt;br&gt;&lt;br&gt;
-Auf meinen Tablet habe ich nun einen LAMP-Server aktiviert und kann nun von unterwegs aus weiterhin am einen Web-Projekt arbeiten ;)&lt;br&gt;&lt;br&gt;
+Auf meinen Tablet habe ich nun einen LAMP-Server aktiviert und kann nun von unterwegs aus weiterhin am einen Web-Projekt arbeiten ;)&lt;br&gt;&lt;br&gt;&lt;small&gt;Screenshot einer SSH-Sitzung:&lt;/small&gt;
+&lt;img src=&quot;http://loop.arcturus.uberspace.de/storage/app/media/Screenshots/Ubuntu_LAMP_Server_on_Android.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
 --&lt;br&gt;&lt;br&gt;
 With this Android-Application, now I&#039;m able to host my own LAMP-Server in my Pocket. Ideal for further works on scripts when you are travelling.&lt;br&gt;&lt;br&gt;
 On my tablet, there&#039;s a Apache2 + PHP5.6 + MySQL Server activated.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
