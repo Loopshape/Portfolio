@@ -40,6 +40,8 @@ requirejs.config({
 		jssnippet : './hostweb/assets/js/app/bower_components/jquery.snippet.2.0.0/language/sh_javascript.min',
 
 		jscookie : './hostweb/assets/js/app/bower_components/js-cookie/src/js.cookie',
+		
+		hoverintent : './hostweb/assets/js/app/bower_components/jquery-hoverIntent/jquery.hoverIntent',
 
 		main : './hostweb/assets/js/app/main'
 
@@ -117,6 +119,11 @@ requirejs.config({
 		jscookie : {
 		    deps : ['angular', 'jquery'],
 		    exports : 'Cookie'
+		},
+		
+		hoverintent : {
+		    deps : ['angular', 'jquery'],
+		    exports : 'hoverIntent'
 		},
 
 		main : {

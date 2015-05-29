@@ -11,7 +11,7 @@
 console.log('Starting MAINSCRIPT');
 
 // on this area, all Plugins must be listed as a sequence and be called so
-requirejs(['angular', 'jquery', 'tweenlite', 'backbone', 'underscore', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet', 'jscookie'], function(angular, $, TweenLite, Backbone, _, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet, Cookies) {
+requirejs(['angular', 'jquery', 'tweenlite', 'backbone', 'underscore', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet', 'jscookie', 'hoverintent'], function(angular, $, TweenLite, Backbone, _, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet, Cookies, hoverIntent) {
 	'use strict';
 
 	// Angular.JS Setup
@@ -29,21 +29,23 @@ requirejs(['angular', 'jquery', 'tweenlite', 'backbone', 'underscore', 'tooltips
 	var pageSpeed = 500;
 	
 	$('header#header')
-    	.on('mouseover', function() {
-    	    if(!$(this).hasClass('hover') && $(this).offset().top<-1)
-        	    $(this).animate({
-        	        'top' : '+=380'
-        	    }, pageSpeed*4).addClass('hover');
-    	})
-    	.on('mouseleave', function(e) {
-    	    var pageY = e.pageY;
-	        if($(this).hasClass('hover') && $(this).offset().top>-380)
-	            if(pageY<60)
-    	            return;
-    	        $(this).animate({
-        	        'top' : '-=380'
-        	    }, pageSpeed*4).removeClass('hover');
-    	});
+	    .hoverIntent(
+	        function() {
+	            if(!$(this).hasClass('hover') && $(this).offset().top<-1)
+            	    $(this).animate({
+            	        'top' : '+=380'
+            	    }, pageSpeed*4).addClass('hover');
+	        },
+	        function(e) {
+	            var pageY = e.pageY;
+    	        if($(this).hasClass('hover') && $(this).offset().top>-380)
+    	            if(pageY<60)
+        	            return;
+        	        $(this).animate({
+            	        'top' : '-=380'
+            	    }, pageSpeed*4).removeClass('hover');
+	        }
+	    );
 
 	// Typography settings
 	function responsiveMeasures() {
