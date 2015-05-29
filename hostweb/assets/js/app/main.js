@@ -30,17 +30,22 @@ requirejs(['angular', 'jquery', 'tweenlite', 'backbone', 'underscore', 'tooltips
 	
 	$('header#header')
 	    .hoverIntent(
-	        function() {
+	        function(e) {
+	            var pageY = e.pageY;
+                if(pageY<60 && $(this).hasClass('hover') && $(this).offset().top>=-380)
+                    return;
 	            if(!$(this).hasClass('hover') && $(this).offset().top<-1)
-            	    $(this).animate({
+            	    $(this).addClass('hover').animate({
             	        'top' : '+=380'
-            	    }, pageSpeed*4).addClass('hover');
+            	    }, pageSpeed*4, function() {
+            	        $(this).removeClass('busy');
+            	    });
 	        },
 	        function(e) {
 	            var pageY = e.pageY;
+	            if(pageY<60 && $(this).hasClass('hover'))
+    	            return;
     	        if($(this).hasClass('hover') && $(this).offset().top>-380)
-    	            if(pageY<60)
-        	            return;
         	        $(this).animate({
             	        'top' : '-=380'
             	    }, pageSpeed*4).removeClass('hover');
