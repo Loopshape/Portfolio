@@ -2,144 +2,180 @@
  * REQUIRE.JS configuration file
  * by Arjuna Noorsanto • E-Mail: awebgo.net@gmail.com
  */
-requirejs.config({
+requirejs.config(
+{
 
-	baseUrl : '.',
+    baseUrl : '.',
 
-	pragmasOnSave : {
-		excludeRequireCss : true
-	},
+    pragmasOnSave :
+    {
+        excludeRequireCss : true
+    },
 
-	map : {
-		'*' : {
-			'css' : './hostweb/assets/js/app/bower_components/require-css/css'
-		}
-	},
+    map :
+    {
+        '*' :
+        {
+            'css' : './hostweb/assets/js/app/bower_components/require-css/css'
+        }
+    },
 
-	paths : {
+    paths :
+    {
 
-		angular : './hostweb/assets/js/app/bower_components/angular/angular.min',
+        /* minified
+         angular :
+        './hostweb/assets/js/app/bower_components/angular/angular.min',
+         */
+        angular : './hostweb/assets/js/app/bower_components/angular/angular',
 
-		backbone : './hostweb/assets/js/app/bower_components/backbone/backbone',
-		underscore : './hostweb/assets/js/app/bower_components/underscore/underscore-min',
+        backbone : './hostweb/assets/js/app/bower_components/backbone/backbone',
+        underscore : './hostweb/assets/js/app/bower_components/underscore/underscore-min',
 
-		jquery : './hostweb/assets/js/app/bower_components/jquery2/jquery.min',
-		jqmigrate : './hostweb/assets/js/app/bower_components/jquery2/jquery-migrate.min.js',
+        jquery : './hostweb/assets/js/app/bower_components/jquery2/jquery.min',
+        jqmigrate : './hostweb/assets/js/app/bower_components/jquery2/jquery-migrate.min.js',
 
-        tweenlite : './hostweb/assets/js/app/bower_components/greensock/src/minified/TweenLite.min',
-		tweenmax : './hostweb/assets/js/app/bower_components/greensock/src/minified/TweenMax.min',
+        gsap : './hostweb/assets/js/app/bower_components/greensock/src/minified/jquery.gsap.min',
+        tweenlite : '//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min',
+        tweenmax : '//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min',
+        draggable : '//cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min',
 
-		responsivemeasure : './hostweb/assets/js/app/bower_components/Responsive-Measure/jquery.rm',
+        responsivemeasure : './hostweb/assets/js/app/bower_components/Responsive-Measure/jquery.rm',
 
-		tooltipsy : './hostweb/assets/js/app/bower_components/tooltipsy-master/tooltipsy.min',
-		angularscroll : './hostweb/assets/js/app/bower_components/angular-scroll/angular-scroll.min',
-		multicolselect : './hostweb/assets/js/app/bower_components/Multi-Column-Select/Multi-Column-Select/Multi-Column-Select.min',
-		cssmulticol : './hostweb/assets/js/app/bower_components/css3_multicol/css3-multi-column',
+        tooltipsy : './hostweb/assets/js/app/bower_components/tooltipsy-master/tooltipsy.min',
+        angularscroll : './hostweb/assets/js/app/bower_components/angular-scroll/angular-scroll.min',
+        multicolselect : './hostweb/assets/js/app/bower_components/Multi-Column-Select/Multi-Column-Select/Multi-Column-Select.min',
+        cssmulticol : './hostweb/assets/js/app/bower_components/css3_multicol/css3-multi-column',
 
-		jquerysnippet : './hostweb/assets/js/app/bower_components/jquery.snippet.2.0.0/jquery.snippet.min',
-		jssnippet : './hostweb/assets/js/app/bower_components/jquery.snippet.2.0.0/language/sh_javascript.min',
+        jquerysnippet : './hostweb/assets/js/app/bower_components/jquery.snippet.2.0.0/jquery.snippet.min',
+        jssnippet : './hostweb/assets/js/app/bower_components/jquery.snippet.2.0.0/language/sh_javascript.min',
 
-		jscookie : './hostweb/assets/js/app/bower_components/js-cookie/src/js.cookie',
-		
-		hoverintent : './hostweb/assets/js/app/bower_components/jquery-hoverIntent/jquery.hoverIntent',
-		
-		fancybox : './hostweb/assets/js/app/bower_components/fancybox/source/jquery.fancybox.pack',
+        jscookie : './hostweb/assets/js/app/bower_components/js-cookie/src/js.cookie',
 
-		main : './hostweb/assets/js/app/main'
+        hoverintent : './hostweb/assets/js/app/bower_components/jquery-hoverIntent/jquery.hoverIntent',
 
-	},
+        fancybox : './hostweb/assets/js/app/bower_components/fancybox/source/jquery.fancybox.pack',
 
-	shim : {
+        main : './hostweb/assets/js/app/main'
 
-		angular : {
-			exports : 'angular'
-		},
+    },
 
-		jquery : {
-			deps : ['angular'],
-			exports : '$'
-		},
+    shim :
+    {
 
-		jqmigrate : {
-			deps : ['angular', 'jquery']
-		},
+        angular :
+        {
+            exports : 'angular'
+        },
 
-		backbone : {
-			deps : ['angular', 'jquery'],
-			exports : 'Backbone'
-		},
+        jquery :
+        {
+            deps : ['angular'],
+            exports : '$'
+        },
 
-		underscore : {
-			deps : ['angular', 'jquery'],
-			exports : '_'
-		},
+        jqmigrate :
+        {
+            deps : ['angular', 'jquery']
+        },
 
-		tweenmax : {
-			deps : ['angular', 'jquery'],
-			exports : 'TweenMax'
-		},
-		
-		tweenlite : {
-			deps : ['angular', 'jquery'],
-			exports : 'TweenLite'
-		},
+        backbone :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'Backbone'
+        },
 
-		tooltipsy : {
-			deps : ['angular', 'jquery'],
-			exports : 'tooltipsy'
-		},
+        underscore :
+        {
+            deps : ['angular', 'jquery'],
+            exports : '_'
+        },
 
-		angularscroll : {
-			deps : ['angular', 'jquery'],
-			exports : 'AngularScroll'
-		},
+        gsap :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'gsap'
+        },
 
-		responsivemeasure : {
-			deps : ['angular', 'jquery'],
-			exports : 'responsiveMeasure'
-		},
+        tweenmax :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'TweenMax'
+        },
 
-		multicolselect : {
-			deps : ['angular', 'jquery'],
-			exports : 'MultiColumnSelect'
-		},
+        tweenlite :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'TweenLite'
+        },
 
-		cssmulticol : {
-			deps : ['angular', 'jquery'],
-			exports : 'CssMultiColumns'
-		},
+        tooltipsy :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'tooltipsy'
+        },
 
-		jquerysnippet : {
-			deps : ['angular', 'jquery'],
-			exports : 'snippet'
-		},
+        angularscroll :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'AngularScroll'
+        },
 
-		jssnippet : {
-			deps : ['jquerysnippet']
-		},
+        responsivemeasure :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'responsiveMeasure'
+        },
 
-		jscookie : {
-		    deps : ['angular', 'jquery'],
-		    exports : 'Cookie'
-		},
-		
-		hoverintent : {
-		    deps : ['angular', 'jquery'],
-		    exports : 'hoverIntent'
-		},
-		
-		fancybox : {
-		    deps : ['angular', 'jquery'],
-		    exports : 'fancybox'
-		},
+        multicolselect :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'MultiColumnSelect'
+        },
 
-		main : {
-			exports : 'Main'
-		}
+        cssmulticol :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'CssMultiColumns'
+        },
 
-	},
+        jquerysnippet :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'snippet'
+        },
 
-	waitSeconds: 240
+        jssnippet :
+        {
+            deps : ['jquerysnippet']
+        },
+
+        jscookie :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'Cookie'
+        },
+
+        hoverintent :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'hoverIntent'
+        },
+
+        fancybox :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'fancybox'
+        },
+
+        main :
+        {
+            exports : 'Main'
+        }
+
+    },
+
+    waitSeconds : 240
 
 });
 require(['main']);

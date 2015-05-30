@@ -6,64 +6,68 @@
 *
 */
 // module dependencies
-require(['jquery','underscore','backbone','hoverintent'], function($,_,Backbone,hoverIntent) {
-	'use strict';
+require(['jquery', 'underscore', 'backbone', 'tweenlite'], function($, _, Backbone, TweenLite)
+{
+    'use strict';
 
-	// Backbone definitions for App
-	var App = Backbone.View.extend({
+    // Backbone definitions for App
+    var App = Backbone.View.extend(
+    {
 
-		ajax : function() {
-			alert('AJAX function was called...');
-			return;
-		},
-		
-		workstuff : function() {
-		    
-		    var TweenMax = require(['tweenmax']);
-		    
-		    $('p').hoverIntent(
-		        function() {
-		            TweenLite.to($(this), 2, {
-        		        scale : '+=1.2'
-        		    });
-		        },
-		        function() {
-		            TweenLite.to($(this), 2, {
-        		        scale : '+=0.8'
-        		    });
-		        }
-		    );
-		    
-		    return;
-		},
+        ajax : function()
+        {
+            alert('AJAX function was called...');
+            return;
+        },
 
-		render : function() {
+        render : function()
+        {
 
-			var item = this.page;
-			var itemSpeed = 500;
-			
-			this.setElement(item);
-			
-			// here comes the APP logic
-			console.log('Start rendering:');
-			
-			this.workstuff();
+            var item = this.page;
+            var itemSpeed = 500;
 
-			return;
-		},
+            this.setElement(item);
 
-		events : {
-			'click a[rel=ajax]' : 'ajax'
-		},
+            // here comes the APP logic
+            console.log('Start rendering:');
 
-		initialize : function() {
-			this.windowWidth = $(window).width();
-			_.bindAll(this, 'ajax');
-			this.render();
-		}
-		
-	});
+            // GSAP MOVES
 
-	var app = new App();
+            var $page = $('#page');
+
+            function moveBox(e)
+            {
+
+                var x = e.pageX,
+                    y = e.pageY;
+
+                TweenLite.to($page, 3,
+                {
+                    opacity : '-=0.01'
+                });
+
+                return true;
+            }
+
+
+            $(document).on('click', moveBox);
+
+            return;
+        },
+
+        events :
+        {
+            'click a[rel=ajax]' : 'ajax'
+        },
+
+        initialize : function()
+        {
+            this.windowWidth = $(window).width();
+            _.bindAll(this, 'ajax');
+            this.render();
+        }
+    });
+
+    var app = new App();
 
 });

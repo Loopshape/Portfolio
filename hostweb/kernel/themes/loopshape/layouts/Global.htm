@@ -13,14 +13,14 @@ security = "all"
 ==
 <?php
 function onStart() {
-    
+
     $this->page['baseUrl'] = 'http://'.$_SERVER["HTTP_HOST"].'/';
-    
+
 }
 ?>
 ==
 <!DOCTYPE HTML>
-<html ng-app='loopcode'>
+<html>
 	<p class='slogan'>
 		<strong>Loopshape präsentiert das Webentwicklungsportal für Programmierer</strong>
 	</p>
@@ -41,7 +41,7 @@ function onStart() {
 		<!-----------------------------------------
 
 		BUSINESS PORTFOLIO + THEME "Infinity Red"
-		
+
 		Powered by: octobercms.com
 
 		Programmed by: Arjuna Noorsanto in Q2/2015
@@ -52,7 +52,7 @@ function onStart() {
 		------------------------------------------->
 
         <base href="{{ this.page.baseUrl }}" />
-        
+
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=1" />
 
 		<title>Web Development • Arjuna Noorsanto • Mediengestalter Digital in Hamburg/Germany</title>
@@ -72,7 +72,7 @@ function onStart() {
 		<![endif]-->
 
 		<link rel="shortcut icon" href="favicon.ico" />
-		
+
 		{% component "session" %}
 		{% component "SeoCmsPage" %}
 
@@ -88,29 +88,29 @@ function onStart() {
 			<section id="main">
 
 				{% partial "area/header" %}
-				
+
 				<div id="breadcrumbArea">
     		        {% component "breadcrumbs" %}
     		    </div>
-				
+
 				<div id="contentWrapper">
-				    
+
 				    <div class="gridsys"></div>
-				    
+
     				{% page %}
-						
+
 				</div>
-				
+
 				<div class="cf"></div>
-				
+
 				<div id="bufferSpace"></div>
-				
+
 				<div class="cf"></div>
-				
+
 				{% partial "markup/socialmedias" %}
-				
+
 				<div class="cf"></div>
-                
+
                 <section id="disqusArea">
                 	<div id="disqus_thread"></div>
                 	<script type="text/javascript">
@@ -132,13 +132,13 @@ function onStart() {
                 		}
                 	</style>
                 </section>
-                
+
                 <div class="cf"></div>
-    				
+
     			{% partial "area/footer" %}
-				
+
             </section>
-		
+
 		</div>
 
 		<script type="text/javascript">
@@ -150,11 +150,11 @@ function onStart() {
 					(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 				}());
 		</script>
-        
+
         <a href="#" class="scrollToTop"></a>
 
 		<a class="areaFull" href="./." title="Mausklick: Erneuten HTTP-Request senden!"><img src="./hostweb/assets/img/items/ajax-loader.gif" alt="" id="ajaxLoader" /></a>
-        
+
 		{% partial "area/scripts" %}
 
 	</body>
