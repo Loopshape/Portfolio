@@ -1,0 +1,124 @@
+description = "Devel Template"
+
+[breadcrumbs]
+main-ol-class = "breadcrumb"
+active-class = "active"
+disabled-class = "disabled"
+
+[SeoCmsPage]
+
+
+[session]
+security = "all"
+==
+<?php
+function onStart() {
+
+    $this->page['baseUrl'] = 'http://'.$_SERVER["HTTP_HOST"].'/';
+
+}
+?>
+==
+<!DOCTYPE HTML>
+<html>
+	<p class='slogan'>
+		<strong>Loopshape präsentiert das Webentwicklungsportal für Programmierer</strong>
+	</p>
+	<noscript>
+		Javascript muss aktiviert sein, damit diese Website im vollen Umfang genutzt werden kann !!!!!!!
+		<style rel='stylesheet'>
+			#page > * > * {
+				display: none !important;
+			}
+			#page > .inner {
+				margin-top: -45px !important;
+			}
+		</style>
+	</noscript>
+
+	<head>
+
+		<!-----------------------------------------
+
+		BUSINESS PORTFOLIO + THEME "Infinity Red"
+
+		Powered by: octobercms.com
+
+		Programmed by: Arjuna Noorsanto in Q2/2015
+		Contact eMail: awebgo.net@gmail.com
+
+		http://loop.arcturus.uberspace.de/
+
+		------------------------------------------->
+
+		<base href="{{ this.page.baseUrl }}" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=1" />
+
+		<title>Web Development • Arjuna Noorsanto • Mediengestalter Digital in Hamburg/Germany</title>
+
+		<link href='//fonts.googleapis.com/css?family=Lora|Oswald:700' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="{{ ['assets/less/theme.less'] | theme }}" />
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+		<!--[if gte IE 9]>
+		<style type="text/css">
+		.gradient {
+		filter: none;
+		}
+		</style>
+		<![endif]-->
+
+		<link rel="shortcut icon" href="favicon.ico" />
+
+		{% component "session" %}
+		{% component "SeoCmsPage" %}
+
+	</head>
+	<body id="page">
+
+		<!-- <img id="fmWallpaper" src="./hostweb/assets/img/area/background.jpg" width="auto" height="100%" alt="" /> -->
+
+		<div class="inner">
+
+			<!-- <img class="fillArea" src="./hostweb/assets/img/area/background.jpg" width="100%" height="100%" alt="" /> -->
+
+			<section id="main">
+
+				{% partial "area/header" %}
+
+				<div id="breadcrumbArea">
+    		        {% component "breadcrumbs" %}
+    		    </div>
+
+				<div id="contentWrapper" style="border:none!important;">
+
+				    <!-- <div class="gridsys"></div> -->
+
+    				{% page %}
+
+				</div>
+
+				<div class="cf"></div>
+
+				<div id="bufferSpace"></div>
+
+                <div class="cf"></div>
+
+    			{% partial "area/footer" %}
+
+            </section>
+
+		</div>
+
+        <a href="#" class="scrollToTop"></a>
+
+		<a class="areaFull" href="./." title="Mausklick: Erneuten HTTP-Request senden!"><img src="./hostweb/assets/img/items/ajax-loader.gif" alt="" id="ajaxLoader" /></a>
+
+		{% partial "area/frameworkscripts" %}
+
+	</body>
+
+</html>
