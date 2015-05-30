@@ -11,7 +11,7 @@
 console.log('Starting MAINSCRIPT');
 
 // on this area, all Plugins must be listed as a sequence and be called so
-requirejs(['angular', 'jquery', 'tweenlite', 'backbone', 'underscore', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet', 'jscookie', 'hoverintent'], function(angular, $, TweenLite, Backbone, _, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet, Cookies, hoverIntent) {
+requirejs(['angular', 'jquery', 'tweenlite', 'backbone', 'underscore', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet', 'jscookie', 'hoverintent', 'fancybox'], function(angular, $, TweenLite, Backbone, _, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet, Cookies, hoverIntent, fancybox) {
 	'use strict';
 
 	// Angular.JS Setup
@@ -193,6 +193,9 @@ requirejs(['angular', 'jquery', 'tweenlite', 'backbone', 'underscore', 'tooltips
 
 			$(window).scrollTop(0);
 			
+			// LINK IMAGES
+		    $('*.linkImages a').fancybox();
+
 			// GSAP MOVES
 			
 			var $box = $('header#header');
@@ -298,7 +301,7 @@ requirejs(['angular', 'jquery', 'tweenlite', 'backbone', 'underscore', 'tooltips
         	    var $url = window.location.href;
         	    $('#cookieYes').on('click', function(e) {
         	        e.preventDefault();
-        	        Cookies.set('loopshape_client', true);
+        	        Cookies.set('loopshape_client', true, '/');
             	    setTimeout(function() {
             	        window.open($url, '_top');
             	    }, 250);

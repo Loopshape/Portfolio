@@ -42,6 +42,8 @@ requirejs.config({
 		jscookie : './hostweb/assets/js/app/bower_components/js-cookie/src/js.cookie',
 		
 		hoverintent : './hostweb/assets/js/app/bower_components/jquery-hoverIntent/jquery.hoverIntent',
+		
+		fancybox : './hostweb/assets/js/app/bower_components/fancybox/source/jquery.fancybox.pack',
 
 		main : './hostweb/assets/js/app/main'
 
@@ -124,6 +126,11 @@ requirejs.config({
 		hoverintent : {
 		    deps : ['angular', 'jquery'],
 		    exports : 'hoverIntent'
+		},
+		
+		fancybox : {
+		    deps : ['angular', 'jquery'],
+		    exports : 'fancybox'
 		},
 
 		main : {

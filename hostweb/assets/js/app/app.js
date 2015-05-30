@@ -6,7 +6,7 @@
 *
 */
 // module dependencies
-require([], function() {
+require(['jquery','underscore','backbone','hoverintent'], function($,_,Backbone,hoverIntent) {
 	'use strict';
 
 	// Backbone definitions for App
@@ -15,6 +15,26 @@ require([], function() {
 		ajax : function() {
 			alert('AJAX function was called...');
 			return;
+		},
+		
+		workstuff : function() {
+		    
+		    var TweenMax = require(['tweenmax']);
+		    
+		    $('p').hoverIntent(
+		        function() {
+		            TweenLite.to($(this), 2, {
+        		        scale : '+=1.2'
+        		    });
+		        },
+		        function() {
+		            TweenLite.to($(this), 2, {
+        		        scale : '+=0.8'
+        		    });
+		        }
+		    );
+		    
+		    return;
 		},
 
 		render : function() {
@@ -26,6 +46,8 @@ require([], function() {
 			
 			// here comes the APP logic
 			console.log('Start rendering:');
+			
+			this.workstuff();
 
 			return;
 		},

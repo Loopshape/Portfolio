@@ -57,6 +57,7 @@
 // ROUTES * * * * * * * * * * * * * * * * * * * * *
 
 @import "global";
+@import "/hostweb/assets/js/app/bower_components/fancybox/source/jquery.fancybox.css";
 
 // END * * * * * * * * * * * * * * * * * * * * * *
 
@@ -115,6 +116,17 @@ html body#page code {
         background-color: transparent !important;
     }
     
+}
+
+// LINKED IMAGES
+
+html body#page .fancybox-overlay {
+    z-index: 1000000 !important;
+}
+
+html body#page #main #contentWrapper *.linkImages img {
+    width: 100% !important;
+    max-width: 32% !important;
 }
 
 // BREADCRUMBAREA
@@ -476,3 +488,29 @@ html body#page section#userArea {
     }
     
 }
+
+// OPENSOURCE TAG COLORS
+
+html body#page #main *.codingTools,
+html body#page #main *.graphicTools,
+html body#page #main *.webTipps {
+    
+    li {
+        &, * {
+            color: #eee !important;
+        }
+        background-color: @frontendgreen + #222 !important;
+    }
+    li:hover.red {
+        background-color: @frontendred + #222 !important;
+    }
+    li:hover,
+    li.blue {
+        background-color: @frontendblue + #222 !important;
+    }
+    li.green {
+        background-color: @frontendgreen + #222 !important;
+    }
+    
+}
+

@@ -131,6 +131,22 @@ requirejs(['jquery', 'backbone', 'underscore', 'tooltipsy'], function($, Backbon
     <a href="http://loop.arcturus.uberspace.de/hostweb/assets/js/app/main.js" class="external hastip" title="Require.JS main-Datei öffnen">main.js</a><br />
 </p>
 <p>
+    Aufgerufen werden diese beiden Dateien über folgende Scriptanweisung:
+</p>
+<code class="fontCode">
+<pre>
+<span class="fontHighlight">// Define BaseURL and load RequireJS-config</span><br />
+var baseUrl = "{{ this.page.baseUrl }}";<br />
+var rjsConfig = baseUrl + 'hostweb/assets/js/app/config.js';<br />
+<br />
+<span class="fontHighlight">// Load the RequireJS mainfile</span><br />
+script src=r.js<br />
+<br />
+<span class="fontHighlight">// Call RequireJS-config incl. BaseURL path</span><br />
+require([rjsConfig]);<br />
+</pre>
+</code>
+<p>
 	&nbsp;
 </p>
 Weiterführende Informationen gibt es auf der Hauptseite von Require.JS:
