@@ -30,16 +30,12 @@
 
     .editor-toolbar {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 3px;
+        right: 3px;
         z-index: @codeeditor-zindex;
         > ul, ul > li { list-style-type: none; padding: 0; margin: 0; }
         > ul > li {
             float: left;
-
-            .tooltip.left {
-                margin-right: 25px;
-            }
         }
         > ul > li > a {
             display: block;
@@ -54,14 +50,12 @@
                 .text-hide();
             }
             > i {
-                .opacity(.7);
+                .opacity(.4);
                 display: block;
-                &:before {
-                    font-size: 15px;
-                }
+                &:before {font-size: 14px;}
             }
             &:hover, &:focus {
-                > i { .opacity(1); }
+                > i{ .opacity(1); }
             }
 
         }

@@ -6,7 +6,6 @@ use Config;
 use Cms\Classes\Theme;
 use Cms\Classes\Router;
 use Cms\Classes\Controller;
-use Cms\Classes\CmsException;
 use October\Rain\Exception\ErrorHandler as ErrorHandlerBase;
 use October\Rain\Exception\ApplicationException;
 use Twig_Error_Runtime;
@@ -28,8 +27,7 @@ class ErrorHandler extends ErrorHandlerBase
         // The Twig runtime error is not very useful
         if (
             $proposedException instanceof Twig_Error_Runtime &&
-            ($previousException = $proposedException->getPrevious()) &&
-            (!$previousException instanceof CmsException)
+            ($previousException = $proposedException->getPrevious())
         ) {
             $proposedException = $previousException;
         }

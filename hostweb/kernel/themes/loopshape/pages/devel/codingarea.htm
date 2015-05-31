@@ -1,0 +1,32 @@
+title = "Development Area"
+url = "/development-area"
+layout = "Experimental"
+hidden = "0"
+robot_index = "index"
+robot_follow = "follow"
+child_of = "activity/coding"
+hide_crumb = "0"
+crumb_title = "Development"
+remove_crumb_trail = "0"
+crumb_disabled = "0"
+==
+<?php
+function onStart() {
+    return $this->doProc();
+}
+
+function doProc() {
+    
+    $data = null;
+    
+    $linkName = '';
+    $linkHref = '';
+    $_intern = true;
+    
+    $link = '<a href="'.$linkHref.'" class="'.($_intern?'internal ':'external ').'">'.$linkName.'</a>';
+    
+    return $data;
+    
+}
+?>
+==

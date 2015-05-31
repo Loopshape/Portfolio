@@ -23,10 +23,6 @@ requirejs.config(
     paths :
     {
 
-        /* minified
-         angular :
-        './hostweb/assets/js/app/bower_components/angular/angular.min',
-         */
         angular : './hostweb/assets/js/app/bower_components/angular/angular',
 
         backbone : './hostweb/assets/js/app/bower_components/backbone/backbone',

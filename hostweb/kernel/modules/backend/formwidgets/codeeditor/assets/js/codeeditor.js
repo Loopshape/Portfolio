@@ -164,8 +164,8 @@
             })
             .tooltip({
                 delay: 500,
-                placement: 'left',
-                html: true
+                placement: 'auto',
+                html: true 
             })
         ;
 
@@ -184,7 +184,7 @@
 
         editor.commands.addCommand({
             name: 'toggleFullscreen',
-            bindKey: { win: 'Ctrl+Shift+F', mac: 'Ctrl+Shift+F' },
+            bindKey: { win: 'Ctrl+Alt+F', mac: 'Ctrl+Alt+F' },
             exec: $.proxy(this.toggleFullscreen, this),
             readOnly: true
         })

@@ -36,7 +36,7 @@ class NavigationManager
         'icon'        => null,
         'url'         => null,
         'permissions' => [],
-        'order'       => 500,
+        'order'       => 100,
         'sideMenu'    => []
     ];
 

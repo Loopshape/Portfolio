@@ -33,49 +33,25 @@ class UserGroups extends Controller
     /**
      * Add available permission fields to the Group form.
      */
-    protected function formExtendFields($form)
-    {
-        /*
-         * Add permissions tab
-         */
-        $form->addTabFields($this->generatePermissionFields());
-    }
-
-    /**
-     * Generates an array of form fields to assign permissions provided
-     * by the system.
-     * @return array
-     */
-    protected function generatePermissionFields()
+    protected function formExtendFields($host)
     {
         $permissionFields = [];
+        foreach (BackendAuth::listPermissions() as $permission) {
 
-        foreach (BackendAuth::listTabbedPermissions() as $tab => $permissions) {
-
-            $fieldName = 'permissions_'.snake_case($tab).'_section';
+            $fieldName = 'permissions['.$permission->code.']';
             $fieldConfig = [
-                'label' => $tab,
-                'type' => 'section',
-                'tab' => 'backend::lang.user.permissions',
-                'containerAttributes' => ['data-field-collapsible' => 1]
+                'label' => $permission->label,
+                'comment' => $permission->comment,
+                'type' => 'checkbox',
             ];
 
-            $permissionFields[$fieldName] = $fieldConfig;
-
-            foreach ($permissions as $permission) {
-                $fieldName = 'permissions['.$permission->code.']';
-                $fieldConfig = [
-                    'label' => $permission->label,
-                    'comment' => $permission->comment,
-                    'type' => 'checkbox',
-                    'span' => 'auto',
-                    'tab' => 'backend::lang.user.permissions'
-                ];
-
-                $permissionFields[$fieldName] = $fieldConfig;
+            if (isset($permission->tab)) {
+                $fieldConfig['tab'] = $permission->tab;
             }
+
+            $permissionFields[$fieldName] = $fieldConfig;
         }
 
-        return $permissionFields;
+        $host->addTabFields($permissionFields);
     }
 }

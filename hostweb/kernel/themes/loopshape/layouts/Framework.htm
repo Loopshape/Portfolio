@@ -73,7 +73,6 @@ function onStart() {
 
 		<link rel="shortcut icon" href="favicon.ico" />
 		
-		{% component "session" %}
 		{% component "SeoCmsPage" %}
 
 	</head>
@@ -150,7 +149,8 @@ function onStart() {
         <a href="#" class="scrollToTop"></a>
 
 		<a class="areaFull" href="./." title="Mausklick: Erneuten HTTP-Request senden!"><img src="./hostweb/assets/img/items/ajax-loader.gif" alt="" id="ajaxLoader" /></a>
-        
+       
+        {% component "session" %}
 		{% partial "area/frameworkscripts" %}
 
 	</body>

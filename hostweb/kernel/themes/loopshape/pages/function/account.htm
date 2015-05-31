@@ -1,0 +1,40 @@
+title = "Login Area"
+url = "/account/:code?"
+layout = "Raw"
+hidden = "0"
+robot_index = "index"
+robot_follow = "follow"
+child_of = "home"
+hide_crumb = "0"
+crumb_title = "Account"
+remove_crumb_trail = "0"
+crumb_disabled = "0"
+
+[account]
+redirect = "forum/techforum"
+paramCode = ":code"
+
+[resetPassword]
+paramCode = ":code"
+==
+<div class="cf"></div>
+<section id="memberArea">
+    
+    <section id="content">
+        <div class="inner">
+            
+            {% component "account" %}
+            
+        </div>
+    </section>
+    
+    <section id="sidebar">
+        <div class="inner">
+            
+            <h3>Passwort Reset</h3>
+            {% component "resetPassword" %}
+            
+        </div>
+    </section>
+    
+</section>

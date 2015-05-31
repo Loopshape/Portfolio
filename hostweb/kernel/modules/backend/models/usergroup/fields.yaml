@@ -3,9 +3,6 @@
 # ===================================
 
 fields:
-    is_new_user_default:
-        label: backend::lang.user.group.is_new_user_default_field
-        type: checkbox
 
     name:
         label: backend::lang.user.group.name_field
@@ -20,6 +17,10 @@ fields:
         label: backend::lang.user.group.description_field
         type: textarea
         size: tiny
+
+    is_new_user_default:
+        label: backend::lang.user.group.is_new_user_default_field
+        type: checkbox
 
 tabs:
     stretch: true

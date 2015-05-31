@@ -40,7 +40,7 @@
         $(window).resize($.proxy(this.updateWidth, this))
         this.updateWidth()
 
-        if (!Modernizr.touch)
+        if (!Modernizr.touch) 
             this.$el.sortable({
                 vertical: false,
                 handle: '.drag-handle',
@@ -87,7 +87,6 @@
 
             $(this).closest('li').remove()
             self.redraw()
-            self.setSortOrders()
         })
 
         $(window).on('oc.report-widget-added', function(){
@@ -96,8 +95,7 @@
         })
 
         window.setTimeout(function(){
-            self.updateWidth()
-            self.redraw()
+            self.redraw();
         }, 200)
         this.setSortOrders()
     }

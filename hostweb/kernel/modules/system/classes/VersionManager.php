@@ -233,10 +233,6 @@ class VersionManager
         $versionFile = $this->getVersionFile($code);
         $versionInfo = Yaml::parseFile($versionFile);
 
-        if (!is_array($versionInfo)) {
-            $versionInfo = [];
-        }
-
         if ($versionInfo) {
             uksort($versionInfo, function ($a, $b) {
                 return version_compare($a, $b);

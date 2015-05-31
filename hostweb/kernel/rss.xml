@@ -7,40 +7,111 @@
 		<atom:link href="http://loop.arcturus.uberspace.de/blog/rss.xml" rel="self" type="application/rss+xml" />
 
 		<item>
+			<title>Treeline.io • Create a NodeJS app with a browserinterface</title>
+			<link>http://loop.arcturus.uberspace.de/blog/post/treelineio-create-nodejs-app-browserinterface</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/treelineio-create-nodejs-app-browserinterface</guid>
+			<pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
+			<description>&lt;h3&gt;Treeline.io • Create a NodeJS webapp with the help of a GUI in the browser&lt;/h3&gt;
+&lt;p&gt;
+    &lt;strong&gt;Treeline.io&lt;/strong&gt; ist eine webbasierte Steuerungs-Oberfläche zum Erstellen einer NodeJS-Applikation basierend auf dem JS-Content-Management-System &quot;SailsJS&quot;.
+&lt;/p&gt;
+&lt;p&gt;Hier geht&#039;s zur Website: &lt;a href=&quot;http://treeline.io/&quot; class=&quot;external hastip&quot; title=&quot;Öffne externen Link&quot;&gt;&lt;strong&gt;Treeline.io&lt;/strong&gt;&lt;/a&gt;
+&lt;/p&gt;</description>
+		</item>
+		<item>
+			<title>A Photographer-Portfolio done in jQuery</title>
+			<link>http://loop.arcturus.uberspace.de/blog/post/photographer-portfolio-done-jquery</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/photographer-portfolio-done-jquery</guid>
+			<pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
+			<description>&lt;h3&gt;A Photographer Portfolio mostly done in jQuery&lt;/h3&gt;
+&lt;!--
+&lt;a href=&quot;http://frank-woiwode.de/&quot; class=&quot;external hastip&quot; title=&quot;Öffne externen Link&quot;&gt;&lt;strong&gt;frank-woiwode.de&lt;/strong&gt;&lt;/a&gt;
+--&gt;
+&lt;p&gt;I&#039;ve build a jQuery website for a photographer. Only one little block of PHP is reading the images from the directories. Everything else is done in jQuery.&lt;br /&gt;&lt;br /&gt;Please take a look:
+&lt;a href=&quot;http://frank-woiwode.de/&quot; class=&quot;external hastip&quot; title=&quot;Öffne externen Link&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;&lt;a href=&quot;http://frank-woiwode.de/&quot;&gt;http://frank-woiwode.de/&lt;/a&gt;&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description>
+		</item>
+		<item>
+			<title>SailsJS • Ein MVC framework basierend auf NodeJS</title>
+			<link>http://loop.arcturus.uberspace.de/blog/post/sailsjs-ein-mvc-framework-basierend-auf-nodejs</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/sailsjs-ein-mvc-framework-basierend-auf-nodejs</guid>
+			<pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
+			<description>&lt;h3&gt;SailsJS • Ein MVC framework basierend auf NodeJS&lt;/h3&gt;
+&lt;p&gt;SailsJS ist ideal für zB. die Erstellung einer Web-API oder ein minimales Web-Projekt für Backendspezialisten, die den Umgang mit NodeJS gewohnt sind.&lt;/p&gt;
+&lt;img class=&quot;hastip&quot; title=&quot;SailsJS ist ein Javascript MVC Framework und kann im Back- sowie Frontendbereich eingesetzt werden&quot; src=&quot;http://loop.arcturus.uberspace.de/storage/app/media/Websites/Sails_JS.png&quot; alt=&quot;&quot; /&gt;</description>
+		</item>
+		<item>
+			<title>Linux "Ubuntu" LAMP on Android - Part 1</title>
+			<link>http://loop.arcturus.uberspace.de/blog/post/linux-ubuntu-lamp-android-part-1</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/linux-ubuntu-lamp-android-part-1</guid>
+			<pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
+			<description>&lt;h3&gt;Linux &quot;Ubuntu&quot; LAMP-Server on Android • Part 1&lt;/h3&gt;
+&lt;p&gt;
+    &lt;strong&gt;
+        Was bringt mir ein transportabler Webserver für unterwegs?&lt;br&gt;
+        ...ganz viel!&lt;br&gt;&lt;br&gt;&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    Ein Webserver, den man überall mit hinnehmen kann, ist schon eine tolle Sache:&lt;br&gt;Ich kann jederzeit und überall diverse technische Änderungen vornehmen und meiner Kreativität jederzeit freien Lauf lassen...&lt;br&gt;&lt;br&gt;
+    Deswegen bin ich auch so von dem Ubuntu LAMP-Server überzeugt!&lt;br&gt;
+    Mitunter einen voll konfigurierbaren Apache2 HTTP-Server und einer MySQL Datenbank mit PHPmyAdmin-Zugriff ist alles notwendige vorhanden, um mobil Webentwicklung zu betreiben.&lt;br&gt;
+    Auch auf &quot;Composer&quot;, &quot;NodeJS&quot; und &quot;Grunt/Gulp&quot; brauch ich nicht zu verzichten. Bei Bedarf kann auch noch RubyOnRails installiert werden, solange der Speicher noch genügend Platz auf der Speicherkarte hergibt.
+&lt;/p&gt;
+&lt;p&gt;
+    Wie ich den Webserver auf einen Android-Gerät wie zB. einen Tablet einrichte, wird näher in einen vorigen Post von mir erwähnt: &lt;br&gt;&lt;a class=&quot;internal hastip&quot; href=&quot;./../blog/post/ubuntu-lamp-webserver-auf-einem-android-device&quot; title=&quot;Öffne den Post&quot;&gt;Ubuntu LAMP-Webserver auf einem Android Device&lt;/a&gt;
+&lt;/p&gt;</description>
+		</item>
+		<item>
 			<title>Ubuntu LAMP-Webserver auf einem Android Device</title>
 			<link>http://loop.arcturus.uberspace.de/blog/post/ubuntu-lamp-webserver-auf-einem-android-device</link>
 			<guid>http://loop.arcturus.uberspace.de/blog/post/ubuntu-lamp-webserver-auf-einem-android-device</guid>
 			<pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
 			<description>&lt;h3&gt;LAMP server on Android via Linux Deploy&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Mit dieser Android-Applikation kann ein komplett autarker PHP-Webserver via einer Linux-Distribution auf gerooteten Geräten installiert werden: 
-&lt;a href=&quot;https://play.google.com/store/apps/details?id=ru.meefik.linuxdeploy&amp;amp;hl=de&amp;amp;referrer=utm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_term%3Dlinux+deploy+google+play&amp;amp;pcampaignid=APPU_1_uGdSVeWCN8LXUfPcgNgG&quot; title=&quot;Öffne Link&quot; class=&quot;hastip external&quot;&gt;&lt;strong&gt;Linux Deploy&lt;/strong&gt;&lt;/a&gt;
-&lt;br&gt;&lt;br&gt;
-Auf meinen Tablet habe ich nun einen LAMP-Server aktiviert und kann nun von unterwegs aus weiterhin am einen Web-Projekt arbeiten ;)&lt;br&gt;&lt;br&gt;&lt;small&gt;Screenshot einer SSH-Sitzung:&lt;/small&gt;
-&lt;img src=&quot;http://loop.arcturus.uberspace.de/storage/app/media/Screenshots/Ubuntu_LAMP_Server_on_Android.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
---&lt;br&gt;&lt;br&gt;
-With this Android-Application, now I&#039;m able to host my own LAMP-Server in my Pocket. Ideal for further works on scripts when you are travelling.&lt;br&gt;&lt;br&gt;
-On my tablet, there&#039;s a Apache2 + PHP5.6 + MySQL Server activated.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-You may need some shell modifications for some commands to get this app running properly. I&#039;ll post a link for that into the comment-area.&lt;br&gt;&lt;br&gt;&lt;br&gt;
-With post#60 from &quot;Larpoux&quot;, I was able to get an Ubuntu Image. The SD-Card has to be FAT32 formatted. Be aware, that the limit for space is set to max. 4096MB for FAT32-devices:&lt;br&gt;&lt;a href=&quot;https://github.com/meefik/linuxdeploy/issues/60&quot; title=&quot;Öffne Link&quot; class=&quot;hastip external&quot;&gt;https://github.com/meefik/linuxdeploy/issues/60&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-Larpoux commented on 15 Jun 2014&lt;br&gt;
-I was able to install linuxdeploy on my Galaxy Note 3 and my Galaxy Tab Pro running Kitkat 4.4&lt;br&gt;
-This is easy :&lt;br&gt;&lt;br&gt;
--1- Install Busybox somewhere (/system/xbin is fine)&lt;br&gt;&lt;br&gt;
--2- Change ENV Directory (in linuxdeploy/settings) from /data/local/linux to 
-/data/data/ru.meefik.linuxdeploy/linux
-and hit Update ENV&lt;br&gt;&lt;br&gt;
--3- In a terminal : &lt;br&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;Mit dieser Android-Applikation kann ein komplett autarker PHP-Webserver via einer Linux-Distribution auf gerooteten Geräten installiert werden: &lt;a href=&quot;https://play.google.com/store/apps/details?id=ru.meefik.linuxdeploy&amp;amp;hl=de&amp;amp;referrer=utm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_term%3Dlinux+deploy+google+play&amp;amp;pcampaignid=APPU_1_uGdSVeWCN8LXUfPcgNgG&quot; title=&quot;Öffne Link&quot; class=&quot;hastip external&quot;&gt;&lt;strong&gt;Linux Deploy&lt;/strong&gt;&lt;/a&gt;
+    &lt;br&gt;&lt;br&gt;
+    Auf meinen Tablet habe ich nun einen LAMP-Server aktiviert und kann nun von unterwegs aus weiterhin am einen Web-Projekt arbeiten ;)
+    &lt;br&gt;&lt;br&gt;&lt;small&gt;Screenshot einer SSH-Sitzung:&lt;/small&gt; &lt;img src=&quot;http://loop.arcturus.uberspace.de/storage/app/media/Screenshots/Ubuntu_LAMP_Server_on_Android.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    --
+    &lt;br&gt;&lt;br&gt;
+    With this Android-Application, now I&#039;m able to host my own LAMP-Server in my Pocket. Ideal for further works on scripts when you are travelling.
+    &lt;br&gt;&lt;br&gt;
+    On my tablet, there&#039;s a Apache2 + PHP5.6 + MySQL Server activated.
+    &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+    You may need some shell modifications for some commands to get this app running properly. I&#039;ll post a link for that into the comment-area.
+    &lt;br&gt;&lt;br&gt;&lt;br&gt;
+    With post#60 from &quot;Larpoux&quot;, I was able to get an Ubuntu Image. The SD-Card has to be FAT32 formatted. Be aware, that the limit for space is set to max. 4096MB for FAT32-devices:
+    &lt;br&gt;&lt;a href=&quot;https://github.com/meefik/linuxdeploy/issues/60&quot; title=&quot;Öffne Link&quot; class=&quot;hastip external&quot;&gt;https://github.com/meefik/linuxdeploy/issues/60&lt;/a&gt;
+    &lt;br&gt;&lt;br&gt;&lt;br&gt;
+    Larpoux commented on 15 Jun 2014
+    &lt;br&gt;
+    I was able to install linuxdeploy on my Galaxy Note 3 and my Galaxy Tab Pro running Kitkat 4.4
+    &lt;br&gt;
+    This is easy :
+    &lt;br&gt;&lt;br&gt;
+    -1- Install Busybox somewhere (/system/xbin is fine)
+    &lt;br&gt;&lt;br&gt;
+    -2- Change ENV Directory (in linuxdeploy/settings) from /data/local/linux to
+    /data/data/ru.meefik.linuxdeploy/linux
+    and hit Update ENV
+    &lt;br&gt;&lt;br&gt;
+    -3- In a terminal :
+    &lt;br&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;
-$ su -&lt;br&gt;
+$ su -
 # cd /data/data/ru.meefik.linuxdeploy/linux/bin&lt;br&gt;
 # rm sh chroot&lt;br&gt;
 # ln -s /system/bin/mksh sh&lt;br&gt;
 # ln -s /system/xbin/busybox chroot&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br&gt;
--4- Install your linux. It should work. And start your vserver.&lt;br&gt;&lt;br&gt;
--5- In a terminal&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;
+    &lt;br&gt;
+    -4- Install your linux. It should work. And start your vserver.
+    &lt;br&gt;&lt;br&gt;
+    -5- In a terminal
+    &lt;br&gt;&lt;/strong&gt;
+&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;
-$ su -&lt;br&gt;
+$ su -
 # . /data/data/ru.meefik.linuxdeploy/linux/bin/linuxdeploy shell&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;</description>
 		</item>
 		<item>
@@ -57,8 +128,11 @@ $ su -&lt;br&gt;
 			<pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
 			<description>&lt;h3&gt;Koding.com&lt;/h3&gt;
 &lt;p&gt;Free 3GB-VM with ROOT access:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://koding.com/R/loopshape&quot; class=&quot;external hastip&quot; title=&quot;Öffne Link&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;http://loop.arcturus.uberspace.de/storage/app/media/Websites/koding_com.png&quot; alt=&quot;Koding.com Website&quot; /&gt;
 &lt;p&gt;&lt;br&gt;
-Website: &lt;a href=&quot;https://koding.com/R/loopshape&quot;&gt;&lt;strong&gt;Koding.com&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description>
+Website: &lt;strong&gt;Koding.com&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;</description>
 		</item>
 		<item>
 			<title>Aptana3 SSH-KEX chroot into Ubuntu-LAMP-Server</title>

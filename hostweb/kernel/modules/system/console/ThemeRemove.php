@@ -2,16 +2,12 @@
 
 use Cms\Classes\Theme;
 use Cms\Classes\ThemeManager;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Console\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Exception;
 
 class ThemeRemove extends Command
 {
-
-    use \Illuminate\Console\ConfirmableTrait;
-
     /**
      * The console command name.
      * @var string
@@ -52,7 +48,7 @@ class ThemeRemove extends Command
             return $this->error(sprintf('The theme %s does not exist.', $themeName));
         }
 
-        if (!$this->confirmToProceed(sprintf('This will DELETE theme "%s" from the filesystem and database.', $themeName))) {
+        if (!$this->confirm(sprintf('Do you really wish to delete the theme %s? YOU CAN NOT UNDO THIS! [y|N]', $themeName), false)) {
             return;
         }
 
@@ -83,8 +79,6 @@ class ThemeRemove extends Command
      */
     protected function getOptions()
     {
-        return [
-            ['force', null, InputOption::VALUE_NONE, 'Force the operation to run.'],
-        ];
+        return [];
     }
 }
