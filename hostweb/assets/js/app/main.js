@@ -27,7 +27,7 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
 
     // PASSPORT STRATEGIES
 
-    //require('./strategy');
+    require(['./hostweb/assets/js/app/strategy']);
 
     // MainJS config vars
     var pageSpeed = 500;
@@ -342,7 +342,7 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
                 $('#cookieYes').on('click', function(e)
                 {
                     e.preventDefault();
-                    Cookies.set('loopshape_client', true, '/');
+                    Cookies.set('loopshape_client', true, { path: '/', expires: 7 });
                     setTimeout(function()
                     {
                         window.open($url, '_top');
