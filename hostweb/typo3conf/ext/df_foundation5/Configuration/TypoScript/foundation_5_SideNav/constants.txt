@@ -1,0 +1,26 @@
+df_foundation5.side-nav {
+	#cat=foundation side navigation/typo/d00; type=wrap; label=side-nav Wrap
+	wrap = |
+
+	#cat=foundation side navigation/cheader/d01; type=wrap; label=side-nav Leveltitle Wrap
+	leveltitleWrap = <h2>|</h2>
+
+	#cat=foundation side navigation/cheader/d02; type=int; label=side-nav Leveltitle Entry 
+	levelTitle = 2
+
+	#cat=foundation side navigation/cheader/d03; type=int; label=side-nav Leveltitle LinkLevel
+	levelTitleLink = -2
+
+	#cat=foundation side navigation/links/d04; type=int; label=side-nav Entry Level
+	entryLevel = 2
+
+	#cat=foundation side navigation/clist/d05; type=string; label=side-nav Exclude UID List
+	excludeUidList =
+
+	#cat=foundation side navigation/enable/d06; type=boolean; label=side-nav Expand all Level
+	expandAll = 0
+
+	#cat=foundation side navigation/enable/d07; type=boolean; label=side-nav Collapse Level
+	collapse = 0
+}
+	

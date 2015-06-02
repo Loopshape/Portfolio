@@ -1,0 +1,22 @@
+plugin.tx_gestionelus_pi1 {
+  # cat=plugin.lexical_search; type=wrap; label= Wrap for alphabet link letters : Wrap associated with each link letter of the alphabet on top of page.
+  alphabetWrapLink = |
+
+  # cat=plugin.lexical_search; type=wrap; label= Wrap for alphabet no link letters : Wrap associated with each no link letter of the alphabet on top of page.
+  alphabetWrap = |
+
+  # cat=plugin.lexical_search; type=wrap; label= Wrap for alphabet broadly : Wrap associated with alphabet on top of page.
+  globalAlphabetWrap = |
+
+  # cat=plugin.lexical_search; type=wrap; label= Wrap for head letter : Wrap associated with letter in head page after a selection on alphabet.
+  headLetterWrap = |
+
+  # cat=plugin.lexical_search; type=wrap; label= Wrap for word : Wrap associated with each word.
+  wordWrap = |
+
+  # cat=plugin.lexical_search; type=wrap; label= Wrap for additional words : Wrap associated with the list of additional words.
+  wordListWrap = |
+
+  # cat=plugin.lexical_search; type=boolean; label= Alphabet on page : If 1, all alphabet is displayed, else only link letter are displayed.
+  displayAlphabet = 1
+}

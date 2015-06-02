@@ -1,0 +1,28 @@
+<f:alias map="{event: index.originalObject}">
+	<h1>
+		<f:render partial="{index.configuration.partialIdentifier}/Title" arguments="{index: index}" />
+	</h1>
+	<h3>
+		<f:render partial="DateInformation" arguments="{index: index}" />
+	</h3>
+
+	<div class="text">
+		<f:format.html>{event.description}</f:format.html>
+	</div>
+
+	<f:if condition="{event.images}">
+		<div class="images">
+			<f:for each="{event.images}" as="image" iteration="i">
+				<f:image src="{image.originalResource.publicUrl}" alt="" maxWidth="200" />
+			</f:for>
+		</div>
+	</f:if>
+
+	<f:if condition="{event.downloads}">
+		<div class="downloads">
+			<f:for each="{event.downloads}" as="download" iteration="i">
+				<a href="{download.originalResource.publicUrl}">{download.originalResource.publicUrl}</a>
+			</f:for>
+		</div>
+	</f:if>
+</f:alias>

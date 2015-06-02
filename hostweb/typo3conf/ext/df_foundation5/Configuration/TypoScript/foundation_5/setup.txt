@@ -1,0 +1,677 @@
+###########################################################
+## Field mapping for visibility and custom styles 
+###########################################################
+tt_content.stdWrap.innerWrap.cObject.default.20.110 = COA
+tt_content.stdWrap.innerWrap.cObject.default.20.110 {
+  10 = TEXT
+  10.field = tx_dffoundation5_class
+  10.noTrimWrap = | ||
+  10.required = 1
+  20 = TEXT
+  20.field = tx_dffoundation5_show_for
+  20.noTrimWrap = | ||
+  20.required = 1
+  30 = TEXT
+  30.field = tx_dffoundation5_hide_for
+  30.noTrimWrap = | ||
+  30.required = 1
+  40 = TEXT
+  40.field = tx_dffoundation5_format
+  40.noTrimWrap = | ||
+  40.required = 1
+  50 = TEXT
+  50.field = tx_dffoundation5_touch
+  50.noTrimWrap = | ||
+  50.required = 1
+  60 = TEXT
+  60.field = tx_dffoundation5_print
+  60.noTrimWrap = | ||
+  60.required = 1
+}
+tt_content.stdWrap.innerWrap.cObject.default.10.cObject.default.innerWrap = |style="{field:tx_dffoundation5_style}"
+tt_content.stdWrap.innerWrap.cObject.default.10.cObject.default.innerWrap.if.isTrue.field =tx_dffoundation5_style
+tt_content.stdWrap.innerWrap.cObject.default.10.cObject.default.innerWrap.required = 1
+
+###########################################################
+## Image Crop
+###########################################################
+tt_content.image.20.1.file {
+  width {
+    field = imagewidth
+    override.cObject = TEXT
+    override.cObject {
+      field = imagewidth
+      wrap = |c
+      if.isTrue.field = tx_dffoundation5_cropscaling
+      outerWrap.cObject = CASE
+      outerWrap.cObject {
+				key.field = tx_dffoundation5_cropscaling_orient
+				default = TEXT
+				default.value = |-0
+				1 < .default
+				1.value = |-{$plugin.tx_dffoundation5_cropscaling.faktor}
+				7 < .1
+				8 < .1	      
+				3 < .default
+				3.value = |+{$plugin.tx_dffoundation5_cropscaling.faktor}
+				4 < .3
+				5 < .3
+      }	      
+    }
+  }
+  height {
+    field = imageheight
+    override.cObject = TEXT
+    override.cObject {
+      field = imageheight
+      wrap = |c
+      if.isTrue.field = tx_dffoundation5_cropscaling
+      outerWrap.cObject = CASE
+      outerWrap.cObject {
+				key.field = tx_dffoundation5_cropscaling_orient
+				default = TEXT
+				default.value = |-0
+				1 < .default
+				1.value = |-{$plugin.tx_dffoundation5_cropscaling.faktor}
+				2 < .1
+				3 < .1	      
+				5 < .1
+				5.value = |+{$plugin.tx_dffoundation5_cropscaling.faktor}
+				6 < .5
+				7 < .5	      
+      }	      
+    }
+  }
+}
+tt_content.image.20.equalH.if.isFalse.field = tx_dffoundation5_cropscaling
+
+###################################
+# New image handling
+###################################
+tt_content.textpic.20.text.wrap = |
+tt_content.image.20.maxW.override.override.cObject = TEXT
+tt_content.image.20.maxW.override.override.cObject.value = 9999
+tt_content.image.20.maxWInText.override.override.cObject < tt_content.image.20.maxW.override.override.cObject
+tt_content.image.20.cols.field >
+tt_content.image.20.cols.data = register:imageCount
+tt_content.image.20 {
+  addClassesCol =
+  addClassesCol.ifEmpty = csc-textpic-firstcol csc-textpic-lastcol  
+  addClassesCol.override = csc-textpic-firstcol |*| csc-textpic-nextcol |*| csc-textpic-lastcol
+  addClassesCol.override.if {
+		isGreaterThan.field >
+    isGreaterThan.data = register:imageCount
+    value = 1
+  }
+  addClassesImage = csc-textpic-first |*| csc-textpic-next |*| csc-textpic-last
+}
+
+###################################
+# New image rendering
+###################################
+temp.imgRendering = <ul class="large-block-grid-{field:tx_dffoundation5_large_block_grid} medium-block-grid-{field:tx_dffoundation5_medium_block_grid} small-block-grid-{field:tx_dffoundation5_small_block_grid} csc-textpic-imgblock"> | </ul>
+tt_content.image.20.rendering {
+  ###################################
+  # Single image - No caption
+  ###################################
+  singleNoCaption {
+    allStdWrap {
+			dataWrap < temp.imgRendering
+			dataWrap.override < temp.imgRendering
+			innerWrap.cObject.0.value =
+      innerWrap.cObject.8.value =
+    }
+    rowStdWrap.wrap = |
+    noRowsStdWrap.wrap = |
+    lastRowStdWrap.wrap = |
+    columnStdWrap.wrap = <li class="csc-textpic-imgwrap no-caption###CLASSES###"> | </li>
+    imgTagStdWrap.wrap = |
+    caption.wrap = |
+  }
+  
+  ###################################
+  # Multiple images - No caption
+  ###################################
+  noCaption {      
+    allStdWrap {
+      dataWrap < temp.imgRendering
+			dataWrap.override < temp.imgRendering
+      innerWrap.cObject.0.value =
+    }
+    rowStdWrap.wrap = |   
+    noRowsStdWrap.wrap = |
+    lastRowStdWrap.wrap = |
+    columnStdWrap.wrap = <li class="csc-textpic-imgwrap no-caption###CLASSES###"> | </li>
+  }
+  
+  ###################################
+  # Single image with a caption
+  ###################################
+  singleCaption {
+    allStdWrap {
+      dataWrap < temp.imgRendering
+			dataWrap.override < temp.imgRendering
+      innerWrap.cObject.0.value =
+    }	
+    columnStdWrap.wrap = <li class="csc-textpic-imgwrap###CLASSES###"> | </li>
+  }  
+  
+  ###################################
+  # Multiple images - with a caption
+  ###################################
+  splitCaption {
+    allStdWrap {
+      dataWrap < temp.imgRendering
+			dataWrap.override < temp.imgRendering
+      innerWrap.cObject.0.value =
+    }	
+    rowStdWrap.wrap = |
+    noRowsStdWrap.wrap = |
+    lastRowStdWrap.wrap = |
+    columnStdWrap.wrap = <li class="csc-textpic-imgwrap###CLASSES###"> | </li>      
+  }
+}
+
+###################################
+# Layout Rendering
+###################################
+tt_content.image.20.layout {
+  ##################
+  # above-center
+  ################## 
+  default = TEXT
+  default {
+    value (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-center csc-textpic csc-textpic-center csc-textpic-above">
+			    ###IMAGES###
+			    <div class="csc-textpic-text">###TEXT###</div>
+		    </div>
+	    </div>
+    )
+    override (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-center csc-textpic csc-textpic-responsive csc-textpic-center csc-textpic-above">
+			    ###IMAGES###
+			    <div class="csc-textpic-text">###TEXT###</div>
+		    </div>
+	    </div>
+    )
+  }
+  ##################
+  # above-right
+  ################## 
+  1 = TEXT
+  1 {
+    value (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-right csc-textpic csc-textpic-right csc-textpic-above">
+			    ###IMAGES###
+			    <div class="csc-textpic-text">###TEXT###</div>
+		    </div>
+	    </div>
+    )
+    override (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-right csc-textpic csc-textpic-responsive csc-textpic-right csc-textpic-above">
+			    ###IMAGES###
+			    <div class="csc-textpic-text">###TEXT###</div>
+		    </div>
+	    </div>
+    )
+  }  
+  ##################
+  # above-left
+  ################## 
+  2 = TEXT
+  2 {
+    value (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-left csc-textpic csc-textpic-left csc-textpic-above">
+			    ###IMAGES###
+			    <div class="csc-textpic-text">###TEXT###</div>
+		    </div>
+	    </div>
+    )
+    override (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-left csc-textpic csc-textpic-responsive csc-textpic-left csc-textpic-above">
+			    ###IMAGES###
+			    <div class="csc-textpic-text">###TEXT###</div>
+		    </div>
+	    </div>
+    )
+  }  
+  ##################
+  # below-center
+  ################## 
+  8 = TEXT
+  8 {
+    value (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-center csc-textpic csc-textpic-center csc-textpic-below">
+			    <div class="csc-textpic-text">###TEXT###</div>
+			    ###IMAGES###
+		    </div>
+	    </div>
+    )
+    override (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-center csc-textpic csc-textpic-responsive csc-textpic-center csc-textpic-below">
+			    <div class="csc-textpic-text">###TEXT###</div>
+			    ###IMAGES###
+		    </div>
+	    </div>
+    )
+  }
+  ##################
+  # below-right
+  ################## 
+  9 = TEXT
+  9 {
+    value (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-right csc-textpic csc-textpic-right csc-textpic-below">
+			    <div class="csc-textpic-text">###TEXT###</div>
+			    ###IMAGES###
+		    </div>
+	    </div>
+    )
+    override (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-right csc-textpic csc-textpic-responsive csc-textpic-right csc-textpic-below">
+			    <div class="csc-textpic-text">###TEXT###</div>
+			    ###IMAGES###
+		    </div>
+	    </div>
+    )
+  }  
+  ##################
+  # below-left
+  ################## 
+  10 = TEXT
+  10 {
+    value (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-left csc-textpic csc-textpic-left csc-textpic-below">
+			    <div class="csc-textpic-text">###TEXT###</div>
+			    ###IMAGES###
+		    </div>
+	    </div>
+    )
+    override (
+	    <div class="row###CLASSES###">
+		    <div class="large-12 columns text-left csc-textpic csc-textpic-responsive csc-textpic-left csc-textpic-below">
+			    <div class="csc-textpic-text">###TEXT###</div>
+			    ###IMAGES###
+		    </div>
+	    </div>
+    )
+  }  
+  ##################
+  # left
+  ##################
+  30 = TEXT
+  30 {
+    insertData = 1
+    value (
+	    <div class="row###CLASSES###">
+		    <div class="large-{field:tx_dffoundation5_large_left_column} medium-{field:tx_dffoundation5_medium_left_column} small-{field:tx_dffoundation5_small_left_column} {field:tx_dffoundation5_left_add} columns csc-textpic">
+			   ###IMAGES###
+		    </div>
+		    <div class="large-{field:tx_dffoundation5_large_right_column} medium-{field:tx_dffoundation5_medium_right_column} small-{field:tx_dffoundation5_small_right_column} {field:tx_dffoundation5_right_add} columns csc-textpic csc-textpic-text">
+			   ###TEXT###
+		    </div>
+	    </div>
+    )
+    override (
+	    <div class="row###CLASSES###">
+		    <div class="large-{field:tx_dffoundation5_large_left_column} medium-{field:tx_dffoundation5_medium_left_column} small-{field:tx_dffoundation5_small_left_column} {field:tx_dffoundation5_left_add} columns csc-textpic csc-textpic-responsive">
+			  ###IMAGES###
+		    </div>
+		    <div class="large-{field:tx_dffoundation5_large_right_column} medium-{field:tx_dffoundation5_medium_right_column} small-{field:tx_dffoundation5_small_right_column} {field:tx_dffoundation5_right_add} columns csc-textpic csc-textpic-text csc-textpic-responsive">
+			  ###TEXT###
+		    </div>
+	    </div>
+    )
+    override {
+      if {
+				value = default
+				equals = {$styles.content.imgtext.layoutKey}
+				negate = 1
+      }
+    }	 
+  }
+  ##################
+  # right
+  ##################
+  31 = TEXT
+  31 {
+    insertData = 1
+    value (
+	    <div class="row###CLASSES###">
+		    <div class="large-{field:tx_dffoundation5_large_left_column} medium-{field:tx_dffoundation5_medium_left_column} small-{field:tx_dffoundation5_small_left_column} {field:tx_dffoundation5_left_add} columns csc-textpic csc-textpic-text">
+			 ###TEXT###		
+		    </div>
+		    <div class="large-{field:tx_dffoundation5_large_right_column} medium-{field:tx_dffoundation5_medium_right_column} small-{field:tx_dffoundation5_small_right_column} {field:tx_dffoundation5_right_add} columns csc-textpic">
+			 ###IMAGES###
+		    </div>
+	    </div>
+    )
+    override (
+	    <div class="row###CLASSES###">
+		    <div class="large-{field:tx_dffoundation5_large_left_column} medium-{field:tx_dffoundation5_medium_left_column} small-{field:tx_dffoundation5_small_left_column} {field:tx_dffoundation5_left_add} columns csc-textpic csc-textpic-text csc-textpic-responsive">
+			  ###TEXT###		
+		    </div>
+		    <div class="large-{field:tx_dffoundation5_large_right_column} medium-{field:tx_dffoundation5_medium_right_column} small-{field:tx_dffoundation5_small_right_column} {field:tx_dffoundation5_right_add} columns csc-textpic csc-textpic-responsive">
+			  ###IMAGES###
+		    </div>
+	    </div>
+    )
+    override {
+      if {
+				value = default
+				equals = {$styles.content.imgtext.layoutKey}
+				negate = 1
+      }
+    }	 
+  }
+  ##################
+  # full img
+  ##################
+  32 = TEXT
+  32.value (
+	  <div class="row###CLASSES###">
+		  <div class="large-12 columns csc-textpic overflowvisible">
+			  ###IMAGES###
+		  </div>
+	  </div>
+  )  
+  override (
+	  <div class="row###CLASSES###">
+		  <div class="large-12 columns csc-textpic csc-textpic-responsive">
+			 ###IMAGES###
+		  </div>
+	  </div>
+  )
+  override {
+    if {
+      value = default
+      equals = {$styles.content.imgtext.layoutKey}
+      negate = 1
+    }
+  }	 
+}
+
+###########################################################
+# New Frames 
+###########################################################
+tt_content.stdWrap.innerWrap.cObject { 
+  #########################
+  # dropdown content
+  #########################
+  100 =< tt_content.stdWrap.innerWrap.cObject.default
+  100 {
+    10.cObject.default.value (
+	    <a href="#" class="{$df_foundation5.dropdown.linkType} {$df_foundation5.dropdown.buttonSize} {$df_foundation5.dropdown.buttonColor} {$df_foundation5.dropdown.buttonCorner}" data-dropdown="drop{field:uid}">{field:header}</a>
+	    <div id="drop{field:uid}" data-dropdown-content
+    )
+    20.10.value = f-dropdown content {$df_foundation5.dropdown.boxSize}
+    30.cObject.default.value = >|</div>
+  }  
+  #########################
+  # Hover dropdown content
+  #########################
+  101 =< tt_content.stdWrap.innerWrap.cObject.default
+  101 {
+    10.cObject.default.value (
+	    <a href="#" class="{$df_foundation5.dropdown.linkType} {$df_foundation5.dropdown.buttonSize} {$df_foundation5.dropdown.buttonColor} {$df_foundation5.dropdown.buttonCorner}" data-dropdown="hover{field:uid}" data-options="is_hover:true">{field:header}</a>
+	    <div id="hover{field:uid}" data-dropdown-content
+    )
+    20.10.value = f-dropdown content {$df_foundation5.dropdown.boxSize}
+    30.cObject.default.value = >|</div>
+  }  
+  #########################
+  # Modalbox Reval
+  #########################  
+  110 =< tt_content.stdWrap.innerWrap.cObject.default
+  110 {
+    10.cObject.default.value (
+	    <a href="#" class="{$df_foundation5.modalbox.linkType} {$df_foundation5.modalbox.buttonSize} {$df_foundation5.modalbox.buttonColor} {$df_foundation5.modalbox.buttonCorner}" data-reveal-id="modal{field:uid}" data-reveal>{field:header}</a>
+	    <div id="modal{field:uid}"
+    )
+    20.10.value = reveal-modal {$df_foundation5.modalbox.size}
+    30.cObject.default.value = data-reveal>|<a class="close-reveal-modal">&#215;</a></div>
+  }
+  #########################
+  # Close-Box - Standard
+  #########################  
+  120 =< tt_content.stdWrap.innerWrap.cObject.default
+  120 {
+    10.cObject.default.value (
+			<div id="alert{field:uid}"
+    )
+    20.10.value = alert-box {$df_foundation5.alert.corner}
+    30.cObject.default.value = data-alert>|<a href="#" class="close">&times;</a></div>
+  }
+  #########################
+  # Close-Box - Info 
+  #########################  	
+  121 =< tt_content.stdWrap.innerWrap.cObject.default
+  121 {
+    10.cObject.default.value (
+			<div id="alert{field:uid}"
+    )
+    20.10.value = alert-box info {$df_foundation5.alert.corner}
+    30.cObject.default.value = data-alert>|<a href="#" class="close">&times;</a></div>
+  }
+  #########################
+  # Close-Box - Warning
+  #########################
+  122 =< tt_content.stdWrap.innerWrap.cObject.default
+  122 {
+    10.cObject.default.value (
+			<div id="alert{field:uid}"
+    )
+    20.10.value = alert-box warning {$df_foundation5.alert.corner}
+    30.cObject.default.value = data-alert>|<a href="#" class="close">&times;</a></div>
+  }
+  #########################
+  # Close-Box Error
+  #########################	
+  123 =< tt_content.stdWrap.innerWrap.cObject.default
+  123 {
+    10.cObject.default.value (
+			<div id="alert{field:uid}"
+    )
+    20.10.value = alert-box alert {$df_foundation5.alert.corner}
+    30.cObject.default.value = data-alert>|<a href="#" class="close">&times;</a></div>
+  }
+  #########################
+  # Close-Box Success
+  #########################		
+  124 =< tt_content.stdWrap.innerWrap.cObject.default
+  124 {
+    10.cObject.default.value (
+			<div id="alert{field:uid}"
+    )
+    20.10.value = alert-box success {$df_foundation5.alert.corner}
+    30.cObject.default.value = data-alert>|<a href="#" class="close">&times;</a></div>
+  }		
+}
+
+#############################################
+# New panel layout for TYPO3 Standard-Frames 
+#############################################	
+tt_content.stdWrap.innerWrap.cObject {
+  20.20.10.value = csc-frame csc-frame-frame1 panel radius
+  21.20.10.value = csc-frame csc-frame-frame2 panel callout radius
+}
+
+###########################################################
+# Config defaults
+###########################################################
+config {
+  doctype = html5
+  no_cache = 0
+  debug = 0
+  meaningfulTempFilePrefix = 100
+}
+page.meta {
+  viewport = width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0
+}
+
+###########################################################
+# Browser Conditions
+###########################################################
+[browser = msie] && [version= <7]
+config.htmlTag_setParams = class="no-js lt-ie9 lt-ie8 lt-ie7" lang="de"
+[global]
+[browser = msie] && [version= 7]
+config.htmlTag_setParams = class="no-js lt-ie9 lt-ie8" lang="de"
+[global]
+[browser = msie] && [version= 8]
+config.htmlTag_setParams = class="no-js lt-ie9" lang="de"
+[global]
+[browser = msie] && [version= 9]
+config.htmlTag_setParams = class="lt-ie10" lang="de"
+[global]
+[browser = msie] && [version= 10]
+config.htmlTag_setParams = class="ie10" lang="de"
+[global]
+
+###########################################################
+## Header CSS Scripts
+###########################################################
+page.includeCSS {
+  normalize = {$df_foundation5.foundationPath}css/normalize.css
+  foundation = {$df_foundation5.foundationPath}css/foundation.min.css
+  dfstyles = EXT:df_foundation5/Resources/Public/Css/styles.css
+}
+
+###########################################################
+## Foundation JavaScript include Functions
+###########################################################
+
+page.includeJSlibs {
+	modernizr = {$df_foundation5.foundationPath}js/vendor/modernizr.js
+	modernizr.forceOnTop = 1
+}
+
+## jQuery if load by typo3
+################################
+[globalVar = LIT:typo3 = {$df_foundation5.enableJs.enable-jquery}]
+	page.javascriptLibs {
+	  jQuery = 1
+	  jQuery.version = latest
+	  jQuery.source = local
+	  jQuery.noConflict = 0
+	}
+[global]
+
+## jQuery if load by foundation
+################################
+[globalVar = LIT:foundation = {$df_foundation5.enableJs.enable-jquery}]
+	page.includeJSFooterlibs {
+		jquery = {$df_foundation5.jqueryPath}
+		jquery.forceOnTop = 1	
+	}
+[global]
+
+page.includeJSFooterlibs {
+  fastclick = {$df_foundation5.foundationPath}js/vendor/fastclick.js
+  foundation = {$df_foundation5.foundationPath}js/foundation/foundation.js
+}
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-dropdown}]
+	page.includeJSFooterlibs {
+		dropdown = {$df_foundation5.foundationPath}js/foundation/foundation.dropdown.js
+	}
+[global]
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-tooltip}]
+	page.includeJSFooterlibs {
+		tooltip = {$df_foundation5.foundationPath}js/foundation/foundation.tooltip.js
+	}
+[global]
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-slider}]
+	page.includeJSFooterlibs {
+		slider = {$df_foundation5.foundationPath}js/foundation/foundation.slider.js
+	}
+[global]
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-reveal}]
+	page.includeJSFooterlibs {
+		reveal = {$df_foundation5.foundationPath}js/foundation/foundation.reveal.js
+	}
+[global]
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-joyride}]
+	page.includeJSFooterlibs {
+		joyride = {$df_foundation5.foundationPath}js/foundation/foundation.joyride.js
+	}
+[global]
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-clearing}]
+	page.includeJSFooterlibs {
+		clearing = {$df_foundation5.foundationPath}js/foundation/foundation.clearing.js
+	}
+[global]
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-alert}]
+	page.includeJSFooterlibs {
+		alert = {$df_foundation5.foundationPath}js/foundation/foundation.alert.js
+	}
+[global]
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-accordion}]
+	page.includeJSFooterlibs {
+		accordion = {$df_foundation5.foundationPath}js/foundation/foundation.accordion.js
+	}
+[global]
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-abide}]
+	page.includeJSFooterlibs {
+		abide = {$df_foundation5.foundationPath}js/foundation/foundation.abide.js
+	}
+[global]
+[globalVar = LIT:1 = {$df_foundation5.enableJs.enable-equalizer}]
+	page.includeJSFooterlibs {
+		equalizer = {$df_foundation5.foundationPath}js/foundation/foundation.equalizer.js
+	}
+[global]
+
+###########################################################
+## Footer Scripts - init foundation
+###########################################################
+page.jsFooterInline.11214 = COA
+page.jsFooterInline.11214 {
+	100 = TEXT
+	100.value = $(document).foundation();
+}
+
+
+
+
+###########################################################
+## Default CSS
+###########################################################
+plugin.tx_dffoundation5._CSS_DEFAULT_STYLE (
+	.{$styles.content.imgtext.borderClass} .csc-textpic-image img {
+	  border: solid {$styles.content.imgtext.borderColor} {$styles.content.imgtext.borderThick}px;
+	}
+	ul.csc-textpic-imgblock li.csc-textpic-imgwrap { padding: 0 {$styles.content.imgtext.colSpace}px {$styles.content.imgtext.rowSpace}px; }
+	ul.csc-textpic-imgblock {
+	  padding: 0 {$styles.content.imgtext.textMargin}px;
+	}  
+)
+
+###########################################################
+## // Seitentyp 11 | Reval Modal
+## // Beispiel:
+## // <a href="#" data-reveal-id="popup" data-reveal-ajax="index.php?id=123&amp;type=11"> Modalbox </a>
+## // <div id="popup" class="reveal-modal" data-reveal></div>
+popup = PAGE
+popup.typeNum = 11
+popup.config {
+  disableAllHeaderCode = 1
+  disableCharsetHeader = 1
+  enableContentLengthHeader = 0
+  no_cache = 1
+  admPanel = 0	
+  xhtml_cleaning   >
+}  
+popup.10 < styles.content.get
+popup.10.stdWrap.wrap = |<a class="close-reveal-modal">&#215;</a>

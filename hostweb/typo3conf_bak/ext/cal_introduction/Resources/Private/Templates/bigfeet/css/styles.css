@@ -1,0 +1,26 @@
+.body-bg {
+	background-color: #DBE793;
+} 
+
+.navbar-default {
+	border-color: #04151F;
+}
+.navbar {
+	background-color: #007000;
+}
+
+.tx-cal-controller .list-view .vevent .dtstart-container,
+.tx-cal-controller .list-view .vtodo .dtstart-container {
+	width: 100%;
+	background-color: #AFB85B;
+	text-align: left;
+	font-weight: normal;
+}
+
+.tx-cal-controller .even {
+    background-color: transparent;
+}
+
+.tx-wecmap-map {
+	float:right;
+}

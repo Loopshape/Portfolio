@@ -1,0 +1,30 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "",
+        "emConf": {
+            "category": "example",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": "0.1.2"
+        },
+        "extensionKey": "sk_booty",
+        "name": "Seitenkick Bootstrap Starter Package",
+        "originalExtensionKey": "sk_booty",
+        "persons": [],
+        "plugins": [],
+        "vendorName": "Seitenkick"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2015-01-22 02:09",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (1)"
+    }
+}

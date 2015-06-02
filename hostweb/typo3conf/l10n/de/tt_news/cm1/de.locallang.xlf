@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="EN" datatype="plaintext" original="messages" date="2014-05-06T01:18:23Z" product-name="tt_news" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="moduleFunction.tx_ttnews_modfunc1" xml:space="preserve" approved="yes">
+        <source>tt_news category manager</source>
+      <target state="translated">Nachrichtenkategorieverwaltung</target></trans-unit>
+      <trans-unit id="title" xml:space="preserve" approved="yes">
+        <source>News category manager</source>
+      <target state="translated">Nachrichtenkategorieverwaltung</target></trans-unit>
+      <trans-unit id="moveCategoryinto" xml:space="preserve" approved="yes">
+        <source>move category into</source>
+      <target state="translated">Kategorie verschieben in</target></trans-unit>
+      <trans-unit id="copyCategoryinto" xml:space="preserve" approved="yes">
+        <source>copy category into</source>
+      <target state="translated">Kategorie kopieren in</target></trans-unit>
+      <trans-unit id="copyCategoryafter" xml:space="preserve" approved="yes">
+        <source>copy category after</source>
+      <target state="translated">Kategorie kopieren hinter</target></trans-unit>
+      <trans-unit id="edit" xml:space="preserve" approved="yes">
+        <source>Edit record</source>
+      <target state="translated">Datensatz bearbeiten</target></trans-unit>
+      <trans-unit id="showInfo" xml:space="preserve" approved="yes">
+        <source>Show information</source>
+      <target state="translated">Information anzeigen</target></trans-unit>
+      <trans-unit id="unHide" xml:space="preserve" approved="yes">
+        <source>Unhide Record</source>
+      <target state="translated">Datensatz sichtbar machen</target></trans-unit>
+      <trans-unit id="hide" xml:space="preserve" approved="yes">
+        <source>Hide Record</source>
+      <target state="translated">Datensatz verbergen</target></trans-unit>
+      <trans-unit id="deleteWarning" xml:space="preserve" approved="yes">
+        <source>Are you sure you want to delete this record?</source>
+      <target state="translated">Diesen Datensatz tatsächlich löschen?</target></trans-unit>
+      <trans-unit id="delete" xml:space="preserve" approved="yes">
+        <source>Delete record (!)</source>
+      <target state="translated">Datensatz löschen (!)</target></trans-unit>
+      <trans-unit id="new" xml:space="preserve" approved="yes">
+        <source>Create new category on this level</source>
+      <target state="translated">Neue Kategorie auf dieser Ebene erstellen</target></trans-unit>
+      <trans-unit id="newsub" xml:space="preserve" approved="yes">
+        <source>Create new subcategory</source>
+      <target state="translated">Neue Unterkategorie erstellen</target></trans-unit>
+    </body>
+  </file>
+</xliff>

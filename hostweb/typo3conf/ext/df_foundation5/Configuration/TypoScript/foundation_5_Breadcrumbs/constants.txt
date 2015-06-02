@@ -1,0 +1,13 @@
+df_foundation5.breadcrumbs {
+	#cat=foundation breadcrumbs/links/b02; type=int; label=breadcrumbs Entry Level
+	entryLevel = 0
+	
+	#cat=foundation breadcrumbs/links/b03; type=wrap; label=breadcrumbs Range	
+	range = 0|3
+	
+	#cat=foundation breadcrumbs/links/b04; type=string; label=breadcrumbs Separator
+	separator = /
+	
+	#cat=foundation breadcrumbs/links/b05; type=int; label=breadcrumbs Separator Position:Position from the top in px
+	separatorpos = 1
+}

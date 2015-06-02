@@ -1,0 +1,37 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "This is a Ajax Page Preloader. Just add the Static Template and it works.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.1\n\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "de",
+            "state": "alpha",
+            "targetVersion": "6.1",
+            "version": "1.0"
+        },
+        "extensionKey": "ajaxpagepreloader",
+        "name": "PagePreLoader",
+        "originalExtensionKey": "",
+        "persons": [
+            {
+                "company": "",
+                "email": "mail@patriceckhart.com",
+                "name": "Patric Eckhart",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "PatricEckhart"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2014-12-30 11:13",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (1)"
+    }
+}

@@ -1,0 +1,19 @@
+df_foundation5.off-canvas {
+	#cat=foundation off-canvas navigation/cheader/b01; type=string; label=off-canvas Title for Small
+	smallTitle = Menu Top-Label
+	
+	#cat=foundation off-canvas navigation/cheader/b01; type=string; label=off-canvas top Label for Small	
+	topLabel = Menu
+	
+	#cat=foundation off-canvas navigation/cheader/b02; type=string; label=off-canvas Submenu Label for Small	
+	SubLabel = SubMenu
+
+	#cat=foundation off-canvas navigation/links/b03; type=int; label=off-canvas Entry Level
+	entryLevel = 0
+
+	#cat=foundation off-canvas navigation/clist/b04; type=string; label=off-canvas Exclude UID List
+	excludeUidList =
+
+	#cat=foundation off-canvas navigation/enable/b05; type=options[left,right]; label=off-canvas position.
+	position = left
+}

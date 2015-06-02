@@ -1,0 +1,65 @@
+body#indexcms {
+    font-size: 62.5%;
+    line-height: 100.01%;
+
+    background-color: #f3f3f3 !important;
+}
+
+body#indexcms * {
+    font-family: sans-serif !important;
+}
+
+body#indexcms a {
+    color: #222;
+    font-weight: bold !important;
+}
+
+body#indexcms > * {
+    padding: 30px !important;
+}
+
+body#indexcms div.tx-indexedsearch > * {
+    font-size: 1.25em !important;
+}
+
+body#indexcms div.tx-indexedsearch label {
+    clear:both !important;
+    float: left !important;
+    display: inline-block !important;
+    width: 100% !important;
+    min-width: 80px !important;
+    max-width: 32% !important;
+    padding: 7px 12px !important;
+    margin-right: 30px !important;
+}
+body#indexcms div.tx-indexedsearch input,
+body#indexcms div.tx-indexedsearch select {
+    float: left;
+    display: inline-block;
+    width: 100%;
+    min-width: 160px !important;
+    max-width: 62%;
+    padding: 7px !important;
+    border: 1px solid #666 !important;
+    margin-bottom: 30px;
+}
+
+body#indexcms div.tx-indexedsearch input["checkbox"] {
+    clear: both;
+    float: left;
+    display: inline-block;
+    width: 100%;
+    min-width: 0 !important;
+    max-width: 12%;
+    padding: 7px !important;
+    border: 1px solid transparent !important;
+    margin-bottom: 30px;
+}
+
+#tx_indexedsearch > table > tbody > tr:nth-child(1) > td:nth-child(1) {
+    min-width: 100px !important;
+}
+
+html body .tx-indexedsearch-rules {
+    display: none !important;
+}

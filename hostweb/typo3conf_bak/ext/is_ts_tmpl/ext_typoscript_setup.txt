@@ -1,0 +1,213 @@
+# Eigenes Template für Indexsearch
+temp.istmpl = TEMPLATE
+temp.istmpl {
+	template = FILE
+	template.file = typo3conf/ext/is_ts_tmpl/pi1/is_results.tmpl
+	marks {
+	#Texte
+		TEXT_RESULTSTITLE = TEXT
+		TEXT_RESULTSTITLE {
+			value = Suchergebnisse
+			lang.en = Results
+		}
+		
+		TEXT_SEARCHEDFOR = TEXT
+		TEXT_SEARCHEDFOR {
+			value = Sie suchten nach
+			lang.en = You've been searching for
+		}
+		
+		TEXT_PAGETITLE = TEXT
+		TEXT_PAGETITLE {
+			value = Seitentitel
+			lang.en = Pagetitle
+		}
+		
+		TEXT_RESULTSPERPAGE = TEXT
+		TEXT_RESULTSPERPAGE {
+			value =  Ergebnisse pro Seite anzeigen
+			lang.en = View results per page
+		}
+	
+	#Variablen
+    	WHATIS = TEXT
+	    WHATIS.field = sword
+
+    	RESULT_IDX = COA
+	    RESULT_IDX {
+	 #Todo: Debuggen und übersetzen!
+    		10 = TEXT
+			10.field = first_item
+#     		10.field = pointer
+      		10.wrap = Ergebnisse&nbsp;|&nbsp;bis&nbsp;
+	  		20 = TEXT
+			# Das muss noch geprüft werden!
+    		20.field =result_number
+    		20.wrap = |&nbsp;von&nbsp;
+    		30 = TEXT
+    		30.field = res_count
+    		
+    		40 = TEXT
+    		#40.debugData = 1
+    	}
+
+    	NR = TEXT
+    	NR.field = result_number
+	    TITLE = TEXT
+    	TITLE.field = title
+	    CONTENT = TEXT
+    	CONTENT.field = description
+	    LINK = TEXT
+		LINK.field = as_special
+
+	    RESULTNAV = TEXT
+    	RESULTNAV.field = browser
+#    RESULTNAV.debugData = 1 
+
+		RESULTMODE = COA
+		RESULTMODE {
+			20 = TEXT
+			20.value = 10
+	    	20.wrap = &nbsp;<b>[|]</b>
+			20.if {
+		   		value = 10
+	   			equals.field = results
+	   		}
+	       	21 < .20
+		   	21.wrap = &nbsp;[|]
+	       	21.if.negate = 1
+		   	21.typolink = 1
+	       	21.typolink.parameter.field = uid
+	   		21.typolink.additionalParams.cObject = COA
+		   	21.typolink.additionalParams.cObject {
+	   			10 = TEXT
+		   		10.value = 10
+		   		10.wrap = &tx_indexedsearch[results]=
+	   			20 = TEXT
+	   			20.field = sword
+		   		20.wrap = &tx_indexedsearch[sword]=
+		   	}
+			30 < .20
+			30.value = 20
+			30.if.value = 20
+			31 < .21
+			31.value = 20
+			31.if.value = 20
+			31.typolink.additionalParams.cObject.10.value = 20
+	       	
+		   	40 < .20
+			40.value = 50
+			40.if.value = 50
+			41 < .21
+			41.value = 50
+			41.if.value = 50
+			41.typolink.additionalParams.cObject.10.value = 50
+		}
+  	}
+}
+
+plugin.tx_indexedsearch.customTemplate = 1
+plugin.tx_indexedsearch.customTemplate {
+	dontSpecialcharTitle = 1
+	head = COA
+	head {
+    	10 < temp.istmpl
+	    10.workOnSubpart = TEMPLATE_HEAD
+  	}
+  	foot = COA
+  	foot {
+    	10 < temp.istmpl
+	    10.workOnSubpart = TEMPLATE_FOOT
+  	}
+  	row = COA
+	row {
+    	10 < temp.istmpl
+ 		10.workOnSubpart = TEMPLATE_ROW
+  	}
+  	noResults = TEXT
+	noResults.value = Leider keine Ergebnisse
+	noResults.lang.en = Sorry, no results
+	noResults.wrap = <p>|</p>
+	
+	noSectionHeader = 1
+# Ergebnisbrowser konfigurieren
+  	pagebrowser {
+    	prev = << vorige
+    	prev.wrap = |&nbsp;&nbsp;&nbsp;
+    	next = nächste >>
+    	next.wrap = &nbsp;&nbsp;&nbsp;|
+
+    	nrLink.wrap.splitChar = *
+    	nrLink.wrap = &nbsp;|&nbsp;*
+    	aktLink.wrap.splitChar = *
+    	aktLink.wrap = &nbsp;|&nbsp;<b>*</b>
+  	}
+}
+
+
+
+
+# noResults für Volltextsuche
+plugin.tx_indexedsearch.customTemplate.noResults >
+plugin.tx_indexedsearch.customTemplate.noResults = COA
+plugin.tx_indexedsearch.customTemplate.noResults {
+	5 = TEXT
+	5.value = Suchergebnisse
+	5.lang.en = Results
+	5.wrap = <h1>|</h1>
+	10 = COA
+	10  {
+		10 = TEXT
+		10.value = Sie suchten nach
+		10.lang.en = You've been searching for
+		10.wrap = |:&nbsp;
+		20 = TEXT
+		20.data = GPvar : tx_indexedsearch | sword
+		20.wrap = <b>"|"</b>
+		wrap = <p>|</p>
+	}
+	20 = TEXT
+	20.value = Es wurden keine Seiten gefunden.
+	20.lang.en = Sorry, no results.
+	20.wrap = <p>|</p>
+	30 = TEXT
+	30.value = Neue Suche
+	30.lang.en = New Search
+	30.wrap = <div  style="margin: 10px 0 30px 0;"><b>>>&nbsp;|</b></div>
+	30.typolink = 1
+	30.typolink.parameter = 37
+}
+
+plugin.tx_indexedsearch.customTemplate.searchForm.form = TEMPLATE
+plugin.tx_indexedsearch.customTemplate.searchForm.form {
+	template = FILE
+	template.file = typo3conf/ext/is_ts_tmpl/pi1/is_searchForm.tmpl
+	workOnSubpart = TEMPLATE_SEARCHFORM
+	marks {
+		SWORD = TEXT
+		SWORD.field = sword
+				
+		BUTTONTEXT = TEXT
+		BUTTONTEXT {
+			value = Finden
+			lang.en = Find it
+			wrap = |!
+		}
+		
+		RESULTS = TEXT
+		RESULTS.field = results
+		
+		POINTER = TEXT
+	}
+}
+
+plugin.tx_indexedsearch.customTemplate.searchForm.hiddenform < plugin.tx_indexedsearch.customTemplate.searchForm.form
+plugin.tx_indexedsearch.customTemplate.searchForm.hiddenform {
+	workOnSubpart = TEMPLATE_HIDDENFORM
+}
+
+
+# Modifikations for the "roessle"
+plugin.tx_indexedsearch.show.resultNumber = 1
+plugin.tx_indexedsearch.customTemplate.row.10.marks.TEXT_PAGETITLE >
+plugin.tx_indexedsearch.customTemplate.row.10.marks.TEXT_PAGETITLE = TEXT

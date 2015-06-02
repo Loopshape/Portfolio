@@ -1,0 +1,32 @@
+<f:layout name="Default" />
+<f:section name="page">
+    <div class="head">
+        <div class="container">
+            <div class="dropdown">
+                <button class="btn btn-default sk-btn-without-border dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"><f:translate key="{LLLSKbooty}:activelanguage" /> <span class="caret"></span> </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <f:cObject typoscriptObjectPath="obj.languagemenu"></f:cObject>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="pull-right"><f:cObject typoscriptObjectPath="obj.logo"/> 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <f:format.raw>{content}</f:format.raw>
+            <!-- FOOTER -->
+            <footer>
+                <p class="pull-right"><small><f:translate key="{LLLSKbooty}:headerComment" arguments="{0: '2014'}" /></small></p>
+                <p></p>
+            </footer>
+        </div>
+    </div>
+    <!-- /.container -->
+    <f:cObject typoscriptObjectPath="obj.googleTrackingCode"/> 
+   
+</f:section>

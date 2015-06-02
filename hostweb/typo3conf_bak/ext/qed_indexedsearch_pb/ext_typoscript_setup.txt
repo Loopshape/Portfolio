@@ -1,0 +1,35 @@
+plugin.tx_indexed_search {
+	
+	pageTitleAdd= {$plugin.tx_indexed_search.pageTitleAdd}
+	pageTitlePage= {$plugin.tx_indexed_search.pageTitlePage}
+	
+	resultsWrap = {$plugin.tx_indexed_search.resultsWrap}
+	
+	noResultsWrap = {$plugin.tx_indexed_search.resultsWrap}
+	searchedForWordWrap = {$plugin.tx_indexed_search.searchedForWordWrap} 
+	searchedForWrap = {$plugin.tx_indexed_search.searchedForWrap}
+	searchWordWrap = {$plugin.tx_indexed_search.searchWordWrap} 
+	
+	pageBrowser {	
+		browseBoxWrap = {$plugin.tx_indexed_search.browseBoxWrap}
+		browseLinksWrap = {$plugin.tx_indexed_search.browseLinksWrap}		
+		showResultsNumbersWrap = {$plugin.tx_indexed_search.showResultsNumbersWrap}		
+		showRange = {$plugin.tx_indexed_search.showRange}		
+		showResultCount = {$plugin.tx_indexed_search.showResultCount}		
+		dontLinkActivePage = {$plugin.tx_indexed_search.dontLinkActivePage}		
+		disabledLinkWrap = {$plugin.tx_indexed_search.disabledLinkWrap}		
+		inactiveLinkWrap = {$plugin.tx_indexed_search.inactiveLinkWrap}		
+		activeLinkWrap = {$plugin.tx_indexed_search.activeLinkWrap}		
+		alwaysPrev = {$plugin.tx_indexed_search.alwaysPrev}		
+		hscText = {$plugin.tx_indexed_search.hscText}		
+		maxPages = {$plugin.tx_indexed_search.maxPages}				
+		showFirstLast = {$plugin.tx_indexed_search.showFirstLast}				
+		resultsWrap = {$plugin.tx_indexed_search.resultsWrap}																						
+	}
+	
+
+}
+
+// Modifies the page title according to search vars :
+	includeLibs.pagetitle = typo3conf/ext/accessible_is_browse_results/user_is_functions.php
+	config.titleTagFunction = user_is_functions->change_title

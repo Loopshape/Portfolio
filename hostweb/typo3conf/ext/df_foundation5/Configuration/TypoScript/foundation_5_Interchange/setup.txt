@@ -1,0 +1,357 @@
+#######################################################
+# lib.interchange
+#######################################################
+
+page.includeJSFooterlibs {
+  interchange = {$df_foundation5.foundationPath}js/foundation/foundation.interchange.js
+}
+
+tt_content.image.20.1 {
+  layout.data.element = <img data-interchange="###SOURCECOLLECTION###"###PARAMS######ALTPARAMS######SELFCLOSINGTAGSLASH###>
+  layout.data.source = [###SRC###, (###DATAKEY###)],|*|[###SRC###, (###DATAKEY###)],|*|[###SRC###, (###DATAKEY###)]
+  layoutKey = data
+	layoutKey.override = default
+	layoutKey.override.if.isTrue.field = tx_dffoundation5_interchange
+  sourceCollection {
+	    
+    default >
+    default {
+      dataKey = default
+      maxW = 320
+      maxW.cObject = TEXT
+      maxW.cObject.value = 320
+      maxW.cObject.dataWrap = |/{field:tx_dffoundation5_small_block_grid}
+			maxW.cObject.dataWrap.override = |/1
+			maxW.cObject.dataWrap.override.if.isTrue.field = tx_dffoundation5_orbit			
+      maxW.cObject.importData = 1
+      maxW.prioriCalc = intval
+      maxW.override.field = imagewidth     
+      maxW {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          7 < .1
+          8 < .1         
+          3 < .default
+          3.value = |+{$df_foundation5.cropscaling.faktor}
+					3.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					3.value.override.if.isTrue.field = tx_dffoundation5_cropscaling	
+          4 < .3
+          5 < .3
+        }
+      }     
+      maxH.override.field = imageheight
+      maxH {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          2 < .1
+          3 < .1
+          5 < .1
+          5.value = |+{$df_foundation5.cropscaling.faktor}
+					5.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					5.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+          6 < .5
+          7 < .5    
+        }
+      }     
+    }
+    
+    small >
+    small {
+      dataKey = small
+      maxW = {$df_foundation5.interchange.mediaQuerie-small.img.maxW}
+      maxW.cObject = TEXT
+      maxW.cObject.value = {$df_foundation5.interchange.mediaQuerie-small.img.maxW}
+      maxW.cObject.dataWrap = |/{field:tx_dffoundation5_small_block_grid}
+			maxW.cObject.dataWrap.override = |/1
+			maxW.cObject.dataWrap.override.if.isTrue.field = tx_dffoundation5_orbit			
+      maxW.cObject.importData = 1
+      maxW.prioriCalc = intval
+      maxW.override.field = imagewidth     
+      maxW {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          7 < .1
+          8 < .1         
+          3 < .default
+          3.value = |+{$df_foundation5.cropscaling.faktor}
+					3.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					3.value.override.if.isTrue.field = tx_dffoundation5_cropscaling	
+          4 < .3
+          5 < .3
+        }
+      }     
+      maxH.override.field = imageheight
+      maxH {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          2 < .1
+          3 < .1
+          5 < .1
+          5.value = |+{$df_foundation5.cropscaling.faktor}
+					5.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					5.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+          6 < .5
+          7 < .5        
+        }
+      }
+    }
+    
+    medium >
+    medium {
+      dataKey = medium
+      maxW = {$df_foundation5.interchange.mediaQuerie-medium.img.maxW}      
+      maxW.cObject = TEXT
+      maxW.cObject.value = {$df_foundation5.interchange.mediaQuerie-medium.img.maxW}
+      maxW.cObject.dataWrap = |/{field:tx_dffoundation5_medium_block_grid}
+			maxW.cObject.dataWrap.override = |/1
+			maxW.cObject.dataWrap.override.if.isTrue.field = tx_dffoundation5_orbit			
+      maxW.cObject.importData = 1
+      maxW.prioriCalc = intval      
+      maxW.override.field = imagewidth     
+      maxW {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          7 < .1
+          8 < .1         
+          3 < .default
+          3.value = |+{$df_foundation5.cropscaling.faktor}
+					3.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					3.value.override.if.isTrue.field = tx_dffoundation5_cropscaling	
+          4 < .3
+          5 < .3
+        }
+      }     
+      maxH.override.field = imageheight
+      maxH {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          2 < .1
+          3 < .1         
+          5 < .1
+          5.value = |+{$df_foundation5.cropscaling.faktor}
+					5.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					5.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+          6 < .5
+          7 < .5        
+        }
+      }
+    }
+    
+    large >
+    large {
+      dataKey = large
+      maxW = {$df_foundation5.interchange.mediaQuerie-large.img.maxW}
+      maxW.cObject = TEXT
+      maxW.cObject.value = {$df_foundation5.interchange.mediaQuerie-large.img.maxW}
+      maxW.cObject.dataWrap = |/{field:tx_dffoundation5_large_block_grid}
+			maxW.cObject.dataWrap.override = |/1
+			maxW.cObject.dataWrap.override.if.isTrue.field = tx_dffoundation5_orbit
+			maxW.cObject.importData = 1
+      maxW.prioriCalc = intval      
+      maxW.override.field = imagewidth
+      maxW {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          7 < .1
+          8 < .1         
+          3 < .default
+          3.value = |+{$df_foundation5.cropscaling.faktor}
+					3.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					3.value.override.if.isTrue.field = tx_dffoundation5_cropscaling									
+          4 < .3
+          5 < .3
+        }
+      }     
+      maxH.override.field = imageheight
+      maxH {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+          
+					2 < .1
+          3 < .1         
+          5 < .1
+          5.value = |+{$df_foundation5.cropscaling.faktor}
+					5.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					5.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+          6 < .5
+          7 < .5        
+        }
+      }
+    }
+    
+    retina >
+    retina {
+    dataKey = retina
+      maxW = {$df_foundation5.interchange.mediaQuerie-retina.img.maxW}
+      maxW.cObject = TEXT
+      maxW.cObject.value = {$df_foundation5.interchange.mediaQuerie-retina.img.maxW}
+      maxW.cObject.dataWrap = |/{field:tx_dffoundation5_large_block_grid}
+			maxW.cObject.dataWrap.override = |/1
+			maxW.cObject.dataWrap.override.if.isTrue.field = tx_dffoundation5_orbit			
+      maxW.cObject.importData = 1
+      maxW.prioriCalc = intval
+      maxW.override.field = imagewidth     
+      maxW {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          7 < .1
+          8 < .1         
+          3 < .default
+          3.value = |+{$df_foundation5.cropscaling.faktor}
+					3.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					3.value.override.if.isTrue.field = tx_dffoundation5_cropscaling	
+          4 < .3
+          5 < .3
+        }
+      }     
+      maxH.override.field = imageheight
+      maxH {
+        outerWrap.cObject = CASE
+        outerWrap.cObject {
+          key.field = tx_dffoundation5_cropscaling_orient
+          default = TEXT
+          default.value = |-0
+					default.value.override = |c-0
+					default.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          1 < .default
+					1.value.override = |c-{$df_foundation5.cropscaling.faktor}
+					1.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+					1.if.isTrue.field = tx_dffoundation5_cropscaling
+					
+          2 < .1
+          3 < .1       
+          5 < .1
+          5.value = |+{$df_foundation5.cropscaling.faktor}
+					5.value.override = |c+{$df_foundation5.cropscaling.faktor}
+					5.value.override.if.isTrue.field = tx_dffoundation5_cropscaling
+          6 < .5
+          7 < .5        
+        }
+      }
+    }
+    smallRetina >
+  }
+}
+
+
+page.jsFooterInline.11214 = COA
+page.jsFooterInline.11214 {
+
+	// fix simultaneous use of Equalizer and Interchange
+	4 = TEXT
+	4.value = $(document).on('replace', 'img', function() {jQuery(document).foundation('equalizer', 'reflow');});
+	
+	// fix conflicts with foundation orbit and interchange
+	5 = TEXT
+	5.value (
+
+$('.orbit-slider').on('replace.fndtn.interchange', 'img', function(e, new_path, original_path) {
+	var self = $(this);
+	self.foundation('orbit').trigger('resize');
+	if(self.height() > 30) {
+		self.off(e);
+	}
+});
+
+)
+
+}

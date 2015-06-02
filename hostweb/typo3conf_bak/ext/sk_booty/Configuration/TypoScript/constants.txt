@@ -1,0 +1,35 @@
+sk_booty {
+
+    # cat=SK Booty; type=string; label=Base Ref URL; URL to use as base ref
+    baseRefURL = /
+
+    # cat=SK Booty; type=string; label=Logo Path: Path where the logo is saved
+    logoPath = EXT:sk_sfgv/Resources/Public/Images/sfgv_logo.png
+
+    # cat=SK Booty; type=string; label=Layout: Path where layout is located
+    layoutPath = EXT:sk_booty/Resources/Private/Layouts/
+
+    # cat=SK Booty; type=string; label=Partials: Path where partials are located
+    partialsPath = EXT:sk_booty/Resources/Private/Partials/
+
+    # cat=SK Booty; type=string; label=Page template: Path where page template is located     
+    templatePath = EXT:sk_booty/Resources/Private/Template/index.html
+
+    # cat=SK Booty; type=string; label=Theme: Path were the theme CSS is located
+    themeCssPath = EXT:sk_booty/Resources/Public/Css/theme.css
+
+    # cat=SK Booty; type=string; label=Theme: URL were the theme CSS is located
+    awesomeFontCssURL =
+
+    # cat=SK Booty; type=string; label=Font JS: URL were the font Javascript is located
+    webFontJavaScriptURL =
+
+    # cat=SK Booty; type=string; label=Theme JS: Path were the theme Javascript is located     
+    themeJavaScriptPath = EXT:sk_booty/Resources/Public/JavaScript/theme.js
+
+    # cat=SK Booty; type=string; label=Google Tracking ID: Enter your   Google Analytics Tracking ID
+    googleTrackingID =
+
+    # cat=SK Booty; type=string; label=Viewport Content: Enter viewport content parameters
+    viewportContent =  width=device-width, initial-scale=1
+}

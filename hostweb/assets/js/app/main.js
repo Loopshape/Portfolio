@@ -25,10 +25,6 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
         $scope.userPasswd = "1337secure";
     });
 
-    // PASSPORT STRATEGIES
-
-    require(['./hostweb/assets/js/app/strategy']);
-
     // MainJS config vars
     var pageSpeed = 500;
 
@@ -41,7 +37,7 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
             $(this).addClass('hover').animate(
             {
                 'top' : '+=380'
-            }, pageSpeed * 4, function()
+            }, pageSpeed * 2, function()
             {
                 $(this).removeClass('busy');
             });
@@ -54,7 +50,7 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
             $(this).animate(
             {
                 'top' : '-=380'
-            }, pageSpeed * 4).removeClass('hover');
+            }, pageSpeed * 2).removeClass('hover');
     });
 
     // Typography settings
@@ -272,9 +268,6 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
                     'color' : 'rgba(255,255,255,0.8)',
                     'background-color' : 'rgba(39,118,33,1)',
                     'border' : '5px solid rgba(9,99,13,1)',
-                    '-moz-box-shadow' : '0 0 30px rgba(0,12,32,1)',
-                    '-webkit-box-shadow' : '0 0 30px rgba(0,12,32,1)',
-                    'box-shadow' : '0 0 30px rgba(0,12,32,1)',
                     'text-shadow' : '0 0 3px #000',
                     '-webkit-border-radius' : '8px',
                     'border-radius' : '8px'
@@ -331,7 +324,7 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
                 $(this).parent().prepend('<a href="' + $imgSrc + '" alt="" title="' + $imgTitle + '" class="clickImage fancy-image img hastip"></a>');
                 $('.featured-images a').fancybox();
             });
-
+            
             // MANAGE LOOPSHAPECOOKIE
 
             if (!Cookies.set('loopshape_client'))

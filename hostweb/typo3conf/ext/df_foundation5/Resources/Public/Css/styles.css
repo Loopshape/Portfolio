@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* **********************
+ * FD DropDown 
+ */
+a.dropdown-link, a.modal-link {
+	border-bottom: 1px dotted #CCCCCC;
+	cursor: help!important;
+}
+a.dropdown-link.tiny, a.modal-link.tiny, a.dropdown-nav-title.tiny {
+	font-size: 80%;
+}
+a.dropdown-link.small, a.modal-link.small, a.dropdown-nav-title.small {
+	font-size: 90%;
+}
+a.dropdown-link.medium, a.modal-link.medium, a.dropdown-nav-title.medium {
+	font-size: 100%;
+}
+a.dropdown-link.large, a.modal-link.large, a.dropdown-nav-title.large {
+	font-size: 150%;
+}
+/* **********************
+ * Alert Box
+ */ 
+.alert-box .close {
+	top: 5%;
+}
+/* **********************
+ * FD top-bar 
+ */
+.top-bar.expanded .toggle-topbar a span {
+	box-shadow: none;
+}
+.pagination-left {
+	text-align: left;
+}
+.pagination-right {
+	text-align: right;
+}
+.off-canvas-wrap {
+	overflow: inherit;
+}
+
+/* ********************************
+ * Magellan column width not 100%
+ */
+.magellan-container {
+	background-color: #ebebeb;
+} 
+@media only screen and (min-width: 40.063em) {
+.sidebar.fixed, [data-magellan-expedition] {
+	left: auto !important;
+}
+[data-magellan-expedition], [data-magellan-expedition-clone] {
+	min-width: 0;
+}
+.magellan-container.fixed {
+	width: 62.5rem;
+}
+}
+/* **********************
+ * Image Block-Grid
+ */ 
+figure {
+	margin: 0!important;
+}
+/* **********************
+ * Image caption
+ */ 
+figcaption.csc-textpic-caption {
+	width: 100%;
+	font-size: 80%;
+	display: inline-block;
+}
+figcaption.csc-textpic-caption-l {
+	text-align: left;
+}
+figcaption.csc-textpic-caption-c {
+	text-align: center;
+}
+figcaption.csc-textpic-caption-r {
+	text-align: right;
+}
+

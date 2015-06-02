@@ -1,0 +1,236 @@
+<T3DataStructure>
+<meta>
+<langDisable>1</langDisable>
+</meta>
+  <sheets>
+	
+	<sDEF>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.sheet.iframe</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				<settings.url>
+					<TCEforms>
+						<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.url</label>
+						<config>
+							<type>input</type>
+						</config>
+					</TCEforms>
+				</settings.url>
+
+				<settings.params>
+					<section>1</section>
+					<type>array</type>
+					<tx_templavoila type="array">
+								<title>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.param</title>
+					</tx_templavoila>
+
+					<el>
+
+						<param>
+							<type>array</type>
+							<el>
+								<key>
+									<TCEforms>
+										<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.name</label>
+										<config>
+											<type>input</type>
+										</config>
+									</TCEforms>
+								</key>
+								<value>
+									<TCEforms>
+										<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.value</label>
+										<config>
+											<type>input</type>
+										</config>
+									</TCEforms>
+								</value>
+							</el>
+						</param>
+					</el>
+				</settings.params>
+
+			</el>
+		</ROOT>
+	</sDEF>
+
+	<sREG>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.sheet.settings</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+					<settings.width>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.width</label>
+							<config>
+								<type>input</type> 
+								<checkbox></checkbox>
+								<size>3</size>				
+							</config>
+						</TCEforms>
+					</settings.width>
+					<settings.height>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.height</label>
+							<config>
+								<type>input</type>
+								<checkbox></checkbox>
+								<size>3</size>	
+							</config>
+						</TCEforms>
+					</settings.height>
+					<settings.name>
+						<TCEforms>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.iframeName</label>
+							<config>
+								<type>input</type>
+							</config>
+						</TCEforms>
+					</settings.name>
+					<settings.seamless>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.seamless</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.seamless>
+					<settings.sandbox>
+						<TCEforms>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.sandbox</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.sandbox.empty</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>          
+
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.sandbox.allow-forms</numIndex>
+										<numIndex index="1">allow-forms</numIndex>
+									</numIndex>          
+
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.sandbox.allow-same-origin</numIndex>
+										<numIndex index="1">allow-same-origin</numIndex>
+									</numIndex>          
+
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.sandbox.allow-scripts</numIndex>
+										<numIndex index="1">allow-scripts</numIndex>
+									</numIndex>          
+
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.sandbox.allow-top-navigation</numIndex>
+										<numIndex index="1">allow-top-navigation</numIndex>
+									</numIndex>          
+								</items>
+								<minitems>1</minitems>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.sandbox>
+					<settings.srcdoc>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.srcdoc</label>
+							<config>
+								<type>text</type>
+								<rows>5</rows>
+								<cols>40</cols>
+							</config>
+						</TCEforms>
+					</settings.srcdoc>
+			</el>
+		</ROOT>
+	</sREG>
+
+    <sREG2>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.sheet.html4settings</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+					<settings.html5disable>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.html5disable</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.html5disable>
+					<settings.marginwidth>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.marginwidth</label>
+							<config>
+								<type>input</type>
+								<eval>num</eval>
+								<checkbox></checkbox>
+								<size>3</size>
+							</config>
+						</TCEforms>
+					</settings.marginwidth>
+					<settings.marginheight>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.marginheight</label>
+							<config>
+								<type>input</type>
+								<eval>num</eval>
+								<checkbox></checkbox>
+								<size>3</size>
+							</config>
+						</TCEforms>
+					</settings.marginheight>
+					<settings.scrolling>
+						<TCEforms>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.scrolling</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.auto</numIndex>
+										<numIndex index="1">auto</numIndex>
+									</numIndex>          
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.yes</numIndex>
+										<numIndex index="1">yes</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.no</numIndex>
+										<numIndex index="1">no</numIndex>
+									</numIndex>
+								</items>
+								<minitems>1</minitems>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.scrolling>
+					<settings.frameborder>
+						<TCEforms>
+							<label>LLL:EXT:html5iframe/Resources/Private/Language/locallang_db.xml:tt_content.pi_flexform.frameborder</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.frameborder>
+			</el>
+		</ROOT>
+	</sREG2>
+
+  </sheets>
+</T3DataStructure>

@@ -1,0 +1,103 @@
+df_foundation5.orbit {
+	
+	# cat=foundation orbit/enable/a01; type=options[slide,fade]; label=Animation:Sets the type of animation used for transitioning between slides
+	animation = slide
+	
+	# cat=foundation orbit/enable/a02; type=type=int+; label=Timer Speed:Sets the amount of time in milliseconds before transitioning a slide
+	timer_speed = 3000
+	
+	# cat=foundation orbit/enable/a03; type=options[false,true]; label=Pause on hover:Pause Autoplay when a dot is hovered
+	pause_on_hover = false
+
+	# cat=foundation orbit/enable/a04; type=options[false,true]; label=Resume om mouseout:If pause on hover is set to true, this setting resumes playback after mousing out of slide
+	resume_on_mouseout = false
+	
+	# cat=foundation orbit/enable/a05; type=options[true,false]; label=Next on klick:Resume om mouseout:Advance to next slide on click
+	next_on_click = true
+
+	# cat=foundation orbit/enable/a06; type=type=int+; label=Animation Speed:Sets the amount of time in milliseconds the transition between slides will last
+	animation_speed = 500
+
+	# cat=foundation orbit/enable/a07; type=options[false,true]; label=Stack on small
+	stack_on_small = false
+	
+	# cat=foundation orbit/enable/a08; type=options[true,false]; label=Navigation Arrows
+	navigation_arrows = true
+
+	# cat=foundation orbit/enable/a09; type=options[true,false]; label=Show dot indicators:Does the slider have bullets visible?
+	bullets = true
+	
+	# cat=foundation orbit/enable/a10; type=options[true,false]; label=Slide loop:Does the slider should go to the first slide after showing the last?
+	circular = true	
+
+	# cat=foundation orbit/enable/a11; type=options[true,false]; label=Display slide number
+	slide_number = true
+	
+	# cat=foundation orbit/enable/a12; type=options[true,false]; label=Display timer:Does the slider have a timer active? Setting to false disables the timer.
+	timer = true	
+
+	# cat=foundation orbit/enable/a13; type=string; label=Display slide number text
+	slide_number_text = of
+	
+	# cat=foundation orbit/enable/a15; type=options[false,true]; label=Variable height:Does the slider have variable height content?
+	variable_height = false
+	
+	# cat=foundation orbit/enable/a16; type=options[true,false]; label=Swipe
+	swipe = true
+	
+
+	# Classes
+	
+	# cat=foundation orbit classes/enable/a17; type=string; label=Class of orbit container
+	container_class = orbit-container
+	container_class >
+
+	# cat=foundation orbit classes/enable/a18; type=string; label=Class of stack on small
+	stack_on_small_class = orbit-stack-on-small
+	stack_on_small_class >
+	
+	# cat=foundation orbit classes/enable/a19; type=string; label=Class for next:Class name given to the next button
+	next_class = orbit-next
+
+	# cat=foundation orbit classes/enable/a20; type=string; label=Class for prev:Class name given to the previous button
+	prev_class = orbit-prev
+
+	# cat=foundation orbit classes/enable/a21; type=string; label=Class for timer:Class name given to the timer
+	timer_container_class = orbit-timer
+	
+	# cat=foundation orbit classes/enable/a22; type=string; label=Class for paused:Class name given to the paused button
+	timer_paused_class = paused
+	timer_paused_class >
+	
+	# cat=foundation orbit classes/enable/a23; type=string; label=Class for progress:Class name given to the progress bar
+	timer_progress_class = orbit-progress
+	timer_progress_class >
+	 
+	# cat=foundation orbit/enable/a24; type=string; label=Class for slice container:Class name given to the slide container
+	slides_container_class = orbit-slides-container
+	slides_container_class >
+	 
+	# cat=foundation orbit classes/enable/a25; type=string; label=Class for preloader:Class given to the perloader
+	preloader_class = preloader
+
+	# cat=foundation orbit classes/enable/a26; type=string; label=Class for bullets:Class name given to the navigation bullets
+	bullets_container_class = orbit-bullets
+
+	# cat=foundation orbit classes/enable/a27; type=string; label=Class for active bullet:Class name given to the active navigation bullet
+	bullets_active_class = active
+	bullets_active_class >
+
+	# cat=foundation orbit classes/enable/a28; type=string; label=Class for slide number:Class name given to the slide number
+	slide_number_class = orbit-slide-number
+
+	# cat=foundation orbit classes/enable/a29; type=string; label=Class for caption:Class name given to the caption
+	slide_caption_class = orbit-caption
+
+	# cat=foundation orbit classes/enable/a30; type=string; label=Class for active slide:Class name given to the active slide
+	active_slide_class = active
+	active_slide_class >
+
+	# cat=foundation orbit classes/enable/a31; type=string; label=Class for transitioning:Class name given to the  orbit transition
+	orbit_transition_class = orbit-transitioning
+	orbit_transition_class >
+}

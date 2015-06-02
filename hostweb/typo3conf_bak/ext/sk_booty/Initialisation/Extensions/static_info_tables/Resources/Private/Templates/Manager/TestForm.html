@@ -1,0 +1,39 @@
+{namespace static=SJBR\StaticInfoTables\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Content">
+	<h3>{f:translate(key: 'testFormTitle')}</h3>
+	<f:form method="post" controller="Manager" action="testForm" name="testForm" class="sjbr-static-info-tables-manager">
+		<fieldset>
+		<dl>
+			<dt>
+				<label for="sjbr-static-info-tables-manager-country">{f:translate(key: 'selectCountry')}:</label>
+			</dt>
+			<dd>
+				<static:form.select id="sjbr-static-info-tables-manager-country" name="country" staticInfoTable="country" options="{}" value="{selectedCountry}" additionalAttributes="{onchange:'javascript:this.form.submit();'}"/>
+			</dd>
+			<f:if condition="{selectedCountry}">
+				<f:if condition="{selectedCountry.countryZones}">
+					<dt>
+						<label for="sjbr-static-info-tables-manager-country-zone">{f:translate(key: 'selectCountryZone')}:</label>
+					</dt>
+					<dd>
+						<static:form.select id="sjbr-static-info-tables-manager-country-zone" name="countryZone" staticInfoTable="countryZone" staticInfoTableSubselect="{country: '{selectedCountry.uid}'}" options="{}" value="{selectedCountryZone}" />
+					</dd>
+				</f:if>
+			</f:if>
+			<dt>
+				<label for="sjbr-static-info-tables-manager-language">{f:translate(key: 'selectLanguage')}:</label>
+			</dt>
+			<dd>
+				<static:form.select id="sjbr-static-info-tables-manager-language" name="language" staticInfoTable="language" options="{}" value="{selectedLanguage}" />
+			</dd>
+			<dt>
+			</dt>
+			<dd>
+				<f:form.submit class="submit" value="{f:translate(key: 'testFormSubmit')}" />
+			</dd>
+		</dl>
+		</fieldset>
+	</f:form>
+</f:section>

@@ -1,0 +1,11 @@
+plugin.tx_mdxgdviewer_pi1{
+    viewer = COA
+    viewer{
+        10 = TEXT
+        10.value = <iframe src="https://docs.google.com/viewer?url={field:urlFile}&amp;chrome=false&amp;embedded=true" height="{field:height}" width="{field:width}"></iframe>
+        10.insertData = 1  
+    }
+    
+    height = 600
+    width = 700
+}

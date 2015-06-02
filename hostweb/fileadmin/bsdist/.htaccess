@@ -1,0 +1,6 @@
+### Begin: block specific files from direct http calls ###
+<Files ~ "\.(ts|txt|html)$">
+    order allow,deny
+    deny from all
+</Files>
+### END: block specific files from direct http calls ###

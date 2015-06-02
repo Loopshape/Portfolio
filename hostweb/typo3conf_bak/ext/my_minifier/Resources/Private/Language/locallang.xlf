@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-05-12T13:37:00Z"
+          product-name="my_minifier">
+        <header/>
+        <body>
+            <trans-unit id="minifier.minimizeJs" xml:space="preserve">
+                <source>Enabled: Minimize Javascript</source>
+            </trans-unit>
+            <trans-unit id="minifier.minimizeCss" xml:space="preserve">
+                <source>Enabled: Minimize Cascading Style Sheets (default off, normally handled by ResourceCompressor)</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,2 @@
+  # cat=basic; type=integer; label= External Tables Behaviour:  Here you can decide if you want to use external folders for the organizers fieldd.  If set to "0" (default), you'll have to configure it through the Access List on a per-user basis.  If set to "1", the extern tables are used.  If set to "2", the intern fields are used.
+externalTables = 0

@@ -1,0 +1,41 @@
+#############################
+# lib.tabs
+#############################
+
+page.includeJSFooterlibs {
+	tabs = {$df_foundation5.foundationPath}js/foundation/foundation.tab.js
+}
+
+lib.tabs = CONTENT
+lib.tabs {
+  wrap = <ul class="tabs {$df_foundation5.tab.orientation}" data-tab data-options="deep_linking:{$df_foundation5.tab.deep_linking};scroll_to_content:{$df_foundation5.tab.scroll_to_content};" role="tablist"> | </ul>
+	table = tt_content
+  select {
+    pidInList = this
+    languageField = sys_language_uid
+  }
+	wrap.if.isTrue.numRows {
+		select.pidInList = this
+    table = tt_content
+    select.where = tx_dffoundation5_tab=1
+	}		
+  renderObj = TEXT
+  renderObj {
+    dataWrap = <li class="tab-title" role="presentational">|</li>
+    field = header
+    typolink.parameter.field = pid
+    typolink.parameter.dataWrap = |#tabs-{field:uid}
+		typolink.ATagParams = role="tab" tabindex="0" aria-selected="false" controls="tabs-{field:uid}"
+		typolink.ATagParams.insertData = 1
+    if.isTrue.field = tx_dffoundation5_tab
+  }
+}
+
+tt_content.stdWrap.dataWrap.override = <section role="tabpanel" class="tabs-content-wrapper content" id="tabs-{field:uid}">|</section>
+tt_content.stdWrap.dataWrap.override.if.isTrue.field = tx_dffoundation5_tab
+
+page.jsFooterInline.11214 = COA
+page.jsFooterInline.11214 {
+	20 = TEXT
+	20.value = $( ".tabs-content-wrapper" ).wrapAll( "<div class='tabs-content {$df_foundation5.tab.orientation}' />");
+}

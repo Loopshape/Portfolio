@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<TITLE>Indexed Search template für das Bildungsportal</TITLE>
+</head>
+
+<body>
+
+<pre>
+###WHATIS###
+###RESULT_IDX###
+
+###NR###
+###TITLE###
+###CONTENT### 
+###LINK###
+
+###RESULTNAV###
+###RESULTMODE###
+</pre>
+
+
+
+
+
+
+
+<!-- ###TEMPLATE_RESULTS### begin -->
+<!-- ###TEMPLATE_HEAD### begin -->
+<h1>###TEXT_RESULTSTITLE###</h1>
+###TEXT_SEARCHEDFOR###: <b>"###WHATIS###"</b>
+<div class="unterseite-trenner-head-spalte-2-volltextsuche">
+	<p style="margin:4px 0 0px 0;">###RESULT_IDX###</p>
+</div>
+
+<div class="unterseite-trenner-spalte-2">
+	<img src="../img/blank.gif" width="1" height="9" class="blank" alt="" />
+</div>
+<div class="EventsListView">
+<!-- ###TEMPLATE_HEAD### end -->
+
+
+
+<!-- ###TEMPLATE_ROW### begin -->
+	<div style="padding: 20px 10px 0 10px; width: 30px; float: left" align="right"><b>###NR###)</b></div>
+	<div style="padding: 20px 30px 0 0px;">
+		<div style="padding: 0 0 5px 0;"><b>###TITLE###</b> ###TEXT_PAGETITLE###</div>
+  		<div style="margin: 0px 0 10px 50px; padding: 5px 0 0 0; border-top: 1px dotted #000">###CONTENT### <br /><b>###LINK###</b></div>
+	</div>
+	<div style="clear: both"></div>
+<!-- ###TEMPLATE_ROW### end -->
+
+
+
+<!-- ###TEMPLATE_FOOT### begin -->
+</div>
+<p style="margin-bottom: 30px">###RESULTNAV###</p>
+<p style="margin-bottom: 20px"> ###TEXT_RESULTSPERPAGE###:&nbsp;###RESULTMODE###</p>
+<!-- ###TEMPLATE_FOOT### end -->
+<!-- ###TEMPLATE_RESULTS### end -->
+
+
+</body>
+</html>

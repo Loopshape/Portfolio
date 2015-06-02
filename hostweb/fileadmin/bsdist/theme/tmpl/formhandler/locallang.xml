@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="mr">Mr</label>
+            <label index="mrs">Mrs</label>
+            <label index="firstname">Firstname</label>
+            <label index="lastname">Lastname</label>
+            <label index="phone">Phone</label>
+            <label index="email">Email</label>
+            <label index="comment_placeholder">What would you like to ask?</label>
+            <label index="company">Company</label>
+
+            <label index="btn_send">Send</label>
+
+            <label index="msg_error">Please fill out all required fields.</label>
+            <label index="msg_thankyou">Thank you.</label>
+            <label index="error_email_email">Please enter a valid email address.</label>
+
+            <label index="salutation">Salutation</label>
+            <label index="comment">Comment</label>
+
+            <label index="email_leadin1">Hello</label>
+            <label index="email_leadin2">This request is from the website</label>
+
+            <label index="email_leadin1_user">Hello</label>
+            <label index="email_leadin2_user">You have send the following request or information.</label>
+            <label index="email_thanx_user">Thank you.</label>
+
+            <label index="error_mathguard">The answer is not correct.</label>
+            <label index="error_freecapfield">Sorry, not correct. Please try again.</label>
+
+            <label index="form_header_anchor">c277</label>
+
+            <label index="is_error_firstname">has-error</label>
+            <label index="is_error_lastname">has-error</label>
+            <label index="is_error_email">has-error</label>
+            <label index="is_error_phone">has-error</label>
+            <label index="is_error_freecapfield">has-error</label>
+            <label index="is_error_comment">has-error</label>
+        </languageKey>
+
+        <languageKey index="de" type="array">
+            <label index="mr">Herr</label>
+            <label index="mrs">Frau</label>
+            <label index="firstname">Vorname</label>
+            <label index="lastname">Nachname</label>
+            <label index="phone">Telefon</label>
+            <label index="email">E-Mail</label>
+            <label index="comment_placeholder">Was möchten Sie fragen?</label>
+            <label index="company">Firma</label>
+
+            <label index="btn_send">Senden</label>
+
+            <label index="msg_error">Bitte füllen Sie alle Pflichtfelder aus.</label>
+            <label index="msg_thankyou">Wir danke Ihnen für Ihre Kontaktaufnahme und werden uns raschest möglich um Ihr Anliegen kümmern.</label>
+            <label index="error_email_email">Bitte geben Sie eine gültige Email Adresse ein.</label>
+
+            <label index="salutation">Anrede</label>
+            <label index="comment">Bemerkung</label>
+
+            <label index="email_leadin1">Guten Tag</label>
+            <label index="email_leadin2">Die folgende Anfrage stammt von der Website</label>
+
+            <label index="email_leadin1_user">Guten Tag</label>
+            <label index="email_leadin2_user">Sie haben auf unserer Website die folgende Anfrage gemacht.</label>
+            <label index="email_thanx_user">Wir danke Ihnen für Ihre Kontaktaufnahme und werden uns raschest möglich um Ihr Anliegen kümmern.</label>
+
+            <label index="error_mathguard">Die MathGuard-Antwort ist nicht korrekt.</label>
+            <label index="error_freecapfield">Die Prüfzeichen sind nicht korrekt.</label>
+
+            <label index="form_header_anchor">c277</label>
+        </languageKey>
+    </data>
+</T3locallang>

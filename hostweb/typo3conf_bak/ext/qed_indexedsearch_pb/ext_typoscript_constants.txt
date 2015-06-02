@@ -1,0 +1,49 @@
+plugin.tx_indexed_search {
+	# cat=qed_indexedsearch_pb/ctext/1; type=string; label=pageTitleAdd: 
+	pageTitleAdd= Results for:
+	# cat=qed_indexedsearch_pb/ctext/2; type=string; label=pageTitlePage:
+	pageTitlePage= Page
+	# cat=qed_indexedsearch_pb/enable/3; type=boolean; label=addDescriptionToIndex:
+	addDescriptionToIndex=1
+	# cat=qed_indexedsearch_pb/enable/4; type=boolean; label=addKeywordsToIndex:
+	addKeywordsToIndex=1
+  # cat=qed_indexedsearch_pb/others/5; type=wrap; label=browseBoxWrap:
+  browseBoxWrap = <div class="indexed-search-browser">|</div>
+  # cat=qed_indexedsearch_pb/others/6; type=wrap; label=showResultsWrap:
+  showResultsWrap = <h4>|</h4>    
+  # cat=qed_indexedsearch_pb/others/7; type=wrap; label=browseLinksWrap:  
+  browseLinksWrap = <ul>|</ul>
+  # cat=qed_indexedsearch_pb/others/8; type=wrap; label=showResultsNumbersWrap:  
+  showResultsNumbersWrap = |
+  # cat=qed_indexedsearch_pb/others/9; type=boolean; label=showRange:  
+  showRange = 0
+  # cat=qed_indexedsearch_pb/others/10; type=boolean; label=showResultCount:  
+  showResultCount = 1
+  # cat=qed_indexedsearch_pb/others/11; type=boolean; label=dontLinkActivePage:  
+  dontLinkActivePage = 1
+  # cat=qed_indexedsearch_pb/others/12; type=wrap; label=disabledLinkWrap:  
+  disabledLinkWrap = <li class="disabled">|</li>
+  # cat=qed_indexedsearch_pb/others/13; type=wrap; label=inactiveLinkWrap:  
+  inactiveLinkWrap = <li>|</li>
+  # cat=qed_indexedsearch_pb/others/14; type=wrap; label=activeLinkWrap:  
+  activeLinkWrap = <li class="cur">|</li>    
+  # cat=qed_indexedsearch_pb/others/15; type=boolean; label=alwaysPrev:  
+  alwaysPrev = 1
+  # cat=qed_indexedsearch_pb/others/16; type=boolean; label=hscText:  
+  hscText = 0
+  # cat=qed_indexedsearch_pb/others/17; type=int+; label=maxPages:  
+  maxPages = 7
+  # cat=qed_indexedsearch_pb/others/18; type=boolean; label=showFirstLast:  
+  showFirstLast = 1  
+	# cat=qed_indexedsearch_pb/others/19; type=wrap; label=resultsWrap:
+	resultsWrap = <ul class="indexed-search-res">|</ul>
+	# cat=qed_indexedsearch_pb/others/20; type=wrap; label=noResultsWrap:
+	noResultsWrap = <p>|</p>
+	# cat=qed_indexedsearch_pb/others/21; type=wrap; label=resultsWrap:
+	searchedForWordWrap = <strong class="m1">|</strong>
+	# cat=qed_indexedsearch_pb/others/22; type=wrap; label=resultsWrap:
+	searchedForWrap = <div>|</div>
+	# cat=qed_indexedsearch_pb/others/23; type=wrap; label=resultsWrap:
+	searchWordWrap = <strong class="m1">|</strong>	
+		
+}

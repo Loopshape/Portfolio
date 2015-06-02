@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallangExt>
+  <data type="array">
+    <languageKey index="de" type="array">
+      <label index="title"/>
+      <label index="function.test_service"/>
+      <label index="header.test_service"/>
+      <label index="noServices"/>
+      <label index="service"/>
+      <label index="serviceError"/>
+      <label index="serviceNotAvailable"/>
+      <label index="parameters"/>
+      <label index="noResult"/>
+      <label index="testResult"/>
+      <label index="test"/>
+    </languageKey>
+  </data>
+</T3locallangExt>

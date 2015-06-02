@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>TYPO3-HTML-Vorlage</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="../../../../fileadmin/css/HTB3CF_fixHF_main_verschoben.css" media="screen" />
+  <!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="../css/ie6hacks.css" media="screen" />
+  <![endif]-->
+</head>
+<body>
+<br>
+<br>
+<br>
+<H1>CALENDAR TEMPLATE</H1>
+<h2>EXAMPLE</h2>
+<br>
+<br>
+<br>
+<br>
+<em>This template features:<br>
+- Subparts: date header and date content<br>
+- Markers:
+###TYPE###: type / Typ (calendar or ToDo)<br>
+###WOTA###: Day of week / Wochentag<br>
+###DATE###: Date / Datum<br>
+###DATETEXT###<br>
+###TIME###: Time / Uhrzeit<br>
+###HEADER###: Title / Titel<br>
+####CONTENT####: Text starting at the second row beyond the time-row<br>
+###CATEGORY###: category / Kategorie
+###LINK###
+###TEXT_CALWEEK### 
+###CALWEEK###
+
+for ToDos:
+###WEEK###: nomen est omen<br>
+###PRIORITY###
+###WORKGROUP###
+###RESPONSIBLE###
+###COMPLETE###
+
+and related text-markers like ###TEXT_....### for all markers above
+(See the source code for subparts and markers)<br>
+</em>
+<br>
+<br>
+<br>
+<br>
+
+<!-- ###TEMPLATE_CALENDAR### -->
+<div class="kk_calendar">
+<!-- ###TABLE_CONTENT### -->
+   <div class="cal_1stRow">
+      <div class="cal_Date">###WOTA### ###DATE### ###TEXT_CALWEEK### ###CALWEEK###</div>
+      <div class="cal_Header">###TYPE###
+         <br>###DATETEXT###
+         <br>###TEXT_CATEGORY### ###CATEGORY###
+         <br>###TEXT_PRIORITY### ###PRIORITY###
+         <br>###HEADER###
+      </div>
+   </div>
+
+   <!-- ###DATE_CONTENT### -->
+   <div class="cal_2ndRow">
+      <div class="cal_Time">###TIME###</div>
+      <div class="cal_Content">###CONTENT###</div>
+   </div>
+   <!-- ###DATE_CONTENT### -->
+   <div class="cal_link">###TEXT_LINK### ###LINK###</div>
+<!-- ###TABLE_CONTENT### -->
+</div>
+<!-- ###TEMPLATE_CALENDAR### -->
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+<!-- ###TEMPLATE_TODO### -->
+<div class="kk_calendar_todo">
+<!-- ###TABLE_CONTENT### -->
+   <div class="cal_1stRow">
+      <div class="cal_Date">###WOTA### ###DATE###</div>
+      <div class="cal_Header">###HEADER###</div>
+   </div>
+
+   <!-- ###DATE_CONTENT### -->
+   <div class="cal_2ndRow">
+      <div class="cal_Time">###TIME###</div>
+      <div class="cal_Content">###CONTENT###</div>
+   </div>
+   <!-- ###DATE_CONTENT### -->
+   <div class="cal_link">###TEXT_LINK### ###LINK###</div>
+<!-- ###TABLE_CONTENT### -->
+</div>
+<!-- ###TEMPLATE_TODO### -->
+
+<br>
+<br>
+<br>
+
+</body>
+</html>

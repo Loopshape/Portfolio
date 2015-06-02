@@ -1,0 +1,8 @@
+# cat=modules/enable/; type=boolean; type=boolean; label=Enable Magellan sticky navigation
+foundation_5_Magellan = 0
+
+# cat=modules/enable/; type=boolean; type=boolean; label=Enable Tabs
+foundation_5_Tabs = 0
+
+# cat=modules/enable/; type=options[no slider module=0,Wow-Slider=1,Orbit-Slider (deprecated)=2]; label=Slider module
+foundation_5_slider = 1

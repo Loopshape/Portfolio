@@ -1,0 +1,2 @@
+# cat=plugin.ajaxpagepreloader; type=options [black,white]; label=Color;
+plugin.ajaxpagepreloader.view.BackgroundColor = black

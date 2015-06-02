@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2014-05-06T01:18:23Z" product-name="tt_news" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id=".alttitle" xml:space="preserve" approved="yes">
+        <source>News</source>
+      <target state="translated">Nachrichten</target></trans-unit>
+      <trans-unit id=".description" xml:space="preserve" approved="yes">
+        <source> news description</source>
+      <target state="translated">Beschreibung Nachrichten</target></trans-unit>
+      <trans-unit id="_.seeAlso" xml:space="preserve" approved="yes">
+        <source>tt_news manual | http://typo3.org/documentation/document-library/extension-manuals/tt_news/current/</source>
+      <target state="translated">tt_news-Anleitung | http://typo3.org/documentation/document-library/extension-manuals/tt_news/current/</target></trans-unit>
+      <trans-unit id="_.image" xml:space="preserve">
+        <source> </source>
+      <target></target></trans-unit>
+      <trans-unit id=".image_descr" xml:space="preserve">
+        <source> </source>
+      <target></target></trans-unit>
+      <trans-unit id=".syntax" xml:space="preserve">
+        <source/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

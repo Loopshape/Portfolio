@@ -7,7 +7,7 @@ Options -Indexes +SymLinksIfOwnerMatch
     </IfModule>
     
 	RewriteEngine On
-	#RewriteBase /html/
+	#RewriteBase /
   
 	RewriteCond %{HTTP_HOST} ^(http:\/\/)?loop\.arcturus\.uberspace\.de$  
 	RewriteCond %{REQUEST_URI} !^/hostweb/kernel/  

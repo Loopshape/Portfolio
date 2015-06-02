@@ -1,0 +1,25 @@
+#############################
+# Orbit Slider
+#############################
+page.includeJSFooterlibs {
+  orbit = {$df_foundation5.foundationPath}js/foundation/foundation.orbit.js
+}
+temp.orbit {
+  allStdWrap.dataWrap.override = <ul class="clearing-thumbs" data-clearing>|</ul>
+  allStdWrap.dataWrap.override.if {
+    isTrue.field = tx_dffoundation5_orbit
+    value = 1
+    isGreaterThan.data = register:imageCount
+  }  
+}
+
+tt_content.image.20.rendering {
+  noCaption.allStdWrap.dataWrap.override.override.override < temp.orbit.allStdWrap.dataWrap
+  splitCaption.allStdWrap.dataWrap.override.override.override < temp.orbit.allStdWrap.dataWrap	
+	splitCaption.caption {
+		wrap {
+			override.override = <figcaption class="orbit-caption###CLASSES###"> | </figcaption>
+			override.override.if.isTrue.field = tx_dffoundation5_orbit
+		}	
+	}
+}

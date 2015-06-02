@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Iframe Extension extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="noUrlSpecified">No URL specified. Please enter a URL in your Flexform or in TYPOScript</label>			
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="noUrlSpecified">Keine URL angegeben. Bitte geben Sie eine URL in der Flexform oder im TYPOScript an</label>			
+		</languageKey>
+	</data>
+</T3locallang>

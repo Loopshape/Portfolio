@@ -1,0 +1,13 @@
+plugin.tx_kkcalendar_pi1 >
+plugin.tx_kkcalendar_pi1 {
+    # cat=plugin.tx_kkcalendar/file; type=file[html,htm,tmpl,txt]; label= Template File: This is a simple htmlfile where each part of the calendar is defined with HTML-code. To see an example with explanations, take a look at EXT:tt_calender/pi/calender_template.tmpl which is the default.
+  file.templateFile = EXT:kk_calendar/calendar_template_table.html
+    # cat=plugin.tx_kkcalendar//; type=int+; label=Max age (days): If set, the items will automatically disappear from the calendar after this number of days.
+  maxAge = 30
+    # cat=plugin.tx_kkcalendar//; type=int+; label=global_calendarItems_pid: If set, this will be the general sysfolder, where calendar item are in
+  global_calendarItems_pid =
+    # cat=plugin.tx_kkcalendar//; type=boolean; label=realUrlUsed: If set, the links will be interpreted like real Url-Paths instead of index.php?id=nn
+  realUrlUsed = 0
+    # cat=plugin.tx_kkcalendar//; type=array; label=trans: Used for correct transformation of the date-function-results
+  trans = Monday => Montag, Tuesday=> Dienstag, Wednesday => Mittwoch, Thursday  => Donnerstag, Friday=> Freitag, Saturday  => Samstag, Sunday=> Sonntag, Mon=> Mo., Tue=> Di., Wed=> Mi., Thu=> Do., Fri=> Fr., Sat=> Sa., Sun=> So., January=> Januar, February  => Februar, March => März, May=> Mai, June  => Juni, July  => Juli, October=> Oktober, December  => Dezember,
+}

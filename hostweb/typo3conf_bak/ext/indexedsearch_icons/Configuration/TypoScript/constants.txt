@@ -1,0 +1,5 @@
+plugin.tx_indexedsearchicons {
+	iconPath = EXT:indexedsearch_icons/Resources/Public/Icons/32x32
+	iconWidth =
+	iconHeight =
+}

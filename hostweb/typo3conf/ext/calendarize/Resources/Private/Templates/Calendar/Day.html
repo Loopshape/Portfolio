@@ -1,0 +1,40 @@
+{namespace c=HDNET\Calendarize\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+	<f:if condition="{settings.dayPid}">
+		<div class="browser">
+
+			<c:ifDateUpper base="{settings.dateLimitBrowserPrev}" check="{previous}">
+				<c:link.day pageUid="{settings.dayPid}" date="{previous}">
+					&lt; <f:format.date format="{settings.dateFormat}">{previous}</f:format.date>
+				</c:link.day>
+			</c:ifDateUpper>
+
+			<c:ifDateLower base="{settings.dateLimitBrowserNext}" check="{next}">
+				<c:link.day pageUid="{settings.dayPid}" date="{next}">
+					<f:format.date format="{settings.dateFormat}">{next}</f:format.date> &gt;
+				</c:link.day>
+			</c:ifDateLower>
+
+		</div>
+	</f:if>
+
+	<h1>
+		<f:format.date format="{settings.dateFormat}">{today}</f:format.date>
+	</h1>
+
+	<f:if condition="{indices}">
+		<f:then>
+			<f:for each="{indices}" as="index">
+				<f:render partial="{index.configuration.partialIdentifier}/ListItem" arguments="{index: index}" />
+			</f:for>
+		</f:then>
+		<f:else>
+			<f:translate key="noEvents.day" />
+		</f:else>
+	</f:if>
+
+</f:section>

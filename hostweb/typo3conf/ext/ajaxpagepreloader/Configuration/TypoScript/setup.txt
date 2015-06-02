@@ -1,0 +1,32 @@
+page.CSS_inlineStyle  ( 
+		      #preloader  {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: {$plugin.ajaxpagepreloader.view.BackgroundColor};
+     z-index: 9999;
+    height: 100%;
+ }
+
+#status  {
+     width: 200px;
+     height: 200px;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     background-image: url(../typo3conf/ext/ajaxpagepreloader/Resources/Public/Images/ajax-loader-{$plugin.ajaxpagepreloader.view.BackgroundColor}.gif);
+     background-repeat: no-repeat;
+     background-position: center;
+     margin: -100px 0 0 -100px;
+ }
+) 
+page.jsFooterInline.10 = TEXT
+page.jsFooterInline.10.value  (
+			      jQuery(window).load(function() {
+			      				     jQuery("#status").fadeOut();
+			      				     jQuery("#preloader").delay(1000).fadeOut("slow");
+							     })
+)
+page.bodyTag = <body> <div id="preloader"><div id="status"></div></div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallangExt>
+  <data type="array">
+    <languageKey index="de" type="array">
+      <label index="editConstants">Konstanten bearbeiten</label>
+      <label index="category">Kategorie</label>
+      <label index="noConstants">Keine Konstanten verfügbar</label>
+      <label index="noConstantsDescription">Es sind keine bearbeitbaren Konstanten für den Konstanten-Editor verfügbar.</label>
+    </languageKey>
+  </data>
+</T3locallangExt>

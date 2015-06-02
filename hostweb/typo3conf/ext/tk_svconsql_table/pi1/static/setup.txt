@@ -1,0 +1,74 @@
+plugin.tx_tksvconsqltable_pi1 {
+
+	cache {
+		lifetime = {$plugin.tx_tksvconsqltable_pi1.cache.lifetime}
+	}
+
+	formatting {
+		dateFormat = {$plugin.tx_tksvconsqltable_pi1.formatting.dateFormat}
+		timeFormat = {$plugin.tx_tksvconsqltable_pi1.formatting.timeFormat}
+		decimals = {$plugin.tx_tksvconsqltable_pi1.formatting.decimals}
+		dec_point = {$plugin.tx_tksvconsqltable_pi1.formatting.dec_point}
+		thousands_sep = {$plugin.tx_tksvconsqltable_pi1.formatting.thousands_sep}
+	}
+
+	db {
+		driver = {$plugin.tx_tksvconsqltable_pi1.db.driver}
+		server = {$plugin.tx_tksvconsqltable_pi1.db.server}
+		user = {$plugin.tx_tksvconsqltable_pi1.db.user}
+		password = {$plugin.tx_tksvconsqltable_pi1.db.password}
+		database = {$plugin.tx_tksvconsqltable_pi1.db.database}
+		query = {$plugin.tx_tksvconsqltable_pi1.db.query}
+		init = {$plugin.tx_tksvconsqltable_pi1.db.init}
+		fetchMode = {$plugin.tx_tksvconsqltable_pi1.db.fetchMode}
+	}
+	
+	table {
+		templateFile = {$plugin.tx_tksvconsqltable_pi1.table.templateFile}
+		border = {$plugin.tx_tksvconsqltable_pi1.table.border}
+		cellPadding = {$plugin.tx_tksvconsqltable_pi1.table.cellPadding}
+		cellSpacing = {$plugin.tx_tksvconsqltable_pi1.table.cellSpacing}
+		class = {$plugin.tx_tksvconsqltable_pi1.table.class}
+		caption = {$plugin.tx_tksvconsqltable_pi1.table.caption}
+		caption_as_span = {$plugin.tx_tksvconsqltable_pi1.table.caption_as_span}
+		colNames = {$plugin.tx_tksvconsqltable_pi1.table.colNames}
+		colFormats = {$plugin.tx_tksvconsqltable_pi1.table.colFormats}
+		hiddenCols = {$plugin.tx_tksvconsqltable_pi1.table.hiddenCols}
+		rowClasses = {$plugin.tx_tksvconsqltable_pi1.table.rowClasses}
+		colClasses = {$plugin.tx_tksvconsqltable_pi1.table.colClasses}
+		captionInFirstCol = {$plugin.tx_tksvconsqltable_pi1.table.captionInFirstCol}
+		captionInLastCol = {$plugin.tx_tksvconsqltable_pi1.table.captionInLastCol}
+		change_col = {$plugin.tx_tksvconsqltable_pi1.table.change_col}
+	}
+	
+	stdWrap.wrap = <div class="myTable">|</div>
+	
+	_CSS_DEFAULT_STYLE (
+
+	.tx-tksvconsqltable-pi1 {
+			font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+			font-size: 15px;
+			background-color: #fff;
+			padding: 10px;
+			color: #000;
+		}
+		
+		.tx-tksvconsqltable-pi1 div.errorMsg {
+			border: 2px solid #ff0000; 
+			padding: 10px;	
+		}
+		.tx-tksvconsqltable-pi1 table, .tx-tksvconsqltable-pi1 td {
+			font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+			font-size: 11px;	
+			border: 0px;
+			padding: 2px
+		}
+		.tx-tksvconsqltable-pi1 table tr.even {
+			background-color: #E6E6FA;
+		}
+		.tx-tksvconsqltable-pi1 table tr.odd {
+			background-color: #FFE4E1;
+		}
+
+	)
+}

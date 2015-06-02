@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns:t3="http://typo3.org/schemas/xliff" version="1.0">
+  <file t3:id="1415814905" source-language="en" datatype="plaintext" original="messages" date="2011-10-17T20:22:35Z" product-name="openid" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="title.error" xml:space="preserve" approved="yes">
+        <source>Error during OpenID authentication</source>
+      <target state="translated">Fehler während OpenID-Authentifizierung</target></trans-unit>
+      <trans-unit id="title.success" xml:space="preserve" approved="yes">
+        <source>OpenID authentication successful</source>
+      <target state="translated">OpenID-Authentifizierung erfolgreich</target></trans-unit>
+      <trans-unit id="error.cancelled" xml:space="preserve" approved="yes">
+        <source>OpenID authentication has been cancelled.</source>
+      <target state="translated">OpenID-Authentifizierung wurde abgebrochen.</target></trans-unit>
+      <trans-unit id="error.general" xml:space="preserve" approved="yes">
+        <source><![CDATA[Status: %s<br/>Message: %s]]></source>
+      <target state="translated">Status: %s&lt;br/&gt;Meldung: %s</target></trans-unit>
+      <trans-unit id="error.no-response" xml:space="preserve" approved="yes">
+        <source>We got no OpenID response.</source>
+      <target state="translated">Keine OpenID-Antwort erhalten.</target></trans-unit>
+      <trans-unit id="error.setup" xml:space="preserve" approved="yes">
+        <source>Error setting up OpenID authentication for "%s".</source>
+      <target state="translated">Fehler bei der Einrichtung der OpenID-Authentifizierung für "%s".</target></trans-unit>
+      <trans-unit id="youropenid" xml:space="preserve" approved="yes">
+        <source><![CDATA[OpenID is: <tt>%s</tt>]]></source>
+      <target state="translated">OpenID ist: &lt;tt&gt;%s&lt;/tt&gt;</target></trans-unit>
+      <trans-unit id="addopenid" xml:space="preserve" approved="yes">
+        <source>Add OpenID</source>
+      <target state="translated">OpenID hinzufügen</target></trans-unit>
+      <trans-unit id="html.title" xml:space="preserve" approved="yes">
+        <source>OpenID registration</source>
+      <target state="translated">OpenID-Registrierung</target></trans-unit>
+      <trans-unit id="html.description" xml:space="preserve" approved="yes">
+        <source>Add an OpenID to your backend user. This OpenID can then be used to log in the TYPO3 backend.</source>
+      <target state="translated">Fügen Sie Ihrem Backend-Benutzer eine OpenID hinzu. Diese OpenID kann dann zur Anmeldung am TYPO3-Backend benutzt werden.</target></trans-unit>
+      <trans-unit id="html.openid_url" xml:space="preserve" approved="yes">
+        <source>OpenID identifier</source>
+      <target state="translated">OpenID-Identifikation</target></trans-unit>
+      <trans-unit id="html.submit" xml:space="preserve" approved="yes">
+        <source>Login</source>
+      <target state="translated">Anmeldung</target></trans-unit>
+    </body>
+  </file>
+</xliff>

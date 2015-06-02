@@ -1,0 +1,31 @@
+2013-02-21 Kurt Kunig  <kurt.kunig@kupix.de>
+    release 1.1.3
+additional flexform field "maxDatesInView" for limitation of the number of records displayed in a view
+
+
+2011-12-16 Kurt Kunig  <kurt.kunig@kupix.de>
+    release 1.1.2
+I forgot to upload the modified manual
+
+
+2011-12-14 Kurt Kunig  <kurt.kunig@kupix.de>
+    release 1.1.1
+additional flexform field "noEntryMessage" for an output-message if no date/task is found to be displayed.
+Otherwise a standard message taken out of the locallang.xml
+"<label index="noEntryMessage">There are no entries available right now.</label>"
+This can also be overwritten by
+
+plugin.tx_kkcalendar_pi1._LOCAL_LANG.de {
+   noEntryMessage = Another message than standard ...
+}
+
+
+2010-02-02 Kurt Kunig  <kurt.kunig@kupix.de>
+    release 1.0.0
+wrong path for static files fixed
+wrong index in locallang-db and flexform for calendar-types (calendar / Todos) fixed
+complete statics (constants and setup) and css included
+manual update
+
+2010-01-19 Kurt Kunig  <kurt.kunig@kupix.de>
+	* Initial release 0.1.0

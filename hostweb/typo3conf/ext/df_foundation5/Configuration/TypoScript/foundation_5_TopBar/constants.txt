@@ -1,0 +1,45 @@
+df_foundation5.top-bar {
+
+	#cat=foundation top-bar navigation/enable/a01; type=options[contain-to-grid,fixed,contain-to-grid fixed,custom]; label=Positioning the Top Bar
+	position = contain-to-grid
+	
+	#cat=foundation top-bar navigation/enable/a02; type=options[true,false]; label=Mouse hover:You can now make the top bar clickable if false
+	is_hover = true
+
+	#cat=foundation top-bar navigation/enable/a03; type=options[true,false]; label=Show Parent Link when small
+	mobileShowParentLink = true
+
+	#cat=foundation top-bar navigation/ctext/a04; type=string; label=Title for Small:menu title when small
+	smallTitle = Menu
+
+	#cat=foundation top-bar navigation/links/a05; type=wrap; label=linkWrap for toplevel
+	linkWrap.top = |
+	
+	#cat=foundation top-bar navigation/links/a06; type=wrap; label=linkWrap toplevel active root:linkWrap for toplevel in the active root path
+	linkWrap.topAct = |	
+	
+	#cat=foundation top-bar navigation/links/a06; type=wrap; label=linkWrap toplevel active page:linkWrap for toplevel the active page
+	linkWrap.topCur = |	
+	
+	#cat=foundation top-bar navigation/links/a07; type=wrap; label=linkWrap for subLevel
+	linkWrap.sub = |
+
+	#cat=foundation top-bar navigation/links/a08; type=wrap; label=linkWrap sublevel active root:linkWrap for sublevel in the active root path
+	linkWrap.subAct = |	
+
+	#cat=foundation top-bar navigation/links/a08; type=wrap; label=linkWrap sublevel active page:linkWrap for sublevel the active page
+	linkWrap.subCur = |		
+
+	#cat=foundation top-bar navigation/enable/a09; type=boolean; label=Enable ATag before wrap
+	ATagBeforeWrap = 1
+	
+	#cat=foundation top-bar navigation/enable/a10; type=string; label=ATagParams
+	ATagParams = 
+	
+	#cat=foundation top-bar navigation/clist/b01; type=int; label=Entry Level
+	entryLevel = 0
+
+	#cat=foundation top-bar navigation/clist/b02; type=string; label=Exclude UID List
+	excludeUidList =
+
+}

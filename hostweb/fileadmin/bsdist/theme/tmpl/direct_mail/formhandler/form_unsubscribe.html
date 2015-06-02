@@ -1,0 +1,51 @@
+
+<!-- ------------------ Unsubscribe form -------------------------------- -->
+
+<!-- ###TEMPLATE_FORM1### begin -->
+###master_form-start_nlunsub###
+<!-- master_radiogrp2_language -->
+    ###master_input_email###
+    ###master_unsubscribe###
+###master_form-end_nlunsub###
+<script language="JavaScript">
+    (function($){
+        $(document).ready(function() {
+            $(".radiogrpbtn").each(function(){
+                if ( $(this).is(':checked') ) {
+                    $(this).closest('label').addClass('active');
+                }
+            });
+        });
+    })(jQuery);
+</script>
+<!-- ###TEMPLATE_FORM1### end -->
+
+
+<!-- ------------------ On Screen Message -------------------------------- -->
+
+<!-- ###TEMPLATE_SUBMITTEDOK### begin -->
+<p>###LLL:unsub_success_message###</p>
+<!-- ###TEMPLATE_SUBMITTEDOK### end -->
+
+
+
+<!-- ------------------ Emails -------------------------------- -->
+
+<!-- ###TEMPLATE_EMAIL_USER_PLAIN### begin -->
+###LLL:email_user_greetings### ###value_firstname### ###value_lastname###,
+
+###LLL:unsub_email_user_text###
+
+###LLL:email_user_footer###
+<a href="###LLL:email_user_footer_link###">###LLL:email_user_footer_link###</a>
+<!-- ###TEMPLATE_EMAIL_USER_PLAIN### end -->
+
+
+<!-- ###TEMPLATE_EMAIL_USER_HTML### begin -->
+<p>###LLL:email_user_greetings### ###value_firstname### ###value_lastname###</p>
+<p>###LLL:unsub_email_user_text###</p>
+<p>
+    ###LLL:email_user_footer###<br>
+    <a href="###LLL:email_user_footer_link###">###LLL:email_user_footer_link###</a>
+</p>
+<!-- ###TEMPLATE_EMAIL_USER_HTML### end -->

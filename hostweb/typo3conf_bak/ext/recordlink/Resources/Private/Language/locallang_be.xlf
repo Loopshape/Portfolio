@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2015-03-17T11:08:12Z" product-name="recordlink">
+    <header/>
+    <body>
+      <trans-unit id="record">
+        <source>Record</source>
+      </trans-unit>
+      <trans-unit id="select_linktype">
+        <source>Select Type:</source>
+      </trans-unit>
+      <trans-unit id="select_record">
+        <source>Select Record:</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

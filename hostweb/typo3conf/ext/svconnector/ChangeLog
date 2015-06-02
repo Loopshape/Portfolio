@@ -1,0 +1,84 @@
+2014-06-05 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Released version 2.4.0, resolves #57622
+
+2014-04-05 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Migrated documentation to reST, resolves #57621
+
+2014-04-02 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Verified compatibility with TYPO3 CMS 6.2, resolves #57536
+	* Fixed broken debug output in TYPO3 CMS 6.2, resolves #57534
+	* Add API to access language and character set converter instances, resolves #55361
+	* Removed useless code example in query() method of base connector class, resolves #52100
+
+2013-07-21 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Verified compatibility with TYPO3 CMS 6.1, resolves #50256
+	* Released version 2.3.0
+
+2013-01-24 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Released version 2.2.0
+
+2013-01-11 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Ensured compatibility with TYPO3 CMS 6.0, resolves #44448
+
+2012-09-23 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Released version 2.1.0
+
+2012-09-21 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Verified compatibility with TYPO3 4.7, performed some code cleanup, resolves #41170
+
+2012-09-14 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Added API for providing configuration samples to BE module, resolves #13548
+	* Added choice of output format in BE module, resolves #40920
+
+2012-09-10 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Moved BE module to Extbase, resolves #40804
+	* Improved checks when no connector services are installed, resolves #38118
+
+2011-03-08 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Released version 2.0.0
+
+2011-03-02 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Added BE module to test connector services
+
+2011-01-06 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Added utility method for XML to PHP array conversion, resolves #11794
+
+2010-04-27 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Added a post-processing method to the API
+	* Moved sv1 service class to "base" class
+	* Released version 1.1.0
+
+2009-10-20 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Removed unneeded registration of (empty) base service
+	* Raised status to stable
+	* Released version 1.0.0
+
+2009-01-16 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Released version 0.4.0
+
+2008-07-20 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Added hook examples
+	* Added manual
+	* Completed API
+	* Raised status to beta
+
+2008-04-28 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* First public release

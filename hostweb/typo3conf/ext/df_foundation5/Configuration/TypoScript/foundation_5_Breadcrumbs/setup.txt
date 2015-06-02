@@ -1,0 +1,28 @@
+
+#############################
+# lib.breadcrumbs
+#############################
+lib.breadcrumbs = HMENU
+lib.breadcrumbs {
+ 	special = rootline
+	special.range = {$df_foundation5.breadcrumbs.range}	
+  entryLevel = {$df_foundation5.breadcrumbs.entryLevel}
+  wrap = <nav class="breadcrumbs">|</nav>
+  1 = TMENU
+  1 {
+    noBlur = 1
+    NO = 1
+    NO {   
+      ATagTitle.field = abstract // subtitle
+			allWrap = |
+			stdWrap.htmlSpecialChars = 1
+    }
+    CUR < .NO
+    CUR = 1
+		CUR.ATagParams = class="current" 
+  }
+}
+page.cssInline {
+	20012 = TEXT
+	20012.value = .breadcrumbs > *:before {content:"{$df_foundation5.breadcrumbs.separator}";top:{$df_foundation5.breadcrumbs.separatorpos}px;}
+}

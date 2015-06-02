@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallangExt>
+  <data type="array">
+    <languageKey index="de" type="array">
+      <label index="width">Breite</label>
+      <label index="tablet">Tablet</label>
+      <label index="mobile">Handy</label>
+      <label index="computer">Computer</label>
+      <label index="customWidth">Benutzerdefinierte Größe</label>
+      <label index="autoSize">Automatische Größe</label>
+    </languageKey>
+  </data>
+</T3locallangExt>

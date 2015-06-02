@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallangExt>
+  <data type="array">
+    <languageKey index="de" type="array">
+      <label index="config_debug">Debug: Setzen Sie das Häkchen, um das Debugging im Dev Log zu aktivieren. Debugging ist aktiviert wenn TYPO3_DLOG auf true gesetzt wurde. Diese Funktion benötigt devlog oder eine ähnliche Erweiterung.</label>
+    </languageKey>
+  </data>
+</T3locallangExt>

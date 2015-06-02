@@ -1,0 +1,10 @@
+df_foundation5.sub-nav {	
+	#cat=foundation sub navigation/typo/c00; type=wrap; label=sub-nav Wrap
+	wrap = |
+	
+	#cat=foundation sub navigation/typo/c01; type=int; label=sub-nav Entry Level
+	entryLevel = 2
+
+	#cat=foundation sub navigation/clist/c02; type=string; label=sub-nav Exclude UID List
+	excludeUidList =
+}

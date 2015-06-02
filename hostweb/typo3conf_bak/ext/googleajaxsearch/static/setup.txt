@@ -1,0 +1,14 @@
+plugin.tx_googleajaxsearch_pi1 {
+  linkTarget={$plugin.tx_googleajaxsearch.linkTarget}
+  apiKey={$plugin.tx_googleajaxsearch.apiKey}
+  siteRestriction={$plugin.tx_googleajaxsearch.siteRestriction} 
+  additionalSiteRestriction={$plugin.tx_googleajaxsearch.additionalSiteRestriction}
+  titleWordRestriction={$plugin.tx_googleajaxsearch.titleWordRestriction} 
+  additionalTitleWordRestriction={$plugin.tx_googleajaxsearch.additionalTitleWordRestriction}
+  urlRestriction ={$plugin.tx_googleajaxsearch.urlRestriction}
+  additionalUrlRestriction ={$plugin.tx_googleajaxsearch.additionalUrlRestriction}
+  defaultSearch={$plugin.tx_googleajaxsearch.defaultSearch}
+  resultsDOMId={$plugin.tx_googleajaxsearch.resultsDOMId}
+  searchFormDOMId={$plugin.tx_googleajaxsearch.searchFormDOMId}
+  brandingDOMId={$plugin.tx_googleajaxsearch.brandingDOMId}
+}

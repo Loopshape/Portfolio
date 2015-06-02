@@ -1,0 +1,42 @@
+#######################################################
+# lib.side-nav
+#######################################################
+lib.side-nav = COA
+lib.side-nav {
+	stdWrap.wrap = {$df_foundation5.side-nav.wrap}
+  10 = TEXT
+  10.data = leveltitle:{$df_foundation5.side-nav.levelTitle}
+  10.typolink.parameter.data=leveluid:{$df_foundation5.side-nav.levelTitleLink}
+  10.wrap = {$df_foundation5.side-nav.leveltitleWrap}
+  
+  20 = HMENU
+  20 {
+    excludeUidList = {$df_foundation5.side-nav.excludeUidList}
+    entryLevel = {$df_foundation5.side-nav.entryLevel}
+    1 = TMENU
+    1 {
+      expAll = {$df_foundation5.side-nav.expandAll}
+      collapse = {$df_foundation5.side-nav.collapse}
+      noBlur = 1
+      wrap = <ul class="side-nav level1">|</ul>
+      
+      NO = 1
+      NO {
+        ATagTitle.field = abstract // description // subtitle
+        allWrap = |
+        ATagBeforeWrap = 1        
+        wrapItemAndSub = <li>|</li>
+      }      
+      ACT < .NO
+      ACT = 1
+      ACT.wrapItemAndSub = <li class="active">|</li>			
+      CUR < .NO
+      CUR = 1
+      CUR.wrapItemAndSub = <li class="active current">|</li>			
+    }
+    2 < .1
+    2.wrap = <ul class="side-nav level2">|<li class="divider"></li></ul>
+    3 < .2
+    3.wrap = <ul class="side-nav level3">|<li class="divider"></li></ul>    
+  }
+}

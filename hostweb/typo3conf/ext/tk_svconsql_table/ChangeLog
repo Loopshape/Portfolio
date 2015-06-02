@@ -1,0 +1,29 @@
+2014-09-27 Tomasz Krawczyk  <tomasz@typo3.pl>
+
+	* added TYPO3 v.6.2 compatibility.
+	* updated dependencies
+
+2013-08-05 Tomasz Krawczyk  <tomasz@typo3.pl>
+
+	* Fixed bug causing TYPO3 crash while using Caching Framework under TYPO3 version 4.5.
+
+2013-07-19 Tomasz Krawczyk  <tomasz@typo3.pl>
+
+	* added TYPO3 v.6.1 compatibility.
+	
+2013-04-14 Tomasz Krawczyk  <tomasz@typo3.pl>
+
+	* added TYPO3 v.6 compatibility
+	* added init and fetch mode databse parameters
+	* fixed minor bugs
+	* fixed typo in TypoScript configuration
+
+2013-03-20 Tomasz Krawczyk  <tomasz@typo3.pl>
+
+	* table generation rewriten from scratch
+	* added version compatibility
+	* added Caching Framework support
+
+2011-04-29 Tomasz Krawczyk  <tomasz@typo3.pl>
+
+	* initial release

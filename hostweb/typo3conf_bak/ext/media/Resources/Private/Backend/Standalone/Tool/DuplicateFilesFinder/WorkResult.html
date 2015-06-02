@@ -1,0 +1,168 @@
+<style>
+	.file-identifier {
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	ul {
+		list-style-type: none;
+		margin: 0 0 0 1px;
+		padding: 0;
+	}
+	ul.list-files li {
+		margin: 0;
+		line-height: 15px;
+	}
+	ul.list-files li label {
+		margin-bottom: 0;
+		line-height: 15px;
+		min-height: 15px;
+	}
+	.checkbox-placeholder {
+		display: inline-block;
+		width: 15px;
+	}
+	.checkbox-file {
+		margin-bottom: 5px !important;
+	}
+	.deleting-disabled-notice {
+		margin-bottom: 8px;
+		line-height: 15px;
+	}
+</style>
+
+<script>
+
+	(function($) {
+		$(function() {
+
+			/**
+			 * Check or un check all check boxes
+			 */
+			$('.toggleSelection').click (function () {
+				var target = $(this).attr('data-target');
+				var checkboxes = $(target + ' :checkbox');
+				checkboxes.prop("checked", !checkboxes.prop("checked"));
+			});
+
+		});
+	})(jQuery);
+</script>
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-typo3">
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-typo3">
+				<div class="container-fluid navbar-typo3-top">
+					<div>
+						<div class="row-fluid">
+							<div class="span6">
+							</div>
+							<div class="span6">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid navbar-typo3-bottom">
+					<div>
+						<div class="row-fluid">
+							<div class="span6">
+								<v:link.back/>
+							</div>
+							<div class="span6">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="container" style="padding-left: 10px;">
+
+	<h4>Duplicate files</h4>
+
+	<f:for each="{duplicateFilesReports}" as="report">
+
+		<div style="font-weight: bold; margin-bottom: 10px">Storage "{report.storage.name}" (UID {report.storage.uid})</div>
+
+		<f:if condition="{report.duplicateFiles}">
+			<f:then>
+				<div class="alert alert-error">
+					{report.numberOfDuplicateFiles} case<f:if condition="{report.numberOfDuplicateFiles} > 1">s</f:if> of duplicated files!
+				</div>
+
+				<p>
+					<button class="toggleSelection" data-target="#report-storage-{report.storage.uid}">
+						<span title="Toggle selection" class="t3-icon t3-icon-actions t3-icon-actions-document t3-icon-document-select"></span>
+						Check/uncheck all
+					</button>
+				</p>
+
+				<div id="report-storage-{report.storage.uid}">
+					<f:form action="work" class="" controller="Tool" extensionName="vidi" pluginName="user_VidiSysFileM1"
+					        additionalParams="{returnUrl: '{v:gp(argument: \'returnUrl\', encode: false)}'}">
+						<f:form.hidden name="arguments[deleteDuplicateFiles]" value="1"/>
+						<f:form.hidden name="tool" value="TYPO3\CMS\Media\Tool\DuplicateFilesFinderTool"/>
+
+
+						<f:for each="{report.duplicateFiles}" key="sha1" as="records">
+							<div class="file-identifier">File with hash <strong>{sha1}</strong>:</div>
+							<ul class="list-files">
+								<f:for each="{records}" as="record" iteration="iterator">
+									<li>
+										<label>
+											<div class="checkbox-placeholder">
+												<f:if condition="{record.number_of_references} == 0">
+													<f:form.checkbox name="arguments[files][]" value="{record.uid}"
+														 id="checkbox-{record.uid}"
+														 class="checkbox-file"
+														 checked="1"/>
+												</f:if>
+											</div>
+											<a href="/{m:file.uri(file: '{record.uid}')}" target="_blank">{record.identifier}</a> (UID {record.uid})
+										</label>
+										<f:if condition="{record.number_of_references} > 0">
+											<div class="deleting-disabled-notice">
+												<div class="checkbox-placeholder"></div>
+												<div style="display: inline-block;">
+													File has {record.number_of_references}
+													reference<f:if condition="{record.number_of_references} > 1">s</f:if> and cannot be deleted!
+												</div>
+											</div>
+										</f:if>
+										<f:if condition="{m:file.exists(file: '{record.uid}')} == 0">
+											<div class="deleting-disabled-notice">
+												<div class="checkbox-placeholder"></div>
+												<div style="display: inline-block; color: red;">
+													File is missing!
+												</div>
+											</div>
+										</f:if>
+									</li>
+								</f:for>
+							</ul>
+
+							<hr/>
+						</f:for>
+
+						<input type="submit" value="Deleted selected record(s)" class="btn"/>
+						<div>
+							* Operation will require to be run multiple time if too many records, depending on your server configuration.
+						</div>
+					</f:form>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="alert alert-success">
+					Everything seems fine.
+				</div>
+			</f:else>
+		</f:if>
+	</f:for>
+
+
+</div>
+
+{namespace v=TYPO3\CMS\Vidi\ViewHelpers}
+{namespace m=TYPO3\CMS\Media\ViewHelpers}

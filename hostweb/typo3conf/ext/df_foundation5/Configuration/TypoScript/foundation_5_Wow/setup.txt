@@ -1,0 +1,110 @@
+###########################################################
+## Header CSS Scripts
+###########################################################
+page.includeCSS {
+	wowslider = EXT:df_foundation5/Resources/Public/Wow/Theme/{$df_foundation5.wowslider.theme}/style.css
+}
+
+###########################################################
+## Inline Scripts for wowSlider
+###########################################################
+page.bodyTag ( 
+<body>
+<script type="text/javascript" src="typo3conf/ext/df_foundation5/Resources/Public/Wow/engine1/wowslider.min.js"></script>
+<script type="text/javascript" src="typo3conf/ext/df_foundation5/Resources/Public/Wow/engine1/script.min.js"></script>
+)
+
+temp.js = COA
+temp.js {
+	30 = TEXT
+	30.value = <script type="text/javascript">jQuery(".wowslider{field:uid}")
+	30.insertData = 1
+	40 = TEXT
+	40.value = .wowSlider({effect:"{$df_foundation5.wowslider.effect}",prev:"{$df_foundation5.wowslider.prev}",next:"{$df_foundation5.wowslider.next}",duration:{$df_foundation5.wowslider.duration},delay:{$df_foundation5.wowslider.delay},autoPlay:{$df_foundation5.wowslider.autoPlay},autoPlayVideo:false,playPause:{$df_foundation5.wowslider.playPause},stopOnHover:{$df_foundation5.wowslider.stopOnHover},loop:{$df_foundation5.wowslider.loop},bullets:{$df_foundation5.wowslider.bullets},caption:{$df_foundation5.wowslider.caption},captionEffect:"{$df_foundation5.wowslider.captionEffect}",controls:{$df_foundation5.wowslider.controls},responsive:2,fullScreen:{$df_foundation5.wowslider.fullScreen},gestures:2,onBeforeStep:{$df_foundation5.wowslider.onBeforeStep},images:0});</script>
+}
+
+temp.wow {
+  override (
+  	<div id="wowslider-container1" class="wowslider{field:uid}">
+			<div class="ws_images">
+				<ul>|</ul>
+			</div>
+  )	
+	override.if {
+    isTrue.field = tx_dffoundation5_wow
+    value = 1
+    isGreaterThan.data = register:imageCount
+  }
+}
+
+temp.bullets = COA
+temp.bullets {
+	10 = COA
+	10.wrap = <div class="ws_bullets"><div>|</div></div>
+	10.10 = FILES
+	10.10 {
+		references{
+			table=tt_content
+			uid.data=field:uid
+			fieldName=image
+		}
+		renderObj = COA
+		renderObj.10 = IMAGE
+		renderObj.10.wrap = <a href="#"><span>|</span></a>
+		renderObj.10 {
+			required=1
+			file.width = 155
+			file.height = 48
+			file.import.data=file:current:originalUid//file:current:uid
+		}
+	}
+	
+	80 = TEXT
+	80.value = <div class="ws_shadow"></div></div>
+	90 = TEXT
+	90 < temp.js
+}
+
+tt_content.image.20.1.emptyTitleHandling.override = keepEmpty
+tt_content.image.20.1.emptyTitleHandling.override.isTrue.field = tx_dffoundation5_wow
+
+tt_content.image.20.rendering {
+  noCaption.allStdWrap.dataWrap.override.override.override < temp.wow
+  splitCaption.allStdWrap.dataWrap.override.override.override < temp.wow
+
+	noCaption.allStdWrap.append < temp.bullets
+	splitCaption.allStdWrap.append < temp.bullets
+	
+	# columnStdWrap
+	splitCaption.columnStdWrap.wrap.override.override = <li class="splitCaption">|</li>
+	splitCaption.columnStdWrap.wrap.override.override.if.isTrue.field = tx_dffoundation5_wow	
+	
+	singleNoCaption.columnStdWrap.wrap.override.override = <li class="singleNoCaption">|</li>
+	singleNoCaption.columnStdWrap.wrap.override.override.if.isTrue.field = tx_dffoundation5_wow
+	
+	
+	# singleStdWrap
+	splitCaption.singleStdWrap.wrap.override.override = |{file:current:description}
+	splitCaption.singleStdWrap.wrap.override.override.if.isTrue.field = tx_dffoundation5_wow	
+	splitCaption.singleStdWrap.insertData = 1
+	
+	singleNoCaption.singleStdWrap.wrap.override.override = |{file:current:description}
+	singleNoCaption.singleStdWrap.wrap.override.override.if.isTrue.field = tx_dffoundation5_wow
+	singleNoCaption.singleStdWrap.insertData = 1
+
+#	noCaption.columnStdWrap.wrap.override.override = <li class="noCaption">|</li>
+#	noCaption.columnStdWrap.wrap.override.override.if.isTrue.field = tx_dffoundation5_wow	
+	
+#	noCaption.singleStdWrap.wrap.override.override = 2|
+#	noCaption.singleStdWrap.wrap.override.override.if.isTrue.field = tx_dffoundation5_wow
+	
+#	singleCaption.singleStdWrap.wrap.override.override = 3|
+#	singleCaption.singleStdWrap.wrap.override.override.if.isTrue.field = tx_dffoundation5_wow
+
+}
+
+page.cssInline {
+	20015 = TEXT
+	20015.value = .overflowvisible { overflow:visible!important; }
+	20015.isTrue.field = tx_dffoundation5_wow
+}

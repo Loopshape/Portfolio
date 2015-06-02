@@ -1,0 +1,113 @@
+
+<!-- ------------------ Form fields -------------------------------- -->
+
+<!-- ###master_radiogrp2### -->
+<div class="form-group ###is_error_###fieldname######">
+    <label class="col-sm-3 control-label text-left">###LLL:###fieldname###### ###required_###fieldname######</label>
+    <div class="col-sm-9">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-info btn-sm">
+                <input type="radio" name="###formValuesPrefix###[###fieldname###]" class="radiogrpbtn" id="fhandler-###fieldname###-1" value="###LLL:###fieldname###.0.val###" ###checked_###fieldname###_###LLL:###fieldname###.0.val###### > ###LLL:###fieldname###.0###
+            </label>
+            <label class="btn btn-info btn-sm">
+                <input type="radio" name="###formValuesPrefix###[###fieldname###]" class="radiogrpbtn" id="fhandler-###fieldname###-2" value="###LLL:###fieldname###.1.val###" ###checked_###fieldname###_###LLL:###fieldname###.1.val###### > ###LLL:###fieldname###.1###
+            </label>
+        </div>
+    </div>
+</div>
+<!-- ###master_radiogrp2### -->
+
+<!-- ###master_input### -->
+<div class="form-group ###is_error_###fieldname######">
+    <label class="col-sm-3 control-label text-left" for="###fieldname###" id="fhandler-###fieldname###-label">###LLL:###fieldname###### ###required_###fieldname######</label>
+    <div class="col-sm-9">
+        <input type="text" class="form-control" id="fhandler-###fieldname###" placeholder="###LLL:###fieldname######" name="###formValuesPrefix###[###fieldname###]" value="###value_###fieldname######"/>
+        ###error_###fieldname######
+    </div>
+</div>
+<!-- ###master_input### -->
+
+<!-- ###master_input_ajax### -->
+<div class="form-group ajax ###is_error_###fieldname######">
+    <label class="col-sm-3 col-xs-12 control-label text-left" for="###fieldname###" id="fhandler-ajax-###fieldname###-label">###LLL:###fieldname###### ###required_###fieldname######</label>
+    <div class="col-sm-9 col-xs-10">
+        <input type="text" class="form-control" id="fhandler-ajax-###fieldname###" placeholder="###LLL:###fieldname######" name="###formValuesPrefix###[###fieldname###]" value="###value_###fieldname######"/>
+        ###error_###fieldname######
+    </div>
+    <div class="col-sm-1 col-xs-2 text-left">
+        ###validate_###fieldname######
+    </div>
+</div>
+<!-- ###master_input_ajax### -->
+
+<!-- ###master_subscribe### -->
+<div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+        <input type="submit" ###submit_nextStep### class="btn btn-primary" value="###LLL:subscribe###" />
+    </div>
+</div>
+<!-- ###master_subscribe### -->
+
+<!-- ###master_unsubscribe### -->
+<div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+        <input type="submit" ###submit_nextStep### class="btn btn-primary" value="###LLL:unsubscribe###" />
+    </div>
+</div>
+<!-- ###master_unsubscribe### -->
+
+
+
+
+<!-- ###master_small-radiogrp2### -->
+<div class="form-group ###is_error_###fieldname######">
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-info btn-sm">
+            <input type="radio" name="###formValuesPrefix###[###fieldname###]" class="radiogrpbtn" id="###formValuesPrefix###[###fieldname###]1" value="###LLL:###fieldname###.0.val###" ###checked_###fieldname###_###LLL:###fieldname###.0.val###### > ###LLL:###fieldname###.0###
+        </label>
+        <label class="btn btn-info btn-sm">
+            <input type="radio" name="###formValuesPrefix###[###fieldname###]" class="radiogrpbtn" id="###formValuesPrefix###[###fieldname###]2" value="###LLL:###fieldname###.1.val###" ###checked_###fieldname###_###LLL:###fieldname###.1.val###### > ###LLL:###fieldname###.1###
+        </label>
+    </div>
+</div>
+<!-- ###master_small-radiogrp2### -->
+
+<!-- ###master_small-inputsubscribe### -->
+<div class="form-group ###is_error_###fieldname######">
+    <div class="input-group">
+        <input type="text" class="form-control" id="###fieldname###" placeholder="###LLL:###fieldname######" name="###formValuesPrefix###[###fieldname###]" value="###value_###fieldname######"/>
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">###LLL:subscribe###</button>
+        </span>
+    </div>
+</div>
+<!-- ###master_small-inputsubscribe### -->
+
+
+<!-- ------------------ Form start/end -------------------------------- -->
+
+<!-- ###master_form-start### -->
+<form action="###REL_URL###" method="post" class="form form-horizontal" id="###fieldname###" role="form">
+    ###HIDDEN_FIELDS###
+<!-- ###master_form-start### -->
+
+<!-- ###master_multipart-form-start### -->
+<form action="###REL_URL###" method="post" class="form form-horizontal" id="###fieldname###" enctype="multipart/form-data" role="form">
+    ###HIDDEN_FIELDS###
+<!-- ###master_multipart-form-start### -->
+
+<!-- ###master_form-end### -->
+</form>
+<!-- ###master_form-end### -->
+
+
+
+<!-- ------------------ Form sections (fieldsets) -------------------------------- --
+
+<!-- ###master_section-start### -->
+    <fieldset>
+<!-- ###master_section-start### -->
+
+<!-- ###master_section-end### -->
+    </fieldset>
+<!-- ###master_section-end### -->

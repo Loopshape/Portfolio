@@ -1,0 +1,54 @@
+
+df_foundation5 {
+	
+	wowslider {
+		
+		# cat=foundation wow/typo/a01; type=options[Absent,Animated,Aqua,Balance,Block,Book,Bootstrap,Box,Calm,Catalyst,Catalystdigital,Chess,Chrome,Cloud,Contour,Convex,Crystal,Cursive,Darkmatter,Digit,Dominion,Drive,Easy,Elegant,Elemental,Emerald,Flat,Flux,Fresh,Galaxy,Gentle,Geometric,Glass,Gothic,Graffito,Ionosphere,Luxury,Material,Megalopolis,Mellow,Metro,Native,Noble,Noir,Numeric,Pinboard,Plastic,Premium,Primetime,Pulse,Pure,Push,Puzzle,Quiet,Salient,Shady,Showy,Shuffle,Silence,Simple,Sky,Slim,Strict,Studio,Subway,Sunny,Surface,Terse,Tick,Transparent,Turquoise,Twist,Vernisage,Zoom]; label=Slide theme
+		theme = Convex
+	
+		#cat=foundation wow/typo/a02; type=string; label=Multiple slide transition effect:basic,basic_linear,blast,blur,book,brick,bubbles,collage,cube,domino,dribbles,fade,flip,fly,kenburns,lines,page,parallax,glass_parallax,rotate,seven,slices,stack,stack_vertical,tv [single effect: carousel_basic or carousel]
+		effect = basic,basic_linear,blast,blur,book,brick,bubbles,collage,cube,domino,dribbles,fade,flip,fly,kenburns,lines,page,parallax,glass_parallax,rotate,seven,slices,stack,stack_vertical,tv
+
+		# cat=foundation wow/typo/a03; type=options[none,fade,move,parallax,slide,traces]; label=Slide caption Effect
+		captionEffect = move
+
+		#cat=foundation wow/enable/d05; type=boolean; label= Slide AutoPlay
+		autoPlay = 1
+		
+		#cat=foundation wow/enable/d05; type=boolean; label= Slide PlayPause Icon
+		playPause = 1
+		
+		#cat=foundation wow/enable/d05; type=boolean; label= Slide stopOnHover
+		stopOnHover = 0
+
+		#cat=foundation wow/enable/d05; type=boolean; label= Slide loop off
+		loop = 0
+
+		#cat=foundation wow/enable/b01; type=boolean; label= Slide caption
+		caption = 1
+
+		#cat=foundation wow/enable/d05; type=boolean; label= Slide controls Icon
+		controls = 1
+
+		#cat=foundation wow/enable/d05; type=boolean; label= Slide bullets
+		bullets = 1
+
+		#cat=foundation wow/enable/d05; type=boolean; label= Slide fullScreen Icon
+		fullScreen = 1
+
+		#cat=foundation wow/cscript/a01; type=string; label=Slide duration
+		duration = 20*100
+		
+		#cat=foundation wow/cscript/a02; type=string; label=Slide delay
+		delay = 20*100
+		
+		#cat=foundation wow/cscript/a10; type=string; label=Slide order:eg for random function: function(i,c){return (i+1 + Math.floor((c-1)*Math.random()))}
+		onBeforeStep = 0				
+
+		#cat=foundation wow/ctext/a01; type=string; label=Slide prev Label
+		prev =
+		
+		#cat=foundation wow/ctext/a02; type=string; label=Slide next Label
+		next =		
+	}
+} 

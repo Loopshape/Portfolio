@@ -41,6 +41,7 @@ requirejs.config(
         jscookie : './hostweb/assets/js/app/bower_components/js-cookie/src/js.cookie',
         hoverintent : './hostweb/assets/js/app/bower_components/jquery-hoverIntent/jquery.hoverIntent',
         fancybox : './hostweb/assets/js/app/bower_components/fancybox/source/jquery.fancybox.pack',
+        planetarium : './hostweb/assets/js/app/bower_components/planetarium/jquery.planetarium.min',
 
         main : './hostweb/assets/js/app/main'
 
@@ -106,8 +107,7 @@ requirejs.config(
 
         jssnippet :
         {
-            deps : ['jquery'],
-            deps : ['jquerysnippet']
+            deps : ['jquery', 'jquerysnippet']
         },
 
         jscookie :
@@ -126,6 +126,11 @@ requirejs.config(
         {
             deps : ['jquery'],
             exports : 'fancybox'
+        },
+        
+        planetarium : {
+            deps : ['jquery'],
+            exports : 'planetarium'
         },
 
         main :

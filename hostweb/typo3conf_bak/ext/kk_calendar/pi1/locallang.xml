@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for plugin &quot;tx_kkcalendar_pi1&quot;</description>
+	</meta>
+	<data type="array">
+
+		<languageKey index="default" type="array">
+			<label index="tx_kkcalendar_entries.type.I.0">Calendar</label>
+			<label index="tx_kkcalendar_entries.type.I.1">ToDo</label>
+			<label index="tx_kkcalendar_entries.priority.I.0">high</label>
+			<label index="tx_kkcalendar_entries.priority.I.1">medium</label>
+			<label index="tx_kkcalendar_entries.priority.I.2">low</label>
+		   <label index="txtWEEK">Week: </label>
+		   <label index="txtCALWEEK">Week: </label>
+		   <label index="txtCATEGORY">Cat.: </label>
+		   <label index="txtPRIORITY">Priority: </label>
+		   <label index="txtWORKGROUP">Workgroup: </label>
+		   <label index="txtRESPONSIBLE">Responsible person: </label>
+		   <label index="txtCOMPLETE">Completed </label>
+		   <label index="txtLINK">\nLink to: </label>
+			<label index="errNoTemplate">Neither in typoscript nor in the flexform a correct HTML-template is allocated.</label>
+			<label index="noEntryMessage">There are no entries available right now.</label>
+		</languageKey>
+		
+		<languageKey index="de" type="array">
+			<label index="tx_kkcalendar_entries.type.I.0">Kalender</label>
+			<label index="tx_kkcalendar_entries.type.I.1">Aufgabe</label>
+			<label index="tx_kkcalendar_entries.priority.I.0">hoch</label>
+			<label index="tx_kkcalendar_entries.priority.I.1">mittel</label>
+			<label index="tx_kkcalendar_entries.priority.I.2">niedrig</label>
+		   <label index="txtWEEK">Woche: </label>
+		   <label index="txtCALWEEK">KW </label>
+		   <label index="txtCATEGORY">Kat.: </label>
+		   <label index="txtPRIORITY">Prio.: </label>
+		   <label index="txtWORKGROUP">Arbeitsgruppe: </label>
+		   <label index="txtRESPONSIBLE">Verantwortlich: </label>
+		   <label index="txtCOMPLETE">Status: </label>
+		   <label index="txtLINK">\nVerweis zu </label>
+			<label index="errNoTemplate">Weder im Typoscript noch in der Flexform wurde eine korrekte HTML-Vorlage eingebunden.</label>
+			<label index="noEntryMessage">Zur Zeit stehen keine Termine oder Aufgaben an!</label>
+		</languageKey>
+
+	</data>
+</T3locallang>

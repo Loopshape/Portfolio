@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3locallangExt>
+  <data type="array">
+    <languageKey index="de" type="array">
+      <label index=".description"/>
+      <label index="_.seeAlso"/>
+      <label index="title.description"/>
+      <label index="title.details"/>
+      <label index="_title.seeAlso"/>
+      <label index="title_lang_ol.description"/>
+      <label index="title_lang_ol.details"/>
+      <label index="_title_lang_ol.image"/>
+      <label index="title_lang_ol.image_descr"/>
+      <label index="_title_lang_ol.seeAlso"/>
+      <label index="parent_category.description"/>
+      <label index="parent_category.details"/>
+      <label index="_parent_category.seeAlso"/>
+      <label index="hidden.description"/>
+      <label index="hidden.details"/>
+      <label index="_hidden.seeAlso"/>
+      <label index="starttime.description"/>
+      <label index="starttime.syntax"/>
+      <label index="_starttime.seeAlso"/>
+      <label index="endtime.description"/>
+      <label index="endtime.syntax"/>
+      <label index="_endtime.seeAlso"/>
+      <label index="fe_group.description"/>
+      <label index="fe_group.details"/>
+      <label index="_fe_group.seeAlso"/>
+      <label index="image.description"/>
+      <label index="image.details"/>
+      <label index="_image.seeAlso"/>
+      <label index="shortcut.description"/>
+      <label index="shortcut.details"/>
+      <label index="_shortcut.seeAlso"/>
+      <label index="shortcut_target.description"/>
+      <label index="shortcut_target.details"/>
+      <label index="_shortcut_target.seeAlso"/>
+      <label index="single_pid.description"/>
+      <label index="single_pid.details"/>
+      <label index="description.description"/>
+      <label index="description.details"/>
+    </languageKey>
+  </data>
+</T3locallangExt>

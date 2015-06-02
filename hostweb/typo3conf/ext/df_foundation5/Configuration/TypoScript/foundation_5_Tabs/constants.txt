@@ -1,0 +1,9 @@
+df_foundation5.tab {
+	# cat=foundation tab/enable/a01; type=options[horizontal,vertical]; label=Changes the orientation of tabs
+	orientation = horizontal
+	# cat=foundation tab/enable/a02; type=options[false,true]; label=Deep linking to tab or tab content
+	deep_linking = false
+	# cat=foundation tab/enable/a03; type=options[false,true]; label=Scroll to the specified element
+	scroll_to_content = true	
+}
+

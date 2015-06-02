@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns:t3="http://typo3.org/schemas/xliff" version="1.0">
+  <file t3:id="1416085536" source-language="en" datatype="plaintext" original="messages" date="2011-10-17T20:22:36Z" product-name="rtehtmlarea" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="tx_rtepbhtmlarea_pi2.list_type" xml:space="preserve" approved="yes">
+        <source>Front End HTMLArea RTE</source>
+      <target state="translated">Frontend-Editor HTMLArea RTE</target></trans-unit>
+    </body>
+  </file>
+</xliff>

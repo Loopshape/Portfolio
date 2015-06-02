@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>tk_svconsql_table Template</title>
+</head>
+<body>
+	<h1>tk_svconsql_table</h1>
+	<p>
+		Example Template for the Extension tk_svconsql_table
+	</p>
+
+
+<!-- ###TEMPLATE_TABLE### begin -->
+###TABLE_CAPTION1###
+<table ###TABLE_BORDER### ###TABLE_CELL_PADDING### ###TABLE_CELL_SPACING### ###TABLE_CLASS###>
+	###TABLE_CAPTION2###
+	###TABLE_HEAD###
+	###TABLE_BODY###
+	###TABLE_FOOT###
+</table>
+<!-- ###TEMPLATE_TABLE### end -->
+
+
+<!-- ###TEMPLATE_TABLE_HEADER### begin -->
+	<thead>
+		###HEAD_ROWS###
+	</thead>
+<!-- ###TEMPLATE_TABLE_HEADER### end -->
+
+
+<!-- ###TEMPLATE_TABLE_BODY### begin -->
+	<tbody>
+		###BODY_ROWS###
+	</tbody>
+<!-- ###TEMPLATE_TABLE_BODY### end -->
+
+
+<!-- ###TEMPLATE_TABLE_FOOTER### begin -->
+	<tfoot>
+		###FOOTER_ROWS###
+	</tfoot>
+<!-- ###TEMPLATE_TABLE_FOOTER### end -->
+
+
+<!-- ###TEMPLATE_TABLE_HEADER_ROW### begin -->
+<tr>
+	###ROW_CELLS###
+</tr>
+<!-- ###TEMPLATE_TABLE_HEADER_ROW### end -->
+
+
+<!-- ###TEMPLATE_TABLE_ROW### begin -->
+<tr###ROW_CLASS###>
+	###ROW_CELLS###
+</tr>
+<!-- ###TEMPLATE_TABLE_ROW### end -->
+
+
+<!-- ###TEMPLATE_TABLE_ROW_ALT### begin -->
+<tr class="###ROW_CLASS_ALT###">
+	###ROW_CELLS###
+</tr>
+<!-- ###TEMPLATE_TABLE_ROW_ALT### end -->
+
+
+<!-- ###TEMPLATE_HEADER_CELL### begin -->
+<th>###CELL_VALUE###</th>
+<!-- ###TEMPLATE_HEADER_CELL### end -->
+
+
+<!-- ###TEMPLATE_TABLE_CELL### begin -->
+<td###CELL_CLASS###>###CELL_VALUE###</td>
+<!-- ###TEMPLATE_TABLE_CELL### end -->
+
+</body>
+</html>

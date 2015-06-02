@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <type>module</type>
+        <description>Language labels for module &quot;tools_txnxindexedsearchM1&quot;</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="title">Search Statistics</label>
+            
+            <label index="datasource">Datasource</label>
+            <label index="period">Period</label>
+            <label index="all">All</label>
+            <label index="total_statistics">Total Statistics</label>
+            <label index="show_statistics">Show Statistics</label>
+			<label index="today">Today</label>
+			<label index="yesterday">Yesterday</label>
+			<label index="today_yesterday">Today and Yesterday</label>
+			<label index="last_7_days">Last 7 Days</label>
+			<label index="last_30_days">Last 30 Days</label>
+			<label index="this_year">This Year</label>
+			
+			<label index="january">January</label>
+			<label index="february">February</label>
+			<label index="march">March</label>
+			<label index="april">April</label>
+			<label index="may">May</label>
+			<label index="june">June</label>
+			<label index="july">July</label>
+			<label index="august">August</label>
+			<label index="september">September</label>
+			<label index="october">October</label>
+			<label index="november">November</label>
+			<label index="december">December</label>
+			
+			<label index="term">Term</label>
+			<label index="queries">Queries</label>
+			<label index="results">Results (average)</label>
+        </languageKey>
+        
+        <languageKey index="de" type="array">
+            <label index="title">Statistiken zur indizierten Suche</label>
+            
+            <label index="datasource">Datenquelle</label>
+            <label index="period">Zeitraum</label>
+            <label index="all">Alle</label>
+            <label index="total_statistics">Gesamt-Statistik</label>
+            <label index="show_statistics">Anzeigen</label>
+			<label index="today">Heute</label>
+			<label index="yesterday">Gestern</label>
+			<label index="today_yesterday">Heute und Gestern</label>
+			<label index="last_7_days">Die letzten 7 Tage</label>
+			<label index="last_30_days">Die letzten 30 Tage</label>
+			<label index="this_year">Dieses Jahr</label>
+			
+			<label index="january">Januar</label>
+			<label index="february">Februar</label>
+			<label index="march">März</label>
+			<label index="april">April</label>
+			<label index="may">Mai</label>
+			<label index="june">Juni</label>
+			<label index="july">Juli</label>
+			<label index="august">August</label>
+			<label index="september">September</label>
+			<label index="october">Oktober</label>
+			<label index="november">November</label>
+			<label index="december">Dezember</label>
+			
+			<label index="term">Suchbegriff</label>
+			<label index="queries">Anfragen</label>
+			<label index="results">Ergebnisse (durchschnittlich)</label>
+        </languageKey>
+    </data>
+</T3locallang>

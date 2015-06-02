@@ -1,0 +1,22 @@
+#config.metaCharset = utf-8
+
+#thanks to NuSphere Corporation for that gnu/gpl soap libary
+
+includeLibs.nusoap = EXT:NF_nusoap/nusoap/nusoap.php
+
+plugin.tx_googleapisearch_pi1{
+    
+  # your personal key from http://www.google.com/apis/
+  key = 
+ 
+  filter = false
+  restrict = 
+  safeSearch = false
+  
+  #try site=typo3.org ;-), will search this site only if set
+  site = 
+  iconv = ISO-8859-1
+  buttonText = search with google
+  
+
+}

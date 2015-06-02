@@ -1,0 +1,71 @@
+{namespace c=HDNET\Calendarize\ViewHelpers}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td colspan="7">
+				<f:if condition="{settings.monthPid}">
+					<c:ifDateUpper base="{settings.dateLimitBrowserPrev}" check="{date}">
+						<c:dateTime.modify modification="-1 month">{date}</c:dateTime.modify>
+						<c:link.month pageUid="{settings.monthPid}" date="{date}">
+							&lt;
+						</c:link.month>
+						<c:dateTime.modify modification="+1 month">{date}</c:dateTime.modify>
+					</c:ifDateUpper>
+				</f:if>
+				<f:format.date format="F Y">{date}</f:format.date>
+				<f:if condition="{settings.monthPid}">
+					<c:ifDateLower base="{settings.dateLimitBrowserNext}" check="{date}">
+						<c:dateTime.modify modification="+1 month">{date}</c:dateTime.modify>
+						<c:link.month pageUid="{settings.monthPid}" date="{date}">
+							&gt;
+						</c:link.month>
+						<c:dateTime.modify modification="-1 month">{date}</c:dateTime.modify>
+					</c:ifDateLower>
+				</f:if>
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<c:loop.weeksInMonth date="{date}" iteration="week" weekStartsAt="{settings.weekStart}">
+			<tr>
+				<c:loop.daysInWeek date="{week.calendar.date}" iteration="day" weekStartsAt="{settings.weekStart}">
+					<f:if condition="{c:dateTime.indexOnDay(indices: indices, day:day.calendar.date)}">
+						<f:then>
+							<td class="hasEvents">
+								<f:if condition="{settings.dayPid}">
+									<f:then>
+										<c:link.day pageUid="{settings.dayPid}" date="{day.calendar.date}">
+											<f:format.date format="d">{day.calendar.date}</f:format.date>
+										</c:link.day>
+									</f:then>
+									<f:else>
+										<f:format.date format="d">{day.calendar.date}</f:format.date>
+									</f:else>
+								</f:if>
+								<f:if condition="{settings.detailPid}">
+									<ul class="events">
+										<f:for each="{indices}" as="index">
+											<f:if condition="{c:dateTime.indexOnDay(index: index, day:day.calendar.date)}">
+												<li>
+													<c:link.index index="{index}" pageUid="{settings.detailPid}">
+														<f:render partial="{index.configuration.partialIdentifier}/Title" arguments="{index: index}" />
+													</c:link.index>
+												</li>
+											</f:if>
+										</f:for>
+									</ul>
+								</f:if>
+							</td>
+						</f:then>
+						<f:else>
+							<td>
+								<f:format.date format="d">{day.calendar.date}</f:format.date>
+							</td>
+						</f:else>
+					</f:if>
+				</c:loop.daysInWeek>
+			</tr>
+		</c:loop.weeksInMonth>
+	</tbody>
+</table>

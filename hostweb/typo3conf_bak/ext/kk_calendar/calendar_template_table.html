@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>TYPO3-HTML-Vorlage</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="../../../../fileadmin/css/HTB3CF_fixHF_main_verschoben.css" media="screen" />
+  <!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="../css/ie6hacks.css" media="screen" />
+  <![endif]-->
+</head>
+<body>
+<br>
+<br>
+<br>
+<H1>CALENDAR and TODO TEMPLATE</H1>
+<h2>EXAMPLE</h2>
+<br>
+<br>
+<br>
+<br>
+
+<em>This template features:<br>
+- Subparts:
+### TEMPLATE_CALENDAR ###<br>
+### TEMPLATE_TODO ###<br>
+including:
+### TABLE_CONTENT ###<br>
+### DATE_CONTENT ###<br>
+
+<br>- Markers:<br>
+###TYPE###: type / Typ (calendar or ToDo)<br>
+###WOTA###: Day of week / Wochentag<br>
+###DATE###: Date / Datum<br>
+###DATETEXT###<br>
+###TIME###: Time / Uhrzeit<br>
+###HEADER###: Title / Titel<br>
+####CONTENT####: Text starting at the second row beyond the time-row<br>
+###CATEGORY###: category / Kategorie
+###LINK###
+###TEXT_CALWEEK### 
+###CALWEEK###
+
+for ToDos:
+###WEEK###: nomen est omen<br>
+###PRIORITY###
+###WORKGROUP###
+###RESPONSIBLE###
+###COMPLETE###
+
+and related text-markers like ###TEXT_....### for all markers above
+(See the source code for subparts and markers)<br>
+</em>
+<br>
+<br>
+<br>
+<br>
+
+<!-- ###TEMPLATE_CALENDAR### -->
+<table class="tx_kkcalendar">
+<!-- ###TABLE_CONTENT### -->
+   <tr class="cal_1stRow">
+      <td class="cal_Date">###WOTA### ###DATE###<br>###TEXT_CALWEEK### ###CALWEEK###</td>
+      <td class="cal_Header">###HEADER### ###TEXT_LINK### ###LINK###</td>
+   </tr>
+
+   <!-- ###DATE_CONTENT### -->
+   <tr class="cal_2ndRow">
+      <td class="cal_Time">###TIME###</td>
+      <td class="cal_Content">###CONTENT###</td>
+   </tr>
+   <!-- ###DATE_CONTENT### -->
+   <tr class="cal_trenner"><td colspan=2>&nbsp;</td></tr>
+<!-- ###TABLE_CONTENT### -->
+</table>
+<!-- ###TEMPLATE_CALENDAR### -->
+
+
+<br>
+<br>
+<br>
+<br>
+
+<!-- ###TEMPLATE_TODO### -->
+<table class="tx_kkcalendar_todo">
+<!-- ###TABLE_CONTENT### -->
+   <tr><td colspan="2" class="cal_trenner">&nbsp;</td></tr>
+   <tr class="cal_1stRow">
+      <td class="cal_Date rot">###WOTA### ###DATE###<br>###TEXT_WEEK### ###WEEK###</td>
+      <td class="cal_Header">
+         ###TEXT_RESPONSIBLE### ###RESPONSIBLE###
+         <br />###TEXT_WORKGROUP### ###WORKGROUP###
+         <br />###TEXT_PRIORITY### ###PRIORITY###
+         <br />###TEXT_COMPLETED### ###COMPLETE###
+         <br />###HEADER### ###TEXT_LINK### ###LINK###</td>
+   </tr>
+
+   <!-- ###DATE_CONTENT### -->
+   <tr class="cal_2ndRow">
+      <td class="cal_Time">###TIME###</td>
+      <td class="cal_Content">###CONTENT###</td>
+   </tr>
+   <!-- ###DATE_CONTENT### -->
+<!-- ###TABLE_CONTENT### -->
+</table>
+<!-- ###TEMPLATE_TODO### -->
+
+
+
+</body>
+</html>

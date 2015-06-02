@@ -1,0 +1,35 @@
+/*#wowslider-container1 .ws_bullets a img {
+	text-indent: 0;
+	display: block;
+	bottom: 15px;
+	left: -43px;
+	visibility: hidden;
+	position: absolute;
+	border: 1px solid #ffffff;
+	max-width: none;
+}
+#wowslider-container1 .ws_bullets a:hover img { visibility: visible; }
+#wowslider-container1 .ws_bulframe div div {
+	height: 48px;
+	overflow: visible;
+	position: relative;
+}
+#wowslider-container1 .ws_bulframe div {
+	left: 0;
+	overflow: hidden;
+	position: relative;
+	width: 85px;
+	background-color: #ffffff;
+}
+#wowslider-container1 .ws_bullets .ws_bulframe {
+	display: none;
+	bottom: 20px;
+	margin-left: 20px;
+	overflow: visible;
+	position: absolute;
+	cursor: pointer;
+	border: 1px solid #ffffff;
+}
+#wowslider-container1 .ws_bulframe div div { height: auto; }*/
+
+

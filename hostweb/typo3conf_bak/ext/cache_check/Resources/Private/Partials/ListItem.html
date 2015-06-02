@@ -1,0 +1,107 @@
+<h2>{cache.name}</h2>
+
+<f:form action="flush" style="margin-bottom:0px; float: left; margin-right: 5px;">
+	<f:form.hidden name="cache" value="{cache}" />
+	<button type="submit" class="btn btn-warning" aria-label="Delete log">
+		<f:be.buttons.icon icon="actions-system-cache-clear-impact-high" title="Flush cache" /> Flush cache
+	</button>
+</f:form>
+<f:if condition="{cache.isChangeable}">
+	<f:if condition="{cache.isInAnalyseMode}">
+		<f:then>
+			<f:form action="stop" style="margin-bottom:0px; float: left; margin-right: 5px;">
+				<f:form.hidden name="cache" value="{cache}" />
+				<button type="submit" class="btn btn-success" aria-label="Stop">
+					<f:be.buttons.icon icon="actions-edit-hide" title="Stop" /> Stop
+				</button>
+			</f:form>
+		</f:then>
+		<f:else>
+			<f:form action="start" style="margin-bottom:0px; float: left; margin-right: 5px;">
+				<f:form.hidden name="cache" value="{cache}" />
+				<button type="submit" class="btn btn-warning" aria-label="Start">
+					<f:be.buttons.icon icon="actions-edit-unhide" title="Start" /> Start
+				</button>
+			</f:form>
+		</f:else>
+	</f:if>
+	<f:if condition="{cache.dynamicKpi}">
+		<f:form action="delete" style="margin-bottom:0px; float: left; margin-right: 5px;">
+			<f:form.hidden name="cache" value="{cache}" />
+			<button type="submit" class="btn btn-info" aria-label="Delete log">
+				<f:be.buttons.icon icon="actions-edit-delete" title="Delete log" /> Delete log
+			</button>
+		</f:form>
+	</f:if>
+</f:if>
+
+<table cellspacing="1" cellpadding="0" border="0" class="t3-table">
+	<thead>
+		<tr class="bgColor5 tableheader">
+			<th>Configuration</th>
+			<th>=</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td nowrap="nowrap">
+				Frontend
+			</td>
+			<td nowrap="nowrap">
+				{cache.frontend}
+			</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">
+				Backend
+			</td>
+			<td nowrap="nowrap">
+				{cache.backend}
+			</td>
+		</tr>
+
+		<f:if condition="{cache.originalBackend = TRUE}">
+			<tr>
+				<td nowrap="nowrap">
+					Original Backend
+				</td>
+				<td nowrap="nowrap">
+					{cache.originalBackend}
+				</td>
+			</tr>
+		</f:if>
+		<tr>
+			<td nowrap="nowrap">
+				Groups
+			</td>
+			<td nowrap="nowrap">
+				<f:for each="{cache.groups}" as="group">
+					{group}<br />
+				</f:for>
+			</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">
+				Options
+			</td>
+			<td nowrap="nowrap">
+				<f:for each="{cache.options}" as="option" key="optionKey">
+					{optionKey} = {option}<br />
+				</f:for>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table cellspacing="1" cellpadding="0" border="0" class="t3-table">
+	<thead>
+		<tr class="bgColor5 tableheader">
+			<th>KPI</th>
+			<th>=</th>
+		</tr>
+	</thead>
+	<tbody>
+		<f:render partial="Stats" arguments="{stats: cache.staticKpi}" />
+		<f:render partial="Stats" arguments="{stats: cache.dynamicKpi}" />
+	</tbody>
+</table>

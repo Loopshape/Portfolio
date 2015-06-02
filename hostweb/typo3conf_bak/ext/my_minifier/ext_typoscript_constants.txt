@@ -1,0 +1,5 @@
+# cat=plugin.myminifier/enable/10; type=boolean; label=LLL:EXT:my_minifier/Resources/Private/Language/locallang.xlf:minifier.minimizeJs
+my_minifier.minimizeJs = 1
+
+# cat=plugin.myminifier/enable/20; type=boolean; label=LLL:EXT:my_minifier/Resources/Private/Language/locallang.xlf:minifier.minimizeCss
+my_minifier.minimizeCss = 0

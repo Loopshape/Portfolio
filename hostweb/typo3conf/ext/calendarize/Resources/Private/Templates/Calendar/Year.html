@@ -1,0 +1,53 @@
+{namespace c=HDNET\Calendarize\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<td colspan="4">
+
+					<f:if condition="{settings.yearPid}">
+						<c:dateTime.modify modification="-1 year">{date}</c:dateTime.modify>
+						<c:ifDateUpper base="{settings.dateLimitBrowserPrev}" check="{date}">
+							<c:link.year pageUid="{settings.yearPid}" date="{date}">
+								&lt;
+							</c:link.year>
+						</c:ifDateUpper>
+						<c:dateTime.modify modification="+1 year">{date}</c:dateTime.modify>
+					</f:if>
+
+					<f:format.date format="Y">{date}</f:format.date>
+
+					<f:if condition="{settings.yearPid}">
+						<c:dateTime.modify modification="+1 year">{date}</c:dateTime.modify>
+						<c:ifDateLower base="{settings.dateLimitBrowserNext}" check="{date}">
+							<c:link.year pageUid="{settings.yearPid}" date="{date}">
+								&gt;
+							</c:link.year>
+						</c:ifDateLower>
+						<c:dateTime.modify modification="-1 year">{date}</c:dateTime.modify>
+					</f:if>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<c:loop.monthsInYear date="{date}" iteration="year">
+					<td>
+
+						<f:comment>
+							<f:render partial="Month" arguments="{date: year.calendar.date}"/>
+						</f:comment>
+
+						<f:render partial="Month" arguments="{date: year.calendar.date}" />
+
+					</td>
+
+					{f:if(condition: '{year.calendar.break4} == 0', then: '</tr><tr>')}
+				</c:loop.monthsInYear>
+			</tr>
+		</tbody>
+	</table>
+</f:section>

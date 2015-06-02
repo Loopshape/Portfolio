@@ -1,0 +1,13 @@
+TODO MetaSEO 2.0
+* Signal Slots
+* Use News Signal Slots
+* Use ObjectManager
+
+
+
+* Dependency injection
+* Backend module for page-seo
+	-> settings
+* Piwik auto keywords
+* Sitemap url type (page, news etc)
+* add signals

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2014-08-24T08:31:47Z" product-name="svconnector" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="title" xml:space="preserve">
+        <source>Connector Services Sandbox</source>
+      <target></target></trans-unit>
+      <trans-unit id="function.test_service" xml:space="preserve">
+        <source>Test a service</source>
+      <target></target></trans-unit>
+      <trans-unit id="header.test_service" xml:space="preserve">
+        <source>Connector service test</source>
+      <target></target></trans-unit>
+      <trans-unit id="noServices" xml:space="preserve">
+        <source>No connector services are available. Please install at least one before trying to use this test.</source>
+      <target></target></trans-unit>
+      <trans-unit id="service" xml:space="preserve">
+        <source>Choose a connector service (only available services are listed):</source>
+      <target></target></trans-unit>
+      <trans-unit id="serviceError" xml:space="preserve">
+        <source>An error occurred when trying to call the requested service: %1$s (%2$d).</source>
+      <target></target></trans-unit>
+      <trans-unit id="serviceNotAvailable" xml:space="preserve">
+        <source>Service %s is not available.</source>
+      <target></target></trans-unit>
+      <trans-unit id="parameters" xml:space="preserve">
+        <source>Enter parameters appropriate for the service that you want to test:</source>
+      <target></target></trans-unit>
+      <trans-unit id="noResult" xml:space="preserve">
+        <source>The connection test returned no result.</source>
+      <target></target></trans-unit>
+      <trans-unit id="testResult" xml:space="preserve">
+        <source>Connection test result</source>
+      <target></target></trans-unit>
+      <trans-unit id="test" xml:space="preserve">
+        <source>Test!</source>
+      <target></target></trans-unit>
+    </body>
+  </file>
+</xliff>

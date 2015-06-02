@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "machinepack-session": "0.3.2"
+  },
+  "machinepack": {
+    "machines": []
+  }
+}

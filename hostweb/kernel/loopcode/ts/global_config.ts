@@ -1,0 +1,12 @@
+PAGE_TARGET = 2
+content.pageFrameObj = mainframe
+styles.content.getNews.newsPid = 4
+styles.content.imgtext.maxWInText = 0
+styles.content.imgtext.linkWrap.width = 800
+styles.content.imgtext.colSpace = 30
+styles.content.loginform.pid = 2
+styles.content.imgtext.textMargin = 15
+styles.content.imgtext.rowSpace = 30
+styles.content.imgtext.borderSpace = 15
+content.spaceBefore = 0
+content.spaceAfter = 15

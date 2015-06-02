@@ -1,0 +1,41 @@
+#############################
+# lib.magellan
+#############################
+
+page.includeJSFooterlibs {
+	magellan = {$df_foundation5.foundationPath}js/foundation/foundation.magellan.js
+}
+
+lib.magellan = CONTENT
+lib.magellan {
+  wrap = <div class="magellan-container" data-magellan-expedition="fixed" data-options="threshold:{$df_foundation5.magellan.threshold};destination_threshold:{$df_foundation5.magellan.destination_threshold};throttle_delay:{$df_foundation5.magellan.throttle_delay};fixed_top:{$df_foundation5.magellan.fixed_top};active_class:{$df_foundation5.magellan.active_class};"><dl class="sub-nav"> | </dl></div>
+	table = tt_content
+  select {
+    pidInList = this
+    languageField = sys_language_uid
+  }
+	wrap.if.isTrue.numRows {
+		select.pidInList = this
+    table = tt_content
+    select.where = tx_dffoundation5_magellan=1
+	}
+	renderObj = TEXT
+  renderObj {
+    dataWrap = <dd data-magellan-arrival="m{field:uid}">|</dd>
+    field = header
+    typolink.parameter.field = pid
+    typolink.parameter.dataWrap = |#m{field:uid}
+		if.isTrue.field = tx_dffoundation5_magellan
+  }
+}
+
+lib.stdheader.stdWrap {
+	wrap = <a class="anchor" name="m{field:uid}"></a><div class="csc-header csc-header-n{cObj:parentRecordNumber}" data-magellan-destination="m{field:uid}" >|</div>
+	wrap.if.isTrue.field = tx_dffoundation5_magellan
+	insertData = 1
+}
+
+page.cssInline {
+	20013 = TEXT
+	20013.value = a.anchor{display:block;position:relative;top:-{$df_foundation5.magellan.destination_overlap}px;visibility:hidden;}
+}

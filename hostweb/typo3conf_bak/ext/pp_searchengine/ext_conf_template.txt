@@ -1,0 +1,7 @@
+
+  # cat=enable; type=boolean; label=Enable Highlighting : Enable highlighting search words when displaying a page
+  enableHighlight = 1
+
+  # cat=enable; type=boolean; label=Enable Multi-Highlight : When enabled, wrap each sword with a different span-class (search-word, search-word-1, search-word-2, ...)
+  multipleColors = 0
+

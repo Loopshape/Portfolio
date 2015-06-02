@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>language labels for indexedsearch_ttnews_crawler BE forms</description>
+		<type>database</type>
+		<csh_table></csh_table>
+		<fileId>EXT:indexedsearch_ttnews_crawler/locallang_tca.xml</fileId>
+		<labelContext type="array">
+		</labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="indexedsearch_ttnews_crawler.pi_flexform.news_includeNewsWithoutCategory">Include news without category</label>
+			<label index="indexedsearch_ttnews_crawler.pi_flexform.category_selection">Category selection</label>
+			<label index="indexedsearch_ttnews_crawler.pi_flexform.useSubCategories">Use subcategories</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+            <label index="indexedsearch_ttnews_crawler.pi_flexform.news_includeNewsWithoutCategory">News ohne Kategorie einbeziehen</label>
+            <label index="indexedsearch_ttnews_crawler.pi_flexform.category_selection">Kategorieauswahl</label>
+            <label index="indexedsearch_ttnews_crawler.pi_flexform.useSubCategories">Sub-Kategorien benutzen</label>
+		</languageKey>
+		<languageKey index="no" type="array">
+            <label index="indexedsearch_ttnews_crawler.pi_flexform.news_includeNewsWithoutCategory">Inkludere Nyheter uten kategorier</label>
+            <label index="indexedsearch_ttnews_crawler.pi_flexform.category_selection">Valgte kategorier</label>
+            <label index="indexedsearch_ttnews_crawler.pi_flexform.useSubCategories">Bruk underkateogrier</label>
+		</languageKey>
+	</data>
+</T3locallang>

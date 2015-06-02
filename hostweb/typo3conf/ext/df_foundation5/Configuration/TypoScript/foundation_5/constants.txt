@@ -1,0 +1,108 @@
+###################################################
+# Constants - Defauls
+###################################################
+	styles.content.imgtext {
+		maxW = 1024
+		maxWInText = 1024
+		colSpace = 5
+		rowSpace = 10
+		textMargin = 5
+		borderSelector = div.{$styles.content.imgtext.borderClass} li.csc-textpic-imgwrap img
+		separateRows >
+		addIntextClearer >
+	}
+	content.spaceBefore = 15
+##########################################
+
+df_foundation5 {
+	
+	# cat=foundation basic/file/a00; type=string; label= Path to JQuery: You can change this if you need to modify jquery.
+	jqueryPath = EXT:df_foundation5/Resources/Public/FrameWork/foundation-5.5.1/js/vendor/jquery.js
+	
+	# cat=foundation basic/file/a01; type=string; label = Path to zurb foundation 5 Framework
+	foundationPath = EXT:df_foundation5/Resources/Public/FrameWork/foundation-5.5.1/
+
+	# cat=foundation basic/cImage/000; type=int+; label=Cropscaling-Factor: The factor of cropping in percent 
+	cropscaling {
+		faktor = 100
+	}
+	
+	dropdown {
+		# cat=foundation frames/enable/a02; type=options[tiny,small,medium,large]; label=DropDown Size
+		boxSize = medium
+		
+		# cat=foundation frames/enable/a03; type=options[button,dropdown-link]; label=DropDown Link Type:Button or custom class [dropdown-link]
+		linkType = button
+	
+		# cat=foundation frames/enable/a04; type=options[tiny,small,large]; label=DropDown Button-/Link-Size
+		buttonSize = 
+		
+		# cat=foundation frames/enable/a05; type=options[secondary,success,alert,disabled]; label=DropDown Button-color
+		buttonColor = 
+		
+		# cat=foundation frames/enable/a06; type=options[radius,round]; label=DropDown Button-corner
+		buttonCorner =
+	}
+	
+	modalbox {
+		# cat=foundation frames/enable/a07; type=options[tiny,small,medium,large,xlarge]; label=Modal-Box Size
+		size = medium	
+	
+		# cat=foundation frames/enable/a08; type=options[button,modal-link]; label=Modal-Box Link Type:Button or custom class [modal-link]
+		linkType = button
+	
+		# cat=foundation frames/enable/a09; type=options[tiny,small,large]; label=Modal-Box Button-/Link-Size
+		buttonSize = 
+		
+		# cat=foundation frames/enable/a10; type=options[secondary,success,alert,disabled]; label=Modal-Box Button-color
+		buttonColor =
+	
+		# cat=foundation frames/enable/a11; type=options[radius,round]; label=Modal-Box Button-corner
+		buttonCorner = 
+	}
+	
+	alert {
+		# cat=foundation frames/enable/a12; type=options[radius,round]; label=Close-Box Corner
+		corner =
+	}
+} 
+
+
+## Foundation JavaScript include Functions
+###########################################
+
+df_foundation5.enableJs {
+
+	# cat=foundation basic/file/a02; type=options[foundation,typo3,no]; label=Load jQuery from
+	enable-jquery = typo3
+
+	# cat=foundation basic/advanced/a01; type=boolean; label= Enable JS-Source Abide: Abide is an HTML5 form validation library that supports the native API by using patterns and required attributes.
+	enable-abide = 0
+	
+	# cat=foundation basic/advanced/a02; type=boolean; label= Enable JS-Source Accordion: Accordions are elements used to expand and collapse content that is broken into logical sections, much like tabs.
+	enable-accordion = 0
+	
+	# cat=foundation basic/advanced/a03; type=boolean; label= Enable JS-Source Alerts: Alerts are handy elements you can drop into a form or inline on a page to communicate success, warnings, failure or just information. They'll conform to 100% of the container width you put them in.
+	enable-alert = 1
+
+	# cat=foundation basic/advanced/a04; type=boolean; label= Enable JS-Source Clearing: Clearing makes it easy to create responsive lightboxes with any size image.
+	enable-clearing = 0
+	
+	# cat=foundation basic/advanced/a05; type=boolean; label= Enable JS-Source Joyride: Joyride gives users a tour of your site or app when they visit.
+	enable-joyride = 0
+	
+	# cat=foundation basic/advanced/a08; type=boolean; label= Enable JS-Source Reval Modal dialogs: Modal dialogs, or pop-up windows, are handy for prototyping and production. Foundation includes Reveal our jQuery modal plugin, to make this easy for you.
+	enable-reveal = 1
+	
+	# cat=foundation basic/advanced/a09; type=boolean; label= Enable JS-Source Range Sliders: This handy slider will allow you to drag a handle to select a specific value from a range.
+	enable-slider = 0
+	
+	# cat=foundation basic/advanced/a11; type=boolean; label= Enable JS-Source Tooltips: Tooltips are a quick way to provide extended information on a term or action on a page.
+	enable-tooltip = 0
+
+	# cat=foundation basic/advanced/a12; type=boolean; label= Enable JS-Source Equalizer: Equalizer is a great way to create equal height content on your page.
+	enable-equalizer = 0
+
+	# cat=foundation basic/advanced/a13; type=boolean; label= Enable JS-Source Dropdowns / Dropdown Buttons: We removed the various dropdowns within different UI elements for Foundation 5. Instead, we created a universal dropdown plugin that will attach dropdowns or popovers to whatever element you need.
+	enable-dropdown = 1
+}	

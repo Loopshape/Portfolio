@@ -1,0 +1,20 @@
+  # cat=basic; type=string; label=Field to check links in (seperate by spaces)
+field_linkservice = tt_content.bodytext
+
+  # cat=basic; type=int[1-24]; label=Validity of link(hrs)
+link_validity_period = 6
+
+  # cat=basic; type=int[1-720]; label=Validity of field(hrs)
+field_validity_period = 48
+
+  # cat=basic; type=int[10-500]; label=Records in one round
+records_per_run = 100
+
+  # cat=basic; type=int[1-60]; label=HTTP timeout for crawler
+http_timeout = 5
+
+  # cat=basic; type=boolean; label=Report links. Check here go make the crawler make a report over changed, unavaible or faulty links.
+generate_report = 1
+
+  # cat=basic; type=int[24-720]; label=Log retention time(hrs)
+log_retention = 24

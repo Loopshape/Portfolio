@@ -1,0 +1,48 @@
+#############################
+# Orbit Slider
+#############################
+page.includeJSFooterlibs {
+  orbit = {$df_foundation5.foundationPath}js/foundation/foundation.orbit.js
+}
+temp.orbit {
+  allStdWrap.dataWrap.override (
+  <ul class="example-orbit" data-orbit data-options="animation:{$df_foundation5.orbit.animation};
+  timer_speed:{$df_foundation5.orbit.timer_speed};
+  pause_on_hover:{$df_foundation5.orbit.pause_on_hover};
+  resume_on_mouseout:{$df_foundation5.orbit.resume_on_mouseout};
+  next_on_click:{$df_foundation5.orbit.next_on_click};
+  animation_speed:{$df_foundation5.orbit.animation_speed};
+  stack_on_small:{$df_foundation5.orbit.stack_on_small};
+  navigation_arrows:{$df_foundation5.orbit.navigation_arrows};
+  slide_number:{$df_foundation5.orbit.slide_number};
+  slide_number_text:{$df_foundation5.orbit.slide_number_text};
+  bullets:{$df_foundation5.orbit.bullets};
+  circular:{$df_foundation5.orbit.circular};
+  timer:{$df_foundation5.orbit.timer};
+  variable_height:{$df_foundation5.orbit.variable_height};
+  swipe:{$df_foundation5.orbit.swipe};
+  next_class:{$df_foundation5.orbit.next_class};
+  prev_class:{$df_foundation5.orbit.prev_class};
+  timer_container_class:{$df_foundation5.orbit.timer_container_class};
+  preloader_class:{$df_foundation5.orbit.preloader_class};
+  bullets_container_class:{$df_foundation5.orbit.bullets_container_class};
+  slide_number_class:{$df_foundation5.orbit.slide_number_class};
+  caption_class:{$df_foundation5.orbit.slide_caption_class};">|</ul>
+  )
+  allStdWrap.dataWrap.override.if {
+    isTrue.field = tx_dffoundation5_orbit
+    value = 1
+    isGreaterThan.data = register:imageCount
+  }  
+}
+
+tt_content.image.20.rendering {
+  noCaption.allStdWrap.dataWrap.override.override.override < temp.orbit.allStdWrap.dataWrap
+  splitCaption.allStdWrap.dataWrap.override.override.override < temp.orbit.allStdWrap.dataWrap	
+	splitCaption.caption {
+		wrap {
+			override.override = <figcaption class="orbit-caption###CLASSES###"> | </figcaption>
+			override.override.if.isTrue.field = tx_dffoundation5_orbit
+		}	
+	}
+}

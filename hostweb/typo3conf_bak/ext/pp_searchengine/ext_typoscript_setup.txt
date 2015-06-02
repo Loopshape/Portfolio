@@ -1,0 +1,53 @@
+#tt_content.pp_searchengine_pi1.20 >
+
+plugin.tx_ppsearchengine_pi1 {
+
+  config {
+    template {
+      cObject=FILE
+      cObject.file={$plugin.tx_ppsearchengine_pi1.templateFile}
+
+      insertData=1
+    }
+
+    cacheLifeSpan = {$plugin.tx_ppsearchengine_pi1.cacheLifeSpan}
+    maxResPerPages = {$plugin.tx_ppsearchengine_pi1.maxResPerPages}
+    maxPageLink = {$plugin.tx_ppsearchengine_pi1.maxPageLink}
+
+    highlight.field=tx_ppsearchengine_isengine
+  }
+
+
+  display {
+
+    noresult.data=LLL:EXT:pp_searchengine/locallang_db.php:tx_ppsearchengine_pi1.display.noresult
+
+    results.data=LLL:EXT:pp_searchengine/locallang_db.php:tx_ppsearchengine_pi1.display.form.results
+    results.wrap=<b>|</b>
+
+    listDisplay=###results###<br />###pagination###<br />|###pagination###
+
+    pagination.first=
+    pagination.prev=
+    pagination.before=
+    pagination.current.wrap=<i>|</i>
+    pagination.after=
+    pagination.next=
+    pagination.last=
+
+    singleResult=TEXT
+    singleResult {
+      field=description
+      crop={$plugin.tx_ppsearchengine_pi1.cropDescr}| ... | 1
+      htmlSpecialChars=1
+      dataWrap (
+      <table style="text" class="results-table" cellpadding="0" cellspacing="0" width="100%">
+        <tr class="link-row"><td colspan="2"><a href="{field:link}">{field:title}</a></td></tr>
+        <tr class="descr-row"><th style="width: 80px;">{LLL:EXT:pp_searchengine/locallang_db.php:tx_ppsearchengine_pi1.display.result.description}</th><td style="font-style: italic;">|</td></tr>
+        <tr class="pert-row"><th>{LLL:EXT:pp_searchengine/locallang_db.php:tx_ppsearchengine_pi1.display.result.pertinence}</th><td>{field:pertinence}% ({field:count} {LLL:EXT:pp_searchengine/locallang_db.php:tx_ppsearchengine_pi1.display.result.count})</td></tr>
+        <tr class="engine-row"><th>{LLL:EXT:pp_searchengine/locallang_db.php:tx_ppsearchengine_pi1.display.result.engine}</th><td>{field:engine}</td></tr>
+      </table>
+      )
+    }
+  }
+}

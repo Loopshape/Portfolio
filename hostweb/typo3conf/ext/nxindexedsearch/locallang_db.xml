@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'nxindexedsearch'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.CType_pi1">Generic Indexed Search Field</label>
+			<label index="tx_nxindexedsearch_sources">Datasources</label>
+			<label index="tx_nxindexedsearch_sources.datasource_table">Datasource table</label>
+			<label index="tx_nxindexedsearch_sources.datasource_category">Datasource category</label>
+			<label index="tx_nxindexedsearch_searchindex">Searchindex</label>
+			<label index="tx_nxindexedsearch_searchindex.word_uid">Unique-ID of the searchword</label>
+			<label index="tx_nxindexedsearch_searchindex.occurence_count">Count of occurences of the searchword in the document</label>
+			<label index="tx_nxindexedsearch_searchindex.datasource">Relation to datasource</label>
+			<label index="tx_nxindexedsearch_searchwords">Searchwords</label>
+			<label index="tx_nxindexedsearch_searchwords.searchword">The searchword</label>
+			<label index="tx_nxindexedsearch_searchwords.split_offset">The split offset, if the searchword is composed out of two words</label>
+			<label index="tx_nxindexedsearch_searchtime">Searchtime</label>
+			<label index="tx_nxindexedsearch_searchtime.source_uid">Unique-ID of the datasource</label>
+			<label index="tx_nxindexedsearch_searchtime.document_uid">Unique-ID of the document</label>
+		</languageKey>
+	</data>
+</T3locallang>

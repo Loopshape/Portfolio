@@ -1,0 +1,22 @@
+plugin.tx_googleajaxsearch {
+	# cat=plugin.googleajaxsearch/required/10; type=input; label=API Key
+	apiKey =
+	# cat=plugin.googleajaxsearch/basic/20; type=input; label=Sites To Search (space seperated domains)
+	siteRestriction =
+	# cat=plugin.googleajaxsearch/basic/22; type=input; label=Additional Sites To Search (space seperated domains) - TS Config Only
+	additionalSiteRestriction =
+	# cat=plugin.googleajaxsearch/basic/24; type=input; label=Title Word Restrictions (space seperated keywords)
+	titleWordRestriction =
+	# cat=plugin.googleajaxsearch/basic/26; type=input; label=Additional Title Word Restrictions (space seperated keywords, quote phrases) - TS Config Only
+	additionalTitleWordRestriction =
+	# cat=plugin.googleajaxsearch/basic/28; type=input; label=URL Restrictions (space seperated keywords)
+	urlRestriction =
+	# cat=plugin.googleajaxsearch/basic/30; type=input; label=Additional URL Restrictions (space seperated keywords) - TS Config Only
+	additionalUrlRestriction =
+	# cat=plugin.googleajaxsearch/basic/35; type=input; label=Default Search Text (space seperated keywords)
+	defaultSearch =
+	# cat=plugin.googleajaxsearch/basic/40; type=options[blank,self,top,parent]; label=Link Target
+	linkTarget = internal
+	# cat=plugin.googleajaxsearch/dom/50; type=input; label=Results DOM Id
+	resultsDOMId = 
+}

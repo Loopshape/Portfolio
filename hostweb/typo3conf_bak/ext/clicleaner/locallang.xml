@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the lowevel module of &quot;clicleaner&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="name">Cli Cleaner -- clean up cache ans indexed_search index</label>
+			<label index="description">If you need to clear TYPO3 cache or indexed_search index from commandline, use this script.</label>
+			<label index="options.pages">Clear page content cache</label>
+			<label index="options.all">Clear all caches</label>
+			<label index="options.index">Clear index_search index tables</label>
+			<label index="cleantest.header">Affected tables:</label>
+			<label index="cleantest.description">Here is a list of all tables that could be cleaned up, along with the number of records that could be deleted.</label>
+			<label index="recordsToDelete">Table %1$s: %2$d records to delete</label>
+			<label index="noRecordsToDelete">Table %s: no records to delete</label>
+			<label index="noRecordsAtAll">No records to delete!</label>
+			<label index="deletedRecords">%d records deleted.</label>
+			<label index="cleaningRecords">Cleaning records for table "%s"</label>
+		</languageKey>
+	</data>
+</T3locallang>

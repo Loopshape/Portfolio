@@ -1,0 +1,40 @@
+<f:if condition="{sliderImages}">
+    <div class="flexslider" id="{sliderDivId}">
+        <ul class="slides">
+            <f:for each="{sliderImages}" as="slideImage" key="index" iteration="itemIteration">
+                <li>
+                    <figure>
+                        <f:image src="{slideImage.uid}" treatIdAsReference="1" width="{sliderSettings.maxWidth}" alt="{slideImage.title}" title="{slideImage.title}"  />
+                        <f:if condition="{slideImage.title}">
+                            <f:then>
+                                <figcaption class="captions">
+                                    <f:if condition="{slideImage.link}">
+                                        <f:then>
+                                            <h4><f:link.page pageUid="{slideImage.link}" class="title">{slideImage.title}</f:link.page></h4>
+                                        </f:then>
+                                        <f:else>
+                                            <h4>{slideImage.title}</h4>
+                                        </f:else>
+                                    </f:if>
+                                    <f:if condition="{slideImage.description}"><span class="caption"><f:format.nl2br>{slideImage.description}</f:format.nl2br></span></f:if>
+                                </figcaption>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{slideImage.description}"><span class="caption" class="flex-caption"><f:format.nl2br>{slideImage.description}</f:format.nl2br></span></f:if>
+                            </f:else>
+                        </f:if>
+                    </figure>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+    <script language="JavaScript">
+        ( function($) { //
+            $(document).ready(function() { //
+                $('#{sliderDivId}').flexslider({ //
+                    <f:format.raw>{scriptConfig}</f:format.raw>
+                });
+            });
+        } ) ( jQuery );
+    </script>
+</f:if>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="EN" datatype="plaintext" original="messages" date="2014-05-06T01:18:23Z" product-name="tt_news" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id=".alttitle" xml:space="preserve" approved="yes">
+        <source>Web &gt; News admin module</source>
+      <target state="translated">Modul Web&gt;Nachrichten</target></trans-unit>
+      <trans-unit id="list_module.alttitle" xml:space="preserve" approved="yes">
+        <source>News admin module</source>
+      <target state="translated">Nachrichtenverwaltungsmodul</target></trans-unit>
+      <trans-unit id="list_module.description" xml:space="preserve" approved="yes">
+        <source>Provides a news list-module and the tt_news category manager</source>
+      <target state="translated">Stellt ein Listenmodul sowie eine Kategorieverwaltung für Nachrichten zur Verfügung.</target></trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,29 @@
+#######################################################
+# lib.dropdown-nav
+#######################################################
+
+#page.includeJSFooterlibs {
+#	dropdown = {$df_foundation5.foundationPath}js/foundation/foundation.dropdown.js
+#}
+
+lib.dropdown-nav = HMENU
+lib.dropdown-nav {
+  special = list
+  special.value = {$df_foundation5.dropdown-nav.uidlist}
+  1 = TMENU
+  1 {
+    noBlur = 1
+    stdWrap.dataWrap (
+    <a href="#" data-dropdown="drop{field:uid}" data-options="is_hover:{$df_foundation5.dropdown-nav.is_hover};" class="{$df_foundation5.dropdown-nav.linktype} {$df_foundation5.dropdown-nav.linksize} {$df_foundation5.dropdown-nav.ButtonColor} {$df_foundation5.dropdown-nav.ButtonCorner}">{$df_foundation5.dropdown-nav.title}</a>
+    <ul id="drop{field:uid}" class="f-dropdown {$df_foundation5.dropdown-nav.boxsize}" data-dropdown-content">|</ul>
+    )
+    NO = 1
+    NO {
+      ATagTitle.field =
+      wrapItemAndSub = <li>|</li>
+    }      
+    ACT < .NO
+    ACT = 1
+    ACT.wrapItemAndSub = <li class="active">|</li>
+  }
+}

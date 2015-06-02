@@ -1,0 +1,14 @@
+df_foundation5.interchange {
+
+	#cat=foundation Interchange/size/a01; type=int+; label=Image maxWidth small:Note: Image size or image crop in the content element disabled Interchange!
+	mediaQuerie-small.img.maxW = 480
+	
+	#cat=foundation Interchange/size/a02; type=int+; label=Image maxWidth medium:Note: Image size or image crop in the content element disabled Interchange!
+	mediaQuerie-medium.img.maxW = 768
+	
+	#cat=foundation Interchange/size/a03; type=int+; label=Image maxWidth large:Note: Image size or image crop in the content element disabled Interchange!
+	mediaQuerie-large.img.maxW = 1024
+	
+	#cat=foundation Interchange/size/a04; type=int+; label=Image maxWidth retina:Note: Image size or image crop in the content element disabled Interchange!
+	mediaQuerie-retina.img.maxW = 2048
+}

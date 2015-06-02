@@ -1,0 +1,44 @@
+plugin.tx_html5iframe {
+	view {
+		templateRootPath = {$plugin.tx_html5iframe.view.templateRootPath}
+		partialRootPath = {$plugin.tx_html5iframe.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_html5iframe.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_html5iframe.persistence.storagePid}
+	}
+}
+
+plugin.tx_html5iframe._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-iframes-pi1 table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-iframes-pi1 table th {
+		font-weight:bold;
+	}
+
+	.tx-iframes-pi1 table td {
+		vertical-align:top;
+	}
+)
+
+
+
+ # Module configuration
+module.tx_html5iframe {
+	persistence {
+		storagePid = {$plugin.tx_html5iframe.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_html5iframe.view.templateRootPath}
+		partialRootPath = {$module.tx_html5iframe.view.partialRootPath}
+		layoutRootPath = {$module.tx_html5iframe.view.layoutRootPath}
+	}
+}

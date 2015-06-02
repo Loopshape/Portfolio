@@ -1,0 +1,8 @@
+
+1.0.0 - For TYPO3 LTS 6.2 and later
+-------------------------------------
+
+::
+
+	* Initial release
+

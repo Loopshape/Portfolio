@@ -1,0 +1,33 @@
+15-05-27 Markus Kappe <markus.kappe@dix.at>
+	* Bugfix with default configuration (used wrong variable for multi domain setup; set value for emptyUrlReturnValue to true)
+	Thanks to t.schlueter@ilexius.de for the bugfixes
+
+14-07-08 Markus Kappe <markus.kappe@dix.at>
+	* Bugfix with saving 404 config
+	* Bugfix link browser on 404-config-screen on TYPO3 6.2
+
+14-06-06 Mario Pöschl <mario.poeschl@sysgrade.de>
+	* 6.2 compatibility: embed BACK_PATH and scbase only for TYPO3 < 6.2
+	* change $LANG to $GLOBALS['LANG']
+	* fix usage of getFuncMenu()
+	* auto configuration for domain <-> root page id mapping; uses TYPO3 system table sys_domain
+
+13-10-04 Markus Kappe <markus.kappe@dix.at>
+	* Bugfix: 404 error handling did not work
+	* Added some description to 404 error handling (in fact copied the text from the install tool)
+
+13-05-02 Markus Kappe <markus.kappe@dix.at>
+	* Changed default config not to use .html suffix
+	* 6.0 compatibility: flush frontend caches using the caching framework
+	* 6.0 compatibility: "include" statement is written into AdditionalConfiguration.php instead of localconf.php
+	* This version does not work with TYPO3 4.x anymore
+
+12-10-30 Markus Kappe <markus.kappe@dix.at>
+	* Bugfix: Clear Cache no longer deletes redirects
+
+12-02-28 Markus Kappe <markus.kappe@dix.at>
+	* Re-released with new extension key
+
+06-06-05 Andreas Eberhard  <aeberhard@users.sourceforge.net>
+
+	* Initial release

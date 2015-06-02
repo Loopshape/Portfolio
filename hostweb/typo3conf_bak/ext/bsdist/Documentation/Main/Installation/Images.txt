@@ -1,0 +1,2 @@
+.. |img-screenshot|      image:: ../Images/install-distri.png
+.. :align: left

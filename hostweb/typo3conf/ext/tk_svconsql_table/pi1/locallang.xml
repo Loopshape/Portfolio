@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for plugin &quot;tx_tksvconsqltable_pi1&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="no_svconnector_sql">Service sql of the extension SQL Connector Service was not found!</label>
+			<label index="amount_cols_n_formats">Amount of columns and amount of formats must be equal!</label>
+			<label index="amount_cols_n_col_classes">Amount of columns and amount of column classes must be equal!</label>
+			<label index="no_db_driver_set">ADOdb driver name not set</label>
+			<label index="no_db_server_set">Server name not set</label>
+			<label index="no_db_user_set">User name not set</label>
+			<label index="no_db_password_set">User password not set</label>
+			<label index="no_db_database_set">Database name not set</label>
+			<label index="no_db_query_set">SQL query not set</label>
+			<label index="no_records">No records found</label>
+		</languageKey>
+	</data>
+	<data type="array">
+		<languageKey index="pl" type="array">
+			<label index="no_svconnector_sql">Nie znaleziono serwisu sql rozszerzenia SQL Connector Service!</label>
+			<label index="amount_cols_n_formats">Ilości kolumn i formatów kolumn muszą być równe!</label>
+			<label index="amount_cols_n_col_classes">Ilości kolumn i ilość klas kolumn muszą być równe!</label>
+			<label index="no_db_driver_set">Brak nazwy sterownika ADOdb</label>
+			<label index="no_db_server_set">Brak nazwy serwera</label>
+			<label index="no_db_user_set">Brak nazwy użytkownika</label>
+			<label index="no_db_password_set">Brak hasła użytkownika</label>
+			<label index="no_db_database_set">Brak nazwy bazy danych</label>
+			<label index="no_db_query_set">Brak zapytania SQL</label>
+			<label index="no_records">Brak danych</label>
+		</languageKey>
+	</data>
+</T3locallang>

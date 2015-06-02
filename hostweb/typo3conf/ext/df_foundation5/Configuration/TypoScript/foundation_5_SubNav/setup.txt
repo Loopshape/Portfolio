@@ -1,0 +1,32 @@
+#######################################################
+# lib.sub-nav
+#######################################################
+lib.sub-nav = HMENU
+lib.sub-nav {
+	stdWrap.wrap = {$df_foundation5.sub-nav.wrap}
+  excludeUidList = {$df_foundation5.sub-nav.excludeUidList}
+  entryLevel = {$df_foundation5.sub-nav.entryLevel}
+  1 = TMENU
+  1 {
+    expAll = 1
+    collapse = 0
+    noBlur = 1
+    wrap = <dl class="sub-nav">|</dl>
+    
+    NO = 1
+    NO {
+      ATagTitle.field = abstract // description // subtitle
+      allWrap = |
+      ATagBeforeWrap = 1
+      insertData = 1
+      wrapItemAndSub = <dd>|</dd>
+      
+    }      
+    ACT < .NO
+    ACT = 1
+    ACT.wrapItemAndSub = <dd class="active">|</dd>
+    CUR < .NO
+    CUR = 1
+    CUR.wrapItemAndSub = <dd class="active current">|</dd>
+  }
+}

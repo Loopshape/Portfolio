@@ -1,0 +1,60 @@
+<!--###STATISTICS_FORM### begin-->
+<form method="post">
+	<table class="tx_nxindexedsearch_select_datasource_form">
+		<tr>
+			<td>
+	    		<label for="source_uid">###LL_DATASOURCE###</label>
+	    	</td>
+	    	<td>
+			    <select name="source_uid" id="source_uid">
+			    	<option value="0">###LL_ALL###</option>
+			    	###DATASOURCE_OPTIONS###
+			    </select>
+			</td>
+	    </tr>
+    	<tr>
+    		<td>
+    			<label for="period">###LL_PERIOD###</label>
+    		</td>
+    		<td>
+    			<select name="period" id="period">
+    				###PERIOD_OPTIONS###
+    			</select>
+    		</td>
+    	</tr>
+    	<tr>
+    		<td colspan="2">
+    			<input type="submit" value="###LL_SHOW_STATISTICS###" />
+    		</td>
+    	</tr>
+    </table>
+</form>
+<!--###STATISTICS_FORM### end-->
+
+<!--###STATISTICS### begin-->	    				
+<h3>###TITLE###</h3>
+<table class="typo3-TCEforms">
+	<tr class="class-main2">
+   		<td>###LL_TERM###</td>
+   		<td align="center">###LL_QUERIES###</td>
+   		<td align="center">###LL_RESULTS###</td>
+   	</tr>
+   	###STATISTICS_ROWS###
+</table>
+<!--###STATISTICS### end-->
+
+<!--###STATISTICS_ROW### begin-->
+<tr class="class-main1">
+	<td>###TERM###</td>
+	<td align="center">###QUERIES###</td>
+	<td align="center">###RESULTS_AVERAGE###</td>
+</tr>
+<!--###STATISTICS_ROW### end-->
+
+<!--###DATASOURCE_OPTION### begin-->
+<option value="###DATASOURCE_UID###" ###DATASOURCE_SELECTED###>###DATASOURCE_NAME### (###DATASOURCE_CATEGORY###, ###DATASOURCE_PAGE###)</option>
+<!--###DATASOURCE_OPTION### end-->
+
+<!--###PERIOD_OPTION### begin-->
+<option value="###PERIOD_KEY###" ###PERIOD_SELECTED###>###PERIOD_TEXT###</option>
+<!--###PERIOD_OPTION### end-->

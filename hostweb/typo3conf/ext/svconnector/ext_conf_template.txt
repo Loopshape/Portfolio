@@ -1,0 +1,4 @@
+# customsubcategory=bemodule=LLL:EXT:svconnector/locallang.xml:bemodule
+
+#	cat=basic/enable; type=boolean; label=LLL:EXT:svconnector/locallang.xml:config_debug
+	debug = 0

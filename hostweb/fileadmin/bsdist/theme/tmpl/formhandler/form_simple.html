@@ -1,0 +1,116 @@
+
+<!-- ------------------------------------------------------
+  FORM VIEW
+  --------------------------------------------------------- -->
+<!-- ###TEMPLATE_FORM1### begin -->
+<a name="cform"></a>
+<form action="###REL_URL####cform" method="post" name="contactform-simple" class="form-horizontal" role="form">
+    <input type="hidden" name="id" value="###PID###" />
+    <input type="hidden" name="formhandler[submitted]" value="1" />
+    <input type="hidden" name="type" value="###value_type###" />
+
+    ###field_salutation###
+    ###field_input9_firstname###
+    ###field_input9_lastname###
+    ###field_input9_email###
+    ###field_textarea12_comment###
+    <!--###CAPTCHA_INSERT### this subpart is removed if CAPTCHA is not enabled! -->
+    ###field_freecap###
+    <!--###CAPTCHA_INSERT###-->
+    ###field_submit_send###
+</form>
+<!-- ###TEMPLATE_FORM1### end -->
+
+
+<!-- ------------------------------------------------------
+  FORM DATA VIEW (after send)
+  --------------------------------------------------------- -->
+
+<!-- ###TEMPLATE_SUBMITTEDOK### begin -->
+<p class="lead">###LLL:msg_thankyou###</p>
+<!-- ###TEMPLATE_SUBMITTEDOK### end -->
+
+
+<!-- ------------------------------------------------------
+  EMAIL TEMPLATES TO USER
+  --------------------------------------------------------- -->
+
+<!-- ###TEMPLATE_EMAIL_USER_PLAIN### begin -->
+###LLL:email_leadin1_user###
+###LLL:email_leadin2_user###
+
+###LLL:salutation###: ###value_salutation###
+###LLL:firstname###: ###value_firstname###
+###LLL:lastname###: ###value_lastname###
+
+###LLL:email###: ###value_email###
+
+###LLL:comment###
+###value_comment###
+
+###LLL:email_thanx_user###
+<!-- ###TEMPLATE_EMAIL_USER_PLAIN### end -->
+
+
+<!-- ###TEMPLATE_EMAIL_USER_HTML### begin -->
+<style>
+    body, table, p { font-family: Arial, Helvetica, sans-serif; }
+    table { width: auto; }
+    td.f { font-weight: bold; padding-right: 20px; }
+</style>
+<p>###LLL:email_leadin1_user###</p>
+<p>###LLL:email_leadin2_user###</p>
+<table>
+    <tr><td class="f">###LLL:salutation###:</td><td>###value_salutation###</td></tr>
+    <tr><td class="f">###LLL:firstname###:</td><td>###value_firstname###</td></tr>
+    <tr><td class="f">###LLL:lastname###:</td><td>###value_lastname###</td></tr>
+    <tr><td class="f">&nbsp;</td></tr>
+    <tr><td class="f">###LLL:email###:</td><td><a href="mailto:###email###">###value_email###</a></td></tr>
+</table>
+<p>
+    <b>###LLL:comment###</b><br>
+    ###value_comment###
+</p>
+<p>###LLL:email_thanx_user###</p>
+<!-- ###TEMPLATE_EMAIL_USER_HTML### end -->
+
+
+<!-- ------------------------------------------------------
+  EMAIL TEMPLATES TO ADMIN
+  --------------------------------------------------------- -->
+
+<!-- ###TEMPLATE_EMAIL_ADMIN_PLAIN### begin -->
+###LLL:email_leadin1###
+###LLL:email_leadin2###
+
+###LLL:salutation###: ###value_salutation###
+###LLL:firstname###: ###value_firstname###
+###LLL:lastname###: ###value_lastname###
+
+###LLL:email###: ###value_email###
+
+###LLL:comment###
+###value_comment###
+<!-- ###TEMPLATE_EMAIL_ADMIN_PLAIN### end -->
+
+
+<!-- ###TEMPLATE_EMAIL_ADMIN_HTML### begin -->
+<style>
+    body, table, p { font-family: Arial, Helvetica, sans-serif; }
+    table { width: auto; }
+    td.f { font-weight: bold; padding-right: 20px; }
+</style>
+<p>###LLL:email_leadin1###</p>
+<p>###LLL:email_leadin2###</p>
+<table>
+    <tr><td class="f">###LLL:salutation###:</td><td>###value_salutation###</td></tr>
+    <tr><td class="f">###LLL:firstname###:</td><td>###value_firstname###</td></tr>
+    <tr><td class="f">###LLL:lastname###:</td><td>###value_lastname###</td></tr>
+    <tr><td class="f">&nbsp;</td></tr>
+    <tr><td class="f">###LLL:email###:</td><td><a href="mailto:###email###">###value_email###</a></td></tr>
+</table>
+<p>
+    <b>###LLL:comment###</b><br>
+    ###value_comment###
+</p>
+<!-- ###TEMPLATE_EMAIL_ADMIN_HTML### end -->

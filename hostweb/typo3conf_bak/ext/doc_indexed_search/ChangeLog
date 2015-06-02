@@ -1,0 +1,24 @@
+2008-12-27  Michael Stucki  <michael@typo3.org>
+
+	* Release of CoreDocs for TYPO3 4.2
+	* Applied new documentation template
+
+2008-08-29  Francois Suter  <francois@typo3.org>
+
+	* Updated with all the new (4.2) features documented in the wiki's pending documentation page
+
+2007-02-21  Michael Stucki  <michael@typo3.org>
+
+	* Release of CoreDocs for TYPO3 4.1
+
+2006-11-17  Michael Stucki  <michael@typo3.org>
+
+	* Added "whatis_stdWrap" property (by Martin Kutschker)
+
+2006-07-26  Michael Stucki  <michael@typo3.org>
+
+	* Exchanged the TYPO3 logo in the document footer
+
+2006-03-03  Michael Stucki  <michael@typo3.org>
+
+	* Starting to maintain a ChangeLog for this document

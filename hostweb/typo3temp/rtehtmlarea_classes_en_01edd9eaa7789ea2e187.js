@@ -1,0 +1,9 @@
+HTMLArea.classesLabels = {"text-left":"Text: Left","text-center":"Text: Center","text-right":"Text: Right","text-justify":"Text: Justify","lead":"Text: Lead","active":"Contextual: Active","danger":"Contextual: Danger","info":"Contextual: Info","success":"Contextual: Success","warning":"Contextual: Warning","visible-lg":"Visibility: Large devices","visible-md":"Visibility: Medium devices","visible-print":"Visibility: Print","visible-sm":"Visibility: Small devices","visible-xs":"Visibility: Extra small devices","table-striped":"Table: Striped rows","table-bordered":"Table: Bordered table","table-hover":"Table: Hover rows","table-condensed":"Table: Condensed table","list-unstyled":"Lists: Unstyled","list-inline":"Lists: Inline","btn":"Buttons: Base","btn-default":"Buttons: Default","btn-primary":"Buttons: Primary","btn-success":"Buttons: Success","btn-warning":"Buttons: Warning","btn-danger":"Buttons: Danger","btn-link":"Buttons: Link","btn-block":"Buttons: Block"};
+HTMLArea.classesValues = {"text-left":"","text-center":"","text-right":"","text-justify":"","lead":"","active":"","danger":"","info":"","success":"","warning":"","visible-lg":"","visible-md":"","visible-print":"","visible-sm":"","visible-xs":"","table-striped":"","table-bordered":"","table-hover":"","table-condensed":"","list-unstyled":"","list-inline":"","btn":"","btn-default":"","btn-primary":"","btn-success":"","btn-warning":"","btn-danger":"","btn-link":"","btn-block":""};
+HTMLArea.classesNoShow = {};
+HTMLArea.classesAlternating = {};
+HTMLArea.classesCounting = {};
+HTMLArea.classesSelectable = {};
+HTMLArea.classesRequires = {};
+HTMLArea.classesRequiredBy = {};
+HTMLArea.classesXOR = {};

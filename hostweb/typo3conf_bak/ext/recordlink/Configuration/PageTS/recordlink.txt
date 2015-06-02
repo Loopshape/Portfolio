@@ -1,0 +1,10 @@
+
+mod.tx_recordlink {
+    category {
+        label = Categories
+        table = sys_category
+        pid = 
+    }
+}
+
+RTE.default.tx_recordlink.category < mod.tx_recordlink.category

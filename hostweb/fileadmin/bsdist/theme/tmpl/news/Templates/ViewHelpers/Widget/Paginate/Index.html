@@ -1,0 +1,75 @@
+{namespace n=Tx_News_ViewHelpers}
+
+
+<div class="col-md-8">
+    <f:renderChildren arguments="{contentArguments}" />
+    <div class="clearfix"></div>
+    <div class="hidden-xs hidden-sm">
+        <f:render section="paginator" arguments="{pagination: pagination, configuration:configuration, class:'pagination-lg'}" />
+    </div>
+</div>
+<div class="col-xs-12 visible-xs">
+    <f:render section="paginator" arguments="{pagination: pagination, configuration:configuration, class:'pagination-sm'}" />
+</div>
+<div class="col-md-12 visible-sm">
+    <f:render section="paginator" arguments="{pagination: pagination, configuration:configuration, class:'pagination-lg'}" />
+</div>
+
+<f:section name="paginator">
+    <f:if condition="{pagination.numberOfPages} > 1">
+        <f:if condition="{settings.list.paginate}">
+            <f:if condition="{pagination.current} > 1">
+                <n:headerData><link rel="prev" href="<f:widget.uri arguments="{currentPage: pagination.previousPage}" />" /></n:headerData>
+            </f:if>
+            <f:if condition="{pagination.nextPage}">
+                <n:headerData><link rel="next" href="<f:widget.uri arguments="{currentPage: pagination.nextPage}" />" /></n:headerData>
+            </f:if>
+        </f:if>
+
+        <ul class="pagination {class}">
+            <f:if condition="{pagination.previousPage}">
+                <f:then>
+                    <li class="previous">
+                        <f:if condition="{pagination.previousPage} > 1">
+                            <f:then>
+                                <f:widget.link arguments="{currentPage: pagination.previousPage}">&laquo;</f:widget.link>
+                            </f:then>
+                            <f:else>
+                                <f:widget.link>&laquo;</f:widget.link>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li class="disabled">
+                        <a href="#">&laquo;</a>
+                    </li>
+                </f:else>
+            </f:if>
+            <f:for each="{pagination.pages}" as="page">
+                <f:if condition="{page.isCurrent}">
+                    <f:then>
+                        <li class="active"><a href="#">{page.number}</a></li>
+                    </f:then>
+                    <f:else>
+                        <li>
+                            <f:if condition="{page.number} > 1">
+                                <f:then>
+                                    <f:widget.link arguments="{currentPage: page.number}">{page.number}</f:widget.link>
+                                </f:then>
+                                <f:else>
+                                    <f:widget.link>{page.number}</f:widget.link>
+                                </f:else>
+                            </f:if>
+                        </li>
+                    </f:else>
+                </f:if>
+            </f:for>
+            <f:if condition="{pagination.nextPage}">
+                <li class="last next">
+                    <f:widget.link arguments="{currentPage: pagination.nextPage}">&raquo;</f:widget.link>
+                </li>
+            </f:if>
+        </ul>
+    </f:if>
+</f:section>

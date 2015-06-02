@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns:t3="http://typo3.org/schemas/xliff" version="1.0">
+  <file t3:id="1420197366" source-language="en" datatype="plaintext" original="messages" date="2015-01-02T11:16:11Z" product-name="backend" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="no_modules_registered" xml:space="preserve">
+        <source>No modules have been registered. Please contact your system administrator.</source>
+      <target/><alt-trans xml:space="preserve" origin="gregor_g"><target>Keine Module wurden registriert. Bitte setzen Sie sich mit Ihrem Systemadministrator in Verbindung.</target></alt-trans><alt-trans xml:space="preserve" origin="sebastian.iffland"><target>Es wurden keine Module registriert. Bitte kontaktieren Sie Ihren Systemadministrator.</target></alt-trans></trans-unit>
+    </body>
+  </file>
+</xliff>

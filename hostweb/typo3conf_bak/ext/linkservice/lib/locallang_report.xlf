@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" product-name="linkservice" date="2014-09-24T13:00:01Z">
+    <header/>
+    <body>
+      <trans-unit xml:space="preserve" approved="yes" id="msg_http_error">
+	<source>Link resulted in an error HTTP/###HTTP_STATUS### ###EXCEPTION###</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="msg_http_unavailable">
+	<source>Link was unavailable HTTP/###HTTP_STATUS### ###EXCEPTION###</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="msg_http_temporarily_moved">
+	<source>Link resulted in a temporary HTTP/###HTTP_STATUS### redirect to ###LOCATION###. No action is taken.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="msg_http_permanently_moved">      
+	<source>Link resulted in a permanent HTTP/301 redirect to ###LOCATION###. The link is corrected in the element.</source>
+      </trans-unit>
+      <trans-unit xml:space="preserve" approved="yes" id="msg_http_other">      
+	<source>Link resulted in an HTTP/###HTTP_STATUS### ###EXCEPTION###</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

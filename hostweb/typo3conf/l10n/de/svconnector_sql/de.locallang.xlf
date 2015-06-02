@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="EN" datatype="plaintext" original="messages" date="2014-08-24T08:32:29Z" product-name="svconnector_sql" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="config_debug" xml:space="preserve" approved="yes">
+        <source>Debug: Check to turn on debugging to the Dev Log. Debugging also takes place if TYPO3_DLOG is true. Requires devlog or similar extension.</source>
+      <target state="translated">Debug: Setzen Sie das Häkchen, um das Debugging im Dev Log zu aktivieren. Debugging ist aktiviert wenn TYPO3_DLOG auf true gesetzt wurde. Diese Funktion benötigt devlog oder eine ähnliche Erweiterung.</target></trans-unit>
+    </body>
+  </file>
+</xliff>

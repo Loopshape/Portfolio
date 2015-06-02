@@ -1,0 +1,28 @@
+df_foundation5.dropdown-nav {
+	# cat=foundation dropdown navigation/cheader/e01; type=string; label=dropdown-nav Title
+	title = Title 
+
+  # cat=foundation dropdown navigation/enable/e02; type=options[button,dropdown-nav-title]; label=dropdown-nav LinkType:Button or custom class [dropdown-nav-title]
+	linktype = button
+	
+  # cat=foundation dropdown navigation/enable/e03; type=options[tiny,small,large]; label=dropdown-nav Button-/Link-Size
+	linksize = 
+	
+	# cat=foundation dropdown navigation/enable/e04; type=options[secondary,success,alert,disabled]; label=ModalBox Button-color
+	ButtonColor =
+
+	# cat=foundation dropdown navigation/enable/e05; type=options[radius,round]; label=ModalBox Button-corner
+	ButtonCorner =	
+
+	# cat=foundation dropdown navigation/enable/e06; type=options[tiny,small,medium,large]; label=dropdown-nav Box-Size
+	boxsize = tiny
+	
+	# cat=foundation dropdown navigation/enable/e07; type=options[hover=true,click=false]; label=dropdown-nav Title hover:You can now make the top bar hoverable.
+	is_hover = false	
+
+  # cat=foundation dropdown navigation/clist/e08; type=string; label=DropDown Navigation UID-List
+	uidlist = 
+}
+	
+
+	

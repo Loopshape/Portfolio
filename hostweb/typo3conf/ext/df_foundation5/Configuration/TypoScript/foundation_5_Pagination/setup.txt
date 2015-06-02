@@ -1,0 +1,53 @@
+#############################
+# lib.pagination
+#############################
+
+temp.pagination.wrap = <div class="pagination-centered"><ul class="pagination">|</ul></div>
+temp.pagination = COA
+temp.pagination.10 = HMENU
+temp.pagination.10 {
+  special = browse
+  special {
+    items = first|prev
+    first.fields.title = {$df_foundation5.pagination.firstLabel}
+    prev.fields.title = {$df_foundation5.pagination.prevLabel}
+  }
+  1 = TMENU
+  1.NO.allWrap = <li>|</li>
+}
+
+temp.pagination.20 = HMENU
+temp.pagination.20  {
+  special = directory
+  special.value = {$df_foundation5.pagination.directory}
+  1 = TMENU
+  1 {
+    expAll = 0
+    noBlur = 1
+    NO = 1
+    NO {
+      stdWrap.htmlSpecialChars = 1
+      stdWrap.data = register:count_HMENU_MENUOBJ
+      allWrap = <li>|</li>
+      allWrap.insertData = 1
+      allWrap = <li>|</li>
+    }
+    CUR < .NO
+    CUR = 1
+    CUR.allWrap = <li class="current">|</li>
+  }
+}
+
+temp.pagination.30 < temp.pagination.10
+temp.pagination.30 {
+  special {
+    items = next|last
+    next.fields.title = {$df_foundation5.pagination.nextLabel}
+    last.fields.title = {$df_foundation5.pagination.lastLabel}
+  }
+}
+
+[PIDupinRootline = {$df_foundation5.pagination.directory}] && [treeLevel = {$df_foundation5.pagination.treelevel}]
+lib.pagination < temp.pagination
+[global]
+

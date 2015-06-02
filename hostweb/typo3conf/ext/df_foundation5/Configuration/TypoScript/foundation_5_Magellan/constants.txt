@@ -1,0 +1,20 @@
+df_foundation5.magellan {
+	# cat=foundation magellan/enable/a02; type=type=int+;label=Threshold:How many pixels until the magellan bar sticks, 0 = auto
+	threshold = 0
+
+	# cat=foundation magellan/enable/a03; type=type=int+;label=Destination threshold:Pixels from the top of destination for it to be considered active
+	destination_threshold = 65
+	
+	# cat=foundation magellan/enable/a04; type=type=int+;label=Destination Overlap:Overlap compensation in pixels
+	destination_overlap = 45	
+
+	# cat=foundation magellan/enable/a05; type=type=int+;label=Throttle delay:Calculation throttling to increase framerate
+	throttle_delay = 0
+
+	# cat=foundation magellan/enable/a06; type=type=int+;label=Fixed Top:Top distance in pixels assigned to the fixed element on scroll
+	fixed_top = 0
+	
+	# cat=foundation magellan/enable/a7; type=string; label=Class used for active sections
+	active_class = active
+}
+

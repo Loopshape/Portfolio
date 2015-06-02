@@ -1,0 +1,72 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable> 
+	</meta>
+	<sheets>
+		<sVIEW>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:dev_null_geshi/Resources/Private/Language/locallang.xml:contentsheet</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<cLang>
+						<TCEforms>
+							<label>LLL:EXT:dev_null_geshi/Resources/Private/Language/locallang.xml:lang</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">---</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+								</items>
+								<itemsProcFunc>tx_devnullgeshi_addFieldsToFlexForm->addFields</itemsProcFunc>
+							</config>
+						</TCEforms>
+					</cLang>
+					<cCode>
+						<TCEforms>
+							<label>LLL:EXT:dev_null_geshi/Resources/Private/Language/locallang.xml:code</label>
+							<config>
+								<type>text</type>
+								<cols>120</cols>
+								<rows>12</rows>
+							</config>
+						</TCEforms>
+					</cCode>
+				</el>
+			</ROOT>
+		</sVIEW>
+		<sOPTIONS>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:dev_null_geshi/Resources/Private/Language/locallang.xml:optionsheet</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<cStartnumber>
+						<TCEforms>
+							<label>LLL:EXT:dev_null_geshi/Resources/Private/Language/locallang.xml:startnumber</label>
+							<config>
+								<type>input</type>
+								<eval>int</eval>
+								<size>4</size>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</cStartnumber>
+					<cHighlight>
+						<TCEforms>
+							<label>LLL:EXT:dev_null_geshi/Resources/Private/Language/locallang.xml:highlight</label>
+							<config>
+								<type>input</type>
+								<eval>tx_devnullgeshi_evalhighlight</eval>
+							</config>
+						</TCEforms>
+					</cHighlight>
+				</el>
+			</ROOT>
+		</sOPTIONS>
+    </sheets>
+</T3DataStructure>

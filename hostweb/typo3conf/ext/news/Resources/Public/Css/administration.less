@@ -1,0 +1,84 @@
+.news-administration {
+	.clear {
+		clear: both;
+	}
+	.category-tree {
+		float: left;
+		margin: 0 10px;
+
+		ul {
+            margin: 4px;
+
+          ul {
+            margin: 2px 0 4px 12px;
+          }
+		}
+	}
+	.form {
+		float: left;
+		border-right: 1px solid #ccc;
+		padding-right: 10px;
+	}
+
+	.settings {
+		background-color: #EDEDED;
+		border-top: 1px solid #CDCDCD;
+		border-bottom: 1px solid #CDCDCD;
+		padding: 12px;
+		margin-bottom: 24px;
+
+		.field {
+			padding: 2px 0;
+		}
+
+		.category-tree {
+			li {
+				margin: 2px 0;
+
+				label {
+					padding: 0;
+					margin: 0;
+                    min-height: 12px;
+                    line-height: 1;
+				}
+			}
+
+            input {
+				margin: 0;
+			}
+
+            .tree-wrapper {
+                background: white;
+                border: 1px solid #CDCDCD;
+                padding: 0 4px;
+                height: 160px;
+                width: 320px;
+                margin-bottom: 5px;
+                overflow: auto;
+            }
+		}
+
+		.form .field label {
+			display: block;
+			float: left;
+			width: 150px;
+		}
+		.submit {
+			margin: 5px 0 3px 150px;
+		}
+	}
+	.result .item {
+		padding: 1px;
+
+		a {
+			font-style: italic;
+
+			:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.hide, .hide_line {
+		opacity: 0.5;
+	}
+}

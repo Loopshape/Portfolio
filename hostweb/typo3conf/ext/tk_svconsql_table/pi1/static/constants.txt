@@ -1,0 +1,34 @@
+plugin.tx_tksvconsqltable_pi1 {
+
+	cache.lifetime = 3600
+
+	formatting.dateFormat = Y-m-d
+	formatting.timeFormat = G:i
+	formatting.decimals = 0
+	formatting.dec_point = .
+	formatting.thousands_sep = ,
+
+	db.driver =
+	db.server =
+	db.user =
+	db.password =
+	db.database =
+	db.query =
+	db.init =
+	db.fetchMode = 0
+
+	table.templateFile = EXT:tk_svconsql_table/res/template.html
+	table.border = 1
+	table.cellPadding = 2
+	table.cellSpacing = 1
+	table.class =
+	table.caption =
+	table.caption_as_span = 0
+	table.colNames =
+	table.colFormats =
+	table.hiddenCols =
+	table.rowClasses = even,odd
+	table.colClasses =
+	table.captionInFirstCol = 0
+	table.change_col = 
+}

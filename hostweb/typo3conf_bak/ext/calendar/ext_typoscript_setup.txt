@@ -1,0 +1,1483 @@
+# includeLibs.tx_calendar_inject_tt_news = EXT:calendar/res/calendar_inject_tt_news.php
+
+plugin.tx_calendar_pi1 {
+	category_select = USER
+	category_select.userFunc = tx_calendar_pi1->makeCategorySelect
+
+	targetgroup_select = USER
+	targetgroup_select.userFunc = tx_calendar_pi1->makeTargetgroupSelect
+
+	injectObjects {
+		# disabled to avoid a dependency on tt_news
+		# tt_news {
+		#	getObjectsInRange = tx_calendar_inject_tt_news->getObjectsInRange
+		#	pidInList = 14
+		# }
+	}
+
+	tt_news < plugin.tt_news
+	tt_news {
+		displayCurrentRecord = 1
+	}
+
+	# General settings for displaying the event
+	event = TEMPLATE
+	event {
+		template = TEXT
+		template.field = TEMPLATE_EVENT
+		workOnSubpart = TEMPLATE_EVENT
+		marks {
+			EVENT_TITLE = TEXT
+			EVENT_TITLE {
+				field = title
+				typolink.parameter.field = PAGE_EVENT
+				typolink.additionalParams.field = uid
+				typolink.additionalParams.wrap = &tx_calendar_pi1[f1]=|
+				typolink.useCacheHash = 1
+			}
+
+			EVENT_IMAGE = IMAGE
+			EVENT_IMAGE {
+				file {
+					import = uploads/tx_calendar/
+					import.field = image
+					maxW = 120
+				}
+				imageLinkWrap = 1
+				imageLinkWrap {
+					enable = 1
+					bodyTag (
+						<body bgcolor="#000000" leftmargin="2" topmargin="2"
+  						marginwidth="2" marginheight="2">
+					)
+					wrap = <a href="javascript:close();"> | </a>
+					width = 640m
+					height = 640m
+					JSwindow = 1
+					JSwindow.newWindow = 1
+					JSwindow.expand = 4,4
+				}
+
+			}
+			EVENT_CATEGORY = RECORDS
+			EVENT_CATEGORY {
+				source.field = category
+				tables = tx_calendar_cat
+				conf.tx_calendar_cat = TEXT
+				conf.tx_calendar_cat.field = title
+			}
+
+			EVENT_CATEGORY_IMAGE = RECORDS
+			EVENT_CATEGORY_IMAGE {
+				source.field = category
+				tables = tx_calendar_cat
+				conf.tx_calendar_cat = IMAGE
+				conf.tx_calendar_cat {
+					file {
+						import = uploads/tx_calendar/
+						import.field = image
+						maxW = 50
+					}
+				}
+			}
+
+			EVENT_TARGETGROUP = RECORDS
+			EVENT_TARGETGROUP {
+				source.field = targetgroup
+				tables = tx_calendar_targetgroup
+				conf.tx_calendar_targetgroup = TEXT
+				conf.tx_calendar_targetgroup.field = title
+			}
+
+			EVENT_TARGETGROUP_IMAGE = RECORDS
+			EVENT_TARGETGROUP_IMAGE {
+				source.field = targetgroup
+				tables = tx_calendar_targetgroup
+				conf.tx_calendar_targetgroup = IMAGE
+				conf.tx_calendar_targetgroup {
+					file {
+						import = uploads/tx_calendar/
+						import.field = image
+						maxW = 50
+					}
+				}
+			}
+
+			EVENT_TIME = COA
+			EVENT_TIME {
+				10 = TEXT
+				10 {
+					field = start_date
+					strftime = %Y-%m-%d
+					wrap = <span class="start_date"> | </span>
+				}
+
+				20 = TEXT
+				20 {
+					field = event_start
+					strftime = %H:%M
+					wrap = &nbsp;<span class="start_time"> | </span>
+					if {
+						value = 0
+						equals.field = start_time
+						negate = 1
+					}
+				}
+
+				30 = TEXT
+				30 {
+					field = end_date
+					strftime = %Y-%m-%d
+					wrap = &nbsp;-&nbsp;<span class="end_date"> | </span>
+					if {
+						value = 0
+						equals.field = end_date
+						negate = 1
+					}
+				}
+				31 = TEXT
+				31 {
+					value = &nbsp;-
+					if {
+						value = 0
+						equals.field = end_date
+					}
+				}
+
+				40 = TEXT
+				40 {
+					field = event_end
+					strftime = %H:%M
+					wrap = &nbsp;<span class="end_time"> | </span>
+					if {
+						value = 0
+						equals.field = end_time
+						negate = 1
+					}
+				}
+			}
+
+			EVENT_REPEAT = COA
+			EVENT_REPEAT {
+				10 = CASE
+				10 {
+					key.field = eventtype
+					1 = CASE
+					1 {
+						key.field = rec_type_daily
+						default = COA
+						default {
+							10 = TEXT
+							10.field = repeat_days
+							10.wrap = Repeat every&nbsp; | &nbsp;days
+						}
+					}
+				}
+
+				20 = COA
+				20 {
+					if {
+						value = 0
+						equals.field = eventtype
+						negate = 1
+					}
+
+					10 = TEXT
+					10 {
+						field = rec_end_date
+						strftime = %Y-%m-%d
+						wrap = &nbsp;until&nbsp; |
+						if {
+							value = 0
+							equals.field = rec_end_date
+							negate = 1
+						}
+					}
+
+					20 = TEXT
+					20 {
+						field = rec_end_times
+						wrap = &nbsp;but max.&nbsp; | &nbsp;times
+						if {
+							value = 0
+							equals.field = rec_end_times
+							negate = 1
+						}
+					}
+				}
+
+			}
+
+			EVENT_PLACE = TEXT
+			EVENT_PLACE {
+				field = place
+			}
+
+			EVENT_ADDRESS = TEXT
+			EVENT_ADDRESS {
+				field = address
+    				parseFunc < tt_content.text.20.parseFunc
+			}
+
+			EVENT_TEASER = TEXT
+			EVENT_TEASER {
+				field = teaser
+    				parseFunc < tt_content.text.20.parseFunc
+			}
+
+			EVENT_DESCRIPTION = TEXT
+			EVENT_DESCRIPTION {
+				field = descr
+    				parseFunc < tt_content.text.20.parseFunc
+			}
+
+
+			EVENT_MOREINFO = TEXT
+			EVENT_MOREINFO {
+				field = moreinfo
+    				parseFunc < tt_content.text.20.parseFunc
+			}
+
+			EVENT_URL = TEXT
+			EVENT_URL {
+				field = url_text
+				ifEmpty.override.field = url
+				typolink {
+					parameter.field = url
+				}
+				typolink.useCacheHash = 1
+			}
+
+			EVENT_START_INTERVAL = TEXT
+			EVENT_START_INTERVAL {
+				field = INTERVAL_START
+				strftime = %H-%M
+			}
+
+			EVENT_DURATION = TEXT
+			EVENT_DURATION {
+				wrap = event-range- |
+				field = EVENT_DURATION
+			}
+
+			EVENT_DURATION_FULLDAY = TEXT
+			EVENT_DURATION_FULLDAY {
+				value = event-range-fullday
+				if {
+					value.field = start_time
+					equals.field = end_time
+				}
+			}
+
+			EVENT_ORGANIZER = COA
+			EVENT_ORGANIZER {
+				10 = RECORDS
+				10 {
+					source.field = organizer_mm
+					tables = tx_calendar_organizer
+					conf.tx_calendar_organizer = TEXT
+					conf.tx_calendar_organizer {
+						field = title
+					}
+				}
+
+				20 = TEXT
+				20 {
+					field = organizer
+				}
+			}
+
+			EVENT_ORGANIZER_URL = COA
+			EVENT_ORGANIZER_URL {
+				10 = RECORDS
+				10 {
+					source.field = organizer_mm
+					tables = tx_calendar_organizer
+					conf.tx_calendar_organizer = TEXT
+					conf.tx_calendar_organizer {
+						field = url_text
+						ifEmpty.override.field = url
+						typolink {
+							parameter.field = url
+						}
+						typolink.useCacheHash = 1
+					}
+				}
+
+				20 = TEXT
+				20 {
+					field = organizer_url_text
+					ifEmpty.override.field = organizer_url
+					typolink {
+						parameter.field = organizer_url
+					}
+					typolink.useCacheHash = 1
+				}
+			}
+
+			EVENT_ORGANIZER_EMAIL = COA
+			EVENT_ORGANIZER_EMAIL {
+				10 = RECORDS
+				10 {
+					source.field = organizer_mm
+					tables = tx_calendar_organizer
+					conf.tx_calendar_organizer = TEXT
+					conf.tx_calendar_organizer {
+						field = email
+						typolink {
+							parameter.field = email
+						}
+						typolink.useCacheHash = 1
+					}
+				}
+
+				20 = TEXT
+				20 {
+					field = organizer_email
+					typolink {
+						parameter.field = organizer_email
+					}
+					typolink.useCacheHash = 1
+				}
+			}
+
+
+
+			EVENT_ORGANIZER_IMAGE = RECORDS
+			EVENT_ORGANIZER_IMAGE {
+				source.field = organizer_mm
+				tables = tx_calendar_organizer
+				conf.tx_calendar_organizer = IMAGE
+				conf.tx_calendar_organizer {
+					file {
+						import = uploads/tx_calendar/
+						import.field = image
+						maxW = 50
+						maxH = 50
+					}
+				}
+			}
+
+			BACKGROUND_IMAGE = IMG_RESOURCE
+			BACKGROUND_IMAGE.file = EXT:calendar/templates/day-eventback.jpg
+		}
+	}
+
+
+	day = TEMPLATE
+	day {
+		template = TEXT
+		template.field = TEMPLATE_DAY
+		workOnSubpart = TEMPLATE_DAY
+		marks {
+			DAY_HEADER = TEXT
+			DAY_HEADER {
+				field = day_time
+				strftime = %A, %d %b %Y
+				typolink.parameter.field = PAGE_DAY
+				typolink.useCacheHash = 1
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1.field = year
+						1.wrap = &tx_calendar_pi1[f1]=|
+
+						2 = TEXT
+						2.field = month
+						2.wrap = &tx_calendar_pi1[f2]=|
+
+						3 = TEXT
+						3.field = day
+						3.wrap = &tx_calendar_pi1[f3]=|
+					}
+				}
+			}
+
+			PREV_DAY_IMAGE = IMAGE
+			PREV_DAY_IMAGE {
+				file = EXT:calendar/templates/left.jpg
+				stdWrap.typolink.useCacheHash = 1
+				stdWrap.typolink.parameter.field = PAGE_DAY
+				stdWrap.typolink.additionalParams = TEXT
+				stdWrap.typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = day_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = day_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+						3 = TEXT
+						3 {
+							field = day_time
+							strftime = %d
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 days
+							wrap = &tx_calendar_pi1[f3]=|
+						}
+					}
+				}
+			}
+
+			PREV_DAY_1 = TEXT
+			PREV_DAY_1 {
+				field = day_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = -1 days
+
+				strftime = %a
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_DAY
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = day_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = day_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+						3 = TEXT
+						3 {
+							field = day_time
+							strftime = %d
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 days
+							wrap = &tx_calendar_pi1[f3]=|
+						}
+					}
+				}
+			}
+			PREV_DAY_2 = TEXT
+			PREV_DAY_2 {
+				field = day_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = -2 days
+
+				strftime = %a
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_DAY
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = day_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -2 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = day_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -2 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+						3 = TEXT
+						3 {
+							field = day_time
+							strftime = %d
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -2 days
+							wrap = &tx_calendar_pi1[f3]=|
+						}
+					}
+				}
+			}
+			PREV_DAY_3 = TEXT
+			PREV_DAY_3 {
+				field = day_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = -3 days
+
+				strftime = %a
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_DAY
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = day_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -3 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = day_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -3 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+						3 = TEXT
+						3 {
+							field = day_time
+							strftime = %d
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -3 days
+							wrap = &tx_calendar_pi1[f3]=|
+						}
+					}
+				}
+			}
+
+
+			NEXT_DAY_IMAGE = IMAGE
+			NEXT_DAY_IMAGE {
+				file = EXT:calendar/templates/right.jpg
+				stdWrap.typolink.useCacheHash = 1
+				stdWrap.typolink.parameter.field = PAGE_DAY
+				stdWrap.typolink.additionalParams = TEXT
+				stdWrap.typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = day_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = day_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+						3 = TEXT
+						3 {
+							field = day_time
+							strftime = %d
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 days
+							wrap = &tx_calendar_pi1[f3]=|
+						}
+					}
+				}
+			}
+
+			NEXT_DAY_1 = TEXT
+			NEXT_DAY_1 {
+				field = day_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = +1 days
+
+				strftime = %a
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_DAY
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = day_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = day_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+						3 = TEXT
+						3 {
+							field = day_time
+							strftime = %d
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 days
+							wrap = &tx_calendar_pi1[f3]=|
+						}
+					}
+				}
+			}
+			NEXT_DAY_2 = TEXT
+			NEXT_DAY_2 {
+				field = day_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = +2 days
+
+				strftime = %a
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_DAY
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = day_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +2 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = day_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +2 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+						3 = TEXT
+						3 {
+							field = day_time
+							strftime = %d
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +2 days
+							wrap = &tx_calendar_pi1[f3]=|
+						}
+					}
+				}
+			}
+			NEXT_DAY_3 = TEXT
+			NEXT_DAY_3 {
+				field = day_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = +3 days
+
+				strftime = %a
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_DAY
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = day_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +3 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = day_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +3 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+						3 = TEXT
+						3 {
+							field = day_time
+							strftime = %d
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +3 days
+							wrap = &tx_calendar_pi1[f3]=|
+						}
+					}
+				}
+			}
+
+
+
+
+
+			DAYTABLE_BACKGROUND_IMAGE = IMG_RESOURCE
+			DAYTABLE_BACKGROUND_IMAGE.file = EXT:calendar/templates/dayback-20.jpg
+
+			EVENT_COUNT = TEXT
+			EVENT_COUNT.field = event_count
+
+			HAS_EVENTS = TEXT
+			HAS_EVENTS {
+				value = has_events
+				if {
+					value = 0
+					equals.field = event_count
+					negate = 1
+				}
+			}
+
+		}
+		subparts {
+			EVENTS = USER
+			EVENTS {
+				userFunc = tx_calendar_pi1->displayDay
+				event < plugin.tx_calendar_pi1.event
+				tt_news < plugin.tx_calendar_pi1.tt_news
+			}
+		}
+	}
+	# end of day
+
+	week = TEMPLATE
+	week {
+		template = TEXT
+		template.field = TEMPLATE_WEEK
+		workOnSubpart = TEMPLATE_WEEK
+		marks {
+			WEEK_HEADER = TEXT
+			WEEK_HEADER {
+				field = week_time
+				date = W
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_WEEK
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1.field = year
+						1.wrap = &tx_calendar_pi1[f1]=|
+
+						2 = TEXT
+						2.field = week
+						2.wrap = &tx_calendar_pi1[f2]=|
+					}
+				}
+			}
+
+			WEEK_START = TEXT
+			WEEK_START {
+				field = week_time
+				strftime = %d %b
+			}
+			WEEK_END = TEXT
+			WEEK_END {
+				field = week_time
+				strftime = %d %b %Y
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = +6 days
+			}
+
+			PREV_WEEK = IMAGE
+			PREV_WEEK {
+				file = EXT:calendar/templates/left.jpg
+
+				stdWrap.typolink.useCacheHash = 1
+				stdWrap.typolink.parameter.field = PAGE_WEEK
+				stdWrap.typolink.additionalParams = TEXT
+				stdWrap.typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = week_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -7 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = week_time
+							date = W
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -7 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+			NEXT_WEEK = IMAGE
+			NEXT_WEEK {
+				file = EXT:calendar/templates/right.jpg
+
+				stdWrap.typolink.useCacheHash = 1
+				stdWrap.typolink.parameter.field = PAGE_WEEK
+				stdWrap.typolink.additionalParams = TEXT
+				stdWrap.typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = week_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +7 days
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = week_time
+							date = W
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +7 days
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+			DAYTABLE_BACKGROUND_IMAGE = IMG_RESOURCE
+			DAYTABLE_BACKGROUND_IMAGE.file = EXT:calendar/templates/dayback-20.jpg
+
+			CATEGORY_SELECT < plugin.tx_calendar_pi1.category_select
+			TARGETGROUP_SELECT < plugin.tx_calendar_pi1.targetgroup_select
+		}
+
+		subparts {
+			DAYS = USER
+			DAYS {
+				userFunc = tx_calendar_pi1->displayWeek
+				day < plugin.tx_calendar_pi1.day
+			}
+		}
+	}
+	# end of week
+
+	month = TEMPLATE
+	month {
+		template = TEXT
+		template.field = TEMPLATE_MONTH
+		workOnSubpart = TEMPLATE_MONTH
+		marks {
+
+			CATEGORY_SELECT < plugin.tx_calendar_pi1.category_select
+			TARGETGROUP_SELECT < plugin.tx_calendar_pi1.targetgroup_select
+
+			MONTH_HEADER = TEXT
+			MONTH_HEADER {
+				field = month_time
+				strftime = %B %Y
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_MONTH
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1.field = year
+						1.wrap = &tx_calendar_pi1[f1]=|
+
+						2 = TEXT
+						2.field = month
+						2.wrap = &tx_calendar_pi1[f2]=|
+					}
+				}
+			}
+
+			PREV_MONTH_IMAGE = IMAGE
+			PREV_MONTH_IMAGE {
+				file = EXT:calendar/templates/left.jpg
+
+				stdWrap.typolink.useCacheHash = 1
+				stdWrap.typolink.parameter.field = PAGE_MONTH
+				stdWrap.typolink.additionalParams = TEXT
+				stdWrap.typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 months
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 months
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+
+
+			NEXT_MONTH_IMAGE = IMAGE
+			NEXT_MONTH_IMAGE {
+				file = EXT:calendar/templates/right.jpg
+
+				stdWrap.typolink.useCacheHash = 1
+				stdWrap.typolink.parameter.field = PAGE_MONTH
+				stdWrap.typolink.additionalParams = TEXT
+				stdWrap.typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 months
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 months
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+
+			PREV_MONTH_1 = TEXT
+			PREV_MONTH_1 {
+				field = month_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = -1 months
+
+				strftime = %b
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_MONTH
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 months
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 months
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+			PREV_MONTH_2 = TEXT
+			PREV_MONTH_2 {
+				field = month_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = -2 months
+
+				strftime = %b
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_MONTH
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -2 months
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -2 months
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+			PREV_MONTH_3 = TEXT
+			PREV_MONTH_3 {
+				field = month_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = -3 months
+
+				strftime = %b
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_MONTH
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -3 months
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -3 months
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+
+			NEXT_MONTH_1 = TEXT
+			NEXT_MONTH_1 {
+				field = month_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = +1 months
+
+				strftime = %b
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_MONTH
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 months
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 months
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+			NEXT_MONTH_2 = TEXT
+			NEXT_MONTH_2 {
+				field = month_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = +2 months
+
+				strftime = %b
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_MONTH
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +2 months
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +2 months
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+			NEXT_MONTH_3 = TEXT
+			NEXT_MONTH_3 {
+				field = month_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = +3 months
+
+				strftime = %b
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_MONTH
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +3 months
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +3 months
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+			PREV_YEAR = TEXT
+			PREV_YEAR {
+				field = month_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = -1 years
+
+				strftime = %Y
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_MONTH
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 years
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 years
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+			NEXT_YEAR = TEXT
+			NEXT_YEAR {
+				field = month_time
+				preUserFunc = tx_calendar_pi1->strtotime
+				preUserFunc.strtotime = +1 years
+
+				strftime = %Y
+				typolink.useCacheHash = 1
+				typolink.parameter.field = PAGE_MONTH
+				typolink.additionalParams = TEXT
+				typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 years
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 years
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+
+			PREV_YEAR_IMAGE = IMAGE
+			PREV_YEAR_IMAGE {
+				file = EXT:calendar/templates/left.jpg
+
+				stdWrap.typolink.useCacheHash = 1
+				stdWrap.typolink.parameter.field = PAGE_MONTH
+				stdWrap.typolink.additionalParams = TEXT
+				stdWrap.typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 years
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = -1 years
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+
+
+			NEXT_YEAR_IMAGE = IMAGE
+			NEXT_YEAR_IMAGE {
+				file = EXT:calendar/templates/right.jpg
+
+				stdWrap.typolink.useCacheHash = 1
+				stdWrap.typolink.parameter.field = PAGE_MONTH
+				stdWrap.typolink.additionalParams = TEXT
+				stdWrap.typolink.additionalParams {
+					# We need to use this hack as this is only passed through stdWwrap()
+					cObject = COA
+					cObject {
+						1 = TEXT
+						1 {
+							field = month_time
+							strftime = %Y
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 years
+							wrap = &tx_calendar_pi1[f1]=|
+						}
+						2 = TEXT
+						2 {
+							field = month_time
+							strftime = %m
+							preUserFunc = tx_calendar_pi1->strtotime
+							preUserFunc.strtotime = +1 years
+							wrap = &tx_calendar_pi1[f2]=|
+						}
+					}
+				}
+			}
+
+
+
+
+
+		}
+
+		subparts {
+			WEEKS = USER
+			WEEKS {
+				userFunc = tx_calendar_pi1->displayMonth
+				week < plugin.tx_calendar_pi1.week
+			}
+		}
+	}
+	# end of month
+
+	# Settings for month view
+	displayMonth{
+
+		month < plugin.tx_calendar_pi1.month
+		month.subparts.WEEKS.week.subparts.DAYS.day.marks {
+			DAY_HEADER.strftime = %d
+
+			NOT_IN_MONTH = TEXT
+			NOT_IN_MONTH {
+				value = not_in_month
+				if {
+					value.field = THIS_MONTH
+					equals.field = month
+					negate = 1
+				}
+			}
+
+			WEEK_END = TEXT
+			WEEK_END {
+				value = weekend
+				if {
+					value.field = day_of_week
+					isGreaterThan = 6
+					negate = 1
+				}
+			}
+
+			TODAY = TEXT
+			TODAY {
+				value = day_is_today
+				if {
+					value.field = TODAY
+					equals.field = day_time
+				}
+			}
+		}
+		# enable this and the lines below to make the
+		# default-month-view faster.  Don't forget to add your custom
+		# marks
+		#month.subparts.WEEKS.week.subparts.DAYS.day.subparts.EVENTS.event.marks >
+		month.subparts.WEEKS.week.subparts.DAYS.day.subparts.EVENTS.event {
+			marks {
+				EVENT_CLASS_STARTING_TODAY = TEXT
+				EVENT_CLASS_STARTING_TODAY {
+					value = event_today
+					if {
+						value.field = start_date
+						equals.field = THIS_DAY
+					}
+				}
+				EVENT_CLASS_STARTING_NOT_TODAY = TEXT
+				EVENT_CLASS_STARTING_NOT_TODAY {
+					value = event_not_today
+					if {
+						value.field = start_date
+						equals.field = THIS_DAY
+						negate = 1
+					}
+				}
+				EVENT_TITLE.crop = 5 | &nbsp;...
+
+				START_TIME = TEXT
+				START_TIME {
+					field = event_start
+					strftime = %H:%M
+					if {
+						value.field = start_time
+						equals.field = end_time
+						negate = 1
+					}
+					typolink.useCacheHash = 1
+					typolink.parameter.field = PAGE_EVENT
+					typolink.additionalParams.field = uid
+					typolink.additionalParams.wrap = &tx_calendar_pi1[f1]=|
+				}
+
+				#FULLDAY = IMAGE
+				#FULLDAY {
+				#	file = EXT:calendar/templates/fullday.jpg
+				#	width = 15
+				#	height = 15
+				#}
+
+				FULLDAY = TEXT
+				FULLDAY {
+					value = (All)
+					if {
+						value.field = start_time
+						equals.field = end_time
+					}
+					typolink.useCacheHash = 1
+					typolink.parameter.field = PAGE_EVENT
+					typolink.additionalParams.field = uid
+					typolink.additionalParams.wrap = &tx_calendar_pi1[f1]=|
+				}
+			}
+		}
+	}
+
+	displayDay {
+		day < plugin.tx_calendar_pi1.day
+		day.marks.DAY_HEADER.typolink >
+	}
+
+	displayWeek {
+		week < plugin.tx_calendar_pi1.week
+		week.marks.WEEK_HEADER.typolink >
+
+		week.subparts.DAYS.day {
+			marks {
+				DAY_HEADER.strftime = %d
+				DAY_HEADER_WEEKDAY = TEXT
+				DAY_HEADER_WEEKDAY {
+					field = day_time
+					strftime = %a
+					typolink.useCacheHash = 1
+					typolink.parameter.field = PAGE_DAY
+					typolink.additionalParams = TEXT
+					typolink.additionalParams {
+						# We need to use this hack as this is only passed through stdWwrap()
+						cObject = COA
+						cObject {
+							1 = TEXT
+							1.field = year
+							1.wrap = &tx_calendar_pi1[f1]=|
+
+							2 = TEXT
+							2.field = month
+							2.wrap = &tx_calendar_pi1[f2]=|
+
+							3 = TEXT
+							3.field = day
+							3.wrap = &tx_calendar_pi1[f3]=|
+						}
+					}
+				}
+
+				TODAY = TEXT
+				TODAY {
+					value = day_is_today
+					if {
+						value.field = TODAY
+						equals.field = day_time
+					}
+				}
+			}
+		}
+
+
+	}
+
+	displayEvent {
+		event < plugin.tx_calendar_pi1.event
+		event.marks.EVENT_TITLE.typolink >
+	}
+
+	displayUpcoming {
+		event < plugin.tx_calendar_pi1.event
+	}
+
+}

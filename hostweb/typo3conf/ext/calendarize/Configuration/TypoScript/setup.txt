@@ -1,0 +1,45 @@
+/**
+ * Configuration
+ */
+plugin.tx_calendarize {
+
+	settings {
+		# Limit for the previous button in the day,week,month,year view
+		dateLimitBrowserPrev = 2012-01-01
+
+		# Limit for the next button in the day,week,month,year view
+		dateLimitBrowserNext = 2020-01-01
+
+		# Start of the week - ISO-8601 / http://php.net/manual/de/function.date.php 'N'
+		weekStart = 1
+
+		# date format - http://php.net/manual/de/function.date.php
+		dateFormat = d.m.Y
+
+		# time format - http://php.net/manual/de/function.date.php
+		timeFormat = H:i
+	}
+
+	mvc.callDefaultActionIfActionCantBeResolved = 1
+
+	view {
+		templateRootPaths {
+			100 = EXT:calendarize/Resources/Private/Templates/
+		}
+		partialRootPaths {
+			100 = EXT:calendarize/Resources/Private/Partials/
+		}
+		layoutRootPaths {
+			100 = EXT:calendarize/Resources/Private/Layouts/
+		}
+		widget {
+			TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper {
+				templateRootPath = EXT:calendarize/Resources/Private/Templates/
+			}
+		}
+	}
+
+	features {
+		skipDefaultArguments = 1
+	}
+}

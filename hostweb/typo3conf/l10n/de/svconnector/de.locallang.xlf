@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2014-08-24T08:31:47Z" product-name="svconnector" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="config_debug" xml:space="preserve">
+        <source>Debug: Check to turn on debugging to the Dev Log. Debugging also takes place if TYPO3_DLOG is true. Requires devlog or similar extension.</source>
+      <target></target></trans-unit>
+    </body>
+  </file>
+</xliff>

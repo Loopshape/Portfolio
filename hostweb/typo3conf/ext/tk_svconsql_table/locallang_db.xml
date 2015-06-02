@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'tk_svconsql_table'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.list_type_pi1">Table for Connector SQL</label>
+			<label index="tt_content.pi_flexform.sheet_cache">Caching</label>
+			<label index="tt_content.pi_flexform.sheet_cache.lifetime">Cache lifetime (in seconds)</label>
+			<label index="tt_content.pi_flexform.sheet_db">Database</label>
+			<label index="tt_content.pi_flexform.sheet_db.driver">Driver</label>
+			<label index="tt_content.pi_flexform.sheet_db.server">Server</label>
+			<label index="tt_content.pi_flexform.sheet_db.user">User</label>
+			<label index="tt_content.pi_flexform.sheet_db.password">Password</label>
+			<label index="tt_content.pi_flexform.sheet_db.database">Database name</label>
+			<label index="tt_content.pi_flexform.sheet_db.query">Query</label>
+			<label index="tt_content.pi_flexform.sheet_db.init">Init</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode">Fetch mode</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode.0">Default</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode.1">Numerical array</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode.2">Associative array</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode.3">Both</label>
+			<label index="tt_content.pi_flexform.sheet_table">Table</label>
+			<label index="tt_content.pi_flexform.sheet_table.template_file">Template file</label>
+			<label index="tt_content.pi_flexform.sheet_table.border">Border</label>
+			<label index="tt_content.pi_flexform.sheet_table.cellpadding">Cell padding</label>
+			<label index="tt_content.pi_flexform.sheet_table.cellspacing">Cell spacing</label>
+			<label index="tt_content.pi_flexform.sheet_table.class">Table CSS class</label>
+			<label index="tt_content.pi_flexform.sheet_table.caption">Caption</label>
+			<label index="tt_content.pi_flexform.sheet_table.caption_as_span">Caption as span before table</label>
+			<label index="tt_content.pi_flexform.sheet_table.colnames">Column names list</label>
+			<label index="tt_content.pi_flexform.sheet_table.colformats">Column formats list</label>
+			<label index="tt_content.pi_flexform.sheet_table.hiddencols">List of hidden column numbers (starting from zero)</label>
+			<label index="tt_content.pi_flexform.sheet_table.rowclasses">Row classes</label>
+			<label index="tt_content.pi_flexform.sheet_table.colclasses">Column classes</label>
+			<label index="tt_content.pi_flexform.sheet_table.captioninfirstcol">Caption in first column</label>
+			<label index="tt_content.pi_flexform.sheet_table.change_col">Number of column containing change (compared to zero for additional styling)</label>
+		</languageKey>
+		<languageKey index="pl" type="array">
+			<label index="tt_content.list_type_pi1">Tabela dla Connector SQL</label>
+			<label index="tt_content.pi_flexform.sheet_cache">Cache</label>
+			<label index="tt_content.pi_flexform.sheet_cache.lifetime">Czas cache-owania (w sekundach)</label>
+			<label index="tt_content.pi_flexform.sheet_db">Baza danych</label>
+			<label index="tt_content.pi_flexform.sheet_db.driver">Sterownik</label>
+			<label index="tt_content.pi_flexform.sheet_db.server">Serwer</label>
+			<label index="tt_content.pi_flexform.sheet_db.user">Nazwa użytkownika</label>
+			<label index="tt_content.pi_flexform.sheet_db.password">Hasło użytkownika</label>
+			<label index="tt_content.pi_flexform.sheet_db.database">Nazwa bazy</label>
+			<label index="tt_content.pi_flexform.sheet_db.query">Zapytanie SQL</label>
+			<label index="tt_content.pi_flexform.sheet_db.init">Inicjacja</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode">Sposób dostarczania danych</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode.0">Domyślnie</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode.1">Tablica numeryczna</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode.2">Tablica asociacyjna</label>
+			<label index="tt_content.pi_flexform.sheet_db.fetchMode.3">Obie</label>
+			<label index="tt_content.pi_flexform.sheet_table">Tablea</label>
+			<label index="tt_content.pi_flexform.sheet_table.template_file">Szablon HTML</label>
+			<label index="tt_content.pi_flexform.sheet_table.border">Border</label>
+			<label index="tt_content.pi_flexform.sheet_table.cellpadding">Cell padding</label>
+			<label index="tt_content.pi_flexform.sheet_table.cellspacing">Cell spacing</label>
+			<label index="tt_content.pi_flexform.sheet_table.class">Klasa CSS tabeli</label>
+			<label index="tt_content.pi_flexform.sheet_table.caption">Tytuł tabeli</label>
+			<label index="tt_content.pi_flexform.sheet_table.caption_as_span">Tytuł jako span przed tabelą</label>
+			<label index="tt_content.pi_flexform.sheet_table.colnames">Lista nazw kolumn</label>
+			<label index="tt_content.pi_flexform.sheet_table.colformats">Lista formatów kolumn</label>
+			<label index="tt_content.pi_flexform.sheet_table.hiddencols">Lista numerów ukrytych kolumn (zaczynając od zera)</label>
+			<label index="tt_content.pi_flexform.sheet_table.rowclasses">Lista klas CSS wierszy</label>
+			<label index="tt_content.pi_flexform.sheet_table.colclasses">Lista klas CSS kolumn</label>
+			<label index="tt_content.pi_flexform.sheet_table.captioninfirstcol">Tytuł tabeli w pierwszej kolumnie</label>
+			<label index="tt_content.pi_flexform.sheet_table.change_col">Numer kolumny zawierającej zmianę (wartość porównywana jest do zera dla dodatkowej stylizacji)</label>
+		</languageKey>		
+	</data>
+</T3locallang>

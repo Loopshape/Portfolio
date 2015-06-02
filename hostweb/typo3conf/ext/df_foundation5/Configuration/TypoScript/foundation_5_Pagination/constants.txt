@@ -1,0 +1,19 @@
+df_foundation5.pagination {
+	#cat=foundation pagination/links/b01; type=int; label=pagination directory:pagination fetched from directory (page-id)
+	directory = 0
+	
+	#cat=foundation pagination/links/b02; type=string; label=pagination treelevel:pagination visible from specified pagination directory and in tree level (level list)
+	treelevel = 	0,1,2,3,4,5,6,7,8,9
+
+	#cat=foundation pagination//b03; type=string; label=pagination first label
+	firstLabel = «« 
+	
+	#cat=foundation pagination//b04; type=string; label=pagination prev label
+	prevLabel = « 
+	
+	#cat=foundation pagination//b05; type=string; label=pagination next label
+	nextLabel = »
+	
+	#cat=foundation pagination//b06; type=string; label=pagination last label
+	lastLabel = »»
+}
