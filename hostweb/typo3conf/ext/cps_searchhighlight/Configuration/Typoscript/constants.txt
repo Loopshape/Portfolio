@@ -1,0 +1,15 @@
+###
+# This are the default TS-constants for cps_searchhighlight
+##
+
+plugin.tx_cpssearchhighlight {
+    # cat=plugin.cps_searchhighlight//2; type=int+; label= Minimum Keyword Length: Define the minimum length of a keyword to be highlighted.
+  minkeywordlength = 2
+  
+    # cat=plugin.cps_searchhighlight//2; type=int+; label= Number of Different Colors: Set the number of different colors (CSS-Styles) to use. Keep in mind that you have to extend the CSS .tx-cpssearchhighlight-sword-X (X stands for the number of the keyword).
+  numberofcolors = 3
+  
+    # cat=plugin.cps_searchhighlight/enable/1; type=boolean; label= Different Colors: Enable different colors for different keywords.
+  differentcolors = 1
+    
+}

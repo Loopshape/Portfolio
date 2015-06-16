@@ -6,7 +6,7 @@
 *
 */
 // module dependencies
-require(['jquery', 'underscore', 'backbone', 'tweenlite'], function($, _, Backbone, TweenLite)
+require(['jquery', 'underscore', 'backbone'], function($, _, Backbone)
 {
     'use strict';
 
@@ -69,5 +69,8 @@ require(['jquery', 'underscore', 'backbone', 'tweenlite'], function($, _, Backbo
     });
 
     var app = new App();
+    
+    //https://prerender.io token definition
+    //app.use(require('prerender-node').set('prerenderToken', '0dZL98XiFVk9TUP09PvU'));
 
 });

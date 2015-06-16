@@ -1,0 +1,137 @@
+plugin.tx_linkhandler {
+  tt_news {
+    forceLink        = {$plugin.linkhandlerconf.tt_news.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tt_news.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tt_news.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tt_news.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tt_products {
+    forceLink        = {$plugin.linkhandlerconf.tt_products.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tt_products.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tt_products.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tt_products.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_cal_event {
+    forceLink        = {$plugin.linkhandlerconf.tx_cal_event.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_cal_event.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_cal_event.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_cal_event.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_01.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_01.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_01.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_01.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_01.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_02.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_02.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_02.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_02.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_02.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_03.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_03.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_03.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_03.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_03.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_04.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_04.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_04.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_04.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_04.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_05.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_05.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_05.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_05.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_05.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_06.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_06.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_06.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_06.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_06.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_07.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_07.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_07.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_07.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_07.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_08.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_08.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_08.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_08.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_08.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_09.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_09.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_09.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_09.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_09.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  {$plugin.linkhandlerconf.tx_mytable_10.table} {
+    forceLink        = {$plugin.linkhandlerconf.tx_mytable_10.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_mytable_10.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_mytable_10.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_mytable_10.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_news_domain_model_news {
+    forceLink        = {$plugin.linkhandlerconf.tx_news_domain_model_news.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_news_domain_model_news.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_news_domain_model_news.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_news_domain_model_news.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+  tx_sfeventmgt_domain_model_event {
+    forceLink        = {$plugin.linkhandlerconf.tx_sfeventmgt_domain_model_event.forceLink}
+    useCacheHash     = {$plugin.linkhandlerconf.tx_sfeventmgt_domain_model_event.useCacheHash}
+    parameter        = {$plugin.linkhandlerconf.tx_sfeventmgt_domain_model_event.parameter}
+    additionalParams = {$plugin.linkhandlerconf.tx_sfeventmgt_domain_model_event.additionalParams}
+    additionalParams {
+      insertData = 1
+    }
+  }
+}

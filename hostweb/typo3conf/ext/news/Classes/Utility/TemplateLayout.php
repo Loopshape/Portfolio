@@ -1,5 +1,7 @@
 <?php
 
+namespace GeorgRinger\News\Utility;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -12,11 +14,14 @@
  *
  * The TYPO3 project - inspiring people to share!
  */
+use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * TemplateLayout utility class
  */
-class Tx_News_Utility_TemplateLayout implements \TYPO3\CMS\Core\SingletonInterface {
+class TemplateLayout implements SingletonInterface {
 
 	/**
 	 * Get available template layouts for a certain page
@@ -29,12 +34,18 @@ class Tx_News_Utility_TemplateLayout implements \TYPO3\CMS\Core\SingletonInterfa
 
 		// Check if the layouts are extended by ext_tables
 		if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['templateLayouts'])
-			&& is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['templateLayouts'])) {
+			&& is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['templateLayouts'])
+		) {
 			$templateLayouts = $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['templateLayouts'];
 		}
 
 		// Add TsConfig values
-		foreach($this->getTemplateLayoutsFromTsConfig($pageUid) as $templateKey => $title) {
+		foreach ($this->getTemplateLayoutsFromTsConfig($pageUid) as $templateKey => $title) {
+			if (GeneralUtility::isFirstPartOfStr($title, '--div--')) {
+				$optGroupParts = GeneralUtility::trimExplode(',', $title, TRUE, 2);
+				$title = $optGroupParts[1];
+				$templateKey = $optGroupParts[0];
+			}
 			$templateLayouts[] = array($title, $templateKey);
 		}
 
@@ -49,7 +60,7 @@ class Tx_News_Utility_TemplateLayout implements \TYPO3\CMS\Core\SingletonInterfa
 	 */
 	protected function getTemplateLayoutsFromTsConfig($pageUid) {
 		$templateLayouts = array();
-		$pagesTsConfig = \TYPO3\CMS\Backend\Utility\BackendUtility::getPagesTSconfig($pageUid);
+		$pagesTsConfig = BackendUtility::getPagesTSconfig($pageUid);
 		if (isset($pagesTsConfig['tx_news.']['templateLayouts.']) && is_array($pagesTsConfig['tx_news.']['templateLayouts.'])) {
 			$templateLayouts = $pagesTsConfig['tx_news.']['templateLayouts.'];
 		}

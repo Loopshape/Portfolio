@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>module</type>
+    <description>Language labels for plugin &quot;tx_browser_pi1&quot;</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="promptAbstractBody"><![CDATA[
+        <p>
+          Skills of the +AOE Linkhandler Configurator:
+        </p>
+        <ul style="list-style:inside;">
+          <li style="margin-bottom:0">
+            Proper links in the <strong>backend</strong>:<br />
+            You configure the RTE link assistant here.
+          </li>
+          <li style="margin-bottom:0">
+            Proper links in the <strong>frontend</strong>:<br />
+            You configure TypoScript with the Constant Editor. See category [LINKHANDLERCONF].
+          </li>
+          <li style="margin-bottom:0">
+            The +AOE linkhandler configurator has a <strong>configuration out of the box for some tables</strong><br />
+            like calendar base (cal), news (tt_news), organiser (org) or shop system (tt_products).<br />
+            In these cases you have to maintain the pid of the single view in the Constant Editor only.<br />
+            And you can maintain the onlyPids for a better usability here.
+          </li>
+          <li style="margin-bottom:0">
+            You can handle upto <strong>ten tables independently</strong>.<br />
+            This enables you, to configure the AOE linkhandler for your own extension comfortable.
+          </li>
+          <li style="margin-bottom:0">
+            <strong>If you are missing a configuration</strong> out of the box, please send me the configuration.<br />
+            I will try to integrate it into +AOE Linkhandler Configurator. Contact me: <a href="http://wildt.at.die-netzmacher.de/" target="_blank" title="wildt.at.die-netzmacher.de" style="background:none;border:none;float:none;padding:0;text-decoration:underline;">Dirk Wildt</a>.
+          </li>
+        </ul>
+      ]]></label>
+      <label index="promptBearInMindBody"><![CDATA[
+        <p>
+          Bear in mind:
+        </p>
+        <ul style="list-style:inside;">
+          <li style="margin-bottom:0">
+            You have to include the static template "+link handler configurator (linkhandlerconf)".
+          </li>
+          <li style="margin-bottom:0">
+            The root page is recommended.
+          </li>
+          <li style="margin-bottom:0">
+            You should not use the static template of the link handler.<br />
+            You can get trouble with tt_news.<br />
+            Remove the static template "link handler (linkhandler)"!
+          </li>
+        </ul>
+      ]]></label>
+      <label index="promptExtensionManagerBody"><![CDATA[
+        <p>
+          For proper links in the backend you have to configure the table from the categopry above<br />
+          by the extension manager of the +AOE Linkhandler Configurator too.
+        </p>
+      ]]></label>
+      <label index="promptConstantEditorBody"><![CDATA[
+        <p>
+          For proper links in the frontend you have to maintain the configuration of the current table with the TypoScript Constant Editor too!
+          See:
+        </p>
+        <ul style="list-style:inside;">
+          <li style="margin-bottom:0">
+            Web > Template
+          </li>
+          <li style="margin-bottom:0">
+            Page Tree: root page (recommended)
+          </li>
+          <li style="margin-bottom:0">
+            Edit area: Constant Editor > category [LINKHANDLERCONF]
+          </li>
+        </ul>
+      ]]></label>
+      <label index="promptExternalLinksBody"><![CDATA[
+        <div style="float:right;padding-left:1em;">
+          <a href="http://die-netzmacher.de/typo3-entwicklung/"
+            style="background:none;border:none;float:none;padding:0;text-decoration:underline;"
+            alt="Die Netzmacher - TYPO3 development"
+            title="Die Netzmacher - TYPO3 development"
+            target="_blank">
+            <img src="../../../../typo3conf/ext/linkhandlerconf/lib/icons/die-netzmacher_logo_131px131px.gif"
+              width="131"
+              height="131"
+              alt="Die Netzmacher - TYPO3 development" /></a>
+        </div>
+        <ul style="list-style:inside;">
+          <li>
+            Linkhandler Configurator developer<br />
+            <a href="http://die-netzmacher.de/typo3-entwicklung/"
+              style="background:none;border:none;float:none;padding:0;text-decoration:underline;"
+              alt="Die Netzmacher - TYPO3 development"
+              title="Die Netzmacher - TYPO3 development"
+              target="_blank">die-netzmacher.de</a>
+          </li>
+        </ul>
+      ]]></label>
+      <label index="promptOrganiserBody"><![CDATA[
+        <p>
+          The <a href="http://typo3-organiser.de/"
+                style="background:none;border:none;float:none;padding:0;text-decoration:underline;"
+                alt="TYPO3 Organiser: Install it with one mouse click!"
+                title="TYPO3 Organiser: Install it with one mouse click!"
+                target="_blank">Organiser - TYPO3 for the lobby and organisers</a>
+          has the linkhandler configuration integrated.
+        </p>
+        <p>
+          If you like to configure the AOE linkhandler for the TYPO3-Organiser, please use the extension manager of the Organiser.
+        </p>
+      ]]></label>
+      <label index="promptQuickshopBody"><![CDATA[
+        <p>
+          The <a href="http://typo3-quick-shop.de/"
+                style="background:none;border:none;float:none;padding:0;text-decoration:underline;"
+                alt="TYPO3 Quick Shop: Install it with one mouse click!"
+                title="TYPO3 Quick Shop: Install it with one mouse click!"
+                target="_blank">Quick Shop - responsive, ready-to-use, one-click</a>
+          has the linkhandler configuration integrated.
+        </p>
+        <p>
+          If you like to configure the AOE linkhandler for the TYPO3-Quick-Shop, please use the extension manager of the Quick Shop.
+        </p>
+      ]]></label>
+      <label index="promptTyposcriptMyTableCheckBody"><![CDATA[
+        <p>
+          If you like to check your configuration with the TypoScript Object Browser,<br />
+          "Display constants" must set to <strong>[Plain substition (default)]</strong> in the Object Browser.<br />
+          Otherwise plugin.tx_linkhandler.<i>this_table*</i> will not displayed!<br />
+          <br />
+          <i>*this_table</i>: table from the field below.
+        </p>
+      ]]></label>
+    </languageKey>
+    <languageKey index="de" type="array">
+      <label index="promptAbstractBody"><![CDATA[
+        <p>
+          Das kann der +AOE Linkhandler Configurator:
+        </p>
+        <ul style="list-style:inside;">
+          <li style="margin-bottom:0">
+            Verlinkung im <strong>Backend</strong>:<br />
+            Du konfigurierst hier den RTE Link Assistenten.
+          </li>
+          <li style="margin-bottom:0">
+            Verlinkung im <strong>Frontend</strong>:<br />
+            Du konfigurierst TypoScript mit dem Konstanten-Editor. Siehe Kategorie [LINKHANDLERCONF].
+          </li>
+          <li style="margin-bottom:0">
+            Der +AOE Linkhandler Konfigurator hat <strong>schlüsselfertige Konfigurationen</strong> für manche TYPO3-Erweiterungen wie Calendar Base (cal), News (tt_news), Organiser (org) oder Shop System (tt_products).<br />
+            Bei diesen Konfigurationen brauchst Du im Konstanten-Editor nur die ID der Seite angeben, die die Detail-Ansicht zeigt.<br />
+            Und hier kannst Du für eine bessere Benutzerfreundlichkeit die "onlyPids" angeben.
+          </li>
+          <li style="margin-bottom:0">
+            Du kannst bis zu <strong>zehn unabhängige Tabellen </strong> pflegen.<br />
+            Das ermöglicht Dir, den AOE Linkhandler für Deine eigenen TYPO3-Erweiterungen bequem konfigurieren zu können.
+          </li>
+          <li style="margin-bottom:0">
+            <strong>Sollte eine schlüsselfertige Konfiguration fehlen</strong>, schicke mir die Konfiguration zu.<br />
+            Ich werde versuchen, diese in den +AOE Linkhandler Configurator einzubauen. Meine E-Mail-Adresse: <a href="http://wildt.at.die-netzmacher.de/" target="_blank" title="wildt.at.die-netzmacher.de" style="background:none;border:none;float:none;padding:0;text-decoration:underline;">Dirk Wildt</a>.
+          </li>
+        </ul>
+      ]]></label>
+      <label index="promptBearInMindBody"><![CDATA[
+        <p>
+          Beachte bitte unbedingt folgendes:
+        </p>
+        <ul style="list-style:inside;">
+          <li style="margin-bottom:0">
+            Du musst das Include Static Template "+link handler configurator (linkhandlerconf)" einbinden.
+          </li>
+          <li style="margin-bottom:0">
+            Empfehlenswert ist die Einbindung auf der obersten Seite im Seitenbaum.
+          </li>
+          <li style="margin-bottom:0">
+            Und Du solltest nicht das Include Static Template des AOE Linkhandlers benutzen.<br />
+            Du kannst sonst Probleme mit der Konfiguration von tt_news bekommen.<br />
+            Entferne also: "link handler (linkhandler)"!
+          </li>
+        </ul>
+      ]]></label>
+      <label index="promptExtensionManagerBody"><![CDATA[
+        <p>
+          Für funktionierende Links im Backend musst Du diese Tabelle (siehe Kategorie oben)<br />
+          auch mit dem Extension Manager des +AOE Linkhandler Configurator pflegen.
+        </p>
+      ]]></label>
+      <label index="promptConstantEditorBody"><![CDATA[
+        <p>
+          Für funktionierende Links im Frontend musst Du die Konfiguration dieser Tabelle auch mit dem TypoScript Konstanten-Editor pflegen!
+          Siehe:
+        </p>
+        <ul style="list-style:inside;">
+          <li style="margin-bottom:0">
+            Web > Template
+          </li>
+          <li style="margin-bottom:0">
+            Seitenbaum: oberste Seite (empfohlen)
+          </li>
+          <li style="margin-bottom:0">
+            Bearbeitungsbereich: Konstanten-Editor > Kategorie [LINKHANDLERCONF]
+          </li>
+        </ul>
+      ]]></label>
+      <label index="promptExternalLinksBody"><![CDATA[
+        <div style="float:right;padding-left:1em;">
+          <a href="http://die-netzmacher.de/typo3-entwicklung/"
+            style="background:none;border:none;float:none;padding:0;text-decoration:underline;"
+            alt="Die Netzmacher - TYPO3-Entwicklung"
+            title="Die Netzmacher - TYPO3-Entwicklung"
+            target="_blank">
+            <img src="../../../../typo3conf/ext/linkhandlerconf/lib/icons/die-netzmacher_logo_131px131px.gif"
+              width="131"
+              height="131"
+              alt="Die Netzmacher - TYPO3-Entwicklung" /></a>
+        </div>
+        <ul style="list-style:inside;">
+          <li>
+            Linkhandler Konfigurator Entwickler<br />
+            <a href="http://die-netzmacher.de/typo3-entwicklung/"
+              style="background:none;border:none;float:none;padding:0;text-decoration:underline;"
+              alt="Die Netzmacher - TYPO3-Entwicklung"
+              title="Die Netzmacher - TYPO3-Entwicklung"
+              target="_blank">die-netzmacher.de</a>
+          </li>
+        </ul>
+      ]]></label>
+      <label index="promptOrganiserBody"><![CDATA[
+        <p>
+          The <a href="http://typo3-organiser.de/"
+                style="background:none;border:none;float:none;padding:0;text-decoration:underline;"
+                alt="TYPO3 Organiser: Installation mit einem Klick!"
+                title="TYPO3 Organiser: Installation mit einem Klick!"
+                target="_blank">Organiser - TYPO3 für Lobby und Veranstalter</a>
+          hat die AOE Linkhandler Konfiguration integriert.
+        </p>
+        <p>
+          Wenn Du den TYPO3-Organiser konfigurieren möchtest, benutze bitte den Extension Manager des Organisers.
+        </p>
+      ]]></label>
+      <label index="promptQuickshopBody"><![CDATA[
+        <p>
+          The <a href="http://typo3-quick-shop.de/"
+                style="background:none;border:none;float:none;padding:0;text-decoration:underline;"
+                alt="TYPO3 Quick Shop: Installation mit einem Klick!"
+                title="TYPO3 Quick Shop: Installation mit einem Klick!"
+                target="_blank">Quick Shop - responsive, ready-to-use, one-click</a>
+          hat die AOE Linkhandler Konfiguration integriert.
+        </p>
+        <p>
+          Wenn Du den TYPO3-Quick-Shop konfigurieren möchtest, benutze bitte den Extension Manager des Quick Shops.
+        </p>
+      ]]></label>
+      <label index="promptTyposcriptMyTableCheckBody"><![CDATA[
+        <p>
+          Wenn Du Deine Konfiguration mit dem TypoScript Object Browser prüfen möchtest, dann muss dort<br />
+          "Konstanten anzeigen" auf <strong>[Einfaches ersetzen (Standard)]</strong> gesetzt sein.<br />
+          Sonst wird plugin.tx_linkhandler.<i>diese_Tabelle*</i> nicht angezeigt!<br />
+          <br />
+          <i>*diese_Tabelle</i>: Tabelle aus dem Feld unten
+        </p>
+      ]]></label>
+    </languageKey>
+  </data>
+</T3locallang>

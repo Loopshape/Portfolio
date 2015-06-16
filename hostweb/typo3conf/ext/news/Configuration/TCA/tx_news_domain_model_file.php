@@ -1,7 +1,5 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
-}
+defined('TYPO3_MODE') or die();
 
 $ll = 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:';
 
@@ -153,7 +151,7 @@ return array(
 	),
 	'palettes' => array(
 		'palettteCore' => array(
-			'showitem' => 'hidden,sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource,',
+			'showitem' => 'hidden,sys_language_uid, l10n_parent, l10n_diffsource,',
 			'canNotCollapse' => TRUE
 		),
 		'palettteDescription' => array(

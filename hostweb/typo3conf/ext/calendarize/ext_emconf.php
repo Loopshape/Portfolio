@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "calendarize".
  *
- * Auto generated 02-06-2015 17:22
+ * Auto generated 16-06-2015 01:18
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -14,8 +14,8 @@ $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Calendarize',
 	'description' => 'Create a structure for timely controlled tables and one plugin for the different output of calendar views. The extension is shipped with one default event table, but the aim of the extension is to "calendarize" every table/model. It is completely independent and configurable! Use your own models as event items in this calender. We need feedback about the concept! Development on https://github.com/lochmueller/calendarize',
 	'category' => 'fe',
-	'version' => '1.3.3',
-	'state' => 'beta',
+	'version' => '1.4.0',
+	'state' => 'stable',
 	'uploadfolder' => false,
 	'createDirs' => NULL,
 	'clearcacheonload' => true,

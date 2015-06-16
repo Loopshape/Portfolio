@@ -1,0 +1,31 @@
+.t3-newsletter-button-planner{background:url('../../typo3conf/ext/newsletter/Resources/Public/Icons/tx_newsletter.png') 0 50% no-repeat !important;padding-left:20px !important}
+.t3-newsletter-button-statistics{background:url('../../typo3conf/ext/newsletter/Resources/Public/Icons/chart_bar.png') 0 50% no-repeat !important;padding-left:20px !important}
+.t3-newsletter-statistic{margin-left:1em;font-size:120%;line-height:normal}
+.t3-newsletter-statistic-group{margin-top:2em;margin-bottom:1em}
+.t3-newsletter-statistic .beginTime,.t3-newsletter-statistic .plannedTime{font-weight:bold}
+.t3-newsletter-statistic .not-sent,.t3-newsletter-statistic .sent,.t3-newsletter-statistic .opened,.t3-newsletter-statistic .bounced,.t3-newsletter-statistic .link-opened{font-weight:bold;font-size:150%}
+.t3-newsletter-statistic .sent{color:#000}
+.t3-newsletter-statistic .opened{color:#078207}
+.t3-newsletter-statistic .not-opened{color:#25CDF2}
+.t3-newsletter-statistic .bounced{color:#E01B4C}
+.t3-newsletter-statistic .link-opened{color:#FFB61B}
+ul.errors li,ul.warnings li,ul.infos li{list-style-position:inside}
+ul.errors li{list-style-image:url('../../typo3conf/ext/newsletter/Resources/Public/Icons/error.png')}
+ul.warnings li{list-style-image:url('../../typo3conf/ext/newsletter/Resources/Public/Icons/warning.png')}
+ul.infos li{list-style-image:url('../../typo3conf/ext/newsletter/Resources/Public/Icons/information.png')}
+ul.errors li.none,ul.warnings li.none,ul.infos li.none{list-style-image:url('../../typo3conf/ext/newsletter/Resources/Public/Icons/ok.png')}
+.x-grid3-row-selected{font-weight:bold;background-color:#EBEBEB}
+.x-grid3-row-selected.x-grid3-row-over{background-color:#DEDEDE}
+#newsletterListMenu .x-grid3-row{cursor:pointer}
+#pieChartContainer,#timelineChartContainer{height:100%}
+.typo3-docheader-functions{position:absolute;width:100%}
+.typo3-docheader-buttons{position:absolute;width:100%;top:27px}
+.t3-newsletter-docbody{background:transparent}
+ul.x-tab-strip li{margin-right:1px}
+#newsletterListMenu .x-panel-body,.t3-newsletter-docbody .x-tab-panel-body{border:1px solid #adadad;border-top-width:0}
+.x-tab-strip span.x-tab-strip-text,.x-tab-strip-top .x-tab-strip-active .x-tab-right span.x-tab-strip-text{padding:0;height:18px}
+.t3-newsletter-docheader ul.x-tab-strip-top{margin:17px 24px}
+.t3-newsletter-docbody ul.x-tab-strip-top{margin-bottom:0;margin-top:0}
+.x-border-layout-ct{background-color:transparent}
+.x-toolbar{background:none}
+.x-tab-panel-header{background:none}

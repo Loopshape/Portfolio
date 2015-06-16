@@ -24,7 +24,9 @@ requirejs.config(
     {
 
         angular : './hostweb/assets/js/app/bower_components/angular/angular',
-
+        
+        ember : './hostweb/node_modules/ember-cli/lib/cli/index',
+        
         backbone : './hostweb/assets/js/app/bower_components/backbone/backbone',
         underscore : './hostweb/assets/js/app/bower_components/underscore/underscore-min',
 
@@ -59,6 +61,12 @@ requirejs.config(
         {
             deps : ['angular'],
             exports : '$'
+        },
+        
+        ember :
+        {
+            deps : ['angular', 'jquery'],
+            exports : 'ember'
         },
 
         backbone :

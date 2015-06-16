@@ -1,0 +1,9 @@
+{namespace newsletter=Ecodev\Newsletter\ViewHelpers}
+<f:if condition="{content}">
+    <f:then>
+        <f:format.raw>{content}</f:format.raw>
+    </f:then>
+    <f:else>
+        <p><f:translate key="view_newsletter_not_found" /></p>
+    </f:else>
+</f:if>

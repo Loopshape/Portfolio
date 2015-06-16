@@ -5,6 +5,11 @@
 	background-image: url('../../typo3/sysext/extensionmanager/Resources/Public/Images/Icons/ExtensionUpdateScript.png') !important;
 }
 	
+.t3-icon-scheduler-run-task {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3/sysext/scheduler/Resources/Public/Images/Icons/RunTask.png') !important;
+}
+	
 .t3-icon-pages-contains-news {
 	background-position: 0px 0px !important;
 	background-image: url('../../typo3conf/ext/news/Resources/Public/Icons/folder.gif') !important;
@@ -40,6 +45,11 @@
 	background-image: url('../../typo3/sysext/rtehtmlarea/Resources/Public/Images/Plugins/Abbreviation/abbreviation.gif') !important;
 }
 	
+.t3-icon-tx_scheduler_task_group-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3/sysext/scheduler/ext_icon.png') !important;
+}
+	
 .t3-icon-sys_note-default {
 	background-position: 0px 0px !important;
 	background-image: url('../../typo3/sysext/sys_note/ext_icon.png') !important;
@@ -68,6 +78,31 @@
 .t3-icon-static_territories-default {
 	background-position: 0px 0px !important;
 	background-image: url('../../typo3conf/ext/static_info_tables/Resources/Public/Images/Icons/icon_static_territories.gif') !important;
+}
+	
+.t3-icon-tx_powermail_domain_model_answers-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/powermail/Resources/Public/Icons/tx_powermail_domain_model_answers.gif') !important;
+}
+	
+.t3-icon-tx_powermail_domain_model_fields-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/powermail/Resources/Public/Icons/tx_powermail_domain_model_fields.gif') !important;
+}
+	
+.t3-icon-tx_powermail_domain_model_forms-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/powermail/Resources/Public/Icons/tx_powermail_domain_model_forms.gif') !important;
+}
+	
+.t3-icon-tx_powermail_domain_model_mails-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/powermail/Resources/Public/Icons/tx_powermail_domain_model_mails.gif') !important;
+}
+	
+.t3-icon-tx_powermail_domain_model_pages-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/powermail/Resources/Public/Icons/tx_powermail_domain_model_pages.gif') !important;
 }
 	
 .t3-icon-tx_news_domain_model_file-default {
@@ -143,6 +178,106 @@
 .t3-icon-tx_calendarize_domain_model_index-default {
 	background-position: 0px 0px !important;
 	background-image: url('../../typo3conf/ext/calendarize/Resources/Public/Icons/Index.png') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_comments-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_comments-0 {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_not_approved.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_comments-1 {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_feuser_mm-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_feuser_mm.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_user-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_user.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_urllog-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_urllog.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_ratings_scope-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_ratings_scope.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_ratings_data-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_ratings_data.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_ratings_iplog-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_ratings_iplog.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_spamwords-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_spamwords.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_attachment-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_attachment.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_prefixtotable-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_prefixtotable.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_ipbl_local-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_ipbl_local.gif') !important;
+}
+	
+.t3-icon-tx_toctoc_comments_ipbl_static-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/toctoc_comments/icon_tx_toctoc_comments_ipbl_static.gif') !important;
+}
+	
+.t3-icon-tx_t3socials_networks-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/t3socials/') !important;
+}
+	
+.t3-icon-tx_newsletter_domain_model_newsletter-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/newsletter/Resources/Public/Icons/tx_newsletter_domain_model_newsletter.gif') !important;
+}
+	
+.t3-icon-tx_newsletter_domain_model_bounceaccount-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/newsletter/Resources/Public/Icons/tx_newsletter_domain_model_bounceaccount.gif') !important;
+}
+	
+.t3-icon-tx_newsletter_domain_model_recipientlist-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/newsletter/Resources/Public/Icons/tx_newsletter_domain_model_recipientlist.gif') !important;
+}
+	
+.t3-icon-tx_newsletter_domain_model_email-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/newsletter/Resources/Public/Icons/tx_newsletter_domain_model_email.gif') !important;
+}
+	
+.t3-icon-tx_newsletter_domain_model_link-default {
+	background-position: 0px 0px !important;
+	background-image: url('../../typo3conf/ext/newsletter/Resources/Public/Icons/tx_newsletter_domain_model_link.gif') !important;
 }
 	
 .t3-icon-tx_metaseo_setting_root-default {

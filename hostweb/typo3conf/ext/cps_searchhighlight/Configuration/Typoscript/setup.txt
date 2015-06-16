@@ -1,0 +1,27 @@
+plugin.tx_cpssearchhighlight {
+	_CSS_DEFAULT_STYLE (
+	.tx-cpssearchhighlight-sword { background-color: yellow; }
+	.tx-cpssearchhighlight-sword-1 { background-color: yellow; }
+	.tx-cpssearchhighlight-sword-2 { background-color: aqua; }
+	.tx-cpssearchhighlight-sword-3 { background-color: lime; }
+	)
+	
+	minkeywordlength = {$plugin.tx_cpssearchhighlight.minkeywordlength}
+	numberofcolors = {$plugin.tx_cpssearchhighlight.numberofcolors}
+	differentcolors = {$plugin.tx_cpssearchhighlight.differentcolors}
+
+	sword_array = COA
+    sword_array {
+		10 = TEXT
+		10 {
+			data = GP:tx_ttnews|swords
+			split {
+				token.char = 32
+				cObjNum = 1
+				1.current = 1
+				1.wrap = |,
+				wrap = |
+			}
+		}
+    }
+}

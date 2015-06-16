@@ -1,5 +1,8 @@
 <?php
-/**
+
+namespace GeorgRinger\News\ViewHelpers\Widget\Controller;
+
+	/**
  * This file is part of the TYPO3 CMS project.
  *
  * It is free software; you can redistribute it and/or modify it under
@@ -19,7 +22,7 @@
  * @package TYPO3
  * @subpackage tx_news
  */
-class Tx_News_ViewHelpers_Widget_Controller_PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController {
+class PaginateController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController {
 
 	/**
 	 * @var array
@@ -69,7 +72,7 @@ class Tx_News_ViewHelpers_Widget_Controller_PaginateController extends \TYPO3\CM
 
 		$itemsPerPage = (integer)$this->configuration['itemsPerPage'];
 		if ($itemsPerPage === 0) {
-			throw new RuntimeException('The itemsPerPage is 0 which is not allowed. Please also add "list.paginate.itemsPerPage" to the TS setting settings.overrideFlexformSettingsIfEmpty!', 1400741142);
+			throw new \RuntimeException('The itemsPerPage is 0 which is not allowed. Please also add "list.paginate.itemsPerPage" to the TS setting settings.overrideFlexformSettingsIfEmpty!', 1400741142);
 		}
 
 		$this->numberOfPages = intval(ceil(count($this->objects) / $itemsPerPage));

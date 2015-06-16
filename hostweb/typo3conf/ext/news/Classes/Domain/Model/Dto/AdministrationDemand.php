@@ -1,4 +1,6 @@
 <?php
+namespace GeorgRinger\News\Domain\Model\Dto;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -18,7 +20,7 @@
  * @package TYPO3
  * @subpackage tx_news
  */
-class Tx_News_Domain_Model_Dto_AdministrationDemand extends Tx_News_Domain_Model_Dto_NewsDemand {
+class AdministrationDemand extends \GeorgRinger\News\Domain\Model\Dto\NewsDemand {
 
 	/**
 	 * @var string
@@ -39,6 +41,11 @@ class Tx_News_Domain_Model_Dto_AdministrationDemand extends Tx_News_Domain_Model
 	 * @var string
 	 */
 	protected $sortingDirection;
+
+	/**
+	 * @var string
+	 */
+	protected $searchWord;
 
 	public function getRecursive() {
 		return $this->recursive;
@@ -95,5 +102,19 @@ class Tx_News_Domain_Model_Dto_AdministrationDemand extends Tx_News_Domain_Model
 	 */
 	public function setSortingDirection($sortingDirection) {
 		$this->sortingDirection = $sortingDirection;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getSearchWord() {
+		return $this->searchWord;
+	}
+
+	/**
+	 * @param string $searchWord
+	 */
+	public function setSearchWord($searchWord) {
+		$this->searchWord = $searchWord;
 	}
 }

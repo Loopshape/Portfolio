@@ -1,9 +1,9 @@
-{namespace n=Tx_News_ViewHelpers}
+{namespace n=GeorgRinger\News\ViewHelpers}
 
 <f:layout name="Backend/Default" />
 
 <f:section name="categoryTree">
-	<ul class="list-unstyled">
+	<ul class="{class}">
 		<f:for each="{categories}" as="category">
 			<li>
 				<f:form.checkbox id="category-{category.item.uid}" property="selectedCategories" value="{category.item.uid}" />
@@ -28,7 +28,6 @@
 			</div>
 		</div>
 	</f:if>
-	<f:flashMessages class="tx-extbase-flash-message" />
 
 	<f:form name="demand" object="{demand}" method="get" >
 		<input type="hidden" name="M" value="web_NewsTxNewsM2">
@@ -41,6 +40,15 @@
 		<div class="settings">
 			<div class="row">
 				<div class="col-sm-4 form-horizontal">
+					<div class="form-group">
+						<label for="searchWord" class="col-sm-4 control-label">
+							<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.searchWord" />
+						</label>
+
+						<div class="col-sm-8">
+							<f:form.textfield property="searchWord" id="searchWord" class="form-control" />
+						</div>
+					</div>
 					<div class="form-group">
 						<label for="recursive" class="col-sm-4 control-label">
 							<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.recursive" />
@@ -113,7 +121,7 @@
 				<div class="col-sm-8">
 					<div class="category-tree">
 						<div class="tree-wrapper">
-							<f:render section="categoryTree" arguments="{categories: categories}" />
+							<f:render section="categoryTree" arguments="{categories: categories, class:'list-tree'}" />
 						</div>
 
 						<f:if condition="{categories}">
@@ -149,25 +157,25 @@
 							<th>
 								<f:translate key="LLL:EXT:cms/locallang_ttc.xlf:header_formlabel" />
 								<div class="btn-group">
-									<n:be.buttons.icon class="btn" uri="#" onclick="{n:be.multiEditLink(items:paginatedNews,columns:'title')}" icon="actions-document-open" />
+									<n:be.buttons.icon class="btn" uri="#" onclick="{n:be.multiEditLink(items:paginatedNews, columns:'title')}" icon="actions-document-open" />
 								</div>
 							</th>
 							<th class="nowrap">
 								<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.istopnews" />
 								<div class="btn-group">
-									<n:be.buttons.icon class="btn" uri="#" onclick="{n:be.multiEditLink(items:paginatedNews,columns:'istopnews')}" icon="actions-document-open" />
+									<n:be.buttons.icon class="btn" uri="#" onclick="{n:be.multiEditLink(items:paginatedNews, columns:'istopnews')}" icon="actions-document-open" />
 								</div>
 							</th>
 							<th class="nowrap date">
 								<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.datetime" />
 								<div class="btn-group">
-									<n:be.buttons.icon class="btn" uri="#" onclick="{n:be.multiEditLink(items:paginatedNews,columns:'datetime')}" icon="actions-document-open" />
+									<n:be.buttons.icon class="btn" uri="#" onclick="{n:be.multiEditLink(items:paginatedNews, columns:'datetime')}" icon="actions-document-open" />
 								</div>
 							</th>
 							<th class="nowrap date">
 								<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.archive" />
 								<div class="btn-group">
-									<n:be.buttons.icon class="btn" uri="#" onclick="{n:be.multiEditLink(items:paginatedNews,columns:'archive')}" icon="actions-document-open" />
+									<n:be.buttons.icon class="btn" uri="#" onclick="{n:be.multiEditLink(items:paginatedNews, columns:'archive')}" icon="actions-document-open" />
 								</div>
 							</th>
 							<th class="nowrap">

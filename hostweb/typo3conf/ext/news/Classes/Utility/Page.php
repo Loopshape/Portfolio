@@ -1,5 +1,8 @@
 <?php
-/**
+
+namespace GeorgRinger\News\Utility;
+
+	/**
  * This file is part of the TYPO3 CMS project.
  *
  * It is free software; you can redistribute it and/or modify it under
@@ -19,7 +22,7 @@
  * @subpackage tx_news
  * @author Nikolas Hagelstein <nikolas.hagelstein@gmail.com>
  */
-class Tx_News_Utility_Page {
+class Page {
 
 	/**
 	 * Find all ids from given ids and level
@@ -65,7 +68,7 @@ class Tx_News_Utility_Page {
 				$key = $prefix . ucfirst($item);
 				try {
 					$register[$key] = \TYPO3\CMS\Extbase\Reflection\ObjectAccess::getProperty($object, $item);
-				} catch (Exception $e) {
+				} catch (\Exception $e) {
 					\TYPO3\CMS\Core\Utility\GeneralUtility::devLog($e->getMessage(), 'news', \TYPO3\CMS\Core\Utility\GeneralUtility::SYSLOG_SEVERITY_WARNING);
 				}
 			}
@@ -79,11 +82,11 @@ class Tx_News_Utility_Page {
 	 * @param integer $pageUid page to start with
 	 * @param integer $treeLevel count of levels
 	 * @return \TYPO3\CMS\Backend\Tree\View\PageTreeView
-	 * @throws Exception
+	 * @throws \Exception
 	 */
 	public static function pageTree($pageUid, $treeLevel) {
 		if (TYPO3_MODE !== 'BE') {
-			throw new Exception('Page::pageTree does only work in the backend!');
+			throw new \Exception('Page::pageTree does only work in the backend!');
 		}
 
 		/* @var $tree \TYPO3\CMS\Backend\Tree\View\PageTreeView */

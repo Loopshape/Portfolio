@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'roq_newsevent'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_roqnewsevent_domain_model_event">Event</label>
+            <label index="tx_roqnewsevent_is_event">Is event</label>
+			<label index="tx_roqnewsevent_startdate">Start date</label>
+			<label index="tx_roqnewsevent_starttime">Start time</label>
+			<label index="tx_roqnewsevent_enddate">End date</label>
+			<label index="tx_roqnewsevent_endtime">End time</label>
+			<label index="tx_roqnewsevent_location">Location</label>
+			<label index="tx_news_domain_model_news.tx_extbase_type.Tx_RoqNewsevent_Event">Event</label>
+		</languageKey>
+
+        <languageKey index="nl" type="array">
+            <label index="tx_roqnewsevent_domain_model_event">Evenement</label>
+            <label index="tx_roqnewsevent_is_event">Is evenement</label>
+            <label index="tx_roqnewsevent_startdate">Startdatum</label>
+            <label index="tx_roqnewsevent_starttime">Starttijd</label>
+            <label index="tx_roqnewsevent_enddate">Einddatum</label>
+            <label index="tx_roqnewsevent_endtime">Eindtijd</label>
+            <label index="tx_roqnewsevent_location">Locatie</label>
+            <label index="tx_news_domain_model_news.tx_extbase_type.Tx_RoqNewsevent_Event">Evenement</label>
+        </languageKey>
+
+        <languageKey index="de" type="array">
+            <label index="tx_roqnewsevent_domain_model_event">Veranstaltungs-Infos</label>
+            <label index="tx_roqnewsevent_is_event">Ist eine Veranstaltung</label>
+            <label index="tx_roqnewsevent_startdate">Startdatum</label>
+            <label index="tx_roqnewsevent_starttime">Startzeit</label>
+            <label index="tx_roqnewsevent_enddate">Enddatum</label>
+            <label index="tx_roqnewsevent_endtime">Endzeit</label>
+            <label index="tx_roqnewsevent_location">Ort</label>
+            <label index="tx_news_domain_model_news.tx_extbase_type.Tx_RoqNewsevent_Event">Veranstaltung</label>
+        </languageKey>
+
+        <languageKey index="fr" type="array">
+            <label index="tx_roqnewsevent_domain_model_event">Évènement</label>
+            <label index="tx_roqnewsevent_is_event">Ceci est un évènement</label>
+            <label index="tx_roqnewsevent_startdate">Date de début</label>
+            <label index="tx_roqnewsevent_starttime">Horaire de début</label>
+            <label index="tx_roqnewsevent_enddate">Date de fin</label>
+            <label index="tx_roqnewsevent_endtime">Horaire de fin</label>
+            <label index="tx_roqnewsevent_location">Emplacement</label>
+            <label index="tx_news_domain_model_news.tx_extbase_type.Tx_RoqNewsevent_Event">Évènement</label>
+        </languageKey>
+
+        <languageKey index="dk" type="array">
+            <label index="tx_roqnewsevent_domain_model_event">Kursus</label>
+            <label index="tx_roqnewsevent_is_event">Er et kursus</label>
+            <label index="tx_roqnewsevent_startdate">Startdato</label>
+            <label index="tx_roqnewsevent_starttime">Starttid</label>
+            <label index="tx_roqnewsevent_enddate">Slutdato</label>
+            <label index="tx_roqnewsevent_endtime">Sluttid</label>
+            <label index="tx_roqnewsevent_location">Lokation</label>
+            <label index="tx_news_domain_model_news.tx_extbase_type.Tx_RoqNewsevent_Event">Kursus</label>
+        </languageKey>
+
+	</data>
+</T3locallang>

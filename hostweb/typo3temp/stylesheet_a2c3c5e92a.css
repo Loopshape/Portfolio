@@ -1,0 +1,344 @@
+/* default styles for extension "tx_felogin_pi1" */
+	.tx-felogin-pi1 label {
+		display: block;
+	}
+/* default styles for extension "tx_indexedsearch" */
+		.tx-indexedsearch .tx-indexedsearch-browsebox LI { display:inline; margin-right:5px; }
+		.tx-indexedsearch .tx-indexedsearch-searchbox INPUT.tx-indexedsearch-searchbox-button { width:100px; }
+		.tx-indexedsearch .tx-indexedsearch-searchbox INPUT.tx-indexedsearch-searchbox-sword { width:150px; }
+		.tx-indexedsearch .tx-indexedsearch-whatis { margin-top:10px; margin-bottom:5px; }
+		.tx-indexedsearch .tx-indexedsearch-whatis .tx-indexedsearch-sw { font-weight:bold; font-style:italic; }
+		.tx-indexedsearch .tx-indexedsearch-noresults { text-align:center; font-weight:bold; }
+		.tx-indexedsearch .tx-indexedsearch-res TD.tx-indexedsearch-descr { font-style:italic; }
+		.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-descr .tx-indexedsearch-redMarkup { color:red; }
+		.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-info { background:#eeeeee; }
+		.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead { margin-top:20px; margin-bottom:5px; }
+		.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead H2 { margin-top:0px; margin-bottom:0px; }
+		.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead TD { background:#cccccc; vertical-align:middle; }
+		.tx-indexedsearch .tx-indexedsearch-res .noResume { color:#666666; }
+		.tx-indexedsearch .tx-indexedsearch-category { background:#cccccc; font-size:16px; font-weight:bold; }
+
+		/* Additional styles, needed for the tableless template_css.tmpl (styles don't conflict with the original template) */
+		.tx-indexedsearch .res-tmpl-css { clear:both; margin-bottom:1em; }
+		.tx-indexedsearch .searchbox-tmpl-css LABEL { margin-right:1em; width:10em; float:left; }
+		.tx-indexedsearch .result-count-tmpl-css, .tx-indexedsearch .percent-tmpl-css { letter-spacing:0; font-weight:normal; margin-top:-1.2em; float:right; }
+		.tx-indexedsearch .info-tmpl-css dt, .tx-indexedsearch dl.info-tmpl-css dd { float:left; }
+		.tx-indexedsearch .info-tmpl-css dd.item-mtime { float:none; }
+		.tx-indexedsearch .info-tmpl-css dd.item-path { float:none; }
+/* default styles for extension "tx_form" */
+	div.csc-mailform ol,
+	div.csc-mailform ol li {
+		margin: 0;
+		padding: 0;
+	}
+
+	div.csc-mailform ol li {
+		overflow: hidden;
+	}
+
+	div.csc-mailform fieldset {
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+
+	div.csc-mailform legend {
+		margin-left: 1em;
+		color: #000000;
+		font-weight: bold;
+	}
+
+	div.csc-mailform fieldset ol {
+		padding: 1em 1em 0 1em;
+	}
+
+	div.csc-mailform fieldset li {
+		padding: 0.5em;
+		margin-bottom: 0.5em;
+		list-style: none;
+	}
+
+	div.csc-mailform fieldset.submit {
+		border-style: none;
+	}
+
+	/**
+	 * Normal label
+	 * Left aligned, in front of input
+	 */
+	div.csc-mailform li label {
+		float: left;
+		width: 13em;
+		margin-right: 1em;
+		vertical-align: baseline;
+	}
+
+	div.csc-mailform li input + label,
+	div.csc-mailform li textarea + label,
+	div.csc-mailform li select + label {
+		float: none;
+		width: auto;
+		margin-right: 0;
+		margin-left: 1em;
+	}
+
+	div.csc-mailform li textarea + label {
+		vertical-align: top;
+	}
+
+	label em,
+	legend em {
+		display: block;
+		color: #060;
+		font-size: 85%;
+		font-style: normal;
+		text-transform: uppercase;
+	}
+
+	legend em {
+		position: absolute;
+	}
+
+	label strong,
+	legend strong {
+		display: block;
+		color: #C00;
+		font-size: 85%;
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+
+	legend strong {
+		position: absolute;
+		top: 1.4em;
+	}
+
+	/**
+	 * Labels alignment right
+	 */
+	.labels-alignment-right label,
+	.labels-alignment-right .fieldset-subgroup legend,
+	.labels-alignment-right.fieldset-subgroup legend {
+		text-align: right;
+	}
+
+	/**
+	 * Horizontal fieldset
+	 */
+	fieldset.fieldset-horizontal {
+		border-width: 0;
+	}
+
+	fieldset.fieldset-horizontal ol {
+		padding: 0;
+	}
+
+	fieldset.fieldset-horizontal li {
+		float: left;
+		padding: 0;
+		margin-right: 1em;
+	}
+
+	fieldset.fieldset-horizontal.label-below label {
+		display: block;
+		margin-left: 0;
+		margin-top: 0.2em;
+		font-size: 90%;
+		color: #999999;
+		text-align: left;
+	}
+
+	fieldset.fieldset-horizontal label em {
+		display: inline;
+	}
+
+	/**
+	 * Subgroup fieldset
+	 */
+	fieldset.fieldset-subgroup {
+		margin-bottom: -2em;
+		border-style: none;
+	}
+
+	fieldset.fieldset-subgroup legend {
+		margin-left: 0;
+		padding: 0;
+		font-weight: normal;
+		width: 13em;
+	}
+
+	fieldset.fieldset-subgroup ol {
+		position: relative;
+		top: -1.4em;
+		margin: 0 0 0 14em;
+		padding: 0;
+	}
+
+	fieldset.fieldset-subgroup li {
+		padding: 0;
+	}
+
+	fieldset.fieldset-subgroup input + label {
+		float: none;
+		width: auto;
+		display: inline;
+		margin: 0 0 0 1em;
+	}
+
+	/**
+	 * Labels as block
+	 * Labels displayed above or below the input fields
+	 */
+	.labels-block label {
+		display: block;
+		float: none;
+		margin: 0 0 0.5em;
+		width: auto;
+	}
+
+	.labels-block input + label,
+	.labels-block textarea + label {
+		margin: 0.5em 0 0;
+	}
+
+	.labels-block fieldset.fieldset-subgroup,
+	fieldset.labels-block.fieldset-subgroup {
+		margin-bottom: 0;
+	}
+
+	.labels-block .fieldset-subgroup legend,
+	.labels-block.fieldset-subgroup legend {
+		width: auto;
+	}
+
+	.labels-block .fieldset-subgroup legend em,
+	.labels-block.fieldset-subgroup legend em {
+		position: relative;
+	}
+
+	.labels-block .fieldset-subgroup legend strong,
+	.labels-block.fieldset-subgroup legend strong {
+		position: relative;
+		top: 0;
+	}
+
+	.labels-block .fieldset-subgroup ol,
+	.labels-block.fieldset-subgroup ol {
+		top: 0;
+		margin: 0;
+		padding: 0.5em 0 0;
+	}
+/* default styles for extension "tx_cssstyledcontent" */
+	/* Headers */
+	.csc-header-alignment-center { text-align: center; }
+	.csc-header-alignment-right { text-align: right; }
+	.csc-header-alignment-left { text-align: left; }
+
+	div.csc-textpic-responsive, div.csc-textpic-responsive * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;  }
+
+	/* Clear floats after csc-textpic and after csc-textpic-imagerow */
+	div.csc-textpic, div.csc-textpic div.csc-textpic-imagerow, ul.csc-uploads li { overflow: hidden; }
+
+	/* Set padding for tables */
+	div.csc-textpic .csc-textpic-imagewrap table { border-collapse: collapse; border-spacing: 0; }
+	div.csc-textpic .csc-textpic-imagewrap table tr td { padding: 0; vertical-align: top; }
+
+	/* Settings for figure and figcaption (HTML5) */
+	div.csc-textpic .csc-textpic-imagewrap figure, div.csc-textpic figure.csc-textpic-imagewrap { margin: 0; display: table; }
+
+	/* Captions */
+	figcaption.csc-textpic-caption { display: table-caption; }
+	.csc-textpic-caption { text-align: left; caption-side: bottom; }
+	div.csc-textpic-caption-c .csc-textpic-caption, .csc-textpic-imagewrap .csc-textpic-caption-c { text-align: center; }
+	div.csc-textpic-caption-r .csc-textpic-caption, .csc-textpic-imagewrap .csc-textpic-caption-r { text-align: right; }
+	div.csc-textpic-caption-l .csc-textpic-caption, .csc-textpic-imagewrap .csc-textpic-caption-l { text-align: left; }
+
+	/* Float the columns */
+	div.csc-textpic div.csc-textpic-imagecolumn { float: left; }
+
+	/* Border just around the image */
+	div.csc-textpic-border li.csc-textpic-imgwrap img {
+		border: 2px solid black;
+		padding: 15px 15px;
+	}
+
+	div.csc-textpic .csc-textpic-imagewrap img { border: none; display: block; }
+
+	/* Space below each image (also in-between rows) */
+	div.csc-textpic .csc-textpic-imagewrap .csc-textpic-image { margin-bottom: 30px; }
+	div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagerow-last .csc-textpic-image { margin-bottom: 0; }
+
+	/* colSpace around image columns, except for last column */
+	div.csc-textpic-imagecolumn, td.csc-textpic-imagecolumn .csc-textpic-image { margin-right: 30px; }
+	div.csc-textpic-imagecolumn.csc-textpic-lastcol, td.csc-textpic-imagecolumn.csc-textpic-lastcol .csc-textpic-image { margin-right: 0; }
+
+	/* Add margin from image-block to text (in case of "Text & Images") */
+	div.csc-textpic-intext-left .csc-textpic-imagewrap,
+	div.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+		margin-right: 15px;
+	}
+	div.csc-textpic-intext-right .csc-textpic-imagewrap,
+	div.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
+		margin-left: 15px;
+	}
+
+	/* Positioning of images: */
+
+	/* Center (above or below) */
+	div.csc-textpic-center .csc-textpic-imagewrap, div.csc-textpic-center figure.csc-textpic-imagewrap { overflow: hidden; }
+	div.csc-textpic-center .csc-textpic-center-outer { position: relative; float: right; right: 50%; }
+	div.csc-textpic-center .csc-textpic-center-inner { position: relative; float: right; right: -50%; }
+
+	/* Right (above or below) */
+	div.csc-textpic-right .csc-textpic-imagewrap { float: right; }
+	div.csc-textpic-right div.csc-textpic-text { clear: right; }
+
+	/* Left (above or below) */
+	div.csc-textpic-left .csc-textpic-imagewrap { float: left; }
+	div.csc-textpic-left div.csc-textpic-text { clear: left; }
+
+	/* Left (in text) */
+	div.csc-textpic-intext-left .csc-textpic-imagewrap { float: left; }
+
+	/* Right (in text) */
+	div.csc-textpic-intext-right .csc-textpic-imagewrap { float: right; }
+
+	/* Right (in text, no wrap around) */
+	div.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap { float: right; }
+
+	/* Left (in text, no wrap around) */
+	div.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap { float: left; }
+
+	div.csc-textpic div.csc-textpic-imagerow-last, div.csc-textpic div.csc-textpic-imagerow-none div.csc-textpic-last { margin-bottom: 0; }
+
+	/* Browser fixes: */
+
+	/* Fix for unordered and ordered list with image "In text, left" */
+	.csc-textpic-intext-left ol, .csc-textpic-intext-left ul { padding-left: 40px; overflow: auto; }
+
+	/* File Links */
+	ul.csc-uploads { padding: 0; }
+	ul.csc-uploads li { list-style: none outside none; margin: 1em 0; }
+	ul.csc-uploads img { float: left; margin-right: 1em; vertical-align: top; }
+	ul.csc-uploads span { display: block; }
+	ul.csc-uploads span.csc-uploads-fileName { text-decoration: underline; }
+
+	/* Table background colors: */
+
+	table.contenttable-color-1 { background-color: #EDEBF1; }
+	table.contenttable-color-2 { background-color: #F5FFAA; }
+	table.contenttable-color-240 { background-color: black; }
+	table.contenttable-color-241 { background-color: white; }
+	table.contenttable-color-242 { background-color: #333333; }
+	table.contenttable-color-243 { background-color: gray; }
+	table.contenttable-color-244 { background-color: silver; }
+/* specific page styles for extension "tx_cssstyledcontent" */
+	.csc-space-after-15 { margin-bottom: 15px !important; }
+/* default styles for extension "tx_dffoundation5" */
+	.csc-textpic-border .csc-textpic-image img {
+	  border: solid black 2px;
+	}
+	ul.csc-textpic-imgblock li.csc-textpic-imgwrap { padding: 0 30px 30px; }
+	ul.csc-textpic-imgblock {
+	  padding: 0 15px;
+	}  

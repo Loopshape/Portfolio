@@ -186,6 +186,17 @@ return array (
       array (
       ),
     ),
+    'filemetadata' => 
+    array (
+      'manifestPath' => '',
+      'composerName' => 'typo3/cms-filemetadata',
+      'state' => 'active',
+      'packagePath' => 'typo3/sysext/filemetadata/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
     'form' => 
     array (
       'manifestPath' => '',
@@ -340,12 +351,67 @@ return array (
       array (
       ),
     ),
+    'mediace' => 
+    array (
+      'manifestPath' => '',
+      'composerName' => 'typo3/cms-mediace',
+      'state' => 'active',
+      'packagePath' => 'typo3/sysext/mediace/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'setup' => 
+    array (
+      'manifestPath' => '',
+      'composerName' => 'typo3/cms-setup',
+      'state' => 'active',
+      'packagePath' => 'typo3/sysext/setup/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'sv' => 
+    array (
+      'manifestPath' => '',
+      'composerName' => 'typo3/cms-sv',
+      'state' => 'active',
+      'packagePath' => 'typo3/sysext/sv/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'openid' => 
+    array (
+      'manifestPath' => '',
+      'composerName' => 'typo3/cms-openid',
+      'state' => 'active',
+      'packagePath' => 'typo3/sysext/openid/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
     'recordlist' => 
     array (
       'manifestPath' => '',
       'composerName' => 'typo3/cms-recordlist',
       'state' => 'active',
       'packagePath' => 'typo3/sysext/recordlist/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'recycler' => 
+    array (
+      'manifestPath' => '',
+      'composerName' => 'typo3/cms-recycler',
+      'state' => 'active',
+      'packagePath' => 'typo3/sysext/recycler/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
@@ -368,17 +434,6 @@ return array (
       'composerName' => 'typo3/cms-rsaauth',
       'state' => 'active',
       'packagePath' => 'typo3/sysext/rsaauth/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'setup' => 
-    array (
-      'manifestPath' => '',
-      'composerName' => 'typo3/cms-setup',
-      'state' => 'active',
-      'packagePath' => 'typo3/sysext/setup/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
@@ -407,12 +462,12 @@ return array (
       array (
       ),
     ),
-    'sv' => 
+    'scheduler' => 
     array (
       'manifestPath' => '',
-      'composerName' => 'typo3/cms-sv',
+      'composerName' => 'typo3/cms-scheduler',
       'state' => 'active',
-      'packagePath' => 'typo3/sysext/sv/',
+      'packagePath' => 'typo3/sysext/scheduler/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
@@ -517,6 +572,53 @@ return array (
       array (
       ),
     ),
+    'toctoc_comments' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/toctoc_comments/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'rn_base' => 
+    array (
+      'manifestPath' => '',
+      'composerName' => 'digedag/rn-base',
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/rn_base/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    't3socials' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/t3socials/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    't3_tcpdf' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/t3_tcpdf/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    't3_less' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/t3_less/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
     'static_info_tables' => 
     array (
       'state' => 'active',
@@ -544,10 +646,77 @@ return array (
       array (
       ),
     ),
+    'source_publisher' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/source_publisher/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
     'realurl' => 
     array (
       'state' => 'active',
       'packagePath' => 'typo3conf/ext/realurl/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'powermail' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/powermail/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'nxtemplate' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/nxtemplate/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'nxindexedsearch' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/nxindexedsearch/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'newsletter' => 
+    array (
+      'manifestPath' => '',
+      'composerName' => 'ecodev/newsletter',
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/newsletter/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'news' => 
+    array (
+      'manifestPath' => '',
+      'composerName' => 'georgringer/news',
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/news/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'news_ttnewsimport' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/news_ttnewsimport/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
@@ -559,6 +728,24 @@ return array (
       'composerName' => 'mblaschke/metaseo',
       'state' => 'active',
       'packagePath' => 'typo3conf/ext/metaseo/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'iconfont' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/iconfont/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'google_auth' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/google_auth/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
@@ -600,12 +787,37 @@ return array (
       array (
       ),
     ),
-    'news' => 
+    'cps_devlib' => 
     array (
-      'manifestPath' => '',
-      'composerName' => 'georgringer/news',
       'state' => 'active',
-      'packagePath' => 'typo3conf/ext/news/',
+      'packagePath' => 'typo3conf/ext/cps_devlib/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'cps_tcatree' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/cps_tcatree/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'cps_searchhighlight' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/cps_searchhighlight/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'roq_newsevent' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/roq_newsevent/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
@@ -615,6 +827,16 @@ return array (
     array (
       'state' => 'active',
       'packagePath' => 'typo3conf/ext/cb_newscal/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+        0 => 'roq_newsevent',
+      ),
+    ),
+    'cb_indexedsearch_autocomplete' => 
+    array (
+      'state' => 'active',
+      'packagePath' => 'typo3conf/ext/cb_indexedsearch_autocomplete/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
@@ -656,17 +878,6 @@ return array (
       array (
       ),
     ),
-    'filemetadata' => 
-    array (
-      'manifestPath' => '',
-      'composerName' => 'typo3/cms-filemetadata',
-      'state' => 'inactive',
-      'packagePath' => 'typo3/sysext/filemetadata/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
     'linkvalidator' => 
     array (
       'manifestPath' => '',
@@ -684,28 +895,6 @@ return array (
       'composerName' => 'typo3/cms-dbal',
       'state' => 'inactive',
       'packagePath' => 'typo3/sysext/dbal/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'scheduler' => 
-    array (
-      'manifestPath' => '',
-      'composerName' => 'typo3/cms-scheduler',
-      'state' => 'inactive',
-      'packagePath' => 'typo3/sysext/scheduler/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'mediace' => 
-    array (
-      'manifestPath' => '',
-      'composerName' => 'typo3/cms-mediace',
-      'state' => 'inactive',
-      'packagePath' => 'typo3/sysext/mediace/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
@@ -733,17 +922,6 @@ return array (
       array (
       ),
     ),
-    'openid' => 
-    array (
-      'manifestPath' => '',
-      'composerName' => 'typo3/cms-openid',
-      'state' => 'inactive',
-      'packagePath' => 'typo3/sysext/openid/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
     'opendocs' => 
     array (
       'manifestPath' => '',
@@ -755,75 +933,10 @@ return array (
       array (
       ),
     ),
-    'recycler' => 
-    array (
-      'manifestPath' => '',
-      'composerName' => 'typo3/cms-recycler',
-      'state' => 'inactive',
-      'packagePath' => 'typo3/sysext/recycler/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'nxindexedsearch' => 
-    array (
-      'state' => 'inactive',
-      'packagePath' => 'typo3conf/ext/nxindexedsearch/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'nxtemplate' => 
-    array (
-      'state' => 'inactive',
-      'packagePath' => 'typo3conf/ext/nxtemplate/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'source_publisher' => 
-    array (
-      'state' => 'inactive',
-      'packagePath' => 'typo3conf/ext/source_publisher/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
     'mdx_gdviewer' => 
     array (
       'state' => 'inactive',
       'packagePath' => 'typo3conf/ext/mdx_gdviewer/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'indexedsearch_ttnews_crawler' => 
-    array (
-      'state' => 'inactive',
-      'packagePath' => 'typo3conf/ext/indexedsearch_ttnews_crawler/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'tt_news' => 
-    array (
-      'state' => 'inactive',
-      'packagePath' => 'typo3conf/ext/tt_news/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'indexedsearch_rendered_ttnews' => 
-    array (
-      'state' => 'inactive',
-      'packagePath' => 'typo3conf/ext/indexedsearch_rendered_ttnews/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
@@ -851,6 +964,24 @@ return array (
     array (
       'state' => 'inactive',
       'packagePath' => 'typo3conf/ext/svconnector_sql/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'linkhandlerconf' => 
+    array (
+      'state' => 'inactive',
+      'packagePath' => 'typo3conf/ext/linkhandlerconf/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'linkhandler' => 
+    array (
+      'state' => 'inactive',
+      'packagePath' => 'typo3conf/ext/linkhandler/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (

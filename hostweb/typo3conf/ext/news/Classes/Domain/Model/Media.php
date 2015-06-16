@@ -1,4 +1,6 @@
 <?php
+namespace GeorgRinger\News\Domain\Model;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -18,19 +20,19 @@
  * @package TYPO3
  * @subpackage tx_news
  */
-class Tx_News_Domain_Model_Media extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Media extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	const MEDIA_TYPE_IMAGE = 0;
 	const MEDIA_TYPE_MULTIMEDIA = 1;
 	const MEDIA_TYPE_HTML = 2;
 
 	/**
-	 * @var DateTime
+	 * @var \DateTime
 	 */
 	protected $crdate;
 
 	/**
-	 * @var DateTime
+	 * @var \DateTime
 	 */
 	protected $tstamp;
 
@@ -212,7 +214,7 @@ class Tx_News_Domain_Model_Media extends \TYPO3\CMS\Extbase\DomainObject\Abstrac
 	/**
 	 * Get creation date
 	 *
-	 * @return DateTime
+	 * @return \DateTime
 	 */
 	public function getCrdate() {
 		return $this->crdate;
@@ -221,7 +223,7 @@ class Tx_News_Domain_Model_Media extends \TYPO3\CMS\Extbase\DomainObject\Abstrac
 	/**
 	 * Set creation date
 	 *
-	 * @param DateTime $crdate creation date
+	 * @param \DateTime $crdate creation date
 	 * @return void
 	 */
 	public function setCrdate($crdate) {
@@ -231,7 +233,7 @@ class Tx_News_Domain_Model_Media extends \TYPO3\CMS\Extbase\DomainObject\Abstrac
 	/**
 	 * Get timestamp
 	 *
-	 * @return DateTime
+	 * @return \DateTime
 	 */
 	public function getTstamp() {
 		return $this->tstamp;
@@ -240,7 +242,7 @@ class Tx_News_Domain_Model_Media extends \TYPO3\CMS\Extbase\DomainObject\Abstrac
 	/**
 	 * Set timestamp
 	 *
-	 * @param DateTime $tstamp timestamp
+	 * @param \DateTime $tstamp timestamp
 	 * @return void
 	 */
 	public function setTstamp($tstamp) {

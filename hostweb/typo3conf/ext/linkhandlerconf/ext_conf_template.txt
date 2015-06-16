@@ -1,0 +1,213 @@
+  # cat=basic//100;                   type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptAbstract]; label=Abstract
+basic.promptAbstract=0
+  # cat=basic//101;                   type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptBearInMind]; label=Bear in mind
+basic.bearInMind=0
+  # cat=basic//200;                   type=options[English,German]; label= Localise special backend labels: Language for special backend labels like TypoScript static templates and the link handler.
+basic.LLstatic = English
+  # cat=basic//999;                   type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+basic.externalLinks=0
+
+  # cat=calendar base (tx_cal_event)//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+tx_cal_event.promptConstantEditor=0
+  # cat=calendar base (tx_cal_event)//100;           type=boolean; label=Disabled: If disabled, no configuration will written for Calendar Base. Neither the page TSconfig nor TypoScript. Default: disabled.
+tx_cal_event.disabled = 1
+  # cat=calendar base (tx_cal_event)//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. Default: Calendar Base (tx_cal_event)
+tx_cal_event.label = Calendar Base (tx_cal_event)
+  # cat=calendar base (tx_cal_event)//102;           type=string; label=Tables*:*Obligate! RTE link assistant: List of tables, which should displayed. Default: tx_cal_event. Each (!) table must have a corresponding configuration in the constant editor.
+tx_cal_event.listTables = tx_cal_event
+  # cat=calendar base (tx_cal_event)//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with calendar base data. The pids are recommended for usability only. I.e: 1335, 1245
+tx_cal_event.onlyPids =
+  # cat=calendar base (tx_cal_event)/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+tx_cal_event.externalLinks=0
+
+  # cat=Event management and registration (sf_event_mgt)//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+tx_sfeventmgt_domain_model_event.promptConstantEditor=0
+  # cat=Event management and registration (sf_event_mgt)//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the Event management and registration. Neither the page TSconfig nor TypoScript. Default: disabled.
+tx_sfeventmgt_domain_model_event.disabled = 1
+  # cat=Event management and registration (sf_event_mgt)//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. Default: Event management and registration (sf_event_mgt)
+tx_sfeventmgt_domain_model_event.label = Event management and registration (sf_event_mgt)
+  # cat=Event management and registration (sf_event_mgt)//102;           type=string; label=Tables*:*Obligate! RTE link assistant: List of tables, which should displayed. Default: tx_sfeventmgt_domain_model_event. Each (!) table must have a corresponding configuration in the constant editor.
+tx_sfeventmgt_domain_model_event.listTables = tx_sfeventmgt_domain_model_event
+  # cat=Event management and registration (sf_event_mgt)//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data. The pids are recommended for usability only. I.e: 1335, 1245
+tx_sfeventmgt_domain_model_event.onlyPids =
+  # cat=Event management and registration (sf_event_mgt)/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+tx_sfeventmgt_domain_model_event.externalLinks=0
+
+  # cat=my table 01//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable01.promptConstantEditor=0
+  # cat=my table 01//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable01.disabled = 1
+  # cat=my table 01//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 01 (mytable)
+mytable01.label = My table 01 (mytable)
+  # cat=my table 01//102;           type=string; type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. I.e: tx_mytable_01
+mytable01.table = tx_mytable_01
+  # cat=my table 01//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable01.onlyPids =
+  # cat=my table 01/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable01.externalLinks=0
+
+  # cat=my table 02//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable02.promptConstantEditor=0
+  # cat=my table 02//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable02.disabled = 1
+  # cat=my table 02//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 02 (mytable)
+mytable02.label = My table 02 (mytable)
+  # cat=my table 02//102;           type=string; type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. I.e: tx_mytable_02
+mytable02.table = tx_mytable_02
+  # cat=my table 02//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable02.onlyPids =
+  # cat=my table 02/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable02.externalLinks=0
+
+  # cat=my table 03//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable03.promptConstantEditor=0
+  # cat=my table 03//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable03.disabled = 1
+  # cat=my table 03//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 03 (mytable)
+mytable03.label = My table 03 (mytable)
+  # cat=my table 03//102;           type=string; type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. I.e: tx_mytable_03
+mytable03.table = tx_mytable_03
+  # cat=my table 03//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable03.onlyPids =
+  # cat=my table 03/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable03.externalLinks=0
+
+  # cat=my table 04//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable04.promptConstantEditor=0
+  # cat=my table 04//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable04.disabled = 1
+  # cat=my table 04//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 04 (mytable)
+mytable04.label = My table 04 (mytable)
+  # cat=my table 04//102;           type=string; type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. I.e: tx_mytable_04
+mytable04.table = tx_mytable_04
+  # cat=my table 04//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable04.onlyPids =
+  # cat=my table 04/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable04.externalLinks=0
+
+  # cat=my table 05//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable05.promptConstantEditor=0
+  # cat=my table 05//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable05.disabled = 1
+  # cat=my table 05//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 05 (mytable)
+mytable05.label = My table 05 (mytable)
+  # cat=my table 05//102;           type=string; type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. I.e: tx_mytable_05
+mytable05.table = tx_mytable_05
+  # cat=my table 05//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable05.onlyPids =
+  # cat=my table 05/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable05.externalLinks=0
+
+  # cat=my table 06//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable06.promptConstantEditor=0
+  # cat=my table 06//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable06.disabled = 1
+  # cat=my table 06//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 06 (mytable)
+mytable06.label = My table 06 (mytable)
+  # cat=my table 06//102;           type=string; type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. I.e: tx_mytable_06
+mytable06.table = tx_mytable_06
+  # cat=my table 06//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable06.onlyPids =
+  # cat=my table 06/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable06.externalLinks=0
+
+  # cat=my table 07//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable07.promptConstantEditor=0
+  # cat=my table 07//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable07.disabled = 1
+  # cat=my table 07//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 07 (mytable)
+mytable07.label = My table 07 (mytable)
+  # cat=my table 07//102;           type=string; type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. I.e: tx_mytable_07
+mytable07.table = tx_mytable_07
+  # cat=my table 07//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable07.onlyPids =
+  # cat=my table 07/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable07.externalLinks=0
+
+  # cat=my table 08//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable08.promptConstantEditor=0
+  # cat=my table 08//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable08.disabled = 1
+  # cat=my table 08//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 08 (mytable)
+mytable08.label = My table 08 (mytable)
+  # cat=my table 08//102;           type=string; type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. I.e: tx_mytable_08
+mytable08.table = tx_mytable_08
+  # cat=my table 08//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable08.onlyPids =
+  # cat=my table 08/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable08.externalLinks=0
+
+  # cat=my table 09//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable09.promptConstantEditor=0
+  # cat=my table 09//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable09.disabled = 1
+  # cat=my table 09//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 09 (mytable)
+mytable09.label = My table 09 (mytable)
+  # cat=my table 09//102;           type=string; type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. I.e: tx_mytable_09
+mytable09.table = tx_mytable_09
+  # cat=my table 09//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable09.onlyPids =
+  # cat=my table 09/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable09.externalLinks=0
+
+  # cat=my table 10//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+mytable10.promptConstantEditor=0
+  # cat=my table 10//100;           type=boolean; label=Disabled: If disabled, no configuration will written for the table of your extension. Neither the page TSconfig nor TypoScript. Default: disabled.
+mytable10.disabled = 1
+  # cat=my table 10//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. I.e: My table 10 (mytable)
+mytable10.label = My table 10 (mytable)
+  # cat=my table 10//102;           type=string; label=Table*:*Obligate! RTE link assistant: Table, which should displayed. One table only. I.e: tx_mytable_10
+mytable10.table = tx_mytable_10
+  # cat=my table 10//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the data of your table. The pids are recommended for usability only. I.e: 1335, 1245
+mytable10.onlyPids =
+  # cat=my table 10/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+mytable10.externalLinks=0
+
+  # cat=news (tt_news)//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=tt_news
+tt_news.prompt=0
+  # cat=news (tt_news)//100;           type=boolean; label=Disabled: If disabled, no configuration will written for News (tt_news). Neither the page TSconfig nor TypoScript. Default: disabled.
+tt_news.disabled = 1
+  # cat=news (tt_news)//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. Default: News (tt_news).
+tt_news.label = News (tt_news)
+  # cat=news (tt_news)//102;           type=string; label=Tables*:*Obligate! RTE link assistant: List of tables, which should displayed. Default: tt_news. Each (!) table must have a corresponding configuration in the constant editor.
+tt_news.listTables = tt_news
+  # cat=news (tt_news)//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with tt_news data. The pids are recommended for usability only. I.e: 1335, 1245
+tt_news.onlyPids =
+  # cat=news (tt_news)/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+tt_news.externalLinks=0
+
+  # cat=news system (news)//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=Constant Editor
+tx_news_domain_model_news.promptConstantEditor=0
+  # cat=news system (news)//100;           type=boolean; label=Disabled: If disabled, no configuration will written for News System. Neither the page TSconfig nor TypoScript. Default: disabled.
+tx_news_domain_model_news.disabled = 1
+  # cat=news system (news)//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. Default: News System (news)
+tx_news_domain_model_news.label = News System (news)
+  # cat=news system (news)//102;           type=string; label=Tables*:*Obligate! RTE link assistant: List of tables, which should displayed. Default: tx_news_domain_model_news. Each (!) table must have a corresponding configuration in the constant editor.
+tx_news_domain_model_news.listTables = tx_news_domain_model_news
+  # cat=news system (news)//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with the news data. The pids are recommended for usability only. I.e: 1335, 1245
+tx_news_domain_model_news.onlyPids =
+  # cat=news system (news)/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+tx_news_domain_model_news.externalLinks=0
+
+  # cat=organiser (org)//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptOrganiser]; label=Organiser
+organiser.prompt=0
+  # cat=organiser (org)/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+organiser.externalLinks=0
+
+  # cat=quick shop (quick_shop)//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptQuickshop]; label=Organiser
+quick_shop.prompt=0
+  # cat=quick shop (quick_shop)/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+quick_shop.externalLinks=0
+
+  # cat=shop system (tt_products)//010;           type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptConstantEditor]; label=tt_products
+tt_products.prompt=0
+  # cat=shop system (tt_products)//100;           type=boolean; label=Disabled: If disabled, no configuration will written for Shop System (tt_products). Neither the page TSconfig nor TypoScript. Default: disabled.
+tt_products.disabled = 1
+  # cat=shop system (tt_products)//101;           type=string; label=Label*:*Obligate! RTE link assistant: Label of the tab. Default: Shop System (tt_products).
+tt_products.label = Shop System (tt_products)
+  # cat=shop system (tt_products)//102;           type=string; label=Tables*:*Obligate! RTE link assistant: List of tables, which should displayed. Default: tt_products. Each (!) table must have a corresponding configuration in the constant editor.
+tt_products.listTables = tt_products
+  # cat=shop system (tt_products)//103;           type=string; label=Folders: RTE link assistant: CSV list of the ids of the folders with tt_products data. The pids are recommended for usability only. I.e: 1335, 1245
+tt_products.onlyPids =
+  # cat=shop system (tt_products)/others/999;     type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExternalLinks]; label=External Links
+tt_products.externalLinks=0

@@ -1,0 +1,74 @@
+config.tx_extbase {
+	persistence {
+		classes {
+			In2code\Powermail\Domain\Model\User {
+				mapping {
+					tableName = fe_users
+				}
+			}
+			In2code\Powermail\Domain\Model\UserGroup {
+				mapping {
+					tableName = fe_groups
+				}
+			}
+			In2code\Powermail\Domain\Model\Form {
+				mapping {
+					tableName = tx_powermail_domain_model_forms
+				}
+			}
+			In2code\Powermail\Domain\Model\Page {
+				mapping {
+					tableName = tx_powermail_domain_model_pages
+				}
+			}
+			In2code\Powermail\Domain\Model\Field {
+				mapping {
+					tableName = tx_powermail_domain_model_fields
+				}
+			}
+			In2code\Powermail\Domain\Model\Mail {
+				mapping {
+					tableName = tx_powermail_domain_model_mails
+				}
+			}
+			In2code\Powermail\Domain\Model\Answer {
+				mapping {
+					tableName = tx_powermail_domain_model_answers
+				}
+			}
+		}
+	}
+}
+
+# ParseFunc Configuration for using FAL links in receiver and sender mail
+lib.parseFunc_powermail < lib.parseFunc_RTE
+lib.parseFunc_powermail.tags.link.typolink.forceAbsoluteUrl = 1
+
+
+
+
+#################
+# Backend Module
+#################
+module.tx_powermail {
+	view {
+		templateRootPath = EXT:powermail/Resources/Private/Templates/
+		partialRootPath = EXT:powermail/Resources/Private/Partials/
+		layoutRootPath = EXT:powermail/Resources/Private/Layouts/
+		widget.TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:powermail/Resources/Private/Templates/
+	}
+	settings {
+		# crdate, sender_name, sender_email, subject, receiver_mail, feuser, time
+		sortby = crdate
+		order = desc
+		perPage = 25
+		export {
+			filenameXls = powermail.xls
+			filenameCsv = powermail.csv
+		}
+		uploadPath = {$plugin.tx_powermail.settings.misc.uploadFolder}
+
+		# Don't touch this (this is just to let the extension know, that there is TypoScript included)
+		staticTemplate = 1
+	}
+}

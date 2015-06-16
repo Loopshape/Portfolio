@@ -1,4 +1,4 @@
-{namespace n=Tx_News_ViewHelpers}<!--
+{namespace n=GeorgRinger\News\ViewHelpers}<!--
 	=====================
 		Partials/List/Item.html
 -->
@@ -7,7 +7,7 @@
 	<!-- header -->
 	<div class="header">
 		<h3>
-			<n:link newsItem="{newsItem}" settings="{settings}">
+			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 				{newsItem.title}
 			</n:link>
 		</h3>
@@ -19,7 +19,7 @@
 			<div class="news-img-wrap">
 				<f:if condition="{newsItem.falMediaPreviews}">
 					<f:then>
-						<n:link newsItem="{newsItem}" settings="{settings}">
+						<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 							<f:alias map="{mediaElement: newsItem.falMediaPreviews.0}">
 								<f:if condition="{mediaElement.originalResource.type} == 2">
 									<f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
@@ -27,13 +27,16 @@
 								<f:if condition="{mediaElement.originalResource.type} == 4">
 									<f:render partial="Detail/FalMediaVideo" arguments="{mediaElement: mediaElement}"/>
 								</f:if>
+								<f:if condition="{mediaElement.originalResource.type} == 5">
+									<f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
+								</f:if>
 							</f:alias>
 						</n:link>
 					</f:then>
 					<f:else>
 						<f:if condition="{settings.displayDummyIfNoMedia}">
 							<span class="no-media-element">
-								<n:link newsItem="{newsItem}" settings="{settings}">
+								<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 									<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
 								</n:link>
 							</span>
@@ -51,7 +54,7 @@
 					<div class="news-img-wrap">
 						<f:if condition="{newsItem.mediaPreviews}">
 							<f:then>
-								<n:link newsItem="{newsItem}" settings="{settings}">
+								<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 									<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
 										<f:if condition="{mediaElement.type} == 0">
 											<f:image src="uploads/tx_news/{mediaElement.image}" title="{mediaElement.title}" alt="{mediaElement.alt}" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
@@ -68,7 +71,7 @@
 							<f:else>
 								<f:if condition="{settings.displayDummyIfNoMedia}">
 									<span class="no-media-element">
-										<n:link newsItem="{newsItem}" settings="{settings}">
+										<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 											<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
 										</n:link>
 									</span>
@@ -82,7 +85,7 @@
 					<f:if condition="{settings.displayDummyIfNoMedia}">
 						<f:then>
 							<div class="news-img-wrap">
-								<n:link newsItem="{newsItem}" settings="{settings}">
+								<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
 									<span class="no-media-element">
 										<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}"/>
 									</span>
@@ -108,7 +111,7 @@
 			</f:else>
 		</f:if>
 
-		<n:link newsItem="{newsItem}" settings="{settings}" class="more">
+		<n:link newsItem="{newsItem}" settings="{settings}" class="more" title="{newsItem.title}">
 			<f:translate key="more-link"/>
 		</n:link>
 	</div>
@@ -118,8 +121,8 @@
 		<p>
 			<!-- date -->
 			<span class="news-list-date">
-				<time datetime="{f:format.date(date:newsItem.datetime,format:'Y-m-d')}">
-					<n:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</n:format.date>
+				<time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+					<f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
 				</time>
 			</span>
 

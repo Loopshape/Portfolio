@@ -1,4 +1,4 @@
-{namespace n=Tx_News_ViewHelpers}
+{namespace n=GeorgRinger\News\ViewHelpers}
 
 <f:layout name="Backend/Default" />
 
@@ -29,7 +29,6 @@
 			</div>
 		</div>
 	</f:if>
-	<f:flashMessages class="tx-extbase-flash-message" />
 
 	<f:form name="demand" object="{demand}" method="get" >
 		<input type="hidden" name="M" value="web_NewsTxNewsM2">
@@ -41,6 +40,13 @@
 		</h2>
 		<div class="settings">
 			<div class="form">
+				<div class="field">
+					<label for="searchWord">
+						<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.searchWord" />
+					</label>
+					<f:form.textfield property="searchWord" id="searchWord" />
+					<div class="clear"></div>
+				</div>
 				<div class="field">
 					<label for="recursive">
 						<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:module.recursive" />
@@ -132,19 +138,19 @@
 						<tr class="t3-row-header">
 							<td>
 								<span><f:translate key="LLL:EXT:cms/locallang_ttc.xlf:header_formlabel" /></span>
-								<n:be.buttons.icon uri="#" onclick="{n:be.multiEditLink(items:paginatedNews,columns:'title')}" icon="actions-document-open" />
+								<n:be.buttons.icon uri="#" onclick="{n:be.multiEditLink(items:paginatedNews, columns:'title')}" icon="actions-document-open" />
 							</td>
 							<td>
 								<span><f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.istopnews" /></span>
-								<n:be.buttons.icon uri="#" onclick="{n:be.multiEditLink(items:paginatedNews,columns:'istopnews')}" icon="actions-document-open" />
+								<n:be.buttons.icon uri="#" onclick="{n:be.multiEditLink(items:paginatedNews, columns:'istopnews')}" icon="actions-document-open" />
 							</td>
 							<td class="date">
 								<span><f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.datetime" /></span>
-								<n:be.buttons.icon uri="#" onclick="{n:be.multiEditLink(items:paginatedNews,columns:'datetime')}" icon="actions-document-open" />
+								<n:be.buttons.icon uri="#" onclick="{n:be.multiEditLink(items:paginatedNews, columns:'datetime')}" icon="actions-document-open" />
 							</td>
 							<td class="date">
 								<span><f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.archive" /></span>
-								<n:be.buttons.icon uri="#" onclick="{n:be.multiEditLink(items:paginatedNews,columns:'archive')}" icon="actions-document-open" />
+								<n:be.buttons.icon uri="#" onclick="{n:be.multiEditLink(items:paginatedNews, columns:'archive')}" icon="actions-document-open" />
 							</td>
 							<td>
 								<f:translate key="LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderBy.tstamp" />

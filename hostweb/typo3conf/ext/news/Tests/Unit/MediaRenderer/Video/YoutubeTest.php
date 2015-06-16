@@ -1,4 +1,7 @@
 <?php
+
+namespace GeorgRinger\News\Tests\Unit\MediaRenderer\Video;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -11,11 +14,12 @@
  *
  * The TYPO3 project - inspiring people to share!
  */
+use GeorgRinger\News\Domain\Model\Media;
 
 /**
- * Tests for Tx_News_MediaRenderer_Video_Youtube
+ * Tests for Youtube
  */
-class Tx_News_Tests_Unit_MediaRenderer_Video_YoutubeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
+class YoutubeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
 	/**
 	 * @test
@@ -23,11 +27,14 @@ class Tx_News_Tests_Unit_MediaRenderer_Video_YoutubeTest extends \TYPO3\CMS\Core
 	 * @return void
 	 */
 	public function flvFileIsRecognized($expected, $expectedOutput) {
-		$mediaElement = new Tx_News_Domain_Model_Media();
+		$mediaElement = new Media();
 		$mediaElement->setMultimedia($expected);
-		$mediaElement->setType(Tx_News_Domain_Model_Media::MEDIA_TYPE_MULTIMEDIA);
+		$mediaElement->setType(Media::MEDIA_TYPE_MULTIMEDIA);
 
-		$renderer = new Tx_News_MediaRenderer_Video_Youtube();
+		$mockedSettingsService = $this->getMock('GeorgRinger\\News\\Service\\SettingsService', array('getSettings'));
+
+		$renderer = $this->getAccessibleMock('GeorgRinger\\News\\MediaRenderer\\Video\\Youtube', array('dummy'));
+		$renderer->_set('pluginSettingsService', $mockedSettingsService);
 		$this->assertEquals($expectedOutput, $renderer->enabled($mediaElement));
 	}
 

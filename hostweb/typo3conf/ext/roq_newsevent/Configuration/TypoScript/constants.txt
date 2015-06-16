@@ -1,0 +1,6 @@
+plugin.roq_newsevent {
+    view {
+        templateRootPath = EXT:roq_newsevent/Resources/Private/Templates
+        partialRootPath = EXT:roq_newsevent/Resources/Private/Partials
+    }
+}

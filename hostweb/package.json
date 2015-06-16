@@ -18,17 +18,26 @@
   "author": "Arjuna Noorsanto",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-sass": "~0.4.0",
-    "grunt-contrib-watch": "~0.4.4",
-    "grunt-karma": "^0.10.1",
-    "jasmine-core": "^2.1.3",
-    "karma": "^0.12.31",
-    "karma-jasmine": "^0.3.5",
-    "karma-phantomjs-launcher": "^0.1.4"
+    "broccoli": "^0.16.3",
+    "file": "^0.2.2"
   },
   "dependencies": {
+    "broccoli-asset-rev": "^2.0.2",
     "connect-flash": "^0.1.1",
+    "ember-cli": "0.2.7",
+    "ember-cli-app-version": "0.3.3",
+    "ember-cli-babel": "^5.0.0",
+    "ember-cli-content-security-policy": "0.4.0",
+    "ember-cli-dependency-checker": "^1.0.0",
+    "ember-cli-htmlbars": "0.7.9",
+    "ember-cli-ic-ajax": "0.1.1",
+    "ember-cli-inject-live-reload": "^1.3.0",
+    "ember-cli-qunit": "0.3.13",
+    "ember-cli-release": "0.2.3",
+    "ember-cli-uglify": "^1.0.1",
+    "ember-data": "1.0.0-beta.18",
+    "ember-disable-proxy-controllers": "^1.0.0",
+    "ember-export-application-global": "^1.0.2",
     "express": "^4.12.4",
     "grunt": "^0.4.5",
     "grunt-contrib-sass": "^0.9.2",
@@ -50,6 +59,8 @@
     "passport-openid": "^0.3.1",
     "passport-twitter": "^1.0.3",
     "phantomjs": "^1.9.17",
+    "prerender-node": "^1.2.1",
+    "tap": "^1.2.0",
     "util": "^0.10.3"
   }
 }

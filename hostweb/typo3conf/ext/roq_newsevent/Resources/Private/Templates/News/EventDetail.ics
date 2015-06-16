@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR<e:format.trim replaceDoubleSpaces="FALSE" useWindowsLineEndings="TRUE" removeNewlineTags="TRUE">
+
+    {namespace n=Tx_News_ViewHelpers}
+    {namespace e=Tx_RoqNewsevent_ViewHelpers}
+
+    VERSION:2.0
+    PRODID:-//XYZ Corp//My Product//EN
+
+    <f:render partial="Event/Item" arguments="{newsItem: newsItem, settings: settings}"/>
+
+END:VCALENDAR</e:format.trim>

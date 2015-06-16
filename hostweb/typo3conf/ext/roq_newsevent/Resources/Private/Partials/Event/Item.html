@@ -1,0 +1,56 @@
+{namespace n=Tx_News_ViewHelpers}
+{namespace e=Tx_RoqNewsevent_ViewHelpers}
+<!--
+	=====================
+		Partials/Event/Item.html
+-->
+<e:if condition="'<f:format.date>{newsItem.eventEnddate}</f:format.date>' != '' && '<f:format.date>{newsItem.eventEnddate}</f:format.date>' != '<f:format.date>{newsItem.eventStartdate}</f:format.date>'">
+    <!-- Multiple day event -->
+    <f:then>
+        <f:if condition="{newsItem.eventStarttime}">
+            <!-- Multiple day event with time -->
+            <f:then>
+                <strong><e:translate key="event_date" />:</strong> <e:format.date strftime="1" format="%d %B %Y">{newsItem.eventStartdate}</e:format.date> <e:translate key="event_till" /> <e:format.date strftime="1" format="%d %B %Y">{newsItem.eventEnddate}</e:format.date>
+
+                <f:if condition="{newsItem.eventEndtime}">
+                    <f:then>
+                        <br><strong><e:translate key="event_time" />:</strong> <e:format.time format="H:i">{newsItem.eventStarttime}</e:format.time> <e:translate key="event_till" /> <e:format.time format="H:i">{newsItem.eventEndtime}</e:format.time>
+                    </f:then>
+                    <f:else>
+                        <br><strong><e:translate key="event_time" />:</strong> <e:format.time format="H:i">{newsItem.eventStarttime}</e:format.time>
+                    </f:else>
+                </f:if>
+            </f:then>
+            <!-- Multiple day event without time -->
+            <f:else>
+                <strong><e:translate key="event_date" />:</strong> <e:format.date strftime="1" format="%d %B %Y">{newsItem.eventStartdate}</e:format.date> <e:translate key="event_till" /> <e:format.date strftime="1" format="%d %B %Y">{newsItem.eventEnddate}</e:format.date>
+            </f:else>
+        </f:if>
+    </f:then>
+    <!-- One day event -->
+    <f:else>
+        <f:if condition="{newsItem.eventStarttime}">
+            <!-- One day event with time -->
+            <f:then>
+                <strong><e:translate key="event_date" />:</strong> <e:format.date strftime="1" format="%d %B %Y">{newsItem.eventStartdate}</e:format.date>
+
+                <f:if condition="{newsItem.eventEndtime}">
+                    <f:then>
+                        <br><strong><e:translate key="event_time" />:</strong> <e:format.time format="H:i">{newsItem.eventStarttime}</e:format.time> <e:translate key="event_till" /> <e:format.time format="H:i">{newsItem.eventEndtime}</e:format.time>
+                    </f:then>
+                    <f:else>
+                        <br><strong><e:translate key="event_time" />:</strong> <e:format.time format="H:i">{newsItem.eventStarttime}</e:format.time>
+                    </f:else>
+                </f:if>
+            </f:then>
+            <!-- One day event without time -->
+            <f:else>
+                <strong><e:translate key="event_date" />:</strong> <e:format.date strftime="1" format="%d %B %Y">{newsItem.eventStartdate}</e:format.date>
+            </f:else>
+        </f:if>
+    </f:else>
+
+</e:if>
+<f:if condition="{newsItem.eventLocation}">
+    <br><strong><e:translate key="event_location" />:</strong> {newsItem.eventLocation}
+</f:if>

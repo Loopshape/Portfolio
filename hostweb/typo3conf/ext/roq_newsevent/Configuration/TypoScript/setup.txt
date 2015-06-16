@@ -1,0 +1,54 @@
+# Extbase configuration for news event controller, news event model, and database
+config.tx_extbase {
+    persistence {
+        classes {
+            Tx_News_Domain_Model_News {
+                subclasses {
+                    Tx_RoqNewsevent_Event = Tx_RoqNewsevent_Domain_Model_Event
+          		}
+            }
+
+            Tx_RoqNewsevent_Domain_Model_Event {
+                mapping {
+                    tableName = tx_news_domain_model_news
+
+                    columns {
+                        tx_roqnewsevent_is_event.mapOnProperty = isEvent
+                        tx_roqnewsevent_startdate.mapOnProperty = eventStartdate
+                        tx_roqnewsevent_starttime.mapOnProperty = eventStarttime
+                        tx_roqnewsevent_enddate.mapOnProperty = eventEnddate
+                        tx_roqnewsevent_endtime.mapOnProperty = eventEndtime
+                        tx_roqnewsevent_location.mapOnProperty = eventLocation
+                    }
+                }
+            }
+    	}
+    }
+
+    objects {
+        Tx_News_Controller_NewsController.className = Tx_RoqNewsevent_Controller_EventController
+    }
+}
+
+# Event TypoScript configuration
+plugin.tx_news {
+    view {
+        event {
+            partialRootPath = {$plugin.roq_newsevent.view.partialRootPath}
+            templateRootPath = {$plugin.roq_newsevent.view.templateRootPath}
+        }
+	}
+
+	settings {
+    	event {
+    	    orderByAllowed = tx_roqnewsevent_startdate,tx_roqnewsevent_starttime
+    	    orderBy = tx_roqnewsevent_startdate ASC, tx_roqnewsevent_starttime ASC
+
+    	    archived {
+                orderBy = tx_roqnewsevent_startdate DESC, tx_roqnewsevent_starttime DESC
+            }
+
+            dateField = eventStartdate
+    	}
+    }
+}

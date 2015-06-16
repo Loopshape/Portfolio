@@ -1,0 +1,30 @@
+..  Content substitution
+	...................................................
+	Hint: following expression |my_substition_value| will be replaced when rendering doc.
+
+.. |author| replace:: John Doe <john.doe@typo3.org>
+.. |extension_key| replace:: extension_key
+.. |extension_name| replace:: Extension Name
+.. |time| date:: %m-%d-%Y %H:%M
+
+..  Custom roles
+	...................................................
+	After declaring a role like this: ".. role:: custom", the document may use the new role like :custom:`interpreted text`.
+	Basically, this will wrap the content with a CSS class to be styled in a special way when document get rendered.
+	More information: http://docutils.sourceforge.net/docs/ref/rst/roles.html
+
+.. role:: code
+.. role:: typoscript
+.. role:: typoscript(code)
+.. role:: ts(typoscript)
+.. role:: php(code)
+
+.. ==================================================
+.. EXTERNAL LINKS
+.. --------------------------------------------------
+
+.. _http://forge.typo3.org/projects/extension-roq_redirect: http://forge.typo3.org/projects/extension-roq_redirect
+.. _http://forge.typo3.org/projects/extension-roq_redirect/issues: http://forge.typo3.org/projects/extension-roq_redirect/issues
+.. _https://svn.typo3.org/TYPO3v4/Extensions/roq_redirect: https://svn.typo3.org/TYPO3v4/Extensions/roq_redirect
+.. _http://forge.typo3.org/projects/extension-roq_redirect/roadmap: http://forge.typo3.org/projects/extension-roq_redirect/roadmap
+.. _http://www.roquin.nl/roq-redirect/: http://www.roquin.nl/roq-redirect/

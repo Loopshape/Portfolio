@@ -1,12 +1,42 @@
 PAGE_TARGET = 2
 content.pageFrameObj = mainframe
-styles.content.getNews.newsPid = 4
 styles.content.imgtext.maxWInText = 0
 styles.content.imgtext.linkWrap.width = 800
 styles.content.imgtext.colSpace = 30
-styles.content.loginform.pid = 2
+styles.content.loginform.pid = 10
 styles.content.imgtext.textMargin = 15
 styles.content.imgtext.rowSpace = 30
 styles.content.imgtext.borderSpace = 15
 content.spaceBefore = 0
 content.spaceAfter = 15
+HOST_DEV = loop.arcturus.uberspace.de/hostweb/
+plugin.tx_staticinfotables_pi1.countryCode = DEU
+plugin.tx_staticinfotables_pi1.countryZoneCode = HH
+plugin.tx_staticinfotables_pi1.languageCode = DE
+styles.content.getNews.newsPid = 13
+plugin.tx_news.settings.cropMaxCharacters = 255
+plugin.tx_cbnewscal.settings.firstDayOfWeek = 1
+plugin.ajaxpagepreloader.view.BackgroundColor = white
+plugin.metaseo.metaTags.copyright = (c)Loopshape 2015
+plugin.metaseo.metaTags.revisit = 0
+plugin.metaseo.metaTags.email = awebgo.net@gmail.com
+plugin.metaseo.metaTags.author = Arjuna Noorsanto
+plugin.metaseo.metaTags.publisher = Loopshape Web-Development
+plugin.metaseo.metaTags.language = de
+plugin.metaseo.metaTags.geoRegion = EU
+plugin.metaseo.metaTags.description = Loopshape • Web Development + Media Design
+plugin.metaseo.metaTags.keywords = web,development,media,design,index,crawler,portal
+plugin.metaseo.metaTags.geoPlacename = Germany
+sourceopt.formatHtml.tabSize = 4
+sourceopt.headerComment = Loopshape • Powered by TYPO3
+df_foundation5.enableJs.enable-jquery = no
+## PID der Ergebnisseite
+plugin.tx_indexedsearch.searchUID = 2
+## Teilwortsuche deaktivieren
+plugin.tx_indexedsearch._DEFAULT_PI_VARS.type = 0
+## Anzahl Ergebnisse je Seite
+plugin.tx_indexedsearch._DEFAULT_PI_VARS.results = 10
+plugin.cb_indexedsearch_autocomplete.jQueryLoadedExternally = 1
+plugin.cb_indexedsearch_autocomplete.cssLoadedExternally = 0
+plugin.tx_t3less.files.pathToLessFiles = fileadmin/themes/loopshape/assets/styles/less
+plugin.tx_t3less.files.outputFolder = fileadmin/themes/loopshape/assets/styles/css

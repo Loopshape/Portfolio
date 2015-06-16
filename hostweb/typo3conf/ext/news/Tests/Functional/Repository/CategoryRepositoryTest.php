@@ -15,7 +15,6 @@ namespace GeorgRinger\News\Tests\Unit\Functional\Repository;
  */
 
 
-use TYPO3\CMS\Core\Database\DatabaseConnection;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -26,17 +25,17 @@ class CategoryRepositoryTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	/** @var \TYPO3\CMS\Extbase\Object\ObjectManagerInterface The object manager */
 	protected $objectManager;
 
-	/** @var  \Tx_News_Domain_Repository_CategoryRepository */
+	/** @var  \GeorgRinger\News\Domain\Repository\CategoryRepository */
 	protected $categoryRepository;
 
 	protected $testExtensionsToLoad = array('typo3conf/ext/news');
 
 	public function setUp() {
 		parent::setUp();
-		$this->objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-		$this->categoryRepository = $this->objectManager->get('Tx_News_Domain_Repository_NewsRepository');
+		$this->objectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+		$this->categoryRepository = $this->objectManager->get('GeorgRinger\\News\\Domain\\Repository\\CategoryRepository');
 
-		$this->importDataSet(__DIR__ . '/../Fixtures/tx_news_domain_model_category.xml');
+		$this->importDataSet(__DIR__ . '/../Fixtures/sys_category.xml');
 	}
 
 

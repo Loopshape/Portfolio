@@ -459,6 +459,39 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = \
 
 
 /**
+ * Extension: sv
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/sv/ext_localconf.php
+ */
+
+$_EXTKEY = 'sv';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+// Register base authentication service
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addService(
+	'sv',
+	'auth',
+	\TYPO3\CMS\Sv\AuthenticationService::class,
+	array(
+		'title' => 'User authentication',
+		'description' => 'Authentication with username/password.',
+		'subtype' => 'getUserBE,authUserBE,getUserFE,authUserFE,getGroupsFE,processLoginDataBE,processLoginDataFE',
+		'available' => TRUE,
+		'priority' => 50,
+		'quality' => 50,
+		'os' => '',
+		'exec' => '',
+		'className' => \TYPO3\CMS\Sv\AuthenticationService::class
+	)
+);
+// Add hooks to the backend login form
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/index.php']['loginFormHook']['sv'] = \TYPO3\CMS\Sv\LoginFormHook::class . '->getLoginFormTag';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/index.php']['loginScriptHook']['sv'] = \TYPO3\CMS\Sv\LoginFormHook::class . '->getLoginScripts';
+
+
+/**
  * Extension: saltedpasswords
  * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/saltedpasswords/ext_localconf.php
  */
@@ -500,39 +533,6 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Salte
 	'description' => 'LLL:EXT:saltedpasswords/locallang.xlf:ext.saltedpasswords.tasks.bulkupdate.description',
 	'additionalFields' => \TYPO3\CMS\Saltedpasswords\Task\BulkUpdateFieldProvider::class
 );
-
-
-/**
- * Extension: sv
- * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/sv/ext_localconf.php
- */
-
-$_EXTKEY = 'sv';
-$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
-
-
-defined('TYPO3_MODE') or die();
-
-// Register base authentication service
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addService(
-	'sv',
-	'auth',
-	\TYPO3\CMS\Sv\AuthenticationService::class,
-	array(
-		'title' => 'User authentication',
-		'description' => 'Authentication with username/password.',
-		'subtype' => 'getUserBE,authUserBE,getUserFE,authUserFE,getGroupsFE,processLoginDataBE,processLoginDataFE',
-		'available' => TRUE,
-		'priority' => 50,
-		'quality' => 50,
-		'os' => '',
-		'exec' => '',
-		'className' => \TYPO3\CMS\Sv\AuthenticationService::class
-	)
-);
-// Add hooks to the backend login form
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/index.php']['loginFormHook']['sv'] = \TYPO3\CMS\Sv\LoginFormHook::class . '->getLoginFormTag';
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/index.php']['loginScriptHook']['sv'] = \TYPO3\CMS\Sv\LoginFormHook::class . '->getLoginScripts';
 
 
 /**
@@ -971,6 +971,137 @@ if (TYPO3_MODE === 'BE') {
 
 
 /**
+ * Extension: mediace
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/mediace/ext_localconf.php
+ */
+
+$_EXTKEY = 'mediace';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+// Register additional content objects
+$GLOBALS['TYPO3_CONF_VARS']['FE']['ContentObjects']['MULTIMEDIA'] = \TYPO3\CMS\Mediace\ContentObject\MultimediaContentObject::class;
+$GLOBALS['TYPO3_CONF_VARS']['FE']['ContentObjects']['MEDIA']      = \TYPO3\CMS\Mediace\ContentObject\MediaContentObject::class;
+$GLOBALS['TYPO3_CONF_VARS']['FE']['ContentObjects']['SWFOBJECT']  = \TYPO3\CMS\Mediace\ContentObject\ShockwaveFlashObjectContentObject::class;
+$GLOBALS['TYPO3_CONF_VARS']['FE']['ContentObjects']['FLOWPLAYER'] = \TYPO3\CMS\Mediace\ContentObject\FlowPlayerContentObject::class;
+$GLOBALS['TYPO3_CONF_VARS']['FE']['ContentObjects']['QTOBJECT']   = \TYPO3\CMS\Mediace\ContentObject\QuicktimeObjectContentObject::class;
+
+// Register the "media" CType to the "New Content Element" wizard
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
+	mod.wizards.newContentElement.wizardItems {
+		special.elements.media {
+			icon = gfx/c_wiz/multimedia.gif
+			title = LLL:EXT:cms/layout/locallang_db_new_content_el.xlf:special_media_title
+			description = LLL:EXT:cms/layout/locallang_db_new_content_el.xlf:special_media_description
+			tt_content_defValues.CType = media
+		}
+		special.show := addToList(media)
+	}
+');
+
+// Add Default TypoScript for CType "media" and "multimedia" after default content rendering
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript('mediace', 'constants', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mediace/Configuration/TypoScript/constants.txt">', 'defaultContentRendering');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript('mediace', 'setup', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mediace/Configuration/TypoScript/setup.txt">', 'defaultContentRendering');
+
+if (TYPO3_MODE === 'FE') {
+	// Register the basic media wizard provider
+	\TYPO3\CMS\Mediace\MediaWizard\MediaWizardProviderManager::registerMediaWizardProvider(\TYPO3\CMS\Mediace\MediaWizard\MediaWizardProvider::class);
+}
+
+if (TYPO3_MODE === 'BE') {
+	// Register for hook to show preview of tt_content element of CType="multimedia" in page module
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['multimedia'] =
+		\TYPO3\CMS\Mediace\Hooks\PageLayoutView\MultimediaPreviewRenderer::class;
+}
+
+
+/**
+ * Extension: openid
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/openid/ext_localconf.php
+ */
+
+$_EXTKEY = 'openid';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+// Register OpenID processing service with TYPO3
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addService(
+	'openid',
+	'auth',
+	'tx_openid_service_process',
+	array(
+		'title' => 'OpenID Authentication',
+		'description' => 'OpenID processing login information service for Frontend and Backend',
+		'subtype' => 'processLoginDataBE,processLoginDataFE',
+		'available' => TRUE,
+		'priority' => 35,
+		// Must be lower than for \TYPO3\CMS\Sv\AuthenticationService (50) to let other processing take place before
+		'quality' => 50,
+		'os' => '',
+		'exec' => '',
+		'className' => \TYPO3\CMS\Openid\OpenidService::class
+	)
+);
+
+// Register OpenID authentication service with TYPO3
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addService(
+	'openid',
+	'auth',
+	'tx_openid_service',
+	array(
+		'title' => 'OpenID Authentication',
+		'description' => 'OpenID authentication service for Frontend and Backend',
+		'subtype' => 'getUserFE,authUserFE,getUserBE,authUserBE',
+		'available' => TRUE,
+		'priority' => 75,
+		// Must be higher than for \TYPO3\CMS\Sv\AuthenticationService (50) or \TYPO3\CMS\Sv\AuthenticationService will log failed login attempts
+		'quality' => 50,
+		'os' => '',
+		'exec' => '',
+		'className' => \TYPO3\CMS\Openid\OpenidService::class
+	)
+);
+
+// Register eID script that performs final FE user authentication. It will be called by the OpenID provider
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['tx_openid'] = 'EXT:openid/class.tx_openid_eid.php';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['setup']['accessLevelCheck'][\TYPO3\CMS\Openid\OpenidModuleSetup::class] = '';
+
+// Use popup window to refresh login instead of the AJAX relogin:
+$GLOBALS['TYPO3_CONF_VARS']['BE']['showRefreshLoginPopup'] = 1;
+
+
+/**
+ * Extension: recycler
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/recycler/ext_localconf.php
+ */
+
+$_EXTKEY = 'recycler';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+if (TYPO3_MODE === 'BE') {
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerAjaxHandler('RecyclerAjaxController::dispatch', \TYPO3\CMS\Recycler\Controller\RecyclerAjaxController::class . '->dispatch');
+}
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerAjaxHandler(
+	'RecyclerAjaxController::init',
+	\TYPO3\CMS\Recycler\Task\CleanerTask::class . '->init'
+);
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Recycler\Task\CleanerTask::class] = array(
+	'extension' => 'recycler',
+	'title' => 'LLL:EXT:recycler/Resources/Private/Language/locallang_tasks.xlf:cleanerTaskTitle',
+	'description' => 'LLL:EXT:recycler/Resources/Private/Language/locallang_tasks.xlf:cleanerTaskDescription',
+	'additionalFields' => \TYPO3\CMS\Recycler\Task\CleanerFieldProvider::class
+);
+
+
+/**
  * Extension: reports
  * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/reports/ext_localconf.php
  */
@@ -1286,6 +1417,110 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['rtehtmlarea']['plugins']['CopyPaste']['d
 
 
 /**
+ * Extension: scheduler
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/scheduler/ext_localconf.php
+ */
+
+$_EXTKEY = 'scheduler';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+// Register the Scheduler as a possible key for CLI calls
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['GLOBAL']['cliKeys']['scheduler'] = array(
+	'EXT:scheduler/cli/scheduler_cli_dispatch.php',
+	'_CLI_scheduler'
+);
+// Get the extensions's configuration
+$extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['scheduler']);
+// If sample tasks should be shown,
+// register information for the test and sleep tasks
+if (!empty($extConf['showSampleTasks'])) {
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Example\TestTask::class] = array(
+		'extension' => 'scheduler',
+		'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:testTask.name',
+		'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:testTask.description',
+		'additionalFields' => \TYPO3\CMS\Scheduler\Example\TestTaskAdditionalFieldProvider::class
+	);
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Example\SleepTask::class] = array(
+		'extension' => 'scheduler',
+		'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:sleepTask.name',
+		'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:sleepTask.description',
+		'additionalFields' => \TYPO3\CMS\Scheduler\Example\SleepTaskAdditionalFieldProvider::class
+	);
+}
+
+// Add caching framework garbage collection task
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\CachingFrameworkGarbageCollectionTask::class] = array(
+	'extension' => 'scheduler',
+	'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:cachingFrameworkGarbageCollection.name',
+	'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:cachingFrameworkGarbageCollection.description',
+	'additionalFields' => \TYPO3\CMS\Scheduler\Task\CachingFrameworkGarbageCollectionAdditionalFieldProvider::class
+);
+
+// Add task to index file in a storage
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\FileStorageIndexingTask::class] = array(
+	'extension' => 'scheduler',
+	'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:fileStorageIndexing.name',
+	'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:fileStorageIndexing.description',
+	'additionalFields' => \TYPO3\CMS\Scheduler\Task\FileStorageIndexingAdditionalFieldProvider::class
+);
+
+// Add task for extracting metadata from files in a storage
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\FileStorageExtractionTask::class] = array(
+	'extension' => 'scheduler',
+	'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:fileStorageExtraction.name',
+	'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:fileStorageExtraction.description',
+	'additionalFields' => \TYPO3\CMS\Scheduler\Task\FileStorageExtractionAdditionalFieldProvider::class
+
+);
+
+// Add recycler directory cleanup task. Windows is not supported
+// because "filectime" does not change after moving a file
+if (TYPO3_OS !== 'WIN') {
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\RecyclerGarbageCollectionTask::class] = array(
+		'extension' => 'scheduler',
+		'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:recyclerGarbageCollection.name',
+		'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:recyclerGarbageCollection.description',
+		'additionalFields' => \TYPO3\CMS\Scheduler\Task\RecyclerGarbageCollectionAdditionalFieldProvider::class
+	);
+}
+
+// Add table garbage collection task
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class] = array(
+	'extension' => 'scheduler',
+	'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:tableGarbageCollection.name',
+	'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:tableGarbageCollection.description',
+	'additionalFields' => \TYPO3\CMS\Scheduler\Task\TableGarbageCollectionAdditionalFieldProvider::class
+);
+
+// Initialize option array of table garbage collection task if not already done by some other extension or localconf.php
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options'])) {
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options'] = array();
+}
+
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables'])) {
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables'] = array();
+}
+
+// Register sys_log and sys_history table in table garbage collection task
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['sys_log'])) {
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['sys_log'] = array(
+		'dateField' => 'tstamp',
+		'expirePeriod' => 180
+	);
+}
+
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['sys_history'])) {
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['sys_history'] = array(
+		'dateField' => 'tstamp',
+		'expirePeriod' => 30
+	);
+}
+
+
+/**
  * Extension: sys_action
  * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/sys_action/ext_localconf.php
  */
@@ -1346,6 +1581,216 @@ if (TYPO3_MODE == 'BE') {
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/file_edit.php']['preOutputProcessingHook'][] = \TYPO3\CMS\T3editor\Hook\FileEditHook::class . '->preOutputProcessingHook';
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/file_edit.php']['postOutputProcessingHook'][] = \TYPO3\CMS\T3editor\Hook\FileEditHook::class . '->postOutputProcessingHook';
 }
+
+
+/**
+ * Extension: toctoc_comments
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/toctoc_comments/ext_localconf.php
+ */
+
+$_EXTKEY = 'toctoc_comments';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if (!defined ('TYPO3_MODE')) die('Access denied.');
+
+t3lib_extMgm::addPItoST43($_EXTKEY, 'pi1/class.toctoc_comments_pi1.php', '_pi1', 'list_type', 1);
+t3lib_extMgm::addPItoST43($_EXTKEY, 'pi2/class.toctoc_comments_felogin_pi1.php', '_pi1', 'list_type', 1);
+
+t3lib_extMgm::addLLrefForTCAdescr('xEXT_toctoc_comments', 'EXT:toctoc_comments/pi1/locallang_csh.xml');
+t3lib_extMgm::addLLrefForTCAdescr('tt_content.pi_flexform.toctoc_comments_pi1.list', 'EXT:toctoc_comments/pi1/locallang_csh.xml');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_toctoc_comments_ipbl_local=1
+');
+
+// TCEmain hook to remove comments if referenced item is removed
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass']['toctoc_comments'] = 'EXT:toctoc_comments/class.user_toctoc_comments_tcemain.php:user_toctoc_comments_tcemain';
+
+// Page module hook
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['toctoc_comments_pi1'][] = 'EXT:toctoc_comments/class.user_toctoc_comments_cms_layout.php:user_toctoc_comments_cms_layout->getExtensionSummary';
+
+// Add a hook to the login form
+if (t3lib_extMgm::isLoaded('rsaauth')) {
+	if (version_compare(TYPO3_version, '6.1', '>')) {
+		$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['toctoc_comments']['loginFormOnSubmitFuncs']['rsaauth'] = 'TYPO3\\CMS\\Rsaauth\\Hook\\FrontendLoginHook->loginFormHook';
+	} elseif (version_compare(TYPO3_version, '4.9', '>')) {
+		$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['toctoc_comments']['loginFormOnSubmitFuncs']['rsaauth'] = 'EXT:rsaauth/hooks/class.tx_rsaauth_feloginhook.php:TYPO3\\CMS\\Rsaauth\\Hook\\FrontendLoginHook->loginFormHook';
+	} else {
+		$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['toctoc_comments']['loginFormOnSubmitFuncs']['rsaauth'] = 'EXT:rsaauth/hooks/class.tx_rsaauth_feloginhook.php:tx_rsaauth_feloginhook->loginFormHook';
+	}
+}
+// eID
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['toctoc_comments'] = 'EXT:toctoc_comments/class.toctoc_comments_eID.php';
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['toctoc_comments_ajax'] = 'EXT:toctoc_comments/class.toctoc_comments_ajax.php';
+
+// Extra markers hook for tt_news
+if (t3lib_extMgm::isLoaded('tt_news')) {
+	$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_news']['extraItemMarkerHook'][$_EXTKEY] = 'EXT:toctoc_comments/class.user_toctoc_comments_ttnews.php:&user_toctoc_comments_ttnews';
+}
+
+// Register cache 'toctoc_comments_cache' just if TYPO3 4.3-4.5
+if (version_compare(TYPO3_version, '4.6', '<')) {
+	if (!is_array($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache'])) {
+		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache'] = array();
+	}
+
+	// Define string frontend as default frontend, this must be set with TYPO3 4.5 and below
+	// and overrides the default variable frontend of 4.6
+	if (!isset($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['frontend'])) {
+		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['frontend'] = 't3lib_cache_frontend_StringFrontend';
+	}
+
+	if (!isset($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['backend'])) {
+		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['backend'] = 't3lib_cache_backend_DbBackend';
+	}
+
+	// Define data and tags table for 4.5 and below (obsolete in 4.6)
+	if (!isset($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['options'])) {
+		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['options'] = array();
+	}
+
+	if (!isset($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['options']['cacheTable'])) {
+		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['options']['cacheTable'] = 'tx_toctoc_comments_cache';
+	}
+
+	if (!isset($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['options']['tagsTable'])) {
+		$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['toctoc_comments_cache']['options']['tagsTable'] = 'tx_toctoc_comments_cache_tags';
+	}
+}
+
+
+
+
+/**
+ * Extension: rn_base
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/rn_base/ext_localconf.php
+ */
+
+$_EXTKEY = 'rn_base';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+
+$rnbaseExtPath = t3lib_extMgm::extPath('rn_base');
+
+require_once($rnbaseExtPath . 'class.tx_rnbase.php');
+tx_rnbase::load('tx_rnbase_util_Debug');
+tx_rnbase::load('tx_rnbase_configurations');
+if(!is_array($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['rnbase']) &&
+	tx_rnbase_configurations::getExtensionCfgValue('rn_base', 'activateCache') ) {
+	$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['rnbase'] = array(
+		'backend' => 't3lib_cache_backend_FileBackend',
+		'options' => array(
+		)
+	);
+}
+
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['rn_base']['loadHiddenObjects'] = intval(tx_rnbase_configurations::getExtensionCfgValue('rn_base', 'loadHiddenObjects'));
+
+
+// Include the mediaplayer service
+require_once($rnbaseExtPath.'sv1/ext_localconf.php');
+
+
+/**
+ * Extension: t3socials
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/t3socials/ext_localconf.php
+ */
+
+$_EXTKEY = 't3socials';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined('TYPO3_MODE')) {
+	die('Access denied.');
+}
+
+require_once t3lib_extMgm::extPath('rn_base', 'class.tx_rnbase.php');
+
+/* *** ***************** *** *
+ * *** Register Networks *** *
+ * *** ***************** *** */
+tx_rnbase::load('tx_t3socials_network_Config');
+tx_t3socials_network_Config::registerNetwork(
+	'tx_t3socials_network_pushd_NetworkConfig'
+);
+tx_t3socials_network_Config::registerNetwork(
+	'tx_t3socials_network_twitter_NetworkConfig'
+);
+tx_t3socials_network_Config::registerNetwork(
+	'tx_t3socials_network_xing_NetworkConfig'
+);
+tx_t3socials_network_Config::registerNetwork(
+	'tx_t3socials_network_facebook_NetworkConfig'
+);
+
+
+/* *** **************** *** *
+ * *** Register Trigger *** *
+ * *** **************** *** */
+tx_rnbase::load('tx_t3socials_trigger_Config');
+tx_t3socials_trigger_Config::registerTrigger(
+	'tx_t3socials_trigger_news_TriggerConfig'
+);
+
+/* *** ****************** *** *
+ * *** HybridAuth (FE/BE) *** *
+ * *** ****************** *** */
+// ajax id for BE
+$GLOBALS['TYPO3_CONF_VARS']['BE']['AJAX']['t3socials-hybridauth']
+	= t3lib_extMgm::extPath('t3socials', 'network/hybridauth/class.tx_t3socials_network_hybridauth_OAuthCall.php') .
+		':tx_t3socials_network_hybridauth_OAuthCall->ajaxId';
+
+/* *** ***** *** *
+ * *** Hooks *** *
+ * *** ***** *** */
+// TCE-Hooks, um automatisch beim speichern trigger aufzurufen
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['t3socials']
+	= 'EXT:t3socials/hooks/class.tx_t3socials_hooks_TCEHook.php:tx_t3socials_hooks_TCEHook';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass']['t3socials']
+	= 'EXT:t3socials/hooks/class.tx_t3socials_hooks_TCEHook.php:tx_t3socials_hooks_TCEHook';
+
+/* *** ***************** *** *
+ * *** Register Services *** *
+ * *** ***************** *** */
+tx_rnbase::load('tx_t3socials_srv_ServiceRegistry');
+t3lib_extMgm::addService($_EXTKEY, 't3socials' /* sv type */, 'tx_t3socials_srv_Network' /* sv key */,
+	array(
+		'title' => 'Social network accounts', 'description' => 'Handles accounts of social networks', 'subtype' => 'network',
+		'available' => TRUE, 'priority' => 50, 'quality' => 50,
+		'os' => '', 'exec' => '',
+		'classFile' => t3lib_extMgm::extPath($_EXTKEY, 'srv/class.tx_t3socials_srv_Network.php'),
+		'className' => 'tx_t3socials_srv_Network',
+	)
+);
+
+/* *** ****************** *** *
+ * *** System Enviromends *** *
+ * *** ****************** *** */
+defined('TAB') || define('TAB', chr(9));
+defined('LF') || define('LF', chr(10));
+defined('CR') || define('CR', chr(13));
+defined('CRLF') || define('CRLF', CR . LF);
+
+
+/**
+ * Extension: t3_less
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/t3_less/ext_localconf.php
+ */
+
+$_EXTKEY = 't3_less';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if( !defined( 'TYPO3_MODE' ) )
+{
+	die( 'Access denied.' );
+}
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][] = 'EXT:t3_less/Classes/Controller/BaseController.php:DG\\T3Less\\Controller\\BaseController->baseAction';
+
+
 
 
 /**
@@ -1509,6 +1954,21 @@ if (TYPO3_MODE == 'FE') {
 
 
 /**
+ * Extension: source_publisher
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/source_publisher/ext_localconf.php
+ */
+
+$_EXTKEY = 'source_publisher';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ("TYPO3_MODE")) 	die ("Access denied.");
+
+t3lib_extMgm::addPItoST43($_EXTKEY,"pi1/class.tx_sourcepublisher_pi1.php","_pi1","CType",1);
+
+
+
+/**
  * Extension: realurl
  * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/realurl/ext_localconf.php
  */
@@ -1554,6 +2014,293 @@ define('TX_REALURL_SEGTITLEFIELDLIST_DEFAULT', 'tx_realurl_pathsegment,alias,nav
 define('TX_REALURL_SEGTITLEFIELDLIST_PLO', 'tx_realurl_pathsegment,nav_title,title,uid');
 
 
+
+
+/**
+ * Extension: powermail
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/powermail/ext_localconf.php
+ */
+
+$_EXTKEY = 'powermail';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+/**
+ * Enable caching for show action in form controller
+ */
+$uncachedFormActions = 'form';
+if (\In2code\Powermail\Utility\Configuration::isEnableCachingActive()) {
+	$uncachedFormActions = '';
+}
+$uncachedFormActions .= ', create, confirmation, optinConfirm, marketing';
+
+/**
+ * Include Frontend Plugins for Powermail
+ */
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'In2code.' . $_EXTKEY,
+	'Pi1',
+	array(
+		'Form' => 'form, create, confirmation, optinConfirm, marketing'
+	),
+	array(
+		'Form' => $uncachedFormActions
+	)
+);
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'In2code.' . $_EXTKEY,
+	'Pi2',
+	array(
+		'Output' => 'list, show, edit, update, export, rss, delete'
+	),
+	array(
+		'Output' => 'list, edit, update, export, rss, delete'
+	)
+);
+
+/**
+ * Hook to show PluginInfo
+ */
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info'][$_EXTKEY . '_pi1'][$_EXTKEY] =
+	'EXT:' . $_EXTKEY . '/Classes/Utility/Hook/PluginInformation.php:In2code\Powermail\Utility\Hook\PluginInformation->build';
+
+/**
+ * Hook for first fill of marker field in backend
+ */
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =
+	'EXT:' . $_EXTKEY . '/Classes/Utility/Hook/InitialMarker.php:In2code\Powermail\Utility\Hook\InitialMarker';
+
+/**
+ * JavaScript evaluation of TCA fields
+ */
+$TYPO3_CONF_VARS['SC_OPTIONS']['tce']['formevals']['\In2code\Powermail\Utility\Tca\EvaluateEmail'] =
+	'EXT:powermail/Classes/Utility/Tca/EvaluateEmail.php';
+
+/**
+ * eID to get location from geo coordinates
+ */
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['powermailEidGetLocation'] =
+	'EXT:powermail/Classes/Utility/Eid/GetLocationEid.php';
+
+/**
+ * eID to store marketing information
+ */
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['powermailEidMarketing'] =
+	'EXT:powermail/Classes/Utility/Eid/MarketingEid.php';
+
+/**
+ * CommandController for powermail tasks
+ */
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] =
+	'In2code\\Powermail\\Command\\TaskCommandController';
+
+
+/**
+ * Extension: nxindexedsearch
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/nxindexedsearch/ext_localconf.php
+ */
+
+$_EXTKEY = 'nxindexedsearch';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+
+t3lib_extMgm::addPItoST43($_EXTKEY,'pi1/class.tx_nxindexedsearch_pi1.php','_pi1','CType',1);
+
+
+
+/**
+ * Extension: newsletter
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/newsletter/ext_localconf.php
+ */
+
+$_EXTKEY = 'newsletter';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
+}
+
+// Includes typoscript files
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:newsletter/Configuration/TypoScript/setup.txt">');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptConstants('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:newsletter/Configuration/TypoScript/constants.txt">');
+
+// Register keys for CLI
+$TYPO3_CONF_VARS['SC_OPTIONS']['GLOBAL']['cliKeys']['newsletter_bounce'] = array('EXT:newsletter/cli/bounce.php', '_CLI_scheduler');
+
+/**
+ * Configure FE plugin element "TABLE"
+ */
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'Ecodev.' . $_EXTKEY, 'p', array(// list of controller
+    'Email' => 'show, opened',
+    'Link' => 'clicked',
+    'RecipientList' => 'unsubscribe, export',
+        ), array(// non-cacheable controller
+    'Email' => 'show, opened, unsubscribe',
+    'Link' => 'clicked',
+    'RecipientList' => 'export',
+        )
+);
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['Ecodev\\Newsletter\\Task\\SendEmails'] = array(
+    'extension' => $_EXTKEY,
+    'title' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang.xlf:task_send_emails_title',
+    'description' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang.xlf:task_send_emails_description',
+);
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['Ecodev\\Newsletter\\Task\\FetchBounces'] = array(
+    'extension' => $_EXTKEY,
+    'title' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang.xlf:task_fetch_bounces_title',
+    'description' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang.xlf:task_fetch_bounces_description',
+);
+
+
+/**
+ * Extension: news
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/news/ext_localconf.php
+ */
+
+$_EXTKEY = 'news';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+$boot = function ($packageKey) {
+	// Extension manager configuration
+	$configuration = \GeorgRinger\News\Utility\EmConfiguration::getSettings();
+
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+		'GeorgRinger.news',
+		'Pi1',
+		array(
+			'News' => 'list,detail,dateMenu,searchForm,searchResult',
+			'Category' => 'list',
+			'Tag' => 'list',
+		),
+		array(
+			'News' => 'searchForm,searchResult',
+		)
+	);
+
+	// Page module hook
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['news' . '_pi1']['news'] =
+		'GeorgRinger\\News\\Hooks\\PageLayoutView->getExtensionSummary';
+
+	// Preview of news records
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['news'] =
+		'GeorgRinger\\News\\Hooks\\DataHandler';
+
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc']['news_clearcache'] =
+		'GeorgRinger\\News\\Hooks\\DataHandler->clearCachePostProc';
+
+	// Edit restriction for news records
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass']['news'] =
+		'GeorgRinger\\News\\Hooks\\DataHandler';
+
+	// FormEngine: Rendering of fields
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms.php']['getSingleFieldClass']['news'] =
+		'GeorgRinger\\News\\Hooks\\FormEngine';
+
+	// FormEngine: Rendering of the whole FormEngine
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms.php']['getMainFieldsClass']['news'] =
+		'GeorgRinger\\News\\Hooks\\FormEngine';
+
+	// Modify flexform values
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_befunc.php']['getFlexFormDSClass']['news'] =
+		'GeorgRinger\\News\\Hooks\\BackendUtility';
+
+	// Inline records hook
+	if ($configuration->getUseFal()) {
+		$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms_inline.php']['tceformsInlineHook']['news'] =
+			'GeorgRinger\\News\\Hooks\\InlineElementHook';
+	}
+
+	/* ===========================================================================
+		Custom cache, done with the caching framework
+	=========================================================================== */
+	if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category'])) {
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category'] = array();
+	}
+	// Define string frontend as default frontend, this must be set with TYPO3 4.5 and below
+	// and overrides the default variable frontend of 4.6
+	if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category']['frontend'])) {
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category']['frontend'] = 'TYPO3\CMS\Core\Cache\Frontend\StringFrontend';
+	}
+
+
+	/* ===========================================================================
+		Add soft reference parser
+	=========================================================================== */
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['GLOBAL']['softRefParser']['news_externalurl'] = 'GeorgRinger\\News\\Database\\SoftReferenceIndex';
+
+	/* ===========================================================================
+		Add TSconfig
+	=========================================================================== */
+		// For linkvalidator
+	if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('linkvalidator')) {
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TSconfig/Page/mod.linkvalidator.txt">');
+	}
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:news/Configuration/TSconfig/ContentElementWizard.txt">');
+
+	/* ===========================================================================
+		Hooks
+	=========================================================================== */
+	if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('realurl')) {
+		$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration']['news'] =
+			'GeorgRinger\\News\\Hooks\\RealUrlAutoConfiguration->addNewsConfig';
+	}
+
+	/* ===========================================================================
+		Update scripts
+	=========================================================================== */
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['news_fal'] = 'GeorgRinger\\News\\Updates\\FalUpdateWizard';
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['news_mm'] = 'GeorgRinger\\News\\Updates\\TtContentRelation';
+
+
+	// Register cache frontend for proxy class generation
+	$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['news'] = array(
+		'frontend' => 'TYPO3\\CMS\\Core\\Cache\\Frontend\\PhpFrontend',
+		'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\FileBackend',
+		'groups' => array(
+			'all',
+			'system',
+		),
+		'options' => array(
+			'defaultLifetime' => 0,
+		),
+	);
+	\GeorgRinger\News\Utility\ClassLoader::registerAutoloader();
+};
+
+$boot($_EXTKEY);
+unset($boot);
+
+
+/**
+ * Extension: news_ttnewsimport
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/news_ttnewsimport/ext_localconf.php
+ */
+
+$_EXTKEY = 'news_ttnewsimport';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+if (TYPO3_MODE === 'BE') {
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = 'BeechIt\\NewsTtnewsimport\\Command\\TtNewsPluginMigrateCommandController';
+}
 
 
 /**
@@ -1653,6 +2400,130 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['Metaseo\\Metase
     'title'       => 'Sitemap.txt builder',
     'description' => 'Build sitemap txt as static file (in uploads/tx_metaseo/sitemap-txt/)'
 );
+
+
+/**
+ * Extension: iconfont
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/iconfont/ext_localconf.php
+ */
+
+$_EXTKEY = 'iconfont';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) die ('Access denied.');
+
+// --- Get extension configuration ---
+$extConf = array();
+if ( strlen($_EXTCONF) ) {
+	$extConf = unserialize($_EXTCONF);
+}
+
+// --- Icon font key/name --
+$iconFont = $extConf['iconFont'];
+
+// --- Add RTE plugin --
+//
+switch ( $iconFont ) {
+	case 'fontawesome':
+		$TYPO3_CONF_VARS['EXTCONF']['rtehtmlarea']['plugins']['InsertIcon'] = array();
+		$TYPO3_CONF_VARS['EXTCONF']['rtehtmlarea']['plugins']['InsertIcon']['objectReference'] = '&Laxap\\Iconfont\\Extension\\InsertIcon';
+		$TYPO3_CONF_VARS['EXTCONF']['rtehtmlarea']['plugins']['InsertIcon']['addIconsToSkin'] = 1;
+		$TYPO3_CONF_VARS['EXTCONF']['rtehtmlarea']['plugins']['InsertIcon']['disableInFE'] = 0;
+		break;
+
+	case 'fontello':
+		$TYPO3_CONF_VARS['EXTCONF']['rtehtmlarea']['plugins']['InsertFontelloIcon'] = array();
+		$TYPO3_CONF_VARS['EXTCONF']['rtehtmlarea']['plugins']['InsertFontelloIcon']['objectReference'] = '&Laxap\\Iconfont\\Extension\\InsertFontelloIcon';
+		$TYPO3_CONF_VARS['EXTCONF']['rtehtmlarea']['plugins']['InsertFontelloIcon']['addIconsToSkin'] = 1;
+		$TYPO3_CONF_VARS['EXTCONF']['rtehtmlarea']['plugins']['InsertFontelloIcon']['disableInFE'] = 0;
+		break;
+}
+
+
+
+// --- Load default page TSconfig ---
+//
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:iconfont/Configuration/TypoScript/tsconfig.ts">');
+
+
+/**
+ * Extension: google_auth
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/google_auth/ext_localconf.php
+ */
+
+$_EXTKEY = 'google_auth';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+$TYPO3_CONF_VARS['EXTCONF']['google_auth']['setup'] = unserialize($_EXTCONF);
+
+$subTypes = array();
+if ($TYPO3_CONF_VARS['EXTCONF']['google_auth']['setup']['enableFE']) {
+	array_push($subTypes, 'getUserFE');
+	array_push($subTypes, 'authUserFE');
+	$GLOBALS['TYPO3_CONF_VARS']['SVCONF']['auth']['setup']['FE_fetchUserIfNoSession'] = '1';
+}
+
+if ($TYPO3_CONF_VARS['EXTCONF']['google_auth']['setup']['enableBE']) {
+	array_push($subTypes, 'getUserBE');
+	array_push($subTypes, 'authUserBE');
+	$GLOBALS['TYPO3_CONF_VARS']['SVCONF']['auth']['setup']['BE_fetchUserIfNoSession'] = '1';
+}
+
+if (count($subTypes) > 0) {
+	t3lib_extMgm::addService($_EXTKEY, 'auth', 'tx_googleauth_service_authentication',
+		array(
+			'title' => 'Google Authentification Service',
+			'description' => 'Provides authentication for FE and BE (enabled in extension configuration) through Google OAuth2',
+			'subtype' => implode(',', $subTypes),
+			'available' => TRUE,
+			'priority' => 20,
+			'quality' => 60,
+			'os' => '',
+			'exec' => '',
+			'classFile' => t3lib_extMgm::extPath($_EXTKEY).'Classes/Service/Authentication.php',
+			'className' => 'Tx_GoogleAuth_Service_Authentication',
+		)
+	);
+}
+unset($subTypes);
+
+if (!defined ('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+Tx_Extbase_Utility_Extension::configurePlugin(
+	$_EXTKEY,
+	'Auth',
+	array(
+		'Auth' => 'return, error',
+	),
+	array(
+		'Auth' => 'return, error',
+	)
+);
+
+if ($TYPO3_CONF_VARS['EXTCONF']['google_auth']['setup']['enableProfile']) {
+	Tx_Extbase_Utility_Extension::configurePlugin(
+		$_EXTKEY,
+		'Profile',
+		array(
+			'Profile' => 'mini, save',
+		),
+		array(
+			'Profile' => 'mini, save',
+		)
+	);
+}
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_userauth.php']['logoff_post_processing'][] = 'EXT:google_auth/Classes/UserFunction/Logoff.php:Tx_GoogleAuth_UserFunction_Logoff->logoff';
+
+
 
 
 /**
@@ -1846,111 +2717,98 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['tx_crawler_sche
 
 
 /**
- * Extension: news
- * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/news/ext_localconf.php
+ * Extension: cps_devlib
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/cps_devlib/ext_localconf.php
  */
 
-$_EXTKEY = 'news';
+$_EXTKEY = 'cps_devlib';
 $_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+	// Auto load extension classes
+	$extensionPath = t3lib_extMgm::extPath('cps_devlib') . 'lib/';
+
+	$autoloadFiles = array(
+		'tx_cpsdevlib_db' => $extensionPath.'class.tx_cpsdevlib_db.php',
+		'tx_cpsdevlib_debug' => $extensionPath.'class.tx_cpsdevlib_debug.php',
+		'tx_cpsdevlib_div' => $extensionPath.'class.tx_cpsdevlib_div.php',
+		'tx_cpsdevlib_extmgm' => $extensionPath.'class.tx_cpsdevlib_extmgm.php',
+		'tx_cpsdevlib_parser' => $extensionPath.'class.tx_cpsdevlib_parser.php',
+	);
+
+	foreach ($autoloadFiles as $key => $value) {
+		if (!class_exists($key)) {
+			if (file_exists($value)) {
+				require_once($value);
+			}
+		}
+	}
+
+
+
+/**
+ * Extension: cps_tcatree
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/cps_tcatree/ext_localconf.php
+ */
+
+$_EXTKEY = 'cps_tcatree';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+// register Ajax scripts
+$TYPO3_CONF_VARS['BE']['AJAX']['tceFormsItemTree::expandCollapse'] = t3lib_extMgm::extPath('cps_tcatree') . 'class.tx_cpstcatree.php:tx_cpstcatree->ajaxExpandCollapse';
+
+
+
+/**
+ * Extension: cps_searchhighlight
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/cps_searchhighlight/ext_localconf.php
+ */
+
+$_EXTKEY = 'cps_searchhighlight';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+
+//include and register own post-process hook class for processing of search highlighting
+$TYPO3_CONF_VARS['SC_OPTIONS']['tslib/class.tslib_fe.php']['isOutputting']['tx_cpssearchhighlight'] = 'CPSIT\\CpsSearchhighlight\\Hooks\\SearchhighlightProcess->main';
+
+//include and register own post-process hook class to get solr search terms as register
+if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['extconf']['solr'])) {
+	$TYPO3_CONF_VARS['EXTCONF']['solr']['modifyResultDocument']['searchWords'] = 'CPSIT\\CpsSearchhighlight\\Solr\\ResultsModifier\\SearchWords';
+}
+
+
+
+/**
+ * Extension: roq_newsevent
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/roq_newsevent/ext_localconf.php
+ */
+
+$_EXTKEY = 'roq_newsevent';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
 
 
 if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$boot = function($packageKey) {
-	// Extension manager configuration
-	$configuration = Tx_News_Utility_EmConfiguration::getSettings();
+// Page module hook
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['news_pi1'][$_EXTKEY] =
+	'EXT:' . $_EXTKEY . '/Classes/Hooks/CmsLayout.php:Tx_Roqnewsevent_Hooks_CmsLayout->getExtensionSummary';
 
-	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		$packageKey,
-		'Pi1',
-		array(
-			'News' => 'list,detail,dateMenu,searchForm,searchResult',
-			'Category' => 'list',
-			'Tag' => 'list',
-		),
-		array(
-			'News' => 'searchForm,searchResult',
-		)
-	);
-
-	// Page module hook
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info'][$packageKey . '_pi1'][$packageKey] =
-		'Tx_News_Hooks_CmsLayout->getExtensionSummary';
-
-	// Preview of news records
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][$packageKey] =
-		'Tx_News_Hooks_Tcemain';
-
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][$packageKey . '_clearcache'] =
-		'Tx_News_Hooks_Tcemain->clearCachePostProc';
-
-	// Edit restriction for news records
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass'][$packageKey] =
-		'Tx_News_Hooks_Tcemain';
-
-	// Tceforms: Rendering of fields
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms.php']['getSingleFieldClass'][$packageKey] =
-		'Tx_News_Hooks_Tceforms';
-
-	// Tceforms: Rendering of the whole Tceform
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms.php']['getMainFieldsClass'][] =
-		'Tx_News_Hooks_Tceforms';
-
-	// Modify flexform values
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_befunc.php']['getFlexFormDSClass'][$packageKey] =
-		'Tx_News_Hooks_T3libBefunc';
-
-	// Inline records hook
-	if ($configuration->getUseFal()) {
-		$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tceforms_inline.php']['tceformsInlineHook'][$packageKey] =
-			'Tx_News_Hooks_InlineElementHook';
-	}
-
-	/* ===========================================================================
-		Custom cache, done with the caching framework
-	=========================================================================== */
-	if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category'])) {
-		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category'] = array();
-	}
-	// Define string frontend as default frontend, this must be set with TYPO3 4.5 and below
-	// and overrides the default variable frontend of 4.6
-	if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category']['frontend'])) {
-		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_news_category']['frontend'] = 'TYPO3\CMS\Core\Cache\Frontend\StringFrontend';
-	}
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['switchableControllerActions']['newItems']['--div--'] = 'Events';
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['switchableControllerActions']['newItems']['News->eventList;News->eventDetail'] = 'List view';
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['switchableControllerActions']['newItems']['News->eventDetail'] = 'Detail view';
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['switchableControllerActions']['newItems']['News->eventDateMenu'] = 'Date menu';
 
 
-	/* ===========================================================================
-		Add soft reference parser
-	=========================================================================== */
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['GLOBAL']['softRefParser']['news_externalurl'] = '&Tx_News_Database_SoftReferenceIndex';
-
-	/* ===========================================================================
-		Add TSconfig
-	=========================================================================== */
-		// For linkvalidator
-	if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('linkvalidator')) {
-		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $packageKey . '/Configuration/TSconfig/Page/mod.linkvalidator.txt">');
-	}
-
-	/* ===========================================================================
-		Hooks
-	=========================================================================== */
-	if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('realurl')) {
-		$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/realurl/class.tx_realurl_autoconfgen.php']['extensionConfiguration'][$packageKey] =
-			'Tx_News_Hooks_RealUrlAutoConfiguration->addNewsConfig';
-	}
-
-	/* ===========================================================================
-		Update scripts
-	=========================================================================== */
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['news_fal'] = 'GeorgRinger\\News\\Updates\\FalUpdateWizard';
-
-};
-
-$boot($_EXTKEY);
-unset($boot);
 
 
 /**
@@ -1974,6 +2832,24 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php'][
 
 // Update fields in the flexform
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['Hooks/T3libBefunc.php']['updateFlexforms'][] = 'Cbrunet\CbNewscal\Hooks\T3libBefunc->updateFlexforms';
+
+
+/**
+ * Extension: cb_indexedsearch_autocomplete
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/cb_indexedsearch_autocomplete/ext_localconf.php
+ */
+
+$_EXTKEY = 'cb_indexedsearch_autocomplete';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+
+$TYPO3_CONF_VARS['EXTCONF']['indexed_search']['pi1_hooks']['initialize_postProc'] = 'EXT:cb_indexedsearch_autocomplete/pi1/class.tx_cb_indexedsearch_autocomplete_pi1.php:&tx_cb_indexedsearch_autocomplete_pi1';
+
+$TYPO3_CONF_VARS['FE']['eID_include']['cb_indexedsearch_autocomplete'] = 'EXT:cb_indexedsearch_autocomplete/pi1/fe_index.php';
+
+
 
 
 /**

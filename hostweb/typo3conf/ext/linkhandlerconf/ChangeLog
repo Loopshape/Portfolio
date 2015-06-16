@@ -1,0 +1,68 @@
+6.1.1
+  15-05-09
+  Improvement
+  * #i0010: news system (news)
+
+6.1.0
+  15-05-09
+  Feature
+  * #i0009: Configuration for news system (news)
+            Effected files:
+            * see #i0008
+  * #i0008: Configuration for sf_event_mgt
+            Thanks to Carsten Hager / Munich
+            Effected files:
+            * ext_conf_template.txt
+            * ext_tables.php
+            * static
+              * constants.txt
+              * setup.txt
+            * tsConfig
+              * tx_news_domain_model_news.php
+              * tx_sfeventmgt_domain_model_event.php
+
+6.0.1
+  14-12-06
+  Improvement
+  * #i0007: Providing linkhandler 1.1.0 for TYPO3 6.2
+
+6.0.0
+  14-09-16
+  Major Feature
+  * #61650: Upgrade TYPO3 6.2
+
+2.0.0
+  14-04-29
+  Feature
+  * #58341: Fit it into TYPO3 6.1
+
+1.0.2
+  13-09-16
+  Improvement
+  * #i0006: Updating the manual
+
+1.0.1
+  13-07-30
+  Feature
+  * #i0005: Out-of-the-box template for tt_products
+  Manual
+  * #i0004: Remove section "Conflict tt_news and AOE linkhandler"
+  Improvement
+  * #i0003: URL of calender base doesn't need any time value.
+            * Constant Additional parameters
+              is moved from
+              * &tx_cal_controller[view]=event&tx_cal_controller[type]=tx_cal_phpicalendar&tx_cal_controller[uid]={field:uid}&tx_cal_controller[getdate]={field:start_date}
+              to
+              * &tx_cal_controller[view]=event&tx_cal_controller[type]=tx_cal_phpicalendar&tx_cal_controller[uid]={field:uid}
+
+1.0.0
+  13-07-29
+  Manual
+  * #i0002: Finishing the manual
+  Development
+  * #i0001: Improve calendar base
+
+0.0.1
+  13-07-28
+  Dirk Wildt  <http://wildt.at.die-netzmacher.de>
+  * Initial Release

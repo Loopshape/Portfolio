@@ -7,6 +7,15 @@
 		<atom:link href="http://loop.arcturus.uberspace.de/blog/rss.xml" rel="self" type="application/rss+xml" />
 
 		<item>
+			<title>OctoberCMS mit eingebettetem TYPO3</title>
+			<link>http://loop.arcturus.uberspace.de/blog/post/octobercms-mit-eingebettetem-typo3</link>
+			<guid>http://loop.arcturus.uberspace.de/blog/post/octobercms-mit-eingebettetem-typo3</guid>
+			<pubDate>Tue, 02 Jun 2015 00:00:00 +0000</pubDate>
+			<description>&lt;h3&gt;OctoberCMS mit eingebettetem TYPO3&lt;/h3&gt;
+&lt;p&gt;Ich habe nun TYPO3 in das Octobersytem eingebettet. Damit verspreche ich mir ein umfangreiches Datenbanksystem für die Archivierung von Informationen aus dem Internet.&lt;/p&gt;
+&lt;p&gt;Zusätzlich zu den Content-Management-Systemen fungiert ein Composer/Node.JS-Dependency-System innerhalb des Backends, was diverse Features für die jeweilige Webentwicklung des Frontend-Systems optimiert und über OctoberCMS verwaltet wird.&lt;/p&gt;</description>
+		</item>
+		<item>
 			<title>Treeline.io • Create a NodeJS app with a browserinterface</title>
 			<link>http://loop.arcturus.uberspace.de/blog/post/treelineio-create-nodejs-app-browserinterface</link>
 			<guid>http://loop.arcturus.uberspace.de/blog/post/treelineio-create-nodejs-app-browserinterface</guid>
@@ -36,8 +45,8 @@
 			<guid>http://loop.arcturus.uberspace.de/blog/post/sailsjs-ein-mvc-framework-basierend-auf-nodejs</guid>
 			<pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
 			<description>&lt;h3&gt;SailsJS • Ein MVC framework basierend auf NodeJS&lt;/h3&gt;
-&lt;p&gt;SailsJS ist ideal für zB. die Erstellung einer Web-API oder ein minimales Web-Projekt für Backendspezialisten, die den Umgang mit NodeJS gewohnt sind.&lt;/p&gt;
-&lt;img class=&quot;hastip&quot; title=&quot;SailsJS ist ein Javascript MVC Framework und kann im Back- sowie Frontendbereich eingesetzt werden&quot; src=&quot;http://loop.arcturus.uberspace.de/storage/app/media/Websites/Sails_JS.png&quot; alt=&quot;&quot; /&gt;</description>
+&lt;p&gt;SailsJS ist ideal für zB. die Erstellung einer Web-API oder ein minimales Web-Projekt für Backendspezialisten, die den Umgang mit NodeJS gewohnt sind.&lt;br&gt;&lt;a class=&quot;external hastip&quot; title=&quot;SailsJS ist ein Javascript MVC Framework und kann im Back- sowie Frontendbereich eingesetzt werden&quot; href=&quot;http://sailsjs.org/&quot; alt=&quot;&quot;&gt;SailsJS Website-Link&lt;/a&gt;
+&lt;/p&gt;</description>
 		</item>
 		<item>
 			<title>Linux "Ubuntu" LAMP on Android - Part 1</title>

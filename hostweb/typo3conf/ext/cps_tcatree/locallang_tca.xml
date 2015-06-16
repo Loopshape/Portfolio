@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>language labels for cps_tcatree BE forms</description>
+		<type>database</type>
+		<csh_table></csh_table>
+		<fileId>EXT:cps_tcatree/locallang_tca.xml</fileId>
+		<labelContext type="array"></labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="cps_tcatree.treeview.allPages">[From all pages]</label>
+			<label index="cps_tcatree.treeview.noAccess">No access to table</label>
+		</languageKey>
+	</data>
+</T3locallang>

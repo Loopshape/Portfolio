@@ -1,0 +1,5 @@
+ACHTUNG:
+
+An HybridAuth wurden Code-Änderungen durchgeführt!
+Diese Änderungen wurden mit "dMK CHANGE!!!" markiert.
+Dies muss unbedingt bei einem Update von HybridAuth beachtet werden!

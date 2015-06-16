@@ -1,0 +1,188 @@
+plugin.linkhandlerconf {
+
+  # cat=Linkhandlerconf - Calendar Base (tx_cal_event)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManager]; label=Click for the note
+  tx_cal_event.promptExtensionManager=
+  # cat=Linkhandlerconf - Calendar Base (tx_cal_event)//101; type=int;    label= Pid*:*Obligate! Pid of the page with the single view
+  tx_cal_event.parameter =
+  # cat=Linkhandlerconf - Calendar Base (tx_cal_event)//102; type=string;  label= Additional parameters*:*Obligate! The default parameters are: view='event', type='tx_cal_phpicalendar', uid={field:uid}.
+  tx_cal_event.additionalParams = &tx_cal_controller[view]=event&tx_cal_controller[type]=tx_cal_phpicalendar&tx_cal_controller[uid]={field:uid}
+  # cat=Linkhandlerconf - Calendar Base (tx_cal_event)//103; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_cal_event.forceLink = 0
+  # cat=Linkhandlerconf - Calendar Base (tx_cal_event)//104; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_cal_event.useCacheHash = 1
+
+  # cat=Linkhandlerconf - Event management and registration (sf_event_mgt)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManager]; label=Click for the note
+  tx_sfeventmgt_domain_model_event.promptExtensionManager=
+  # cat=Linkhandlerconf - Event management and registration (sf_event_mgt)//101; type=int;    label= Pid*:*Obligate! Pid of the page with the single view
+  tx_sfeventmgt_domain_model_event.parameter =
+  # cat=Linkhandlerconf - Event management and registration (sf_event_mgt)//102; type=string;  label= Additional parameters*:*Obligate! The default parameters are: view='event', type='tx_cal_phpicalendar', uid={field:uid}.
+  tx_sfeventmgt_domain_model_event.additionalParams = &tx_sfeventmgt_pievent[event]={field:uid}&tx_sfeventmgt_pievent[action]=detail&tx_sfeventmgt_pievent[controller]=Event
+  # cat=Linkhandlerconf - Event management and registration (sf_event_mgt)//103; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_sfeventmgt_domain_model_event.forceLink = 0
+  # cat=Linkhandlerconf - Event management and registration (sf_event_mgt)//104; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_sfeventmgt_domain_model_event.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 01 (tx_mytable_01)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_01.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 01 (tx_mytable_01)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_01
+  tx_mytable_01.table = tx_mytable_01
+  # cat=Linkhandlerconf - My table 01 (tx_mytable_01)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_01.parameter =
+  # cat=Linkhandlerconf - My table 01 (tx_mytable_01)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_01.additionalParams = &tx_mytable_01[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 01 (tx_mytable_01)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_01.forceLink = 0
+  # cat=Linkhandlerconf - My table 01 (tx_mytable_01)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_01.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 02 (tx_mytable_02)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_02.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 02 (tx_mytable_02)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_02
+  tx_mytable_02.table = tx_mytable_02
+  # cat=Linkhandlerconf - My table 02 (tx_mytable_02)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_02.parameter =
+  # cat=Linkhandlerconf - My table 02 (tx_mytable_02)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_02.additionalParams = &tx_mytable_02[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 02 (tx_mytable_02)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_02.forceLink = 0
+  # cat=Linkhandlerconf - My table 02 (tx_mytable_02)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_02.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 03 (tx_mytable_03)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_03.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 03 (tx_mytable_03)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_03
+  tx_mytable_03.table = tx_mytable_03
+  # cat=Linkhandlerconf - My table 03 (tx_mytable_03)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_03.parameter =
+  # cat=Linkhandlerconf - My table 03 (tx_mytable_03)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_03.additionalParams = &tx_mytable_03[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 03 (tx_mytable_03)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_03.forceLink = 0
+  # cat=Linkhandlerconf - My table 03 (tx_mytable_03)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_03.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 04 (tx_mytable_04)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_04.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 04 (tx_mytable_04)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_04
+  tx_mytable_04.table = tx_mytable_04
+  # cat=Linkhandlerconf - My table 04 (tx_mytable_04)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_04.parameter =
+  # cat=Linkhandlerconf - My table 04 (tx_mytable_04)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_04.additionalParams = &tx_mytable_04[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 04 (tx_mytable_04)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_04.forceLink = 0
+  # cat=Linkhandlerconf - My table 04 (tx_mytable_04)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_04.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 05 (tx_mytable_05)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_05.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 05 (tx_mytable_05)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_05
+  tx_mytable_05.table = tx_mytable_05
+  # cat=Linkhandlerconf - My table 05 (tx_mytable_05)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_05.parameter =
+  # cat=Linkhandlerconf - My table 05 (tx_mytable_05)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_05.additionalParams = &tx_mytable_05[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 05 (tx_mytable_05)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_05.forceLink = 0
+  # cat=Linkhandlerconf - My table 05 (tx_mytable_05)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_05.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 06 (tx_mytable_06)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_06.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 06 (tx_mytable_06)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_06
+  tx_mytable_06.table = tx_mytable_06
+  # cat=Linkhandlerconf - My table 06 (tx_mytable_06)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_06.parameter =
+  # cat=Linkhandlerconf - My table 06 (tx_mytable_06)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_06.additionalParams = &tx_mytable_06[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 06 (tx_mytable_06)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_06.forceLink = 0
+  # cat=Linkhandlerconf - My table 06 (tx_mytable_06)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_06.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 07 (tx_mytable_07)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_07.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 07 (tx_mytable_07)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_07
+  tx_mytable_07.table = tx_mytable_07
+  # cat=Linkhandlerconf - My table 07 (tx_mytable_07)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_07.parameter =
+  # cat=Linkhandlerconf - My table 07 (tx_mytable_07)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_07.additionalParams = &tx_mytable_07[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 07 (tx_mytable_07)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_07.forceLink = 0
+  # cat=Linkhandlerconf - My table 07 (tx_mytable_07)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_07.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 08 (tx_mytable_08)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_08.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 08 (tx_mytable_08)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_08
+  tx_mytable_08.table = tx_mytable_08
+  # cat=Linkhandlerconf - My table 08 (tx_mytable_08)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_08.parameter =
+  # cat=Linkhandlerconf - My table 08 (tx_mytable_08)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_08.additionalParams = &tx_mytable_08[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 08 (tx_mytable_08)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_08.forceLink = 0
+  # cat=Linkhandlerconf - My table 08 (tx_mytable_08)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_08.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 09 (tx_mytable_09)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_09.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 09 (tx_mytable_09)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_09
+  tx_mytable_09.table = tx_mytable_09
+  # cat=Linkhandlerconf - My table 09 (tx_mytable_09)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_09.parameter =
+  # cat=Linkhandlerconf - My table 09 (tx_mytable_09)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_09.additionalParams = &tx_mytable_09[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 09 (tx_mytable_09)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_09.forceLink = 0
+  # cat=Linkhandlerconf - My table 09 (tx_mytable_09)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_09.useCacheHash = 1
+
+  # cat=Linkhandlerconf - My table 10 (tx_mytable_10)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManagerMyTable]; label=Click for the note
+  tx_mytable_10.promptExtensionManagerMyTable=
+  # cat=Linkhandlerconf - My table 10 (tx_mytable_10)//101; type=string;  label= Table*:*Obligate! Table with your records. I.e: tx_mytable_10
+  tx_mytable_10.table = tx_mytable_10
+  # cat=Linkhandlerconf - My table 10 (tx_mytable_10)//102; type=int;     label= Pid*:*Obligate! Pid of the page with the single view
+  tx_mytable_10.parameter =
+  # cat=Linkhandlerconf - My table 10 (tx_mytable_10)//103; type=string;  label= Additional parameters*:*Obligate!
+  tx_mytable_10.additionalParams = &tx_mytable_10[uid]={field:uid}
+  # cat=Linkhandlerconf - My table 10 (tx_mytable_10)//104; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_mytable_10.forceLink = 0
+  # cat=Linkhandlerconf - My table 10 (tx_mytable_10)//105; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_mytable_10.useCacheHash = 1
+
+  # cat=Linkhandlerconf - News (tt_news)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManager]; label=Click for the note
+  tt_news.promptExtensionManager=
+  # cat=Linkhandlerconf - News (tt_news)//101; type=int;    label= Pid*:*Obligate! Pid of the page with the single view
+  tt_news.parameter =
+  # cat=Linkhandlerconf - News (tt_news)//102; type=string;  label= Additional parameters*:*Obligate!
+  tt_news.additionalParams = &tx_ttnews[tt_news]={field:uid}
+  # cat=Linkhandlerconf - News (tt_news)//103; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tt_news.forceLink = 0
+  # cat=Linkhandlerconf - News (tt_news)//104; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tt_news.useCacheHash = 1
+
+  # cat=Linkhandlerconf - News System (news)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManager]; label=Click for the note
+  tx_news_domain_model_news.promptExtensionManager=
+  # cat=Linkhandlerconf - News System (news)//101; type=int;    label= Pid*:*Obligate! Pid of the page with the single view
+  tx_news_domain_model_news.parameter =
+  # cat=Linkhandlerconf - News System (news)//102; type=string;  label= Additional parameters*:*Obligate! The default parameters are: view='event', type='tx_cal_phpicalendar', uid={field:uid}.
+  tx_news_domain_model_news.additionalParams = &tx_news_pi1[news]={field:uid}&tx_news_pi1[controller]=News&tx_news_pi1[action]=detail
+  # cat=Linkhandlerconf - News System (news)//103; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tx_news_domain_model_news.forceLink = 0
+  # cat=Linkhandlerconf - News System (news)//104; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tx_news_domain_model_news.useCacheHash = 1
+
+  # cat=Linkhandlerconf - Shop System (tt_products)//100; type=user[EXT:linkhandlerconf/lib/class.tx_linkhandlerconf_extmanager.php:tx_linkhandlerconf_extmanager->promptExtensionManager]; label=Click for the note
+  tt_products.promptExtensionManager=
+  # cat=Linkhandlerconf - Shop System (tt_products)//101; type=int;    label= Pid*:*Obligate! Pid of the page with the single view
+  tt_products.parameter =
+  # cat=Linkhandlerconf - Shop System (tt_products)//102; type=string;  label= Additional parameters*:*Obligate!
+  tt_products.additionalParams = &tt_products[product]={field:uid}
+  # cat=Linkhandlerconf - Shop System (tt_products)//103; type=boolean; label= Force link:Not recommended: Render the link even if the record is hidden or deleted.
+  tt_products.forceLink = 0
+  # cat=Linkhandlerconf - Shop System (tt_products)//104; type=boolean; label= Use cash hash:Recommended: Append to the parameters a unique cash hash.
+  tt_products.useCacheHash = 1
+
+}

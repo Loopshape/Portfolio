@@ -1,0 +1,29 @@
+2014-03-26 EYE Communications AG  <info@eye.ch>
+
+	* UPD t3_tcpdf_config.php updated
+	* UPD tcpdf library updated (6.2.6)
+
+2014-05-12 EYE Communications AG  <info@eye.ch>
+
+	* UPD dependendies in ext_emconf.php updated (TYPO3)
+	* UPD t3_tcpdf_config.php updated
+	* UPD tcpdf library updated (6.0.077)
+
+2013-11-08 EYE Communications AG  <info@eye.ch>
+
+	* ADD ext_autoloader.php added
+	* UPD dependendies in ext_emconf.php updated (TYPO3 & PHP)
+	* UPD tcpdf library updated (6.0.043)
+
+2013-04-28 EYE Communications AG  <info@eye.ch>
+
+	* UPD tcpdf library updated (6.0.012)
+
+2012-04-16 EYE Communications AG  <info@eye.ch>
+
+	* ADD minimal documentation and code sample added (README.txt)
+	* CHG extension status changed to stable
+
+2011-11-10 EYE Communications AG  <info@eye.ch>
+
+	* initial version

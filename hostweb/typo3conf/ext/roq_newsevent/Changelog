@@ -1,0 +1,25 @@
+2013-08-28  Jochem de Groot <jochem@roquin.nl>
+    * Fixed documentation (plugin.tx_news.view.event) due to issue #51221 (thanks to Wolfgang Maschke)    
+        
+2013-07-16  Jochem de Groot <jochem@roquin.nl>
+    * Fixed bug #49651 due to TYPO3 6.1 compatibility (thanks to Sascha Treiber)
+    * Implemented suggestion #45882 (thanks to Georg Ringer)
+
+2012-10-08  Jochem de Groot <jochem@roquin.nl>
+    * Changed 'Event' type to an 'Is event' checkbox to also support the 'Internal Page' and 'External Page' news types for events.
+    * Added support for news event specific templates paths
+    * Lowered version dependency of News from 1.4.0 to 1.3.2 due to issue #40303
+
+2012-09-19  Jochem de Groot <jochem@roquin.nl>
+    * Fixed bug #41042
+    * Updated contact details
+
+2012-09-04  Jochem de Groot <jochem@roquin.nl>
+    * Added native support for more languages
+    * Minor fixes
+
+2012-08-28  Jochem de Groot <jochem@roquin.nl>
+    * Initial (public) version
+
+2012-07-24  Jochem de Groot <jochem@roquin.nl>
+    * Created initial version

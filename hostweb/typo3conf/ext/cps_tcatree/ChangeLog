@@ -1,0 +1,154 @@
+
+0.4.2
+  * Dirk Wildt, Die Netzmacher <http://wildt.at.die-netzmacher,de>
+  2014-09-16
+  Feature
+  * #61661: Extension Initialisation (Upgrade for TYPO3 6.2)
+            * require_once (PATH_t3lib)
+            Effected files:
+            * ext_emconf.php
+            * lib
+              * class.tx_cpstcatree_treeview.php
+
+0.4.1
+  * Dirk Wildt, Die Netzmacher <http://wildt.at.die-netzmacher,de>
+  2013-11-06
+  Feature
+  * #53379: t3lib_div::intInRange -> t3lib_utility_Math::forceIntegerInRange
+            Effected files:
+            * class.tx_cpstcatree.php
+
+2012-01-27 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.4.1
+
+2012-03-09 Nicole Cordes  <cordes@cps-it.de>
+
+	* Fixed problem with height="0px" (Thanks to Sven Burkert)
+
+2012-01-27 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.4.0
+
+2012-01-27 Nicole Cordes  <cordes@cps-it.de>
+
+	* Added support to configure height for tcatree div
+
+2012-01-26 Nicole Cordes  <cordes@cps-it.de>
+
+	* Added support for marker ###REC_FIELD_[fieldname]### in foreign_table_where
+
+2011-11-22 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.3.0
+
+2011-11-22 Nicole Cordes  <cordes@cps-it.de>
+
+	* Added output of webmounts for pages when no root page is accessible (and ignorePermsClause is false)
+	* Added new parameter ignorePermsClause for field configuration (in TCA) to show all pages even when no access was given
+
+2011-10-13 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.2.4
+
+2011-10-13 Nicole Cordes  <cordes@cps-it.de>
+
+	* Fixed table title output
+	* Fixed nested tree view if expandFirst is chosen
+
+2011-09-26 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.2.3
+
+2011-04-15 Nicole Cordes  <cordes@cps-it.de>
+
+	* Added proper generation of titles in relation to label and label_alt
+	* Added ->foreign_table_where to clause
+
+2011-04-15 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.2.2
+
+2011-04-15 Nicole Cordes  <cordes@cps-it.de>
+
+	* Fixed function for already selected items with no access
+	* Fixed function to generate the title
+	* Added uid to title tag for each item
+
+2011-04-15 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.2.1
+
+2011-04-15 Nicole Cordes  <cordes@cps-it.de>
+
+	* Added hook to manipulate treeViewObj->clause from any extension
+
+2011-04-12 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.2.0
+
+2011-04-12 Nicole Cordes  <cordes@cps-it.de>
+
+	* Fixed page TSConfig support for FlexForms (see manual)
+
+2011-04-11 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.1.6
+
+2011-04-11 Nicole Cordes  <cordes@cps-it.de>
+
+	* Added page TSConfig support (hideItems, keepItems, removeItems)
+	* Added integration of cps_devlib
+
+2011-04-05 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.1.5
+
+2011-04-05 Nicole Cordes  <cordes@cps-it.de>
+
+	* Fixed function ajaxExpandCollapse to work on new record pages
+
+2011-04-04 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.1.4
+
+2011-04-04 Nicole Cordes  <cordes@cps-it.de>
+
+	* Fixed function ajaxExpandCollapse to support TYPO3 < 4.5
+	* Updated manual
+
+2011-04-04 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.1.3
+
+2011-04-04 Nicole Cordes  <cordes@cps-it.de>
+
+	* Updated manual
+
+2011-04-02 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.1.2
+
+2011-04-02 Nicole Cordes  <cordes@cps-it.de>
+
+	* Added check for table access
+	* Added check for page access if table is 'pages'
+	* Added styled icons for tree items
+
+2011-04-01 Nicole Cordes  <cordes@cps-it.de>
+
+	* Fixed FlexForm integration for plugins
+
+2011-03-31 Nicole Cordes  <cordes@cps-it.de>
+
+	* Release of cps_tcatree 0.1.1
+
+2011-03-31 Nicole Cordes  <cordes@cps-it.de>
+
+	* Fixed JavaScript method to add item to selected box when a new record is added
+	*	Fixed tree view for non mm-related fields
+	* Added manual
+
+2011-03-30 Nicole Cordes  <cordes@cps-it.de>
+
+	* Initial release

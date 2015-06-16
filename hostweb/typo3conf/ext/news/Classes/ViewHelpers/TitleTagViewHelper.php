@@ -1,4 +1,7 @@
 <?php
+
+namespace GeorgRinger\News\ViewHelpers;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -25,7 +28,7 @@
  * </output>
  *
  */
-class Tx_News_ViewHelpers_TitleTagViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class TitleTagViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * Override the title tag
@@ -35,7 +38,7 @@ class Tx_News_ViewHelpers_TitleTagViewHelper extends \TYPO3\CMS\Fluid\Core\ViewH
 	public function render() {
 		$content = trim($this->renderChildren());
 		if (!empty($content)) {
-			$GLOBALS['TSFE']->page['title'] = $content;
+			$GLOBALS['TSFE']->altPageTitle = $content;
 			$GLOBALS['TSFE']->indexedDocTitle = $content;
 		}
 	}

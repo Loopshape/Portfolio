@@ -1,4 +1,7 @@
 <?php
+
+namespace GeorgRinger\News\MediaRenderer\Video;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -11,6 +14,7 @@
  *
  * The TYPO3 project - inspiring people to share!
  */
+use GeorgRinger\News\MediaRenderer\MediaInterface;
 
 /**
  * Implementation of youtube support
@@ -18,17 +22,30 @@
  * @package TYPO3
  * @subpackage tx_news
  */
-class Tx_News_MediaRenderer_Video_Youtube implements Tx_News_MediaRenderer_MediaInterface {
+class Youtube implements MediaInterface {
+
+	/**
+	 * @var \GeorgRinger\News\Service\SettingsService
+	 */
+	protected $pluginSettingsService;
+
+	/**
+	 * @var \GeorgRinger\News\Service\SettingsService $pluginSettingsService
+	 * @return void
+	 */
+	public function injectSettingsService(\GeorgRinger\News\Service\SettingsService $pluginSettingsService) {
+		$this->pluginSettingsService = $pluginSettingsService;
+	}
 
 	/**
 	 * Render videos from youtube
 	 *
-	 * @param Tx_News_Domain_Model_Media $element
+	 * @param \GeorgRinger\News\Domain\Model\Media $element
 	 * @param integer $width
 	 * @param integer $height
 	 * @return string
 	 */
-	public function render(Tx_News_Domain_Model_Media $element, $width, $height) {
+	public function render(\GeorgRinger\News\Domain\Model\Media $element, $width, $height) {
 		$content = '';
 
 		$url = $this->getYoutubeUrl($element);
@@ -54,10 +71,10 @@ class Tx_News_MediaRenderer_Video_Youtube implements Tx_News_MediaRenderer_Media
 	/**
 	 * Check if given element includes an url to a youtube video
 	 *
-	 * @param Tx_News_Domain_Model_Media $element
+	 * @param \GeorgRinger\News\Domain\Model\Media $element
 	 * @return boolean
 	 */
-	public function enabled(Tx_News_Domain_Model_Media $element) {
+	public function enabled(\GeorgRinger\News\Domain\Model\Media $element) {
 		$result = FALSE;
 
 		$url = $this->getYoutubeUrl($element);
@@ -70,10 +87,10 @@ class Tx_News_MediaRenderer_Video_Youtube implements Tx_News_MediaRenderer_Media
 
 
 	/**
-	 * @param Tx_News_Domain_Model_Media $element
+	 * @param \GeorgRinger\News\Domain\Model\Media $element
 	 * @return null|string
 	 */
-	public function getYoutubeUrl(Tx_News_Domain_Model_Media $element) {
+	public function getYoutubeUrl(\GeorgRinger\News\Domain\Model\Media $element) {
 		$videoId = NULL;
 		$youtubeUrl = NULL;
 
@@ -82,6 +99,12 @@ class Tx_News_MediaRenderer_Video_Youtube implements Tx_News_MediaRenderer_Media
 		}
 		if ($videoId) {
 			$youtubeUrl = '//www.youtube.com/embed/' . $videoId . '?fs=1&wmode=opaque';
+			$settings = $this->pluginSettingsService->getSettings();
+			if (isset($settings['mediaRenderer']) && isset($settings['mediaRenderer']['youtube'])
+				&& isset($settings['mediaRenderer']['youtube']['additionalParams'])
+			) {
+				$youtubeUrl .= $settings['mediaRenderer']['youtube']['additionalParams'];
+			}
 		}
 
 		return $youtubeUrl;

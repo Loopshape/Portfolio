@@ -1,4 +1,6 @@
 <?php
+namespace GeorgRinger\News\Controller;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -11,6 +13,8 @@
  *
  * The TYPO3 project - inspiring people to share!
  */
+use GeorgRinger\News\Domain\Model\Dto\Search;
+use GeorgRinger\News\Utility\Page;
 
 /**
  * Administration controller
@@ -18,7 +22,7 @@
  * @package TYPO3
  * @subpackage tx_news
  */
-class Tx_News_Controller_AdministrationController extends Tx_News_Controller_NewsController {
+class AdministrationController extends NewsController {
 
 	const SIGNAL_ADMINISTRATION_INDEX_ACTION = 'indexAction';
 	const SIGNAL_ADMINISTRATION_NEWSPIDLISTING_ACTION = 'newsPidListingAction';
@@ -38,7 +42,7 @@ class Tx_News_Controller_AdministrationController extends Tx_News_Controller_New
 	protected $tsConfiguration = array();
 
 	/**
-	 * @var Tx_News_Domain_Repository_CategoryRepository
+	 * @var \GeorgRinger\News\Domain\Repository\CategoryRepository
 	 */
 	protected $categoryRepository;
 
@@ -61,24 +65,24 @@ class Tx_News_Controller_AdministrationController extends Tx_News_Controller_New
 	/**
 	 * Inject a news repository to enable DI
 	 *
-	 * @param Tx_News_Domain_Repository_CategoryRepository $categoryRepository
+	 * @param \GeorgRinger\News\Domain\Repository\CategoryRepository $categoryRepository
 	 * @return void
 	 */
-	public function injectCategoryRepository(Tx_News_Domain_Repository_CategoryRepository $categoryRepository) {
+	public function injectCategoryRepository(\GeorgRinger\News\Domain\Repository\CategoryRepository $categoryRepository) {
 		$this->categoryRepository = $categoryRepository;
 	}
 
 	/**
 	 * Main action for administration
 	 *
-	 * @param Tx_News_Domain_Model_Dto_AdministrationDemand $demand
+	 * @param \GeorgRinger\News\Domain\Model\Dto\AdministrationDemand $demand
 	 * @dontvalidate  $demand
 	 * @return void
 	 */
-	public function indexAction(Tx_News_Domain_Model_Dto_AdministrationDemand $demand = NULL) {
+	public function indexAction(\GeorgRinger\News\Domain\Model\Dto\AdministrationDemand $demand = NULL) {
 		$this->redirectToPageOnStart();
 		if (is_null($demand)) {
-			$demand = $this->objectManager->get('Tx_News_Domain_Model_Dto_AdministrationDemand');
+			$demand = $this->objectManager->get('GeorgRinger\\News\\Domain\\Model\\Dto\\AdministrationDemand');
 
 			// Preselect by TsConfig (e.g. tx_news.module.preselect.topNewsRestriction = 1)
 			if (isset($this->tsConfiguration['preselect.'])
@@ -119,7 +123,7 @@ class Tx_News_Controller_AdministrationController extends Tx_News_Controller_New
 	 * @return void
 	 */
 	public function newsPidListingAction($treeLevel = 2) {
-		$tree = Tx_News_Utility_Page::pageTree($this->pageUid, $treeLevel);
+		$tree = Page::pageTree($this->pageUid, $treeLevel);
 
 		$rawTree = array();
 		foreach ($tree->tree as $row) {
@@ -166,15 +170,21 @@ class Tx_News_Controller_AdministrationController extends Tx_News_Controller_New
 	/**
 	 * Create the demand object which define which records will get shown
 	 *
-	 * @param Tx_News_Domain_Model_Dto_AdministrationDemand $demand
-	 * @return Tx_News_Domain_Model_Dto_NewsDemand
+	 * @param \GeorgRinger\News\Domain\Model\Dto\AdministrationDemand $demand
+	 * @return \GeorgRinger\News\Domain\Model\Dto\NewsDemand
 	 */
-	protected function createDemandObjectFromSettings(Tx_News_Domain_Model_Dto_AdministrationDemand $demand) {
+	protected function createDemandObjectFromSettings(\GeorgRinger\News\Domain\Model\Dto\AdministrationDemand $demand) {
 		$demand->setCategories($demand->getSelectedCategories());
 		$demand->setOrder($demand->getSortingField() . ' ' . $demand->getSortingDirection());
-		$demand->setStoragePage(Tx_News_Utility_Page::extendPidListByChildren($this->pageUid, (int)$demand->getRecursive()));
+		$demand->setStoragePage(Page::extendPidListByChildren($this->pageUid, (int)$demand->getRecursive()));
 		$demand->setOrderByAllowed($this->settings['orderByAllowed']);
 
+		if ($demand->getSearchWord()) {
+			$searchDto = new Search();
+			$searchDto->setSubject($demand->getSearchWord());
+			$searchDto->setFields('title');
+			$demand->setSearch($searchDto);
+		}
 		// Ensure that always a storage page is set
 		if ((int)$demand->getStoragePage() === 0) {
 			$demand->setStoragePage('-3');

@@ -1,7 +1,7 @@
 <?php
 if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
 
-t3lib_div::loadTCA('tt_content');
+//t3lib_div::loadTCA('tt_content');
 $TCA['tt_content']['types'][$_EXTKEY.'_pi1']['showitem']='CType;;4;button;1-1-1, header;;3;;2-2-2';
 
 
@@ -14,12 +14,12 @@ if (TYPO3_MODE=="BE") {
 /*
 $TCA["tx_nxindexedsearch_sources"] = Array (
 	"ctrl" => Array (
-		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_sources',		
-		'label' => 'uid',	
+		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_sources',
+		'label' => 'uid',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
-		"default_sortby" => "ORDER BY crdate",	
+		"default_sortby" => "ORDER BY crdate",
 		"dynamicConfigFile" => t3lib_extMgm::extPath($_EXTKEY)."tca.php",
 		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_nxindexedsearch_sources.gif",
 	),
@@ -30,12 +30,12 @@ $TCA["tx_nxindexedsearch_sources"] = Array (
 
 $TCA["tx_nxindexedsearch_searchindex"] = Array (
 	"ctrl" => Array (
-		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_searchindex',		
-		'label' => 'uid',	
+		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_searchindex',
+		'label' => 'uid',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
-		"default_sortby" => "ORDER BY crdate",	
+		"default_sortby" => "ORDER BY crdate",
 		"dynamicConfigFile" => t3lib_extMgm::extPath($_EXTKEY)."tca.php",
 		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_nxindexedsearch_searchindex.gif",
 	),
@@ -46,12 +46,12 @@ $TCA["tx_nxindexedsearch_searchindex"] = Array (
 
 $TCA["tx_nxindexedsearch_searchwords"] = Array (
 	"ctrl" => Array (
-		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_searchwords',		
-		'label' => 'uid',	
+		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_searchwords',
+		'label' => 'uid',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
-		"default_sortby" => "ORDER BY crdate",	
+		"default_sortby" => "ORDER BY crdate",
 		"dynamicConfigFile" => t3lib_extMgm::extPath($_EXTKEY)."tca.php",
 		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_nxindexedsearch_searchwords.gif",
 	),
@@ -62,12 +62,12 @@ $TCA["tx_nxindexedsearch_searchwords"] = Array (
 
 $TCA["tx_nxindexedsearch_searchtime"] = Array (
 	"ctrl" => Array (
-		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_searchtime',		
-		'label' => 'uid',	
+		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_searchtime',
+		'label' => 'uid',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
-		"default_sortby" => "ORDER BY crdate",	
+		"default_sortby" => "ORDER BY crdate",
 		"dynamicConfigFile" => t3lib_extMgm::extPath($_EXTKEY)."tca.php",
 		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_nxindexedsearch_searchtime.gif",
 	),

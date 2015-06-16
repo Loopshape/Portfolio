@@ -1,12 +1,10 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
-}
+defined('TYPO3_MODE') or die();
 
 $ll = 'LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:';
 
 // Extension manager configuration
-$configuration = \Tx_News_Utility_EmConfiguration::getSettings();
+$configuration = \GeorgRinger\News\Utility\EmConfiguration::getSettings();
 
 $teaserRteConfiguration = $configuration->getRteForTeaser() ? ';;;richtext::rte_transform[flag=rte_disabled|mode=ts_css]' : '';
 
@@ -279,7 +277,7 @@ $tx_news_domain_model_news = array(
 				'type' => 'select',
 				'renderMode' => 'tree',
 				'treeConfig' => array(
-					'dataProvider' => 'Tx_News_TreeProvider_DatabaseTreeDataProvider',
+					'dataProvider' => 'GeorgRinger\\News\\TreeProvider\\DatabaseTreeDataProvider',
 					'parentField' => 'parent',
 					'appearance' => array(
 						'showHeader' => TRUE,
@@ -515,7 +513,8 @@ $tx_news_domain_model_news = array(
 				'type' => 'inline',
 				'allowed' => 'tt_content',
 				'foreign_table' => 'tt_content',
-				'MM' => 'tx_news_domain_model_news_ttcontent_mm',
+				'foreign_sortby' => 'sorting',
+				'foreign_field' => 'tx_news_related_news',
 				'minitems' => 0,
 				'maxitems' => 99,
 				'appearance' => array(
@@ -554,7 +553,7 @@ $tx_news_domain_model_news = array(
 					'suggest' => array(
 						'type' => 'suggest',
 						'default' => array(
-							'receiverClass' => 'Tx_News_Hooks_SuggestReceiver'
+							'receiverClass' => 'GeorgRinger\\News\\Hooks\\SuggestReceiver'
 						),
 					),
 					'list' => array(
@@ -609,7 +608,7 @@ $tx_news_domain_model_news = array(
 		// default news
 		'0' => array(
 			'showitem' => 'l10n_parent, l10n_diffsource,
-					title;;paletteCore,;;;;2-2-2, teaser' . $teaserRteConfiguration . ',;;;;3-3-3,author;;paletteAuthor,datetime;;paletteArchive,
+					title;;paletteCore,teaser' . $teaserRteConfiguration . ',author;;paletteAuthor,datetime;;paletteArchive,
 					bodytext;;;richtext::rte_transform[flag=rte_disabled|mode=ts_css],
 					rte_disabled;LLL:EXT:cms/locallang_ttc.xlf:rte_enabled_formlabel,
 					content_elements,
@@ -627,7 +626,7 @@ $tx_news_domain_model_news = array(
 		// internal url
 		'1' => array(
 			'showitem' => 'l10n_parent, l10n_diffsource,
-					title;;paletteCore,;;;;2-2-2, teaser' . $teaserRteConfiguration . ',;;;;3-3-3,author;;paletteAuthor,datetime;;paletteArchive,internalurl,
+					title;;paletteCore, teaser' . $teaserRteConfiguration . ',author;;paletteAuthor,datetime;;paletteArchive,internalurl,
 
 				--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
 					--palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.access;paletteAccess,
@@ -642,7 +641,7 @@ $tx_news_domain_model_news = array(
 		// external url
 		'2' => array(
 			'showitem' => 'l10n_parent, l10n_diffsource,
-					title;;paletteCore,;;;;2-2-2, teaser' . $teaserRteConfiguration . ',;;;;3-3-3,author;;paletteAuthor,datetime;;paletteArchive,externalurl,
+					title;;paletteCore, teaser' . $teaserRteConfiguration . ',author;;paletteAuthor,datetime;;paletteArchive,externalurl,
 
 				--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
 					--palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.access;paletteAccess,

@@ -1,4 +1,6 @@
 <?php
+namespace GeorgRinger\News\Domain\Model;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -18,15 +20,15 @@
  * @package TYPO3
  * @subpackage tx_news
  */
-class Tx_News_Domain_Model_TtContent extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class TtContent extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-	 * @var DateTime
+	 * @var \DateTime
 	 */
 	protected $crdate;
 
 	/**
-	 * @var DateTime
+	 * @var \DateTime
 	 */
 	protected $tstamp;
 
@@ -142,7 +144,7 @@ class Tx_News_Domain_Model_TtContent extends \TYPO3\CMS\Extbase\DomainObject\Abs
 
 
 	/**
-	 * @return DateTime
+	 * @return \DateTime
 	 */
 	public function getCrdate() {
 		return $this->crdate;
@@ -157,7 +159,7 @@ class Tx_News_Domain_Model_TtContent extends \TYPO3\CMS\Extbase\DomainObject\Abs
 	}
 
 	/**
-	 * @return DateTime
+	 * @return \DateTime
 	 */
 	public function getTstamp() {
 		return $this->tstamp;

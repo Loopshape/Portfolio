@@ -1,5 +1,8 @@
 <?php
-/**
+
+namespace GeorgRinger\News\ViewHelpers;
+
+	/**
  * This file is part of the TYPO3 CMS project.
  *
  * It is free software; you can redistribute it and/or modify it under
@@ -11,6 +14,7 @@
  *
  * The TYPO3 project - inspiring people to share!
  */
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * ViewHelper to render meta tags
@@ -31,7 +35,7 @@
  * <meta name="keywords" content="news 1, news 2" />
  * </output>
  */
-class Tx_News_ViewHelpers_MetaTagViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
+class MetaTagViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper {
 
 	/**
 	 * @var string
@@ -60,14 +64,14 @@ class Tx_News_ViewHelpers_MetaTagViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHe
 	public function render($useCurrentDomain = FALSE, $forceAbsoluteUrl = FALSE) {
 		// set current domain
 		if ($useCurrentDomain) {
-			$this->tag->addAttribute('content', \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL'));
+			$this->tag->addAttribute('content', GeneralUtility::getIndpEnv('TYPO3_REQUEST_URL'));
 		}
 
 		// prepend current domain
 		if ($forceAbsoluteUrl) {
 			$path = $this->arguments['content'];
-			if (!\TYPO3\CMS\Core\Utility\GeneralUtility::isFirstPartOfStr($path, \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_SITE_URL'))) {
-				$this->tag->addAttribute('content', \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_SITE_URL') . $this->arguments['content']);
+			if (!GeneralUtility::isFirstPartOfStr($path, GeneralUtility::getIndpEnv('TYPO3_SITE_URL'))) {
+				$this->tag->addAttribute('content', rtrim(GeneralUtility::getIndpEnv('TYPO3_SITE_URL'), '/') . '/' . ltrim($this->arguments['content']), '/');
 			}
 		}
 

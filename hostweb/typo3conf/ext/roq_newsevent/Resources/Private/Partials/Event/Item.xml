@@ -1,0 +1,7 @@
+<!--
+	=====================
+		Partials/Event/Item.xml
+-->
+<e:format.trim>
+    <f:render partial="Event/Item.html" arguments="{newsItem: newsItem, settings:settings}"/>
+</e:format.trim>

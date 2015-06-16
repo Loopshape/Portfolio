@@ -15,6 +15,7 @@ plugin.tx_news {
 		layoutRootPaths {
 			0 = {$plugin.tx_news.view.layoutRootPath}
 		}
+		widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = {$plugin.tx_news.view.templateRootPath}
 	}
 	# Modify the translation
 	_LOCAL_LANG {
@@ -80,10 +81,15 @@ plugin.tx_news {
 		# Interface implementations
 		interfaces {
 			media {
-				video = Tx_News_MediaRenderer_Audio_Mp3,Tx_News_MediaRenderer_Video_Quicktime,Tx_News_MediaRenderer_Video_File,Tx_News_MediaRenderer_Video_Youtube,Tx_News_MediaRenderer_Video_Vimeo,Tx_News_MediaRenderer_Video_Videosites
+				video = GeorgRinger\News\MediaRenderer\Audio\Mp3Html5,GeorgRinger\News\MediaRenderer\Audio\Mp3,GeorgRinger\News\MediaRenderer\Video\Quicktime,GeorgRinger\News\MediaRenderer\Video\File,GeorgRinger\News\MediaRenderer\Video\Youtube,GeorgRinger\News\MediaRenderer\Video\Vimeo,GeorgRinger\News\MediaRenderer\Video\Videosites
 			}
 			falMedia {
-				video = Tx_News_MediaRenderer_Video_Fal
+				video = GeorgRinger\News\MediaRenderer\Video\Fal
+			}
+		}
+		mediaRenderer {
+			youtube {
+				additionalParams =
 			}
 		}
 
@@ -107,10 +113,17 @@ plugin.tx_news {
 			# media configuration
 			media {
 				image {
-						# choose the rel tag like gallery[fo]
-					lightbox = lightbox[myImageSet]
 					maxWidth = 282
 					maxHeight =
+
+					# Get lightbox settings from css_styled_content
+					lightbox {
+						enabled = {$styles.content.imgtext.linkWrap.lightboxEnabled}
+						class = {$styles.content.imgtext.linkWrap.lightboxCssClass}
+						width = {$styles.content.imgtext.linkWrap.width}
+						height = {$styles.content.imgtext.linkWrap.height}
+						rel = lightbox[myImageSet]
+					}
 				}
 
 				video {
@@ -202,6 +215,7 @@ tt_content.shortcut.20.conf.tx_news_domain_model_news {
 	userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
 	extensionName = News
 	pluginName = Pi1
+	vendorName = GeorgRinger
 	switchableControllerActions {
 		News {
 			1 = detail
@@ -223,41 +237,40 @@ module.tx_news < plugin.tx_news
 
 # CMS 7 compatible templates
 [compatVersion = 7.0]
-module.tx_news {
-	view {
-		templateRootPaths {
-			0 = {$plugin.tx_news.view.templateRootPath}7/
+	module.tx_news {
+		view {
+			templateRootPaths {
+				0 = {$plugin.tx_news.view.templateRootPath}7/
+			}
 		}
 	}
-}
 [global]
 
 # ==============================================
 # Persistence object mapping configuration
 # ==============================================
 config.tx_extbase.persistence.classes {
-	Tx_News_Domain_Model_News {
+	GeorgRinger\News\Domain\Model\News {
 		subclasses {
-			0 = Tx_News_Domain_Model_NewsDefault
-			1 = Tx_News_Domain_Model_NewsExternal
-			2 = Tx_News_Domain_Model_NewsInternal
+			0 = GeorgRinger\News\Domain\Model\NewsDefault
+			1 = GeorgRinger\News\Domain\Model\NewsExternal
+			2 = GeorgRinger\News\Domain\Model\NewsInternal
 		}
 	}
 
-	Tx_News_Domain_Model_NewsDefault {
+	GeorgRinger\News\Domain\Model\NewsDefault {
 		mapping {
 			recordType = 0
 			tableName = tx_news_domain_model_news
 		}
 	}
-	Tx_News_Domain_Model_NewsExternal {
+	GeorgRinger\News\Domain\Model\NewsExternal {
 		mapping {
 			recordType = 1
 			tableName = tx_news_domain_model_news
 		}
 	}
-
-	Tx_News_Domain_Model_NewsInternal {
+	GeorgRinger\News\Domain\Model\NewsInternal {
 		mapping {
 			recordType = 2
 			tableName = tx_news_domain_model_news

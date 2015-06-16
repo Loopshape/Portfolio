@@ -16,15 +16,36 @@ config.tx_realurl_enable = 1
 
 # define HTML header
 
-page.headerData = COA
-page.headerData.8 = TEXT
-page.headerData.8.value {
-<base href="http://loop.arcturus.uberspace.de/hostweb/"></base>
-}
+page {
 
-page.includeCSS {
-  file1 = http://loop.arcturus.uberspace.de/hostweb/fileadmin/themes/loopshape/assets/styles/style.css
-  file2 = http://loop.arcturus.uberspace.de/hostweb/fileadmin/themes/loopshape/assets/styles/index.css
+#   includeCSS {
+#       file1 = fileadmin/themes/loopshape/assets/styles/style.css
+#       file2 = fileadmin/themes/loopshape/assets/styles/index.css
+#   }
+
+    headerData {
+        10 = TEXT
+        10.value (
+<link href='//fonts.googleapis.com/css?family=Lora|Oswald:700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!--[if gte IE 9]>
+<style type="text/css">
+.gradient {
+filter: none;
+}
+</style>
+<![endif]-->
+        )
+    }
+
+    footerData {
+        10 = TEXT
+        10.value (
+<script src="/hostweb/assets/js/app/bower_components/jquery2/jquery.min.js"></script>
+<script src="/hostweb/assets/js/app/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+<script src="/hostweb/assets/js/app/cms.js"></script>
+        )
+    }
 }
 
 # define HTML body

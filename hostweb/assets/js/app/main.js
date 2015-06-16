@@ -320,11 +320,11 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
             {
                 var $imgSrc = $(this).attr('src');
                 var $imgTitle = $(this).attr('alt');
-                var $imgData = $(this).clone();
+                //var $imgData = $(this).clone();
                 $(this).parent().prepend('<a href="' + $imgSrc + '" alt="" title="' + $imgTitle + '" class="clickImage fancy-image img hastip"></a>');
                 $('.featured-images a').fancybox();
             });
-            
+
             // MANAGE LOOPSHAPECOOKIE
 
             if (!Cookies.set('loopshape_client'))

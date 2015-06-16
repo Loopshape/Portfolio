@@ -28,7 +28,7 @@ class IndexOnDayViewHelper extends AbstractViewHelper {
 	 * @return bool
 	 */
 	public function render(\DateTime $day, Index $index = NULL, $indices = array()) {
-		foreach ($indices as $idx) {
+		foreach ((array)$indices as $idx) {
 			/** @var $idx Index */
 			if ($idx->getStartDate()
 					->format('d.m.Y') === $day->format('d.m.Y')

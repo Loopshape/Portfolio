@@ -1041,6 +1041,28 @@ if (TYPO3_MODE === 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
 /**
+ * Extension: sv
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/sv/ext_tables.php
+ */
+
+$_EXTKEY = 'sv';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+if (TYPO3_MODE === 'BE') {
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['sv']['services'] = array(
+		'title' => 'LLL:EXT:sv/Resources/Private/Language/locallang.xlf:report_title',
+		'description' => 'LLL:EXT:sv/Resources/Private/Language/locallang.xlf:report_description',
+		'icon' => 'EXT:sv/Resources/Public/Images/service-reports.png',
+		'report' => \TYPO3\CMS\Sv\Report\ServicesListReport::class
+	);
+}
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
  * Extension: recordlist
  * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/recordlist/ext_tables.php
  */
@@ -1096,28 +1118,6 @@ defined('TYPO3_MODE') or die();
 
 // Add context sensitive help (csh) for scheduler task
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('_txsaltedpasswords', 'EXT:saltedpasswords/locallang_csh_saltedpasswords.xlf');
-
-TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
-
-/**
- * Extension: sv
- * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/sv/ext_tables.php
- */
-
-$_EXTKEY = 'sv';
-$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
-
-
-defined('TYPO3_MODE') or die();
-
-if (TYPO3_MODE === 'BE') {
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['sv']['services'] = array(
-		'title' => 'LLL:EXT:sv/Resources/Private/Language/locallang.xlf:report_title',
-		'description' => 'LLL:EXT:sv/Resources/Private/Language/locallang.xlf:report_description',
-		'icon' => 'EXT:sv/Resources/Public/Images/service-reports.png',
-		'report' => \TYPO3\CMS\Sv\Report\ServicesListReport::class
-	);
-}
 
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
@@ -1777,50 +1777,6 @@ if (TYPO3_MODE === 'BE') {
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
 /**
- * Extension: reports
- * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/reports/ext_tables.php
- */
-
-$_EXTKEY = 'reports';
-$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
-
-
-defined('TYPO3_MODE') or die();
-
-if (TYPO3_MODE === 'BE') {
-	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-		'TYPO3.CMS.Reports',
-		'system',
-		'txreportsM1',
-		'',
-		array(
-			'Report' => 'index,detail'
-		), array(
-			'access' => 'admin',
-			'icon' => 'EXT:reports/Resources/Public/Icons/module-reports.png',
-			'labels' => 'LLL:EXT:reports/Resources/Private/Language/locallang.xlf'
-		)
-	);
-	$statusReport = array(
-		'title' => 'LLL:EXT:reports/reports/locallang.xlf:status_report_title',
-		'icon' => 'EXT:reports/Resources/Public/Icons/module-reports.png',
-		'description' => 'LLL:EXT:reports/reports/locallang.xlf:status_report_description',
-		'report' => \TYPO3\CMS\Reports\Report\Status\Status::class
-	);
-	if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status'])) {
-		$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status'] = array();
-	}
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status'] = array_merge($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status'], $statusReport);
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['typo3'][] = \TYPO3\CMS\Reports\Report\Status\Typo3Status::class;
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['system'][] = \TYPO3\CMS\Reports\Report\Status\SystemStatus::class;
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['security'][] = \TYPO3\CMS\Reports\Report\Status\SecurityStatus::class;
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['configuration'][] = \TYPO3\CMS\Reports\Report\Status\ConfigurationStatus::class;
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['fal'][] = \TYPO3\CMS\Reports\Report\Status\FalStatus::class;
-}
-
-TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
-
-/**
  * Extension: setup
  * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/setup/ext_tables.php
  */
@@ -1986,6 +1942,112 @@ if (TYPO3_MODE === 'BE') {
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
 /**
+ * Extension: openid
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/openid/ext_tables.php
+ */
+
+$_EXTKEY = 'openid';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+if (TYPO3_MODE === 'BE') {
+	// Register wizard
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModulePath(
+		'wizard_openid',
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'wizard/'
+	);
+
+	// Add field to setup module
+	$GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_openid_openid'] = array(
+		'type' => 'user',
+		'table' => 'be_users',
+		'label' => 'LLL:EXT:openid/locallang_db.xlf:_MOD_user_setup.tx_openid_openid',
+		'csh' => 'tx_openid_openid',
+		'userFunc' => \TYPO3\CMS\Openid\OpenidModuleSetup::class . '->renderOpenID',
+		'access' => \TYPO3\CMS\Openid\OpenidModuleSetup::class
+	);
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToUserSettings('tx_openid_openid', 'after:password2');
+}
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: recycler
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/recycler/ext_tables.php
+ */
+
+$_EXTKEY = 'recycler';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+if (TYPO3_MODE === 'BE') {
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+		'TYPO3.CMS.Recycler',
+		'web',
+		'Recycler',
+		'',
+		array(
+			'RecyclerModule' => 'index',
+		),
+		array(
+			'access' => 'user,group',
+			'icon' => 'EXT:recycler/Resources/Public/Icons/module-recycler.png',
+			'labels' => 'LLL:EXT:recycler/Resources/Private/Language/locallang_mod.xlf',
+		)
+	);
+}
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: reports
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/reports/ext_tables.php
+ */
+
+$_EXTKEY = 'reports';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+if (TYPO3_MODE === 'BE') {
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+		'TYPO3.CMS.Reports',
+		'system',
+		'txreportsM1',
+		'',
+		array(
+			'Report' => 'index,detail'
+		), array(
+			'access' => 'admin',
+			'icon' => 'EXT:reports/Resources/Public/Icons/module-reports.png',
+			'labels' => 'LLL:EXT:reports/Resources/Private/Language/locallang.xlf'
+		)
+	);
+	$statusReport = array(
+		'title' => 'LLL:EXT:reports/reports/locallang.xlf:status_report_title',
+		'icon' => 'EXT:reports/Resources/Public/Icons/module-reports.png',
+		'description' => 'LLL:EXT:reports/reports/locallang.xlf:status_report_description',
+		'report' => \TYPO3\CMS\Reports\Report\Status\Status::class
+	);
+	if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status'])) {
+		$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status'] = array();
+	}
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status'] = array_merge($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status'], $statusReport);
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['typo3'][] = \TYPO3\CMS\Reports\Report\Status\Typo3Status::class;
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['system'][] = \TYPO3\CMS\Reports\Report\Status\SystemStatus::class;
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['security'][] = \TYPO3\CMS\Reports\Report\Status\SecurityStatus::class;
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['configuration'][] = \TYPO3\CMS\Reports\Report\Status\ConfigurationStatus::class;
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['fal'][] = \TYPO3\CMS\Reports\Report\Status\FalStatus::class;
+}
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
  * Extension: rtehtmlarea
  * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/rtehtmlarea/ext_tables.php
  */
@@ -2080,6 +2142,54 @@ if (TYPO3_MODE === 'BE') {
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Modules/ParseHtml/'
 	);
 }
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: scheduler
+ * File: /var/www/virtual/loop/html/hostweb/typo3/sysext/scheduler/ext_tables.php
+ */
+
+$_EXTKEY = 'scheduler';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+if (TYPO3_MODE === 'BE') {
+	// Add module
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModule(
+		'system',
+		'txschedulerM1',
+		'',
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'mod1/',
+		array(
+			'script' => '_DISPATCH',
+			'access' => 'admin',
+			'name' => 'system_txschedulerM1',
+			'labels' => array(
+				'tabs_images' => array(
+					'tab' => '../Resources/Public/Icons/module-scheduler.png',
+				),
+				'll_ref' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang_mod.xlf',
+			),
+		)
+	);
+
+	// Add context sensitive help (csh) to the backend module
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+		'_MOD_system_txschedulerM1',
+		'EXT:scheduler/Resources/Private/Language/locallang_csh_scheduler.xlf'
+	);
+}
+
+// Register specific icon for run task button
+\TYPO3\CMS\Backend\Sprite\SpriteManager::addSingleIcons(
+	array(
+		'run-task' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('scheduler') . 'Resources/Public/Images/Icons/RunTask.png'
+	),
+	'scheduler'
+);
 
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
@@ -2337,6 +2447,488 @@ if (TYPO3_MODE === 'BE') {
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
 /**
+ * Extension: toctoc_comments
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/toctoc_comments/ext_tables.php
+ */
+
+$_EXTKEY = 'toctoc_comments';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if (!defined('TYPO3_MODE')) die('Access denied.');
+
+if (version_compare(TYPO3_version, '6.3', '>')) {
+	(class_exists('t3lib_extMgm', FALSE)) ? TRUE : class_alias('\TYPO3\CMS\Core\Utility\ExtensionManagementUtility', 't3lib_extMgm');
+	(class_exists('t3lib_div', FALSE)) ? TRUE : class_alias('TYPO3\CMS\Core\Utility\GeneralUtility', 't3lib_div');
+}
+// Add static files for plugins
+t3lib_extMgm::addStaticFile($_EXTKEY, 'static/', 'AJAX Social Network Components');
+
+// Add pi1 plugin
+$TCA['tt_content']['types']['list']['subtypes_excludelist'][$_EXTKEY.'_pi1'] = 'layout,select_key,pages';
+$TCA['tt_content']['types']['list']['subtypes_addlist'][$_EXTKEY.'_pi1'] = 'pi_flexform';
+t3lib_extMgm::addPlugin(Array('LLL:EXT:toctoc_comments/pi1/locallang.xml:tt_content.list_type_pi1', $_EXTKEY.'_pi1'), 'list_type');
+if (version_compare(TYPO3_version, '4.2', '<')) {
+	// Pre-4.2 dies if flexform has references to sheets
+	require_once(t3lib_extMgm::extPath('toctoc_comments', 'flexform_functions.php'));
+	t3lib_extMgm::addPiFlexFormValue($_EXTKEY .'_pi1', toctoc_comments_makeTempFlexFormDS());
+}
+else {
+	// 4.2 or newer works fine with flexforms
+	t3lib_extMgm::addPiFlexFormValue($_EXTKEY .'_pi1', 'FILE:EXT:toctoc_comments/pi1/flexform_ds.xml');
+}
+
+if (version_compare(TYPO3_version, '6.0', '<')) {
+	if (TYPO3_MODE=='BE') {
+		include_once(t3lib_extMgm::extPath($_EXTKEY).'class.user_toctoc_comments_toctoc_comments.php');
+	}
+}
+
+t3lib_extMgm::addLLrefForTCAdescr('tt_content.pi_flexform.toctoc_comments_pi1.list', 'EXT:toctoc_comments/pi1/locallang_csh.xml');
+
+// Comments table
+$TCA['tx_toctoc_comments_comments'] = array(
+	'ctrl' => array (
+		'title' => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_comments_comments',
+		'label' => 'content',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'sortby' => 'crdate',
+		'default_sortby' => ' ORDER BY crdate DESC',
+		'delete' => 'deleted',
+		'enablecolumns' => array (
+			'disabled' => 'hidden',
+		),
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments.gif',
+		//'type' => 'approved',
+		'typeicon_column' => 'approved',
+		'typeicons' => array(
+			'0' => t3lib_extMgm::extRelPath($_EXTKEY) . 'icon_tx_toctoc_comments_not_approved.gif',
+			'1' => t3lib_extMgm::extRelPath($_EXTKEY) . 'icon_tx_toctoc_comments.gif',
+		),
+	)
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_comments_comments');
+//t3lib_extMgm::addToInsertRecords('tx_toctoc_comments_comments');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_comments_comments', 'EXT:toctoc_comments/locallang_csh.xml');
+
+// Comments to FeUser table
+$TCA['tx_toctoc_comments_feuser_mm'] = array(
+	'ctrl' => array (
+		'title' => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_comments_feuser_mm',
+		'label' => 'toctoc_comments_user',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'sortby' => 'crdate',
+		'delete' => 'deleted',
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_feuser_mm.gif',
+		'hideTable'	=> $toctoc_ratings_debug_mode_disabled,
+
+	)
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_comments_feuser_mm');
+//t3lib_extMgm::addToInsertRecords('tx_toctoc_comments_feuser_mm');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_comments_feuser_mm', 'EXT:toctoc_comments/locallang_csh.xml');
+
+// Comments to Comments User
+$TCA['tx_toctoc_comments_user'] = array(
+		'ctrl' => array (
+				'title' => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_comments_user',
+				'label' => 'toctoc_comments_user',
+				'tstamp' => 'tstamp',
+				'crdate' => 'crdate',
+				'sortby' => 'crdate',
+				'delete' => 'deleted',
+				'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+				'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_user.gif',
+		)
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_comments_user');
+//t3lib_extMgm::addToInsertRecords('tx_toctoc_comments_user');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_comments_user', 'EXT:toctoc_comments/locallang_csh.xml');
+
+$TCA['tx_toctoc_comments_urllog'] = array(
+	'ctrl' => array (
+		'title' => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_comments_urllog',
+		'label' => 'external_ref',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'sortby' => 'external_ref',
+		'delete' => 'deleted',
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_urllog.gif',
+		'hideTable'	=> $toctoc_ratings_debug_mode_disabled,
+
+	)
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_comments_urllog');
+//t3lib_extMgm::addToInsertRecords('tx_toctoc_comments_urllog');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_comments_urllog', 'EXT:toctoc_comments/locallang_csh.xml');
+
+
+if (TYPO3_MODE == 'BE') {
+	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['user_toctoc_comments_pi1_wizicon'] = t3lib_extMgm::extPath($_EXTKEY).'pi1/class.user_toctoc_comments_pi1_wizicon.php';
+}
+
+$TCA['tx_toctoc_ratings_scope'] = array (
+	'ctrl' => array (
+		'title' => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_ratings_scope',
+		'label' => 'scope_title',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l18n_parent',
+		'transOrigDiffSourceField' => 'l18n_diffsource',
+		'sortby' => 'sorting',
+		'delete' => 'deleted',
+		'enablecolumns' => array (
+			'disabled' => 'hidden',
+		),
+		'origUid' => 't3_origuid',
+		'shadowColumnsForNewPlaceholders' => 'sys_language_uid,l18n_parent',
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_ratings_scope.gif',
+	),
+	'feInterface' => array (
+		'fe_admin_fieldList' => 'scope_title, sys_language_uid, l18n_parent, l18n_diffsource, scope_description, display_order, hidden',
+	)
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_ratings_scope');
+t3lib_extMgm::addToInsertRecords('tx_toctoc_ratings_scope');
+
+
+$TCA['tx_toctoc_ratings_data'] = array (
+	'ctrl' => array (
+		'title'     => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_ratings_data',
+		'label'     => 'reference',
+		'tstamp'    => 'tstamp',
+		'crdate'    => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'default_sortby' => 'ORDER BY crdate DESC',
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_ratings_data.gif',
+		'hideTable'	=> $toctoc_ratings_debug_mode_disabled,
+		'readOnly'	=> $toctoc_ratings_debug_mode_disabled,
+	),
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_ratings_data');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_ratings_data', 'EXT:toctoc_comments/locallang_csh.xml');
+
+$TCA['tx_toctoc_ratings_iplog'] = array (
+	'ctrl' => array (
+		'title'     => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_ratings_iplog',
+		'label'     => 'reference',
+		'tstamp'    => 'tstamp',
+		'crdate'    => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'default_sortby' => 'ORDER BY crdate DESC',
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_ratings_iplog.gif',
+		'hideTable'	=> $toctoc_ratings_debug_mode_disabled,
+		'readOnly'	=> $toctoc_ratings_debug_mode_disabled,
+	),
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_ratings_iplog');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_ratings_iplog', 'EXT:toctoc_comments/locallang_csh.xml');
+
+$TCA['tx_toctoc_comments_spamwords'] = array (
+		'ctrl' => array (
+				'title'     => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_comments_spamwords',
+				'label'     => 'spamword',
+				'tstamp'    => 'tstamp',
+				'crdate'    => 'crdate',
+				'cruser_id' => 'cruser_id',
+				'default_sortby' => 'ORDER BY spamword',
+				'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+				'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_spamwords.gif',
+		),
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_comments_spamwords');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_comments_spamwords', 'EXT:toctoc_comments/locallang_csh.xml');
+
+// Attachments table
+$TCA['tx_toctoc_comments_attachment'] = array(
+		'ctrl' => array (
+				'title' => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_comments_attachment',
+				'label' => 'title',
+				'tstamp' => 'tstamp',
+				'crdate' => 'crdate',
+				'sortby' => 'crdate',
+				'default_sortby' => ' ORDER BY crdate DESC',
+				'delete' => 'deleted',
+				'enablecolumns' => array (
+						'disabled' => 'hidden',
+				),
+				'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+				'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_attachment.gif',
+				'MM' => 'tx_toctoc_comments_attachment_mm',
+
+		)
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_comments_attachment');
+//t3lib_extMgm::addToInsertRecords('tx_toctoc_comments_comments');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_comments_attachment', 'EXT:toctoc_comments/locallang_csh.xml');
+
+// prefixtotable table
+$TCA['tx_toctoc_comments_prefixtotable'] = array(
+		'ctrl' => array (
+				'title' => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_comments_prefixtotable',
+				'label' => 'pi1_key',
+				'tstamp' => 'tstamp',
+				'crdate' => 'crdate',
+				'sortby' => 'crdate',
+				'default_sortby' => ' ORDER BY crdate DESC',
+				'delete' => 'deleted',
+				'enablecolumns' => array (
+						'disabled' => 'hidden',
+				),
+				'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+				'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_prefixtotable.gif',
+
+		),
+		'feInterface' => array (
+			'fe_admin_fieldList' => 'uid,pi1_key,pi1_table,show_uid,displayfields,topratingsdetailpage,topratingsimagesfolder',
+		),
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_comments_prefixtotable');
+t3lib_extMgm::addToInsertRecords('tx_toctoc_comments_prefixtotable');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_comments_prefixtotable', 'EXT:toctoc_comments/locallang_csh.xml');
+
+$TCA['tx_toctoc_comments_ipbl_local'] = array (
+		'ctrl' => array (
+				'title'     => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_comments_ipbl_local',
+				'label'     => 'ipaddr',
+				'tstamp'    => 'tstamp',
+				'crdate'    => 'crdate',
+				'cruser_id' => 'cruser_id',
+				'default_sortby' => 'ORDER BY ipaddr',
+				'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+				'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_ipbl_local.gif',
+				'rootLevel' => -1,
+		),
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_comments_ipbl_local');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_comments_ipbl_local', 'EXT:toctoc_comments/locallang_csh.xml');
+
+$TCA['tx_toctoc_comments_ipbl_static'] = array (
+		'ctrl' => array (
+				'title'     => 'LLL:EXT:toctoc_comments/locallang_db.xml:tx_toctoc_comments_ipbl_static',
+				'label'     => 'ipaddr',
+				'tstamp'    => 'tstamp',
+				'crdate'    => 'crdate',
+				'cruser_id' => 'cruser_id',
+				'default_sortby' => 'ORDER BY ipaddr',
+				'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+				'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_toctoc_comments_ipbl_static.gif',
+		),
+);
+t3lib_extMgm::allowTableOnStandardPages('tx_toctoc_comments_ipbl_static');
+t3lib_extMgm::addLLrefForTCAdescr('tx_toctoc_comments_ipbl_static', 'EXT:toctoc_comments/locallang_csh.xml');
+
+// facebook connect
+$tempColumns = array (
+		'tx_toctoc_comments_facebook_id' => array (
+				'exclude' => '1',
+				'label' => 'LLL:EXT:toctoc_comments/locallang_db.xml:fe_users.toctoc_comments_id',
+				'config' => array (
+						'type' => 'input',
+						'size' => '20',
+				)
+		),
+		'tx_toctoc_comments_facebook_link' => array (
+				'exclude' => '1',
+				'label' => 'LLL:EXT:toctoc_comments/locallang_db.xml:fe_users.toctoc_comments_link',
+				'config' => array (
+						'type'     => 'input',
+						'size'     => '30',
+						'max'      => '255',
+						'checkbox' => '',
+						'eval'     => 'trim',
+						'wizards'  => array(
+								'_PADDING' => 2,
+								'link'     => array(
+										'type'         => 'popup',
+										'title'        => 'Link',
+										'icon'         => 'link_popup.gif',
+										'script'       => 'browse_links.php?mode=wizard',
+										'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+								)
+						)
+				)
+		),
+		'tx_toctoc_comments_facebook_gender' => array (
+				'exclude' => '1',
+				'label' => 'LLL:EXT:toctoc_comments/locallang_db.xml:fe_users.toctoc_comments_gender',
+				'config' => array (
+						'type' => 'input',
+						'size' => '5',
+				)
+		),
+		'tx_toctoc_comments_facebook_email' => array (
+				'exclude' => '1',
+				'label' => 'LLL:EXT:toctoc_comments/locallang_db.xml:fe_users.toctoc_comments_email',
+				'config' => array (
+						'type' => 'input',
+						'size' => '30',
+				)
+		),
+		'tx_toctoc_comments_facebook_locale' => array (
+				'exclude' => '1',
+				'label' => 'LLL:EXT:toctoc_comments/locallang_db.xml:fe_users.tx_toctoc_comments_facebook_locale',
+				'config' => array (
+						'type' => 'input',
+						'size' => '5',
+						'max' => '5',
+						'eval' => 'trim',
+				)
+		),
+		'tx_toctoc_comments_facebook_updated_time' => array (
+				'exclude' => '1',
+				'label' => 'LLL:EXT:toctoc_comments/locallang_db.xml:fe_users.tx_toctoc_comments_facebook_updated_time',
+				'config' => array (
+						'type' => 'input',
+						'size' => '15',
+						'max' => '25',
+						'eval' => 'trim',
+				)
+		),
+		'gender' => array (
+				'exclude' => '1',
+				'label' => 'LLL:EXT:toctoc_comments/locallang_db.xml:fe_users.gender',
+				'config' => array (
+						'type' => 'radio',
+						'items' => array (
+								array('LLL:EXT:toctoc_comments/locallang_db.xml:fe_users.gender.I.0', '0'),
+								array('LLL:EXT:toctoc_comments/locallang_db.xml:fe_users.gender.I.1', '1')
+						),
+				)
+		),
+);
+if (version_compare(TYPO3_branch, '6.1', '<')) {
+	t3lib_div::loadTCA('fe_users');
+}
+
+if($TCA['fe_users']['columns']['gender']) {
+	unset($tempColumns['gender']);
+}
+t3lib_extMgm::addTCAcolumns('fe_users', $tempColumns, 1);
+$sgender = '';
+$sgenderadd = FALSE;
+if (str_replace('gender,', '', $TCA['fe_users']['feInterface']['fe_admin_fieldList'] ) == $TCA['fe_users']['feInterface']['fe_admin_fieldList'] ) {
+	$sgender = ',gender';
+	$sgenderadd = TRUE;
+}
+$TCA['fe_users']['feInterface']['fe_admin_fieldList'] .= ',tx_toctoc_comments_facebook_id,tx_toctoc_comments_facebook_link,tx_toctoc_comments_facebook_email,tx_toctoc_comments_facebook_gender,tx_toctoc_comments_facebook_locale,tx_toctoc_comments_facebook_updated_time' . $sgender;
+$sgender = '';
+if (str_replace('gender,', '', $TCA['fe_users']['feInterface']['showRecordFieldList'] ) == $TCA['fe_users']['feInterface']['showRecordFieldList'] ) {
+	$sgender = ',gender';
+	$sgenderadd = TRUE;
+}
+$TCA['fe_users']['interface']['showRecordFieldList'] .= ',tx_toctoc_comments_facebook_id,tx_toctoc_comments_facebook_link,tx_toctoc_comments_facebook_email,tx_toctoc_comments_facebook_gender,tx_toctoc_comments_facebook_locale,tx_toctoc_comments_facebook_updated_time' . $sgender;
+if ($sgenderadd == TRUE) {
+	t3lib_extMgm::addToAllTCATypes('fe_users', '--div--;toctoc comments,tx_toctoc_comments_facebook_id;;;;1-1-1,tx_toctoc_comments_facebook_link,tx_toctoc_comments_facebook_email,tx_toctoc_comments_facebook_gender,tx_toctoc_comments_facebook_locale,tx_toctoc_comments_facebook_updated_time,gender');
+} else {
+	t3lib_extMgm::addToAllTCATypes('fe_users', '--div--;toctoc comments,tx_toctoc_comments_facebook_id;;;;1-1-1,tx_toctoc_comments_facebook_link,tx_toctoc_comments_facebook_email,tx_toctoc_comments_facebook_gender,tx_toctoc_comments_facebook_locale,tx_toctoc_comments_facebook_updated_time');
+}
+
+// from commentbe
+if (TYPO3_MODE == 'BE') {
+	t3lib_extMgm::addModulePath('web_toctoccommentsbeM1', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
+	t3lib_extMgm::addModule('web', 'toctoccommentsbeM1', '', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
+}
+
+
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: t3socials
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/t3socials/ext_tables.php
+ */
+
+$_EXTKEY = 't3socials';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+
+/* *** **************** *** *
+ * *** BE Module Config *** *
+ * *** **************** *** */
+if (TYPO3_MODE == 'BE') {
+	// Einbindung einer PageTSConfig
+	t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . 't3socials' . '/mod/pageTSconfig.txt">');
+
+	// communicator
+	t3lib_extMgm::addModule('user', 'txt3socialsM1', '', t3lib_extMgm::extPath('t3socials') . 'mod/');
+	t3lib_extMgm::insertModuleFunction(
+		'user_txt3socialsM1', 'tx_t3socials_mod_Communicator',
+		t3lib_extMgm::extPath('t3socials', 'mod/class.tx_t3socials_mod_Communicator.php'),
+		'LLL:EXT:t3socials/mod/locallang.xml:label_t3socials_connector'
+	);
+	// trigger
+	t3lib_extMgm::insertModuleFunction(
+		'user_txt3socialsM1', 'tx_t3socials_mod_Trigger',
+		t3lib_extMgm::extPath('t3socials', 'mod/class.tx_t3socials_mod_Trigger.php'),
+		'LLL:EXT:t3socials/mod/locallang.xml:label_t3socials_trigger'
+	);
+
+}
+
+/* *** *************** *** *
+ * *** TCA definitions *** *
+ * *** *************** *** */
+$TCA['tx_t3socials_networks'] = array (
+	'ctrl' => array (
+		'title' => 'LLL:EXT:t3socials/Resources/Private/Language/locallang_db.xml:tx_t3socials_networks',
+		'label' => 'name',
+		'tstamp'    => 'tstamp',
+		'crdate'    => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'dividers2tabs' => TRUE,
+		'default_sortby' => 'ORDER BY name asc',
+		'delete' => 'deleted',
+		'enablecolumns' => array (
+			'disabled' => 'hidden',
+		),
+		'requestUpdate' => 'network',
+		'dynamicConfigFile' => t3lib_extMgm::extPath('t3socials', 'Configuration/TCA/Network.php'),
+		'iconfile'          => t3lib_extMgm::extRelPath('t3socials', 'ext_icon.gif'),
+	),
+	'feInterface' => array (
+		'fe_admin_fieldList' => 'name,username,password,config',
+	)
+);
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: t3_less
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/t3_less/ext_tables.php
+ */
+
+$_EXTKEY = 't3_less';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if( !defined( 'TYPO3_MODE' ) )
+{
+	die( 'Access denied.' );
+}
+
+t3lib_extMgm::addStaticFile( $_EXTKEY, 'Configuration/TypoScript', 'less' );
+
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
  * Extension: static_info_tables
  * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/static_info_tables/ext_tables.php
  */
@@ -2385,6 +2977,48 @@ if (TYPO3_MODE == 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
 		}
 	}
 }
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: source_publisher
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/source_publisher/ext_tables.php
+ */
+
+$_EXTKEY = 'source_publisher';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ("TYPO3_MODE")) 	die ("Access denied.");
+$tempColumns = Array (
+	"tx_sourcepublisher_pub_file" => Array (
+		"exclude" => 0,
+		"label" => "LLL:EXT:source_publisher/locallang_db.php:tt_content.tx_sourcepublisher_pub_file",
+		"config" => Array (
+			"type" => "group",
+			"internal_type" => "file",
+			"allowed" => "",
+			"disallowed" => "php,php3",
+			"max_size" => 500,
+			"uploadfolder" => "uploads/tx_sourcepublisher",
+			"size" => 1,
+			"minitems" => 0,
+			"maxitems" => 1,
+		)
+	),
+);
+
+
+//t3lib_div::loadTCA("tt_content");
+t3lib_extMgm::addTCAcolumns("tt_content",$tempColumns,1);
+
+
+//t3lib_div::loadTCA("tt_content");
+$TCA["tt_content"]["types"][$_EXTKEY."_pi1"]["showitem"]="CType;;4;button;1-1-1, header;;3;;2-2-2, tx_sourcepublisher_pub_file;;;;1-1-1";
+
+
+t3lib_extMgm::addPlugin(Array("LLL:EXT:source_publisher/locallang_db.php:tt_content.CType", $_EXTKEY."_pi1"),"CType");
+
 
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
@@ -2495,6 +3129,590 @@ $extensionMamagementUtility::addToAllTCAtypes('pages_language_overlay', 'tx_real
 unset($extensionMamagementUtility, $generalUtility, $isLegacyVersion);
 
 
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: powermail
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/powermail/ext_tables.php
+ */
+
+$_EXTKEY = 'powermail';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+/**
+ * Include Plugins
+ */
+	// Pi1
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	$_EXTKEY,
+	'Pi1',
+	'Powermail'
+);
+	// Pi2
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	$_EXTKEY,
+	'Pi2',
+	'Powermail_Frontend'
+);
+
+/**
+ * Include Backend Module
+ */
+if (
+	TYPO3_MODE === 'BE' &&
+	!\In2code\Powermail\Utility\Configuration::isDisableBackendModuleActive() &&
+	!(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)
+) {
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+		'In2code.' . $_EXTKEY,
+		'web',
+		'm1',
+		'',
+		array(
+			'Module' => 'dispatch, list, exportXls, exportCsv, reportingBe, toolsBe, overviewBe,
+				checkBe, converterBe, converterUpdateBe, reportingFormBe, reportingMarketingBe,
+				fixUploadFolder, fixWrongLocalizedForms, fixFilledMarkersInLocalizedFields,
+				fixWrongLocalizedPages, fixFilledMarkersInLocalizedPages'
+		),
+		array(
+			'access' => 'user,group',
+			'icon'   => 'EXT:' . $_EXTKEY . '/ext_icon.' . (\TYPO3\CMS\Core\Utility\GeneralUtility::compat_version('7.0') ? 'svg' : 'gif'),
+			'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xlf',
+		)
+	);
+}
+
+/**
+ * Include Flexform
+ */
+	// Pi1
+$pluginSignature = str_replace('_', '', $_EXTKEY) . '_pi1';
+$TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+	$pluginSignature,
+	'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/FlexformPi1.xml'
+);
+	// Pi2
+$pluginSignature = str_replace('_', '', $_EXTKEY) . '_pi2';
+$TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+	$pluginSignature,
+	'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/FlexformPi2.xml'
+);
+
+/**
+ * Include UserFuncs
+ */
+if (TYPO3_MODE === 'BE') {
+	$extPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY);
+
+	// form selection
+	require_once($extPath . 'Classes/Utility/Tca/FormSelectorUserFunc.php');
+
+	// show powermail fields in Pi2 (powermail_frontend)
+	require_once($extPath . 'Classes/Utility/Tca/FieldSelectorUserFunc.php');
+
+	// marker field in Pi1
+	require_once($extPath . 'Classes/Utility/Tca/Marker.php');
+
+	// add options to TCA select fields with itemsProcFunc
+	require_once($extPath . 'Classes/Utility/Tca/AddOptionsToSelection.php');
+
+	// show form note in FlexForm
+	require_once($extPath . 'Classes/Utility/Tca/ShowFormNoteEditForm.php');
+
+	// ContentElementWizard for Pi1
+	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['In2code\Powermail\Utility\Hook\ContentElementWizard'] =
+		$extPath . 'Classes/Utility/Hook/ContentElementWizard.php';
+}
+
+/**
+ * Include TypoScript
+ */
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+	$_EXTKEY, 'Configuration/TypoScript/Main',
+	'Main Template'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+	$_EXTKEY, 'Configuration/TypoScript/Powermail_Frontend',
+	'Powermail_Frontend'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+	$_EXTKEY, 'Configuration/TypoScript/CssDemo',
+	'Add Demo CSS'
+);
+if (!\In2code\Powermail\Utility\Configuration::isDisableMarketingInformationActive()) {
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+		$_EXTKEY, 'Configuration/TypoScript/Marketing',
+		'Marketing Information'
+	);
+}
+
+/**
+ * Table Configuration
+ */
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+	'tx_powermail_domain_model_forms',
+	'EXT:powermail/Resources/Private/Language/locallang_csh_tx_powermail_domain_model_forms.xlf'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_powermail_domain_model_forms');
+
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+	'tx_powermail_domain_model_pages',
+	'EXT:powermail/Resources/Private/Language/locallang_csh_tx_powermail_domain_model_pages.xlf'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_powermail_domain_model_pages');
+
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+	'tx_powermail_domain_model_fields',
+	'EXT:powermail/Resources/Private/Language/locallang_csh_tx_powermail_domain_model_fields.xlf'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_powermail_domain_model_fields');
+
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+	'tx_powermail_domain_model_mails',
+	'EXT:powermail/Resources/Private/Language/locallang_csh_tx_powermail_domain_model_mails.xlf'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_powermail_domain_model_mails');
+
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+	'tx_powermail_domain_model_answers',
+	'EXT:powermail/Resources/Private/Language/locallang_csh_tx_powermail_domain_model_answers.xlf'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_powermail_domain_model_answers');
+
+/**
+ * Garbage Collector
+ */
+if (\In2code\Powermail\Utility\Configuration::isEnableTableGarbageCollectionActive()) {
+	$tgct = 'TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask';
+	$table = 'tx_powermail_domain_model_mails';
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][$tgct]['options']['tables'][$table] = array(
+		'dateField' => 'tstamp',
+		'expirePeriod' => 30
+	);
+	$table = 'tx_powermail_domain_model_answers';
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][$tgct]['options']['tables'][$table] = array(
+		'dateField' => 'tstamp',
+		'expirePeriod' => 30
+	);
+}
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: nxindexedsearch
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/nxindexedsearch/ext_tables.php
+ */
+
+$_EXTKEY = 'nxindexedsearch';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+
+//t3lib_div::loadTCA('tt_content');
+$TCA['tt_content']['types'][$_EXTKEY.'_pi1']['showitem']='CType;;4;button;1-1-1, header;;3;;2-2-2';
+
+
+t3lib_extMgm::addPlugin(Array('LLL:EXT:nxindexedsearch/locallang_db.xml:tt_content.CType_pi1', $_EXTKEY.'_pi1'),'CType');
+
+if (TYPO3_MODE=="BE") {
+    t3lib_extMgm::addModule("tools","txnxindexedsearchM1","",t3lib_extMgm::extPath($_EXTKEY)."mod1/");
+}
+
+/*
+$TCA["tx_nxindexedsearch_sources"] = Array (
+	"ctrl" => Array (
+		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_sources',
+		'label' => 'uid',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		"default_sortby" => "ORDER BY crdate",
+		"dynamicConfigFile" => t3lib_extMgm::extPath($_EXTKEY)."tca.php",
+		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_nxindexedsearch_sources.gif",
+	),
+	"feInterface" => Array (
+		"fe_admin_fieldList" => "datasource_table, datasource_category",
+	)
+);
+
+$TCA["tx_nxindexedsearch_searchindex"] = Array (
+	"ctrl" => Array (
+		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_searchindex',
+		'label' => 'uid',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		"default_sortby" => "ORDER BY crdate",
+		"dynamicConfigFile" => t3lib_extMgm::extPath($_EXTKEY)."tca.php",
+		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_nxindexedsearch_searchindex.gif",
+	),
+	"feInterface" => Array (
+		"fe_admin_fieldList" => "word_uid, occurence_count, datasource",
+	)
+);
+
+$TCA["tx_nxindexedsearch_searchwords"] = Array (
+	"ctrl" => Array (
+		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_searchwords',
+		'label' => 'uid',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		"default_sortby" => "ORDER BY crdate",
+		"dynamicConfigFile" => t3lib_extMgm::extPath($_EXTKEY)."tca.php",
+		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_nxindexedsearch_searchwords.gif",
+	),
+	"feInterface" => Array (
+		"fe_admin_fieldList" => "searchword, split_offset",
+	)
+);
+
+$TCA["tx_nxindexedsearch_searchtime"] = Array (
+	"ctrl" => Array (
+		'title' => 'LLL:EXT:nxindexedsearch/locallang_db.xml:tx_nxindexedsearch_searchtime',
+		'label' => 'uid',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		"default_sortby" => "ORDER BY crdate",
+		"dynamicConfigFile" => t3lib_extMgm::extPath($_EXTKEY)."tca.php",
+		"iconfile" => t3lib_extMgm::extRelPath($_EXTKEY)."icon_tx_nxindexedsearch_searchtime.gif",
+	),
+	"feInterface" => Array (
+		"fe_admin_fieldList" => "source_uid, document_uid",
+	)
+);
+*/
+
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: newsletter
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/newsletter/ext_tables.php
+ */
+
+$_EXTKEY = 'newsletter';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
+}
+
+// ========== Register BE Modules
+if (TYPO3_MODE == 'BE') {
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+            'Ecodev.' . $_EXTKEY, 'web', // Make newsletter module a submodule of 'user'
+            'tx_newsletter_m1', // Submodule key
+            'before:info', // Position
+            array(
+        'Module' => 'index',
+        'Newsletter' => 'list, listPlanned, create, statistics',
+        'Email' => 'list',
+        'Link' => 'list',
+        'BounceAccount' => 'list',
+        'RecipientList' => 'list, listRecipient',
+            ), array(
+        'access' => 'user,group',
+        'icon' => 'EXT:newsletter/Resources/Public/Icons/tx_newsletter.png',
+        'labels' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang_module.xlf',
+            )
+    );
+}
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_newsletter_domain_model_newsletter', 'EXT:newsletter/Resources/Private/Language/locallang_csh_tx_newsletter_domain_model_newsletter.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_newsletter_domain_model_newsletter');
+$TCA['tx_newsletter_domain_model_newsletter'] = array(
+    'ctrl' => array(
+        'title' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang_db.xlf:tx_newsletter_domain_model_newsletter',
+        'label' => 'planned_time',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'delete' => 'deleted',
+        'enablecolumns' => array(
+            'disabled' => 'hidden',
+        ),
+        'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Newsletter.php',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_newsletter_domain_model_newsletter.gif',
+    ),
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_newsletter_domain_model_bounceaccount', 'EXT:newsletter/Resources/Private/Language/locallang_csh_tx_newsletter_domain_model_bounceaccount.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_newsletter_domain_model_bounceaccount');
+$TCA['tx_newsletter_domain_model_bounceaccount'] = array(
+    'ctrl' => array(
+        'title' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang_db.xlf:tx_newsletter_domain_model_bounceaccount',
+        'label' => 'email',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'delete' => 'deleted',
+        'enablecolumns' => array(
+            'disabled' => 'hidden',
+        ),
+        'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/BounceAccount.php',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_newsletter_domain_model_bounceaccount.gif',
+    ),
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_newsletter_domain_model_recipientlist', 'EXT:newsletter/Resources/Private/Language/locallang_csh_tx_newsletter_domain_model_recipientlist.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_newsletter_domain_model_recipientlist');
+$TCA['tx_newsletter_domain_model_recipientlist'] = array(
+    'ctrl' => array(
+        'title' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang_db.xlf:tx_newsletter_domain_model_recipientlist',
+        'label' => 'title',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'delete' => 'deleted',
+        'type' => 'type',
+        'enablecolumns' => array(
+            'disabled' => 'hidden',
+        ),
+        'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/RecipientList.php',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_newsletter_domain_model_recipientlist.gif',
+        'type' => 'type', // this tells extbase to respect the "type" column for Single Table Inheritance
+    ),
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_newsletter_domain_model_email', 'EXT:newsletter/Resources/Private/Language/locallang_csh_tx_newsletter_domain_model_email.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_newsletter_domain_model_email');
+$TCA['tx_newsletter_domain_model_email'] = array(
+    'ctrl' => array(
+        'title' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang_db.xlf:tx_newsletter_domain_model_email',
+        'label' => 'recipient_address',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'delete' => 'deleted',
+        'enablecolumns' => array(
+            'disabled' => 'hidden',
+        ),
+        'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Email.php',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_newsletter_domain_model_email.gif',
+    ),
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_newsletter_domain_model_link', 'EXT:newsletter/Resources/Private/Language/locallang_csh_tx_newsletter_domain_model_link.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_newsletter_domain_model_link');
+$TCA['tx_newsletter_domain_model_link'] = array(
+    'ctrl' => array(
+        'title' => 'LLL:EXT:newsletter/Resources/Private/Language/locallang_db.xlf:tx_newsletter_domain_model_link',
+        'label' => 'url',
+        'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Link.php',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_newsletter_domain_model_link.gif',
+    ),
+);
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: news
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/news/ext_tables.php
+ */
+
+$_EXTKEY = 'news';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+$boot = function($packageKey) {
+	// The following calls are targeted for BE but might be needed in FE editing
+
+	// CSH - context sensitive help
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+			'tx_news_domain_model_news', 'EXT:news/Resources/Private/Language/locallang_csh_news.xlf');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+			'tx_news_domain_model_media', 'EXT:news/Resources/Private/Language/locallang_csh_media.xlf');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+			'tx_news_domain_model_file', 'EXT:news/Resources/Private/Language/locallang_csh_file.xlf');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+			'tx_news_domain_model_link', 'EXT:news/Resources/Private/Language/locallang_csh_link.xlf');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+			'tx_news_domain_model_tag', 'EXT:news/Resources/Private/Language/locallang_csh_tag.xlf');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+			'tt_content.pi_flexform.news_pi1.list', 'EXT:news/Resources/Private/Language/locallang_csh_flexforms.xlf');
+
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_news');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_media');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_file');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_link');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_tag');
+
+	// Extension manager configuration
+	$configuration = \GeorgRinger\News\Utility\EmConfiguration::getSettings();
+
+	/***************
+	 * News icon in page tree
+	 */
+	unset($GLOBALS['ICON_TYPES']['news']);
+	\TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('pages', 'contains-news', '../typo3conf/ext/news/Resources/Public/Icons/folder.gif');
+
+	if (TYPO3_MODE === 'BE') {
+
+		$addNewsToModuleSelection = TRUE;
+		foreach ($GLOBALS['TCA']['pages']['columns']['module']['config']['items'] as $item) {
+			if ($item[1] === 'news') {
+				$addNewsToModuleSelection = FALSE;
+				continue;
+			}
+		}
+		if ($addNewsToModuleSelection) {
+			$GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
+				0 => 'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:news-folder',
+				1 => 'news',
+				2 => '../typo3conf/ext/news/Resources/Public/Icons/folder.gif'
+			);
+		}
+
+		/***************
+		 * Show news table in page module
+		 */
+		if ($configuration->getPageModuleFieldsNews()) {
+			$addTableItems = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(';', $configuration->getPageModuleFieldsNews(), TRUE);
+			foreach ($addTableItems as $item) {
+				$split = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode('=', $item, TRUE);
+				if (count($split) == 2) {
+					$fTitle = $split[0];
+					$fList = $split[1];
+				} else {
+					$fTitle = '';
+					$fList = $split[0];
+				}
+				$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['tx_news_domain_model_news'][] = array(
+					'MENU' => $fTitle,
+					'fList' => $fList,
+					'icon' => TRUE,
+				);
+			}
+		}
+
+		if ($configuration->getPageModuleFieldsCategory()) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['sys_category'][0] = array(
+				'fList' => htmlspecialchars($configuration->getPageModuleFieldsCategory()),
+				'icon' => TRUE
+			);
+		}
+
+		// Extend user settings
+		$GLOBALS['TYPO3_USER_SETTINGS']['columns']['newsoverlay'] = array(
+			'label'			=> 'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:usersettings.overlay',
+			'type'			=> 'select',
+			'itemsProcFunc'	=> 'GeorgRinger\\News\\Hooks\\ItemsProcFunc->user_categoryOverlay',
+		);
+		$GLOBALS['TYPO3_USER_SETTINGS']['showitem'] .= ',
+			--div--;LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:pi1_title,newsoverlay';
+
+		// Add tables to livesearch (e.g. "#news:fo" or "#newscat:fo")
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']['news'] = 'tx_news_domain_model_news';
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']['newstag'] = 'tx_news_domain_model_tag';
+
+
+		/* ===========================================================================
+			Register BE-Modules
+		=========================================================================== */
+		if ($configuration->getShowImporter()) {
+			\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+				'news',
+				'web',
+				'tx_news_m1',
+				'',
+				array(
+					'Import' => 'index, runJob, jobInfo',
+				),
+				array(
+					'access' => 'user,group',
+					'icon' => 'EXT:news/Resources/Public/Icons/' .
+						(\TYPO3\CMS\Core\Utility\GeneralUtility::compat_version('7.0') ? 'module_import.png' : 'import_module.gif'),
+					'labels' => 'LLL:EXT:news/Resources/Private/Language/locallang_mod.xlf',
+				)
+			);
+		}
+
+
+		/* ===========================================================================
+			Register BE-Module for Administration
+		=========================================================================== */
+		if ($configuration->getShowAdministrationModule()) {
+			\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+				'news',
+				'web',
+				'tx_news_m2',
+				'',
+				array(
+					'Administration' => 'index,newNews,newCategory,newTag,newsPidListing',
+				),
+				array(
+					'access' => 'user,group',
+					'icon' => 'EXT:news/Resources/Public/Icons/' .
+						(\TYPO3\CMS\Core\Utility\GeneralUtility::compat_version('7.0') ? 'module_administration.png' : 'folder.gif'),
+					'labels' => 'LLL:EXT:news/Resources/Private/Language/locallang_modadministration.xlf',
+				)
+			);
+		}
+
+		/* ===========================================================================
+			Ajax call to save tags
+		=========================================================================== */
+		$GLOBALS['TYPO3_CONF_VARS']['BE']['AJAX']['News::createTag'] = 'typo3conf/ext/news/Classes/Hooks/SuggestReceiverCall.php:GeorgRinger\\News\\Hooks\\SuggestReceiverCall->createTag';
+	}
+
+	/* ===========================================================================
+		Default configuration
+	=========================================================================== */
+	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByCategory'] = 'uid,title,tstamp,sorting';
+	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByNews'] = 'tstamp,datetime,crdate,title' . ($configuration->getManualSorting() ? ',sorting' : '');
+	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByTag'] = 'tstamp,crdate,title';
+	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['switchableControllerActions']['list'] = $configuration->getRemoveListActionFromFlexforms();
+};
+
+$boot($_EXTKEY);
+unset($boot);
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: news_ttnewsimport
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/news_ttnewsimport/ext_tables.php
+ */
+
+$_EXTKEY = 'news_ttnewsimport';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+\Tx_News_Utility_ImportJob::register(
+	'BeechIt\\NewsTtnewsimport\\Jobs\\TTNewsNewsImportJob',
+	'LLL:EXT:news_ttnewsimport/Resources/Private/Language/locallang_be.xml:ttnews_importer_title',
+	'');
+\Tx_News_Utility_ImportJob::register(
+	'BeechIt\\NewsTtnewsimport\\Jobs\\TTNewsCategoryImportJob',
+	'LLL:EXT:news_ttnewsimport/Resources/Private/Language/locallang_be.xml:ttnewscategory_importer_title',
+	'');
+\Tx_News_Utility_ImportJob::register(
+	'BeechIt\\NewsTtnewsimport\\Jobs\\MblNewseventImportJob',
+	'LLL:EXT:news_ttnewsimport/Resources/Private/Language/locallang_be.xml:mblnewsevent_importer_title',
+	'');
+\Tx_News_Utility_ImportJob::register(
+	'BeechIt\\NewsTtnewsimport\\Jobs\\DamMediaTagConversionJob',
+	'LLL:EXT:news_ttnewsimport/Resources/Private/Language/locallang_be.xml:dammediatag_converter_title',
+	'');
 
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
@@ -2985,6 +4203,158 @@ if (TYPO3_MODE == 'BE') {
 // ############################################################################
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'MetaSEO');
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: iconfont
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/iconfont/ext_tables.php
+ */
+
+$_EXTKEY = 'iconfont';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) die ('Access denied.');
+
+// --- Get extension configuration ---
+$extConf = array();
+if ( strlen($_EXTCONF) ) {
+	$extConf = unserialize($_EXTCONF);
+}
+
+
+// --- Icon font key/name --
+$iconFont = $extConf['iconFont'];
+$customIconDefFile = $extConf['customIconDefinitionFile'];
+
+// dummy icon options (if none loaded)
+$iconFontOption = array(array('', 0));
+
+// --- Load array with icons --
+//
+if ( $iconFont == 'custom' ) {
+	if ( file_exists(PATH_site . $customIconDefFile) ) {
+		include(PATH_site . $customIconDefFile);
+	}
+} else {
+	// Load default icon font specific select array
+	if ( file_exists(PATH_site . 'typo3conf/ext/iconfont/ext_tables_' . $iconFont . '.php') ) {
+		include(PATH_site . 'typo3conf/ext/iconfont/ext_tables_' . $iconFont . '.php');
+	}
+}
+
+// --- Add field --
+//
+$tempColumn = array(
+	'tx_iconfont_icon' => array (
+		'exclude' => 0,
+		'label' => 'LLL:EXT:iconfont/Resources/Private/Language/locallang_db.xlf:tt_content.tx_iconfont_icon',
+		'config' => array (
+			'type' => 'select',
+			'default' => '0',
+			'size' => 1,
+			'maxitems' => 1,
+			'items' => $iconFontOption
+		)
+	)
+);
+// show icons in select options
+$tempColumn['tx_iconfont_icon']['config']['iconsInOptionTags'] = 1;
+// don't show icons below select box
+$tempColumn['tx_iconfont_icon']['config']['suppress_icons'] = 'ONLY_SELECTED';
+// add after header_layout
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumn, 1);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'header', 'tx_iconfont_icon', 'after:header_layout');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headers', 'tx_iconfont_icon', 'after:header_layout');
+
+
+// --- Add static ts configurations  --
+//
+switch ( $iconFont ) {
+	case 'fontawesome':
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptConstants('
+plugin.tx_iconfont {
+    # cat=tx_iconfont/base/010; type=string; label=Path to icon font css file
+    cssFile = //maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css
+    # cat=tx_iconfont/base/011; type=string; label=Icon font class prefix
+    fontClassPrefix = fa fa-
+    # cat=tx_iconfont/base/012; type=string; label=Icon font class addon
+    fontClassAddon =
+}');
+		break;
+
+	case 'fontello':
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptConstants('
+plugin.tx_iconfont {
+    # cat=tx_iconfont/base/010; type=string; label=Path to icon font css file
+    cssFile = fileadmin/templates/fontello/css/fontello.css
+    # cat=tx_iconfont/base/011; type=string; label=Icon font class prefix
+    fontClassPrefix = icon-
+    # cat=tx_iconfont/base/012; type=string; label=Icon font class addon
+    fontClassAddon =
+}');
+		break;
+
+	default:
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptConstants('
+plugin.tx_iconfont {
+    # cat=tx_iconfont/base/010; type=string; label=Path to icon font css file
+    cssFile =
+    # cat=tx_iconfont/base/011; type=string; label=Icon font class prefix
+    fontClassPrefix =
+    # cat=tx_iconfont/base/012; type=string; label=Icon font class addon
+    fontClassAddon =
+}');
+
+		break;
+}
+
+
+
+// Default TS for iconfont
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Icon Font');
+
+// Optional for modified header (option in bootstrap_core to have subheader in header tag)
+if ( isset($extConf['enableHeaderRenderingOption']) && $extConf['enableHeaderRenderingOption'] ) {
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Header', 'Subheader in header (addon)');
+}
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: google_auth
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/google_auth/ext_tables.php
+ */
+
+$_EXTKEY = 'google_auth';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+
+
+
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Google OpenAuth v2');
+
+Tx_Extbase_Utility_Extension::registerPlugin(
+	$_EXTKEY,
+	'Auth',
+	'Auth controller return point'
+);
+
+if ($TYPO3_CONF_VARS['EXTCONF']['google_auth']['setup']['enableProfile']) {
+	Tx_Extbase_Utility_Extension::registerPlugin(
+		$_EXTKEY,
+		'Profile',
+		'Mini FrontendUser Profile Editor'
+	);
+}
+
+
 
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
@@ -3616,11 +4986,11 @@ if (version_compare(TYPO3_version, '4.5.0','<=')) {
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
 /**
- * Extension: news
- * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/news/ext_tables.php
+ * Extension: cps_tcatree
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/cps_tcatree/ext_tables.php
  */
 
-$_EXTKEY = 'news';
+$_EXTKEY = 'cps_tcatree';
 $_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
 
 
@@ -3628,177 +4998,113 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$boot = function($packageKey) {
-	// The following calls are targeted for BE but might be needed in FE editing
-
-	// CSH - context sensitive help
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-			'tx_news_domain_model_news', 'EXT:' . $packageKey . '/Resources/Private/Language/locallang_csh_news.xlf');
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-			'tx_news_domain_model_media', 'EXT:' . $packageKey . '/Resources/Private/Language/locallang_csh_media.xlf');
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-			'tx_news_domain_model_file', 'EXT:' . $packageKey . '/Resources/Private/Language/locallang_csh_file.xlf');
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-			'tx_news_domain_model_link', 'EXT:' . $packageKey . '/Resources/Private/Language/locallang_csh_link.xlf');
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-			'tx_news_domain_model_tag', 'EXT:' . $packageKey . '/Resources/Private/Language/locallang_csh_tag.xlf');
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-			'tt_content.pi_flexform.news_pi1.list', 'EXT:' . $packageKey . '/Resources/Private/Language/locallang_csh_flexforms.xlf');
-
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_news');
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_media');
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_file');
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_link');
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_news_domain_model_tag');
-
-	// Extension manager configuration
-	$configuration = Tx_News_Utility_EmConfiguration::getSettings();
-
-	/***************
-	 * News icon in page tree
-	 */
-	unset($GLOBALS['ICON_TYPES']['news']);
-	\TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('pages', 'contains-news', '../typo3conf/ext/news/Resources/Public/Icons/folder.gif');
-
-	if (TYPO3_MODE == 'BE') {
-		$extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($packageKey);
-		$pluginSignature = strtolower($extensionName) . '_pi1';
-
-		/***************
-		 * Wizard pi1
-		 */
-		$GLOBALS['TBE_MODULES_EXT']['xMOD_db_new_content_el']['addElClasses'][$pluginSignature . '_wizicon'] =
-			\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($packageKey) . 'Resources/Private/Php/class.' . $packageKey . '_wizicon.php';
-
-		$addNewsToModuleSelection = TRUE;
-		foreach ($GLOBALS['TCA']['pages']['columns']['module']['config']['items'] as $item) {
-			if ($item[1] === 'news') {
-				$addNewsToModuleSelection = FALSE;
-				continue;
-			}
-		}
-		if ($addNewsToModuleSelection) {
-			$GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
-				0 => 'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:news-folder',
-				1 => 'news',
-				2 => '../typo3conf/ext/news/Resources/Public/Icons/folder.gif'
-			);
-		}
-
-		/***************
-		 * Show news table in page module
-		 */
-		if ($configuration->getPageModuleFieldsNews()) {
-			$addTableItems = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(';', $configuration->getPageModuleFieldsNews(), TRUE);
-			foreach ($addTableItems as $item) {
-				$split = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode('=', $item, TRUE);
-				if (count($split) == 2) {
-					$fTitle = $split[0];
-					$fList = $split[1];
-				} else {
-					$fTitle = '';
-					$fList = $split[0];
-				}
-				$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['tx_news_domain_model_news'][] = array(
-					'MENU' => $fTitle,
-					'fList' => $fList,
-					'icon' => TRUE,
-				);
-			}
-		}
-
-		if ($configuration->getPageModuleFieldsCategory()) {
-			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['sys_category'][0] = array(
-				'fList' => htmlspecialchars($configuration->getPageModuleFieldsCategory()),
-				'icon' => TRUE
-			);
-		}
-
-		// Extend user settings
-		$GLOBALS['TYPO3_USER_SETTINGS']['columns']['newsoverlay'] = array(
-			'label'			=> 'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:usersettings.overlay',
-			'type'			=> 'select',
-			'itemsProcFunc'	=> 'Tx_News_Hooks_ItemsProcFunc->user_categoryOverlay',
-		);
-		$GLOBALS['TYPO3_USER_SETTINGS']['showitem'] .= ',
-			--div--;LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:pi1_title,newsoverlay';
-
-		// Add tables to livesearch (e.g. "#news:fo" or "#newscat:fo")
-		$GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']['news'] = 'tx_news_domain_model_news';
-		$GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']['newstag'] = 'tx_news_domain_model_tag';
+require_once(t3lib_extMgm::extPath('cps_tcatree') . 'class.tx_cpstcatree.php');
 
 
-		/* ===========================================================================
-			Register BE-Modules
-		=========================================================================== */
-		if ($configuration->getShowImporter()) {
-			\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-				$packageKey,
-				'web',
-				'tx_news_m1',
-				'',
-				array(
-					'Import' => 'index, runJob, jobInfo',
-				),
-				array(
-					'access' => 'user,group',
-					'icon' => 'EXT:' . $packageKey . '/Resources/Public/Icons/' .
-						(\TYPO3\CMS\Core\Utility\GeneralUtility::compat_version('7.0') ? 'module_import.png' : 'import_module.gif'),
-					'labels' => 'LLL:EXT:' . $packageKey . '/Resources/Private/Language/locallang_mod.xlf',
-				)
-			);
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
-			if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('t3blog')) {
-				Tx_News_Utility_ImportJob::register(
-					'Tx_News_Jobs_T3BlogNewsImportJob',
-					'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:t3blog_importer_title',
-					'');
-				Tx_News_Utility_ImportJob::register(
-					'Tx_News_Jobs_T3BlogCategoryImportJob',
-					'LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:t3blogcategory_importer_title',
-					'');
-			}
-		}
+/**
+ * Extension: cps_searchhighlight
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/cps_searchhighlight/ext_tables.php
+ */
+
+$_EXTKEY = 'cps_searchhighlight';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
 
 
-		/* ===========================================================================
-			Register BE-Module for Administration
-		=========================================================================== */
-		if ($configuration->getShowAdministrationModule()) {
-			\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-				$packageKey,
-				'web',
-				'tx_news_m2',
-				'',
-				array(
-					'Administration' => 'index,newNews,newCategory,newTag,newsPidListing',
-				),
-				array(
-					'access' => 'user,group',
-					'icon' => 'EXT:' . $packageKey . '/Resources/Public/Icons/' .
-						(\TYPO3\CMS\Core\Utility\GeneralUtility::compat_version('7.0') ? 'module_administration.png' : 'folder.gif'),
-					'labels' => 'LLL:EXT:' . $packageKey . '/Resources/Private/Language/locallang_modadministration.xlf',
-				)
-			);
-		}
 
-		/* ===========================================================================
-			Ajax call to save tags
-		=========================================================================== */
-		$GLOBALS['TYPO3_CONF_VARS']['BE']['AJAX']['News::createTag'] = 'typo3conf/ext/news/Classes/Hooks/SuggestReceiverCall.php:Tx_News_Hooks_SuggestReceiverCall->createTag';
-	}
+if (!defined ('TYPO3_MODE'))     die ('Access denied.');
 
-	/* ===========================================================================
-		Default configuration
-	=========================================================================== */
-	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByCategory'] = 'uid,title,tstamp,sorting';
-	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByNews'] = 'tstamp,datetime,crdate,title' . ($configuration->getManualSorting() ? ',sorting' : '');
-	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['orderByTag'] = 'tstamp,crdate,title';
-	$GLOBALS['TYPO3_CONF_VARS']['EXT']['news']['switchableControllerActions']['list'] = $configuration->getRemoveListActionFromFlexforms();
-};
+//add static template to list
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Keyword Highlighting');
 
-$boot($_EXTKEY);
-unset($boot);
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: roq_newsevent
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/roq_newsevent/ext_tables.php
+ */
+
+$_EXTKEY = 'roq_newsevent';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined('TYPO3_MODE')) {
+	die ('Access denied.');
+}
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'News event');
+
+$tmp_roq_newsevent_columns = array(
+
+    'tx_roqnewsevent_is_event' => array(
+   		'exclude' => 0,
+   		'label' => 'LLL:EXT:roq_newsevent/Resources/Private/Language/locallang_db.xml:tx_roqnewsevent_is_event',
+   		'config' => array(
+   			'type' => 'check',
+   			'default' => 0
+   		),
+   	),
+	'tx_roqnewsevent_startdate' => array(
+		'exclude' => 0,
+		'label' => 'LLL:EXT:roq_newsevent/Resources/Private/Language/locallang_db.xml:tx_roqnewsevent_startdate',
+		'config' => array(
+			'type' => 'input',
+			'size' => 7,
+			'eval' => 'date',
+			'checkbox' => 1,
+		),
+	),
+	'tx_roqnewsevent_starttime' => array(
+		'exclude' => 0,
+		'label' => 'LLL:EXT:roq_newsevent/Resources/Private/Language/locallang_db.xml:tx_roqnewsevent_starttime',
+		'config' => array(
+			'type' => 'input',
+			'size' => 4,
+			'eval' => 'time',
+			'checkbox' => 1,
+		),
+	),
+	'tx_roqnewsevent_enddate' => array(
+		'exclude' => 0,
+		'label' => 'LLL:EXT:roq_newsevent/Resources/Private/Language/locallang_db.xml:tx_roqnewsevent_enddate',
+		'config' => array(
+			'type' => 'input',
+			'size' => 7,
+			'eval' => 'date',
+			'checkbox' => 1,
+		),
+	),
+	'tx_roqnewsevent_endtime' => array(
+		'exclude' => 0,
+		'label' => 'LLL:EXT:roq_newsevent/Resources/Private/Language/locallang_db.xml:tx_roqnewsevent_endtime',
+		'config' => array(
+			'type' => 'input',
+			'size' => 4,
+			'eval' => 'time',
+			'checkbox' => 1,
+		),
+	),
+	'tx_roqnewsevent_location' => array(
+		'exclude' => 0,
+		'label' => 'LLL:EXT:roq_newsevent/Resources/Private/Language/locallang_db.xml:tx_roqnewsevent_location',
+		'config' => array(
+			'type' => 'input',
+			'size' => 30,
+			'eval' => 'trim',
+		),
+	),
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_news_domain_model_news', $tmp_roq_newsevent_columns);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+	'tx_news_domain_model_news',
+	',--div--;LLL:EXT:roq_newsevent/Resources/Private/Language/locallang_db.xml:tx_roqnewsevent_domain_model_event,tx_roqnewsevent_is_event, tx_roqnewsevent_startdate, tx_roqnewsevent_starttime, tx_roqnewsevent_enddate, tx_roqnewsevent_endtime, tx_roqnewsevent_location'
+);
+
+
 
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
@@ -3816,6 +5122,21 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Calendar for news');
+
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
+
+/**
+ * Extension: cb_indexedsearch_autocomplete
+ * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/cb_indexedsearch_autocomplete/ext_tables.php
+ */
+
+$_EXTKEY = 'cb_indexedsearch_autocomplete';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+t3lib_extMgm::addStaticFile($_EXTKEY,'static/ts/', 'Indexed Search AutoComplete');
+
 
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::loadNewTcaColumnsConfigFiles();
 
