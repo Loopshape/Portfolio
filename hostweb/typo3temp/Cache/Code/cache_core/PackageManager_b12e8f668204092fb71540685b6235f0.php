@@ -2355,6 +2355,6 @@ array (
       'ext_icon' => 'ext_icon.gif',
     ),
   ),
-  'packageObjectsCacheEntryIdentifier' => 'PackageObjects_55801a753103e907145316',
+  'packageObjectsCacheEntryIdentifier' => 'PackageObjects_558074e5a07fb283298563',
 );
 #
