@@ -2100,21 +2100,6 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] =
 
 
 /**
- * Extension: nxindexedsearch
- * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/nxindexedsearch/ext_localconf.php
- */
-
-$_EXTKEY = 'nxindexedsearch';
-$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
-
-
-if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
-
-t3lib_extMgm::addPItoST43($_EXTKEY,'pi1/class.tx_nxindexedsearch_pi1.php','_pi1','CType',1);
-
-
-
-/**
  * Extension: newsletter
  * File: /var/www/virtual/loop/html/hostweb/typo3conf/ext/newsletter/ext_localconf.php
  */

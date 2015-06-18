@@ -673,24 +673,6 @@ return array (
       array (
       ),
     ),
-    'nxtemplate' => 
-    array (
-      'state' => 'active',
-      'packagePath' => 'typo3conf/ext/nxtemplate/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
-    'nxindexedsearch' => 
-    array (
-      'state' => 'active',
-      'packagePath' => 'typo3conf/ext/nxindexedsearch/',
-      'classesPath' => 'Classes/',
-      'suggestions' => 
-      array (
-      ),
-    ),
     'newsletter' => 
     array (
       'manifestPath' => '',
@@ -873,6 +855,24 @@ return array (
     array (
       'state' => 'active',
       'packagePath' => 'typo3conf/ext/ajaxpagepreloader/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'nxtemplate' => 
+    array (
+      'state' => 'inactive',
+      'packagePath' => 'typo3conf/ext/nxtemplate/',
+      'classesPath' => 'Classes/',
+      'suggestions' => 
+      array (
+      ),
+    ),
+    'nxindexedsearch' => 
+    array (
+      'state' => 'inactive',
+      'packagePath' => 'typo3conf/ext/nxindexedsearch/',
       'classesPath' => 'Classes/',
       'suggestions' => 
       array (
