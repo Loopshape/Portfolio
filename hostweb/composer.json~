@@ -1,0 +1,11 @@
+{
+    "require": {
+    	"laravel/installer": "~1.1",
+    	"psy/psysh": "@stable",
+        "guzzlehttp/guzzle": "~4.0",
+        "typo3/buildessentials": "^2.3",
+        "menatwork/realurl": "^1.3",
+        "tecnick.com/tcpdf": "^6.2",
+        "fab/vidi": "^0.9.1"
+    }
+}
