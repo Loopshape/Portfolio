@@ -22,7 +22,8 @@ class Plugin extends PluginBase
         return [
             'name'        => 'Frontend User Roles Manager',
             'description' => 'The plugin lets you manage frontend user roles and permissions.',
-            'author'      => 'ShahiemSeymor'
+            'author'      => 'Shahiem Seymor',
+            'homepage'    => 'http://octobercms.com/plugin/shahiemseymor-roles'
         ];
     }
 
@@ -66,7 +67,7 @@ class Plugin extends PluginBase
                 'groups'              => [
                     'label'           => 'Groups',
                     'commentAbove'    => 'Specify which groups this person belongs to.',
-                    'tab'             => 'Permissions',
+                    'tab'             => 'Roles',
                     'type'            => 'relation'
                 ]
             ], 'primary');

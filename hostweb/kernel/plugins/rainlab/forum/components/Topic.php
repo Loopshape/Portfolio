@@ -64,7 +64,7 @@ class Topic extends ComponentBase
     {
         return [
             'name'        => 'rainlab.forum::lang.topicpage.name',
-            'description' => 'rainlab.forum::lang.topicpage.desc'
+            'description' => 'rainlab.forum::lang.topicpage.self_desc'
         ];
     }
 
@@ -369,11 +369,14 @@ class Topic extends ComponentBase
                 throw new ApplicationException('You cannot edit posts or make replies.');
             }
 
-            $post->save(post());
+            $post->fill(post());
+            $post->save();
 
             // First post will update the topic subject
-            if ($topic->first_post->id == $post->id)
-                $topic->save(['subject' => post('subject')]);
+            if ($topic->first_post->id == $post->id) {
+                $topic->fill(['subject' => post('subject')]);
+                $topic->save();
+            }
         }
         elseif ($mode == 'delete') {
             $post->delete();

@@ -12,42 +12,50 @@ crumb_disabled = "0"
 ==
 <h3><strong>Require.JS Scripte einbinden</strong></h3>
 <p>
-	<strong> 01.) Die Datei "r.js" in das HTML-Template einbinden.
-	<br />
-	<br />
-	02.) In einer Konfigurationsdatei die Pfade und Ladeabhängigkeiten definieren. Diese Datei dann per 
-	</p>
-	<code><pre>require(['./RELATIVER_PFAD/CONFIGURATION.FILE']);</pre></code><br />
-	<p>in den Scope laden.
-	<br />
-	<br />
+    <strong> 01.) Die Datei "r.js" in das HTML-Template einbinden.
+    <br />
+    <br />
+    02.) In einer Konfigurationsdatei die Pfade und Ladeabhängigkeiten definieren. Diese Datei dann per
 </p>
-<p>&nbsp;</p>
-<p><strong>
-	Die Pfade sind das ausschlaggebende Merkmal aller Plugins! Diese müssen explizit an die jeweilige Website-Struktur angepasst werden.
-</strong></p>
-<p>&nbsp;</p>
-<p><strong>Dieses Beispiel der "config.js" zeigt die Pfade dieser Website:</strong></p>
+<code>    <pre>require(['./RELATIVER_PFAD/CONFIGURATION.FILE']);</pre></code>
+<br />
+<p>
+    in den Scope laden.
+    <br />
+    <br />
+</p>
+<p>
+    &nbsp;
+</p>
+<p>
+    <strong> Die Pfade sind das ausschlaggebende Merkmal aller Plugins! Diese müssen explizit an die jeweilige Website-Struktur angepasst werden. </strong>
+</p>
+<p>
+    &nbsp;
+</p>
+<p>
+    <strong>Dieses Beispiel der "config.js" zeigt die Pfade dieser Website:</strong>
+</p>
 <code>
-	<pre>
+    <pre>
 <span class="fontHighlight">// Require.JS Konfiguration setzen</span>
 requirejs.config({
-	
+
 	<span class="fontHighlight">// Basispfad für JS angeben</span>
 	baseUrl : '<span class="fontHighlight">PFAD_ZU_DER_JS_BIBLIOTHEK</span>',
 
 	<span class="fontHighlight">// Plugin-Pfade relativ zu dem Basispfad der Bibliothek eintragen!</span>
 	paths : {
-		
+
 		backbone : './hostweb/assets/js/app/bower_components/backbone/backbone',
 		underscore : './hostweb/assets/js/app/bower_components/underscore/underscore-min',
 
 		jquery : './hostweb/assets/js/app/bower_components/jquery2/jquery.min',
 		tooltipsy : './hostweb/assets/js/app/bower_components/tooltipsy-master/tooltipsy.min',
-		
+
 		timeline : './hostweb/assets/js/app/bower_components/greensock/src/minified/TimelineMax.min',
 		tweenmax : './hostweb/assets/js/app/bower_components/greensock/src/minified/TweenMax.min',
-		
+
 		main : './hostweb/assets/js/app/main' <span class="fontHighlight"><---- Haupt-JS-Datei bereits in der Config angegeben!</span>
 
 	},
@@ -56,14 +64,14 @@ requirejs.config({
 	shim : {
 
 		jquery : {
-			exports : '$' <span class="fontHighlight"><---- Setze das $-Zeichen als jQuery Umgebungsvariable</span> 
+			exports : '$' <span class="fontHighlight"><---- Setze das $-Zeichen als jQuery Umgebungsvariable</span>
 		},
-		
+
 		backbone : {
 			deps : ['jquery'], <span class="fontHighlight"><---- Warte bis das Plugin in den Klammern geladen wurde</span>
 			exports : 'Backbone'
 		},
-		
+
 		underscore : {
 			deps : ['jquery'], <span class="fontHighlight"><---- Warte bis das Plugin in den Klammern geladen wurde</span>
 			exports : '_'
@@ -73,11 +81,11 @@ requirejs.config({
 			deps : ['jquery'], <span class="fontHighlight"><---- Warte bis das Plugin in den Klammern geladen wurde</span>
 			exports : 'Tooltipsy'
 		},
-		
+
 		timeline : {
 			exports : 'TimelineMax' <span class="fontHighlight"><---- Lade Plugin in den Scope</span>
 		},
-		
+
 		tweenmax : {
 			exports : 'TweenMax' <span class="fontHighlight"><---- Lade Plugin in den Scope</span>
 		},
@@ -91,20 +99,22 @@ requirejs.config({
 });
 
 <span class="fontHighlight">// Die Haupt-JS-Datei in den Scope laden und ausführen...</span>
-require(['main']); 
+require(['main']);
 		</pre>
-</code><br />
-<div class="cf"></div>
+</code>
+<br />
+<div class="cf">
+</div>
 <p>
-	&nbsp;
+    &nbsp;
 </p>
 <p>
-	03.) Anschließend wird die Haupt-Javascript-Datei aufgerufen, in dem alle möglichen Plugins nach belieben verwendet werden:
-	<br />
-	<br />
+    03.) Anschließend wird die Haupt-Javascript-Datei aufgerufen, in dem alle möglichen Plugins nach belieben verwendet werden:
+    <br />
+    <br />
 </p>
 <code>
-	<pre>
+    <pre>
 <span class="fontHighlight">// status message main script is running</span>
 console.log('Starting MAINSCRIPT');
 
@@ -112,30 +122,38 @@ console.log('Starting MAINSCRIPT');
 requirejs(['jquery', 'backbone', 'underscore', 'tooltipsy'], function($, Backbone, _, Tooltipsy) {
 
 	$(function() {
-		
+
 		<span class="fontHighlight">// status message for jQuery2 ready</span>
 		console.log('jQuery2 initialized');
 
 		<span class="fontHighlight">// load another script into the scope</span>
 		require(['./hostweb/assets/js/app/app']);
-		
+
 	});
 
 });
 		</pre>
-</code><br />
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+</code>
+<br />
 <p>
-    Wer sich zB. die Require.JS Konfiguration von Loopshape ansehen möchte, kann es unter diesen folgenden Links tun:<br />
-    <a href="http://loop.arcturus.uberspace.de/hostweb/assets/js/app/config.js" class="external hastip" title="Require.JS config-Datei öffnen">config.js</a><br />
-    <a href="http://loop.arcturus.uberspace.de/hostweb/assets/js/app/main.js" class="external hastip" title="Require.JS main-Datei öffnen">main.js</a><br />
+    &nbsp;
+</p>
+<p>
+    &nbsp;
+</p>
+<p>
+    Wer sich zB. die Require.JS Konfiguration von Loopshape ansehen möchte, kann es unter diesen folgenden Links tun:
+    <br />
+    <a href="http://loop.arcturus.uberspace.de/hostweb/assets/js/app/config.js" class="external hastip" title="Require.JS config-Datei öffnen">config.js</a>
+    <br />
+    <a href="http://loop.arcturus.uberspace.de/hostweb/assets/js/app/main.js" class="external hastip" title="Require.JS main-Datei öffnen">main.js</a>
+    <br />
 </p>
 <p>
     Aufgerufen werden diese beiden Dateien über folgende Scriptanweisung:
 </p>
 <code class="fontCode">
-<pre>
+    <pre>
 <span class="fontHighlight">// Define BaseURL and load RequireJS-config</span><br />
 var baseUrl = "{{ this.page.baseUrl }}";<br />
 var rjsConfig = baseUrl + 'hostweb/assets/js/app/config.js';<br />
@@ -148,7 +166,7 @@ require([rjsConfig]);<br />
 </pre>
 </code>
 <p>
-	&nbsp;
+    &nbsp;
 </p>
 Weiterführende Informationen gibt es auf der Hauptseite von Require.JS:
 <br />

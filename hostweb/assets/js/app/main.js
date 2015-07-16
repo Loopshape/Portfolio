@@ -11,14 +11,12 @@
 console.log('Starting MAINSCRIPT');
 
 // on this area, all Plugins must be listed as a sequence and be called so
-requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet', 'jscookie', 'hoverintent', 'fancybox'], function(angular, $, _, Backbone, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet, Cookies, hoverIntent, fancybox)
-{
+requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angularscroll', 'responsivemeasure', 'jquerysnippet', 'jssnippet', 'jscookie', 'hoverintent', 'fancybox'], function(angular, $, _, Backbone, tooltipsy, AngularScroll, responsiveMeasure, snippet, jssnippet, Cookies, hoverIntent, fancybox) {
     'use strict';
 
     // Angular.JS Setup
     var app = angular.module('loopcode', []);
-    app.controller('bridge', function($scope)
-    {
+    app.controller('bridge', function($scope) {
         $scope.baseUrl = baseUrl;
         $scope.userName = "Arjuna Noorsanto";
         $scope.userEmail = "awebgo.net@gmail.com";
@@ -28,36 +26,29 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
     // MainJS config vars
     var pageSpeed = 500;
 
-    $('header#header').hoverIntent(function(e)
-    {
+    $('header#header').hoverIntent(function(e) {
         var pageY = e.pageY;
         if (pageY < 60 && $(this).hasClass('hover') && $(this).offset().top >= -380)
             return;
         if (!$(this).hasClass('hover') && $(this).offset().top < -1)
-            $(this).addClass('hover').animate(
-            {
+            $(this).addClass('hover').animate({
                 'top' : '+=380'
-            }, pageSpeed * 2, function()
-            {
+            }, pageSpeed * 2, function() {
                 $(this).removeClass('busy');
             });
-    }, function(e)
-    {
+    }, function(e) {
         var pageY = e.pageY;
         if (pageY < 60 && $(this).hasClass('hover'))
             return;
         if ($(this).hasClass('hover') && $(this).offset().top > -380)
-            $(this).animate(
-            {
+            $(this).animate({
                 'top' : '-=380'
             }, pageSpeed * 2).removeClass('hover');
     });
 
     // Typography settings
-    function responsiveMeasures()
-    {
-        $('#contentWrapper').responsiveMeasure(
-        {
+    function responsiveMeasures() {
+        $('#contentWrapper').responsiveMeasure({
             // Responsive Measures
             idealLineLength : 80,
             minimumFontSize : 12,
@@ -91,26 +82,21 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
 
     var $contextHeight = 0;
 
-    function checkHeights()
-    {
+    function checkHeights() {
 
         $disqusHeight = $disqus.innerHeight();
 
-        if ($('section#content').length)
-        {
+        if ($('section#content').length) {
             $contextHeight = 0;
-            $content.children().each(function()
-            {
+            $content.children().each(function() {
                 $contextHeight += $(this).innerHeight();
             });
             $contentHeight = $contextHeight - $headerHeight - $disqusHeight;
         }
 
-        if ($('aside#sidebar').length)
-        {
+        if ($('aside#sidebar').length) {
             $contextHeight = 0;
-            $sidebar.children().each(function()
-            {
+            $sidebar.children().each(function() {
                 $contextHeight += $(this).innerHeight();
             });
             $sidebarHeight = $contextHeight - $headerHeight - $disqusHeight;
@@ -119,27 +105,22 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
         return;
     }
 
-    function resizeHeights()
-    {
+    function resizeHeights() {
 
         checkHeights();
 
         if ($contentHeight < $sidebarHeight)
-            $wrapper.css(
-            {
+            $wrapper.css({
                 'min-height' : $sidebarHeight
             });
-        $content.css(
-        {
+        $content.css({
             'min-height' : $sidebarHeight
         });
         if ($sidebarHeight < $contentHeight)
-            $wrapper.css(
-            {
+            $wrapper.css({
                 'min-height' : $contentHeight
             });
-        $sidebar.css(
-        {
+        $sidebar.css({
             'min-height' : $contentHeight
         });
 
@@ -147,26 +128,20 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
     }
 
     // Server connectivity test
-    function ajaxCheck()
-    {
-        $.ajax(
-        {
+    function ajaxCheck() {
+        $.ajax({
             url : baseUrl,
             type : "HEAD",
             timeout : 2500,
-            statusCode :
-            {
-                200 : function(response)
-                {
+            statusCode : {
+                200 : function(response) {
                     console.log('Connection: 200 Ok!');
                 },
-                400 : function(response)
-                {
+                400 : function(response) {
                     console.log('Connection: 400 not working!');
                     throw "No Connection available";
                 },
-                0 : function(response)
-                {
+                0 : function(response) {
                     console.log('Connection: 0 no server available');
                     throw "No Server available";
                 }
@@ -175,37 +150,29 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
     }
 
     // additional Standard-Setup
-    try
-    {
+    try {
 
-        setInterval(function()
-        {
+        setInterval(function() {
             ajaxCheck();
         }, 60000);
 
-        $('.areaFull,#ajaxLoader').css(
-        {
+        $('.areaFull,#ajaxLoader').css({
             'position' : 'fixed',
             'z-index' : '100000'
         }).fadeIn(pageSpeed / 4);
 
-        $('a.internal,a.external').on('click', function(e)
-        {
+        $('a.internal,a.external').on('click', function(e) {
             e.preventDefault();
             var isExternal = $(this).hasClass('external');
             if (!isExternal)
-                $('#main').animate(
-                {
+                $('#main').animate({
                     'opacity' : '-=1'
                 }, pageSpeed);
             var $href = $(this).prop('href');
-            setTimeout(function()
-            {
-                if (!isExternal)
-                {
+            setTimeout(function() {
+                if (!isExternal) {
                     window.open($href, '_self');
-                } else
-                {
+                } else {
                     window.open($href, '_blank');
                 }
             }, 100);
@@ -215,8 +182,7 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
         var itemSpeed = 500;
 
         // Document Ready
-        $(function()
-        {
+        $(function() {
 
             // HTML-DOM AREA
 
@@ -226,8 +192,7 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
             $('*.linkImages a').fancybox();
 
             // some Typography settings
-            $(document).on('responsiveMeasureUpdated', function(e, data)
-            {
+            $(document).on('responsiveMeasureUpdated', function(e, data) {
                 $('.giga').css('fontSize', data.fontRatios[24] + 'px');
                 $('h1').css('fontSize', data.fontRatios[20] + 'px');
                 $('h2').css('fontSize', data.fontRatios[18] + 'px');
@@ -239,23 +204,18 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
                 $('.sm').css('fontSize', data.fontRatios[8] + 'px');
             });
 
-            $('#main').animate(
-            {
+            $('#main').animate({
                 'opacity' : '+=1'
-            }, pageSpeed, function()
-            {
-                $('#ajaxLoader').fadeOut(pageSpeed / 4, function()
-                {
+            }, pageSpeed, function() {
+                $('#ajaxLoader').fadeOut(pageSpeed / 4, function() {
                     // load another script into the scope
                     require(['./hostweb/assets/js/app/app']);
                 });
             });
 
-            $('.hastip').tooltipsy(
-            {
+            $('.hastip').tooltipsy({
                 offset : [8, -20],
-                css :
-                {
+                css : {
                     'position' : 'fixed',
                     'top' : '50px',
                     'right' : '33px',
@@ -276,48 +236,38 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
 
             //$("body").snippet("javascript");
 
-            $(window).scroll(function()
-            {
-                if ($(this).scrollTop() > 100)
-                {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
                     $('.scrollToTop').fadeIn();
-                } else
-                {
+                } else {
                     $('.scrollToTop').fadeOut();
                 }
             });
 
-            $('.scrollToTop').click(function()
-            {
-                $('html, body').animate(
-                {
+            $('.scrollToTop').click(function() {
+                $('html, body').animate({
                     scrollTop : 0
                 }, 800);
                 return false;
             });
 
-            $('.areaFull').fadeOut(pageSpeed / 2).css(
-            {
+            $('.areaFull').fadeOut(pageSpeed / 2).css({
                 'z-index' : '-1'
             });
 
-            $(window).resize(function()
-            {
+            $(window).resize(function() {
                 responsiveMeasures();
                 resizeHeights();
             });
 
-            $('#contentWrapper').ready(function()
-            {
+            $('#contentWrapper').ready(function() {
                 responsiveMeasures();
-                setTimeout(function()
-                {
+                setTimeout(function() {
                     resizeHeights();
                 }, pageSpeed / 2);
             });
 
-            $('.featured-images img').each(function()
-            {
+            $('.featured-images img').each(function() {
                 var $imgSrc = $(this).attr('src');
                 var $imgTitle = $(this).attr('alt');
                 //var $imgData = $(this).clone();
@@ -327,17 +277,17 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
 
             // MANAGE LOOPSHAPECOOKIE
 
-            if (!Cookies.set('loopshape_client'))
-            {
+            if (!Cookies.set('loopshape_client')) {
                 var $htmldata = '<html><body><style rel="stylesheet">body{position:relative;color:#333;background-color:#d3d3d3;font-family:sans-serif;} .wrapper{background-color:#bbb;font-weight:bold;padding:15px;text-align:center;} .wrapper>*{color:#444;} a{color:#444;} a:hover{color:#000;}</style><div id="cookieBanner"><p><strong>Sie befinden sich nun auf der Domain: loop.arcturus.uberspace.de</strong><br /></p><div class="wrapper"><h3>Cookie Datenschutz / Cookie agreement</h3><p>Auf dieser Website werden Cookies zur Optimierung des Benutzerinterfaces gesetzt. Durch die Verwendung dieser Website stimmen Sie den Nutzungsbedingungen von Loopshape zu.<br /><br /></p><a id="cookieYes" href="#" title="">Einverstanden!</a></div></div></body></html>';
                 $('body').html($htmldata);
                 var $url = window.location.href;
-                $('#cookieYes').on('click', function(e)
-                {
+                $('#cookieYes').on('click', function(e) {
                     e.preventDefault();
-                    Cookies.set('loopshape_client', true, { path: '/', expires: 7 });
-                    setTimeout(function()
-                    {
+                    Cookies.set('loopshape_client', true, {
+                        path : '/',
+                        expires : 7
+                    });
+                    setTimeout(function() {
                         window.open($url, '_top');
                     }, 250);
                     return false;
@@ -346,14 +296,12 @@ requirejs(['angular', 'jquery', 'underscore', 'backbone', 'tooltipsy', 'angulars
 
         });
 
-    } catch(err)
-    {
+    } catch(err) {
 
         // catch error and restart with a page reload
         console.log(err + '\n');
         console.log('...restarting HTTP-Request!');
-        setTimeout(function()
-        {
+        setTimeout(function() {
             window.open('.', '_self');
         }, 100);
 

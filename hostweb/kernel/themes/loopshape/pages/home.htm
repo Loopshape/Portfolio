@@ -30,36 +30,39 @@ direction = "desc"
 menu_id = "1"
 ==
 <section id="teaser">
-	<div class="inner">
-	    
-	    <h3 class="teaserHeadline"><i class="fa fa-globe"></i>&nbsp;<strong>Webentwicklung</strong></h3>
-	    
-	    <div class="cf"></div>
-	    
-	    <section class="introArea">
-	        {% component "menu" %}
-	    </section>
-	    
-	    <div class="cf"></div>
+    <div class="inner">
+
+        <h3 class="teaserHeadline"><i class="fa fa-globe"></i>&nbsp;<strong>Webentwicklung</strong></h3>
+
+        <div class="cf">
+        </div>
+
+        <section class="introArea">
+            {% component "menu" %}
+        </section>
+
+        <div class="cf">
+        </div>
 
         <section id="teaserWrapper" style="float:left;width:62%;">
-            
-    	    {% partial "markup/loginbar" %}
-        	{% content "message/teaser" %}
-        	
-        	<div class="cf"></div>
+
+            {% partial "markup/loginbar" %}
+            {% content "message/teaser" %}
+
+            <div class="cf">
+            </div>
 
             {% partial "markup/backhomelink" %}
-        	
+
         </section>
-        
+
         <section id="teaserSidebar" style="float:right;width:32%;">
-            
+
             {% partial "module/twitterstream" %}
-            
+
             {% partial "module/contactinfo" %}
-            
+
         </section>
-        
+
     </div>
 </section>

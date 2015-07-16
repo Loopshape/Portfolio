@@ -12,22 +12,23 @@ crumb_disabled = "0"
 ==
 <?php
 function onStart() {
-    return $this->doProc();
+return $this->doProc();
 }
 
 function doProc() {
-    
-    $data = null;
-    
-    $linkName = '';
-    $linkHref = '';
-    $_intern = true;
-    
-    $link = '<a href="'.$linkHref.'" class="'.($_intern?'internal ':'external ').'">'.$linkName.'</a>';
-    
-    return $data;
-    
+
+$data = null;
+
+$linkName = '';
+$linkHref = '';
+$_intern = true;
+
+$link = '<a href="'.$linkHref.'" class="'.($_intern?'internal ':'external ').'">'.$linkName.'</a>';
+
+return $data;
+
 }
 ?>
 ==
-<div class="earth planet"></div>
+<div class="earth planet">
+</div>

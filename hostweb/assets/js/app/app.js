@@ -6,22 +6,18 @@
 *
 */
 // module dependencies
-require(['jquery', 'underscore', 'backbone'], function($, _, Backbone)
-{
+require(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
     'use strict';
 
     // Backbone definitions for App
-    var App = Backbone.View.extend(
-    {
+    var App = Backbone.View.extend({
 
-        ajax : function()
-        {
+        ajax : function() {
             alert('AJAX function was called...');
             return;
         },
 
-        render : function()
-        {
+        render : function() {
 
             var item = this.page;
             var itemSpeed = 500;
@@ -35,14 +31,12 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone)
 
             var $page = $('#page');
 
-            function moveBox(e)
-            {
+            function moveBox(e) {
 
                 var x = e.pageX,
                     y = e.pageY;
 
-                TweenLite.to($page, 3,
-                {
+                TweenLite.to($page, 3, {
                     opacity : '-=0.01'
                 });
 
@@ -55,13 +49,11 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone)
             return;
         },
 
-        events :
-        {
+        events : {
             'click a[rel=ajax]' : 'ajax'
         },
 
-        initialize : function()
-        {
+        initialize : function() {
             this.windowWidth = $(window).width();
             _.bindAll(this, 'ajax');
             this.render();
@@ -69,8 +61,9 @@ require(['jquery', 'underscore', 'backbone'], function($, _, Backbone)
     });
 
     var app = new App();
-    
+
     //https://prerender.io token definition
-    //app.use(require('prerender-node').set('prerenderToken', '0dZL98XiFVk9TUP09PvU'));
+    //app.use(require('prerender-node').set('prerenderToken',
+    // '0dZL98XiFVk9TUP09PvU'));
 
 });

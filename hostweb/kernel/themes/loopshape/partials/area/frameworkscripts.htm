@@ -2,22 +2,20 @@ description = "WCMS Javascripts"
 ==
 <?php
 function onStart() {
-    
-    $this->page['baseUrl'] = 'http://'.$_SERVER["HTTP_HOST"].'/';
-    
+
+$this->page['baseUrl'] = 'http://'.$_SERVER["HTTP_HOST"].'/';
+
 }
 ?>
 ==
 <!--
-	REQUIRE.JS Loader for "Infinity Red" Template 
-	Combined by: Arjuna Noorsanto • E-Mail: awebgo.net@gmail.com
+REQUIRE.JS Loader for "Infinity Red" Template
+Combined by: Arjuna Noorsanto • E-Mail: awebgo.net@gmail.com
 -->
 <!-- define BaseURL and load RequireJS-config -->
 <script>
-	var baseUrl = "{{ this.page.baseUrl }}";
+    var baseUrl = "{{ this.page.baseUrl }}";
     var rjsConfig = baseUrl + 'hostweb/assets/js/app/config.js';
 </script>
 <script src="./hostweb/assets/js/app/r.js"></script>
-<script>
-	require([rjsConfig]);
-</script>
+<script>require([rjsConfig]);</script>

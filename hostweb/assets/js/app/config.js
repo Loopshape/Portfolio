@@ -2,31 +2,26 @@
  * REQUIRE.JS configuration file
  * by Arjuna Noorsanto • E-Mail: awebgo.net@gmail.com
  */
-requirejs.config(
-{
+requirejs.config({
 
     baseUrl : '.',
 
-    pragmasOnSave :
-    {
+    pragmasOnSave : {
         excludeRequireCss : true
     },
 
-    map :
-    {
-        '*' :
-        {
+    map : {
+        '*' : {
             'css' : './hostweb/assets/js/app/bower_components/require-css/css'
         }
     },
 
-    paths :
-    {
+    paths : {
 
         angular : './hostweb/assets/js/app/bower_components/angular/angular',
-        
+
         ember : './hostweb/node_modules/ember-cli/lib/cli/index',
-        
+
         backbone : './hostweb/assets/js/app/bower_components/backbone/backbone',
         underscore : './hostweb/assets/js/app/bower_components/underscore/underscore-min',
 
@@ -49,100 +44,83 @@ requirejs.config(
 
     },
 
-    shim :
-    {
+    shim : {
 
-        angular :
-        {
+        angular : {
             exports : 'angular'
         },
 
-        jquery :
-        {
+        jquery : {
             deps : ['angular'],
             exports : '$'
         },
-        
-        ember :
-        {
+
+        ember : {
             deps : ['angular', 'jquery'],
             exports : 'ember'
         },
 
-        backbone :
-        {
+        backbone : {
             exports : 'Backbone'
         },
 
-        underscore :
-        {
+        underscore : {
             exports : '_'
         },
 
-        tooltipsy :
-        {
+        tooltipsy : {
             deps : ['jquery'],
             exports : 'tooltipsy'
         },
 
-        angularscroll :
-        {
+        angularscroll : {
             deps : ['angular', 'jquery'],
             exports : 'AngularScroll'
         },
 
-        responsivemeasure :
-        {
+        responsivemeasure : {
             deps : ['jquery'],
             exports : 'responsiveMeasure'
         },
 
-        multicolselect :
-        {
+        multicolselect : {
             exports : 'MultiColumnSelect'
         },
 
-        cssmulticol :
-        {
+        cssmulticol : {
             exports : 'CssMultiColumns'
         },
 
-        jquerysnippet :
-        {
+        jquerysnippet : {
             deps : ['jquery'],
             exports : 'snippet'
         },
 
-        jssnippet :
-        {
+        jssnippet : {
             deps : ['jquery', 'jquerysnippet']
         },
 
-        jscookie :
-        {
+        jscookie : {
             deps : ['jquery'],
             exports : 'Cookie'
         },
 
-        hoverintent :
-        {
+        hoverintent : {
             deps : ['jquery'],
             exports : 'hoverIntent'
         },
 
-        fancybox :
-        {
+        fancybox : {
             deps : ['jquery'],
             exports : 'fancybox'
         },
-        
+
         planetarium : {
             deps : ['jquery'],
             exports : 'planetarium'
         },
 
-        main :
-        {
+        main : {
             exports : 'Main'
         }
 
