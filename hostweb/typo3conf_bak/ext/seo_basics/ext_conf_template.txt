@@ -1,2 +1,0 @@
-  # cat=basic/enable; type=boolean; label=Enable the Google XML Sitemap: This enables the Sitemap used for Google, available under www.yourdomain.com/sitemap.xml
-xmlSitemap = 1

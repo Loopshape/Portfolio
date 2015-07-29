@@ -1,2 +1,0 @@
-# cat=basic//; type=string; label=Log directory and filename:If the path does not begin with a slash (/), the path of the current site will be prepended
-logDirAndFilename = debug.log

@@ -1,7 +1,0 @@
-﻿.. |addWecMapApiTemplate|      image:: ../../Images/addWecMapApiTemplate.png
-   :width: 50%
-.. :align: left
-.. :border: 0
-.. :hspace: 12
-.. :name: Add WecMap Api Template
-

@@ -1,4 +1,0 @@
-config.my_minifier {
-    minimizeJs = {$my_minifier.minimizeJs}
-    minimizeCss = {$my_minifier.minimizeCss}
-}
